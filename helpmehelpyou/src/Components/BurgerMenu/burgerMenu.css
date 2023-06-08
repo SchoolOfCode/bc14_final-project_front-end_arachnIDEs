@@ -1,0 +1,121 @@
+.burgerMenu {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    padding-bottom: 30px;
+    margin-bottom: 600px;
+    background-color: #ffffff;
+    color: white;
+  }
+  
+  .brand-name {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration-style: "";
+    font-size: 2.5rem;
+    margin-left: 1rem;
+  }
+  .navigation-menu {
+    margin-left: auto;
+  }
+  
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+    color: #fefefe;
+  }
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+    color: #78AF72;
+  }
+  .navigation-menu li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: #ffffff;
+  }
+  
+  .hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background-color: #78AF72;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  
+  .hamburger:hover {
+    background-color: #5ea856;
+  }
+  
+  @media screen and (max-width: 5000px) {
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 5000px) {
+    .navigation-menu ul {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 5000px) {
+    .navigation-menu ul {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      width: 20%;
+      background-color: #ffffff; 
+    }
+    .navigation-menu li {
+      text-align: center;
+      margin: 0;
+    }
+    .navigation-menu li a {
+      color: black;
+      width: 100%;
+      padding: 5px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+    .navigation-menu li:hover {
+      background-color: #78AF72;
+    }
+  }
+  
+  @media screen and (max-width: 5000px) {
+    .navigation-menu ul {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 5000px) {
+    .navigation-menu.expanded ul {
+      display: block;
+    }
+  }
+  
+  .logo {
+    height: 60px;
+    width: 60px;
+    margin-top: 40px;
+    padding-left: 10px;
+  }

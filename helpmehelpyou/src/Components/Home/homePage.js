@@ -1,5 +1,10 @@
+import './homePage.css';
+
 export default function HomePage() {
 
 
-    return <h1>Home page!</h1>
+    return <div className="homePage">
+    <h1 className="heading">Home page!
+    </h1>
+    </div>
 }
