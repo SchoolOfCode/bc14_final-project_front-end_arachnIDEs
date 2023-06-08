@@ -1,2 +1,4 @@
-export default function GiveHelp() {}
+export default function GiveHelp() {
+    return <h1>Give Help page!</h1>
+}
 
