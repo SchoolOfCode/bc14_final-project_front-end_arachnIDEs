@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-//create skeleton code for GiveHelp page.
+// Create skeleton code for GiveHelp page.
+// A list of all listings to render by default.
+  // State to store data (i.e. all listings)
+// Users to be able to search for listings with keywords and category filter
+  // State to store input box input.
+// Render a list results.
 
 export default function GiveHelp() {
   // state goes here
+    const [userInput, setUserInput] = useState("")
 
   // functions: saving input from input box, click on button in listing to get email address of user.
-
+    function storeInput(event) {
+      setUserInput(event.target.value)
+      console.log(userInput)
+    }
   /*renders:
 Header
 Nav Bar
@@ -18,10 +27,8 @@ Listing - <h1> for title / summary
 
   return (
     <div>
-      <section id="header"></section>
-      <section id="navBar"></section>
       <section id="giveHelpSearch">
-        <input type="text"></input>
+        <input type="text" onChange={storeInput}></input>
         <button>Search</button>
       </section>
       <section id="listing">
