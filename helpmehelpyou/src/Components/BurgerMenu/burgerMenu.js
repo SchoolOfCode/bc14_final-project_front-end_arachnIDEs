@@ -17,7 +17,7 @@ export default function BurgerMenu() {
           className="h-5 w-5"
           viewBox="0 0 20 20"
           background="green"
-          fill="green"
+          fill="white"
         >
           <path
             fillRule="evenodd"

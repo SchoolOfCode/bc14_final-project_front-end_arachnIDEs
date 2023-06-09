@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import "./giveHelp.css";
 
 // Create skeleton code for GiveHelp page.
 // A list of all listings to render by default.
@@ -32,7 +33,7 @@ Listing - <h1> for title / summary
 <button> to close the component? */
 
   return (
-    <div>
+    <div className = "giveHelpContainer">
       <section id="give-help-search">
         <input type="text" onChange={storeInput}></input>
         <button>Search</button>
