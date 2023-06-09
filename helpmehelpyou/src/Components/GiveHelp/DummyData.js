@@ -17,7 +17,7 @@ const dummyData = [
     display_name: "John Doe",
     profile_picture:
       "https://www.inmybag.co.za/wp-content/uploads/2015/09/old-man-smiling.jpg",
-    email_address: "test",
+    email_address: "johndoe@pretendemail.co.uk",
     listing_id: "9r8q7p6o5n4m3l2k1j0i9h8g7f6e5d4c3b2a1",
     listing_title: "Gardening Help Please",
     date_posted: "2023-06-01",
@@ -28,10 +28,10 @@ const dummyData = [
   },
   {
     user_id: "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s",
-    display_name: "JaneSmith",
+    display_name: "Jane Smith",
     profile_picture:
       "https://media.istockphoto.com/id/517234226/photo/i-see-no-good-reason-to-act-my-age.jpg?s=612x612&w=0&k=20&c=qx2j21ZtwPWJuvrLD8uvegXz9z4YSQQnflUyGlBkyic=",
-    email_address: "test",
+    email_address: "jane_smith@pretendemail.com",
     listing_id: "8s7r6q5p4o3n2m1l0k9j8i7h6g5f4e3d2c1b0a",
     listing_title: "House Cleaning Needed",
     date_posted: "2023-06-02",
@@ -45,7 +45,7 @@ const dummyData = [
     display_name: "Mike Johnson",
     profile_picture:
       "https://media.istockphoto.com/id/499781775/photo/positive-attitudes-are-the-way-to-go.jpg?s=612x612&w=0&k=20&c=E0_pJaRiiSBh9ZTOMScxRMQgb1tp1-_OrZRRja04Liw=",
-    email_address: "test",
+    email_address: "mikejo@heresanemail.com",
     listing_id: "9r8q7p6o5n4m3l2k1j0i9h8g7f6e5d4c3b2a1",
     listing_title: "Dog Walking Needed!",
     date_posted: "2023-06-03",
