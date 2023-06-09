@@ -20,10 +20,7 @@ export default function GiveHelp() {
     console.log(userInput);
   }
 
-  function contactUser() {
-    // display email address of user
-    alert("Here's the email address!");
-  }
+ 
 
   function contactUser(email) {
     // Display email address of user
