@@ -40,7 +40,7 @@ Listing - <h1> for title / summary
 
   return (
     <div className="giveHelpContainer">
-      <h2 className="give-help-title">Give Help</h2>
+      <h1 className="give-help-title">Give Help</h1>
       <img
         className="give-help-image"
         src={image}
