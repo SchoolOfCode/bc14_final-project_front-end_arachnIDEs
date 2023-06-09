@@ -11,7 +11,7 @@ s-s-c_name - what they can offer
 listing_details
 */
 
-let dummyData = [
+const dummyData = [
   {
     user_id: "1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r",
     display_name: "John Doe",
@@ -55,3 +55,5 @@ let dummyData = [
       "I need some help walking my dog whilst I'm away at the weekend. I can offer tutoring in return!",
   },
 ];
+
+export default dummyData;
