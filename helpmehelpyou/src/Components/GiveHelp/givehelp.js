@@ -1,6 +1,6 @@
-
 import React, { useState } from "react";
 import "./giveHelp.css";
+import dummyData from "./DummyData";
 
 // Create skeleton code for GiveHelp page.
 // A list of all listings to render by default.
@@ -33,23 +33,35 @@ Listing - <h1> for title / summary
 <button> to close the component? */
 
   return (
-    <div className = "giveHelpContainer">
+    <div className="giveHelpContainer">
       <section id="give-help-search">
         <input type="text" onChange={storeInput}></input>
         <button>Search</button>
       </section>
+
       <section id="listings">
+        {dummyData.map((listing) => 
         <div className="individual-listing">
-          <h1>Listing Title</h1>
-          <p>Listing Details</p>
-          <button onClick={contactUser}>Contact user</button>
-        </div>
-        <div className="individual-listing">
-          <h1>Listing Title</h1>
-          <p>Listing Details</p>
-          <button onClick={contactUser}>Contact user</button>
+          <h1 className="listing-title">Listing Title</h1>
+          <p className="date-posted">dat{listing.}        </p>
+            <p className="listing-details">Listing Details</p>
+          <p className="s-s-c-id">I can offer... skills</p>
+          <div className="user-info">
+            <img
+              className="profile-picture"
+              src="https://via.placeholder.com/150"
+              alt="profile" />
+            <p className="display-nam</div>e">Display Name</p>
+            <p className="borough-id">Borough</p>{" "}
+          </div>
+          <div className="user-contact">{" "}
+            <button className="contact-user" onClick={contactUser}>
+              Contact user
+            </button>
+            <button className="visit-profile">View Profile</button>
+          </div>
         </div>
       </section>
     </div>
-  );
+  )
 }
