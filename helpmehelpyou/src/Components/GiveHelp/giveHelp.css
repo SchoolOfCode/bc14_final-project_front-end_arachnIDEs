@@ -5,25 +5,53 @@
     flex-direction: column;
 text-align: center;}
 
+.search-box {border-radius: 25px;}
+
+.search-button {}
+
+
 .individual-listing {
+    font-size: 14pt;
     align-self: center;
 background-color: #A8C2DA;
-width: 100%;
+width: 300px;
 height: 10%;
 border-radius: 25px;
 margin-top: 30px;
 border: 1px solid black;}
 
-.user-info {display: flex;}
+.user-info {display: flex;
+flex-direction: column;}
 
-.user-contact {flex-direction: row;}
+.listing-title {font-size: 16pt;}
 
-.listing-title {font-size: 20pt;}
-.date-posted {font-size: 16pt;}
-.listing-details {font-size: 16pt;}
+.date-posted {}
+
+.listing-details {}
+
 .s-s-c-id { border-radius: 25px}
-.profile-picture {border-radius: 50px;}
-.display-name {font-size: 16pt;}
-.borough-id {}
-.contact-user {}
-.visit-profile {}
+
+.profile-picture {border-radius: 50px;
+width: 50px;}
+
+.display-name {font-weight: bolder;}
+.user-contact {display: flex;
+    flex-direction: row;
+justify-content: space-around;
+padding-bottom: 30px;
+font-weight: bolder;}
+
+.contact-user {background-color: #78AF72;
+border: black;
+border-radius: 25px;
+font-size: 16pt;
+min-height: 40px;
+margin-left: 10px;
+margin-right: 5px;}
+.visit-profile {background-color: #78AF72;
+    border: black;
+    border-radius: 25px;
+    font-size: 16pt;
+    min-height: 40px;
+margin-left: 5px;
+margin-right: 10px;}

@@ -35,15 +35,13 @@ Listing - <h1> for title / summary
   return (
     <div className="giveHelpContainer">
       <section id="give-help-search">
-        <input type="text" onChange={storeInput}></input>
-        <button>Search</button>
+        <input type="text" onChange={storeInput} className="search-box"></input>
+        <button className = "search-button">Search</button>
       </section>
-
       <section id="listings">
-        {dummyData.map((listing) => 
         <div className="individual-listing">
           <h1 className="listing-title">Listing Title</h1>
-          <p className="date-posted">dat{listing.}        </p>
+          <p className="date-posted">       </p>
             <p className="listing-details">Listing Details</p>
           <p className="s-s-c-id">I can offer... skills</p>
           <div className="user-info">
@@ -51,10 +49,10 @@ Listing - <h1> for title / summary
               className="profile-picture"
               src="https://via.placeholder.com/150"
               alt="profile" />
-            <p className="display-nam</div>e">Display Name</p>
-            <p className="borough-id">Borough</p>{" "}
+            <p className="display-name">Display Name</p>
+            <p className="borough-id">Borough</p>
           </div>
-          <div className="user-contact">{" "}
+          <div className="user-contact">
             <button className="contact-user" onClick={contactUser}>
               Contact user
             </button>
