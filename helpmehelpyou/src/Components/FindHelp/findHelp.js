@@ -35,7 +35,7 @@ export default function FindHelp() {
       </section>
 
       <section id="post-request-link">      
-        <p className="post-request">Need hepl? <a href="/findhelpform">Post a request.</a></p>
+        <p className="post-request">Need help? <a href="/findhelpform">Post a request.</a></p>
       </section>
 
       <section id="helpers">
