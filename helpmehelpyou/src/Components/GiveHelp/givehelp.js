@@ -42,25 +42,28 @@ Listing - <h1> for title / summary
       <section id="listings">
         {dummyData.map((listing) => 
         <div className="individual-listing">
-          <h1 className="listing-title">Listing Title</h1>
-          <p className="date-posted">dat{listing.}        </p>
-            <p className="listing-details">Listing Details</p>
-          <p className="s-s-c-id">I can offer... skills</p>
+          <h1 className="listing-title">{listing.listing_title}</h1>
+          <p className="date-posted">{listing.date_posted}</p>
+            <p className="listing-details">{listing.listing_details}</p>
+          <p className="s-s-c-id">{listing.ssc_name}</p>
           <div className="user-info">
             <img
               className="profile-picture"
-              src="https://via.placeholder.com/150"
+              src={listing.profile_picture}
               alt="profile" />
-            <p className="display-nam</div>e">Display Name</p>
-            <p className="borough-id">Borough</p>{" "}
+            <p className="display-name">{listing.display_name}</p>
+            <p className="borough-id">{listing.borough}</p>
           </div>
-          <div className="user-contact">{" "}
-            <button className="contact-user" onClick={contactUser}>
+          <div className="user-contact">
+            <button className="contact-user" onClick={(listing) => {
+    // display email address of user
+    alert({listing.email_address});}}>
               Contact user
             </button>
             <button className="visit-profile">View Profile</button>
           </div>
         </div>
+        )}
       </section>
     </div>
   )
