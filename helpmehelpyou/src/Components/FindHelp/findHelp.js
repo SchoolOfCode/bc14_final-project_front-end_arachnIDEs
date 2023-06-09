@@ -33,6 +33,11 @@ export default function FindHelp() {
         <input type="text" onChange={storeInput} className="search-box"></input>
         <button className="search-button">🔍</button>
       </section>
+
+      <section id="post-request-link">      
+        <p className="post-request">Need hepl? <a href="/findhelpform">Post a request.</a></p>
+      </section>
+
       <section id="helpers">
         <h3 className="helper-list">Browse Helpers...</h3>
         {helperDummyData.map((listing) => (
