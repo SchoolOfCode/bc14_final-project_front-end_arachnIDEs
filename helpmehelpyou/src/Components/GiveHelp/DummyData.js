@@ -24,7 +24,9 @@ const dummyData = [
     borough_id: "Croydon",
     ssc_name: "Gardening",
     listing_details:
-      "I'm retired and need some help watering my plants whilst I'm travelling. I can offer proof-reading or some ",
+      "I'm retired and need some help watering my plants whilst I'm travelling.",
+      offer_details: "Proofreading",
+      rating: "⭐️⭐️⭐️⭐️⭐️"
   },
   {
     user_id: "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s",
@@ -37,8 +39,9 @@ const dummyData = [
     date_posted: "2023-06-02",
     borough_id: "Camden",
     ssc_name: "Cleaning",
-    listing_details:
-      "Please can someone help me keep the house clean during the week?! I'm trying to juggle too much. I'm happy to bake cakes in return.",
+    listing_details:  "Please can someone help me keep the house clean during the week?! I'm trying to juggle too much.",
+      offer_details: "Baking",
+      rating: "⭐️⭐️⭐️⭐️"
   },
   {
     user_id: "1a9b2c8d7e3f6g5h4i0j1k2l3m4n5o6p7q8r",
@@ -51,8 +54,9 @@ const dummyData = [
     date_posted: "2023-06-03",
     borough_id: "Lewisham",
     ssc_name: "Dog Walking",
-    listing_details:
-      "I need some help walking my dog whilst I'm away at the weekend. I can offer tutoring in return!",
+    listing_details: "I need some help walking my dog whilst I'm away at the weekend.",
+      offer_details: "French tutoring",
+      rating: "⭐️⭐️⭐️"
   },
 ];
 

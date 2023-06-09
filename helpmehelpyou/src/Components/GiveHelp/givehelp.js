@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./giveHelp.css";
+import image from "./givehelp-image.png";
 import dummyData from "./DummyData";
 
 // Create skeleton code for GiveHelp page.
@@ -39,25 +40,42 @@ Listing - <h1> for title / summary
 
   return (
     <div className="giveHelpContainer">
+      <h2 className="give-help-title">Give Help</h2>
+      <img
+        className="give-help-image"
+        src={image}
+        alt="cartoon person helping another person to climb a ladder"
+      ></img>
       <section id="give-help-search">
         <input type="text" onChange={storeInput} className="search-box"></input>
-        <button className = "search-button">Search</button>
+        <button className="search-button">🔍</button>
       </section>
       <section id="listings">
+        <h3 className="recent-listings">Recent listings...</h3>
         {dummyData.map((listing) => (
           <div className="individual-listing">
             <h1 className="listing-title">{listing.listing_title}</h1>
-            <p className="date-posted">{listing.date_posted}</p>
+            <div className="sub-title">
+              <p className="s-s-c-id">{listing.ssc_name}</p>
+              <p className="date-posted">{listing.date_posted}</p>
+            </div>
             <p className="listing-details">{listing.listing_details}</p>
-            <p className="s-s-c-id">{listing.ssc_name}</p>
+            <p className="offer-details">
+              I can offer... {listing.offer_details}
+            </p>
             <div className="user-info">
-              <img
-                className="profile-picture"
-                src={listing.profile_picture}
-                alt="profile"
-              />
-              <p className="display-name">{listing.display_name}</p>
-              <p className="borough-id">{listing.borough}</p>
+              <div className="image-container">
+                <img
+                  className="profile-picture"
+                  src={listing.profile_picture}
+                  alt="profile"
+                />
+                <p className="rating">{listing.rating}</p>
+              </div>
+              <div className="user-details-container">
+                <p className="display-name">{listing.display_name}</p>
+                <p className="borough-id">{listing.borough_id}</p>
+              </div>
             </div>
             <div className="user-contact">
               <button

@@ -1,57 +1,99 @@
-.giveHelpContainer {margin-top: 150px;
+.giveHelpContainer {margin-top: 100px;
     align-self: center;
     align-items: center;
     display: flex;
     flex-direction: column;
 text-align: center;}
 
-.search-box {border-radius: 25px;}
+.give-help-image {height: 200px;
+width:150px;
+text-align: center;
+margin-bottom: 20px;}
 
-.search-button {}
+#give-help-search {display: flex;
+    flex-direction: row;}
 
+.search-box {border-radius: 25px;
+width: 200px;
+height: 20px;
+margin-right: 10px;}
+
+.search-button {font-size: 16pt;
+    border-radius: 50px;
+background-color: rgb(255, 255, 255);
+margin-left: 10px;}
+
+.recent-listings {text-align: left;}
 
 .individual-listing {
     font-size: 14pt;
     align-self: center;
 background-color: #A8C2DA;
-width: 300px;
+width: 350px;
 height: 10%;
 border-radius: 25px;
 margin-top: 30px;
 border: 1px solid black;}
 
-.user-info {display: flex;
-flex-direction: column;}
+.sub-title {display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: space-between;
+font-size: smaller;
+margin-left: 20px;
+margin-right: 20px;}
+
+.user-info {margin-left: 40px;
+    margin-right: 10px;
+    display: flex;
+flex-direction: row;
+align-items: center;}
+
+.image-container {
+    margin-right: 60px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
 
 .listing-title {font-size: 16pt;}
 
-.date-posted {}
+.date-posted {margin-right: 20px;}
 
-.listing-details {}
+.listing-details {font-size: 15pt;
+margin-left: 20px;
+margin-right: 20px;}
 
-.s-s-c-id { border-radius: 25px}
+.s-s-c-id { font-weight: bold;
+margin-left: 20px;}
 
 .profile-picture {border-radius: 50px;
-width: 50px;}
+width: 50px;
+height: 50px;}
 
 .display-name {font-weight: bolder;}
+
 .user-contact {display: flex;
     flex-direction: row;
 justify-content: space-around;
 padding-bottom: 30px;
 font-weight: bolder;}
 
+
+
 .contact-user {background-color: #78AF72;
 border: black;
 border-radius: 25px;
-font-size: 16pt;
+font-size: 14pt;
+font-weight: bolder;
 min-height: 40px;
 margin-left: 10px;
 margin-right: 5px;}
+
 .visit-profile {background-color: #78AF72;
     border: black;
+    font-weight: bolder;
     border-radius: 25px;
-    font-size: 16pt;
+    font-size: 14pt;
     min-height: 40px;
 margin-left: 5px;
 margin-right: 10px;}
