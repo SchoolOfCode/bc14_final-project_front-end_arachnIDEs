@@ -1,6 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import "./burgerMenu.css";
+import { Link } from "react-router-dom";
 
 export default function BurgerMenu() {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -33,7 +34,7 @@ export default function BurgerMenu() {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/give">Give Help</a>
+            <Link to="/give">Give Help</Link>
           </li>
           <li>
             <a href="/find">Find Help</a>
