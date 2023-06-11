@@ -37,7 +37,7 @@ export default function BurgerMenu() {
             <Link to="/give">Give Help</Link>
           </li>
           <li>
-            <a href="/find">Find Help</a>
+          <Link to="/find">Find Help</Link>
           </li>
         </ul>
       </div>
