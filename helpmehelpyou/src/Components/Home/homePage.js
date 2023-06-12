@@ -31,9 +31,9 @@ export default function HomePage() {
       </div>
 
       <div className ="carousel-container">
-      <p className = "home-page-card">
-        Test
-      </p>
+      <div className = "home-page-card">
+       <h3>MEET NAME... </h3>
+      </div>
       </div>
     </div>
   );
