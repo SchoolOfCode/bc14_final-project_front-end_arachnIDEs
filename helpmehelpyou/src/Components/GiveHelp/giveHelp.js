@@ -48,7 +48,9 @@ Listing - <h1> for title / summary
         <input type="text" onChange={storeInput} className="search-box"></input>
         <button className="search-button">🔍</button>
       </section>  <section id="post-request-link-from-givehelp">      
+
         <p className="post-request">Need hepl? <Link to ="/findhelpform">Post a request. </Link></p>
+
       </section>
       <section id="listings">
         <h3 className="recent-listings">Recent listings...</h3>

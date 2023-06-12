@@ -71,6 +71,11 @@ margin-right: 20px;}
 .s-s-c-id {font-weight: bold;
 margin-left: 20px;}
 
+.helper-list {
+    font-size: 18pt;
+    text-align: left;
+}
+
 .profile-picture {border-radius: 50px;
 width: 50px;
 height: 50px;}
