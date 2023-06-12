@@ -51,7 +51,7 @@ export default function PostRequest() {
       <div className="ask-for-help">
         <h1 id="ask-for-help-title">Ask for help</h1>
         <p>You are posting as a guest</p>
-        <form id='ask-for-help-form'>
+        <form id="ask-for-help-form">
           {/* <label>Email</label> */}
           <input type="text" placeholder="Please enter your email"></input>
           {/* Log in and Register will need Link tags at some point! */}
@@ -62,12 +62,11 @@ export default function PostRequest() {
           {/* <label>Summary</label> */}
           <input type="text" placeholder="What help would you like?"></input>
 
-          <label for="categories">Categories</label>
-          <select id="categories" name="categories">
-            <option value="" disabled selected>
+          <label htmlFor="categories">Categories</label>
+          <select id="categories" name="categories" defaultValue="">
+            <option value="" disabled>
               Select One
             </option>
-            <select id="category"></select>
             <optgroup label="Household">
               <option value="cleaning">Cleaning</option>
               <option value="gardening">Gardening</option>
@@ -138,15 +137,16 @@ export default function PostRequest() {
           </label>
           {/* Offer text input */}
           {offer && (
-            <select id="categories" name="categories">
-              <option value="" disabled selected>
+            <select
+              id="categories"
+              name="categories"
+              defaultValue=""
+              value={offerChoice}
+              onChange={handleOfferChoiceChange}
+            >
+              <option value="" disabled>
                 Select One
               </option>
-              <select
-                id="category"
-                value={offerChoice}
-                onChange={handleOfferChoiceChange}
-              ></select>
               <optgroup label="Household">
                 <option value="cleaning">Cleaning</option>
                 <option value="gardening">Gardening</option>
