@@ -22,7 +22,8 @@ export default function HomePage() {
             <Link to = "/give">
             <button className="home-page-buttons" id="give-help-button">
           Give Help
-           </button> </Link>
+           </button> 
+           </Link>
             <Link to = "/find">      
               <button className="home-page-buttons" id="find-help-button">
           Get Help
