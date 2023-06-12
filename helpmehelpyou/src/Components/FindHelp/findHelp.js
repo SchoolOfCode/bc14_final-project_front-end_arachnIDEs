@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./findHelp.css";
 import image from "./findHelpImage.png";
 import helperDummyData from "./helperDummyData"
+import { Link } from "react-router-dom";
 
 
 export default function FindHelp() {
@@ -35,7 +36,9 @@ export default function FindHelp() {
       </section>
 
       <section id="post-request-link">      
-        <p className="post-request">Need help? <a href="/findhelpform">Post a request.</a></p>
+
+        <p className="post-request">Need help? <Link to ="/findhelpform">Post a request. </Link></p>
+
       </section>
 
       <section id="helpers">
