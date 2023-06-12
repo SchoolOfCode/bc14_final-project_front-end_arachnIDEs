@@ -1,3 +1,7 @@
 .test{
     font-size: 100pt;
 }
+
+input {
+    width: 200px;
+}
