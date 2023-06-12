@@ -7,9 +7,10 @@ import { useState } from "react";
 export default function HomePage() {
     const [activeIndex, setActiveIndex] = useState(0);
     const cards = [
-      { id: 1, title: "Card 1", content: "This is card 1" },
-      { id: 2, title: "Card 2", content: "This is card 2" },
-      { id: 3, title: "Card 3", content: "This is card 3" },
+      { id: 1, title: "MEET LOUISE...", content: "This is card 1" },
+      { id: 2, title: "MEET KESHAV...", content: "This is card 2" },
+      { id: 3, title: "MEET STEVE...", content: "This is card 3" },
+      { id: 4, title: "MEET AMY...", content: "This is card 3" },
     ];
   
     const handlePrev = () => {
