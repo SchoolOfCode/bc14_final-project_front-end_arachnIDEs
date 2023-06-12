@@ -222,7 +222,12 @@ export default function PostRequest() {
               </optgroup>
             </select>
           )}
-          <button id="create-listing-btn">Create Listing</button>
+          <button
+            id="create-listing-btn"
+            onClick={() => alert("This will send the form")}
+          >
+            Create Listing
+          </button>
         </form>
       </div>
     </div>
