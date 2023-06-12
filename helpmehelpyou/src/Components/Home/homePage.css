@@ -1,6 +1,16 @@
+.home-page {margin-top: 100px;
+text-align: center;
+align-items: center;
+display:flex;
+flex-direction: column;}
 
+.home-image {width: 300px;
+    height: 300px;
+margin-right: 25px;}
 
-.heading {color:black;
-font-size: 35pt;
-margin-top: 100px;
-text-align: center;}
+.app-logo {height: 100px;
+    width: 200px;}
+
+.intro-text {
+    font-size: 18pt;
+    margin-top: 40px;}
