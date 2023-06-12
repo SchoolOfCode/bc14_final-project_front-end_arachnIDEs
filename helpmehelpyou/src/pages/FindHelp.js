@@ -7,8 +7,7 @@ export default function FindHelpPage() {
      
 
          <FindHelp/>
-         <p>Paul says - a page can contain more
-         than one component or text that doesn't change</p>
+         
          </div>
     )
 }
