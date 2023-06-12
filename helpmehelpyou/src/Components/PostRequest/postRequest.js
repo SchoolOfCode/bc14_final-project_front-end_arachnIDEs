@@ -140,7 +140,6 @@ export default function PostRequest() {
             <select
               id="categories"
               name="categories"
-              defaultValue=""
               value={offerChoice}
               onChange={handleOfferChoiceChange}
             >
