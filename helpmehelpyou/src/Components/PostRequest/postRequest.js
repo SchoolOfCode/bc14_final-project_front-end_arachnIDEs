@@ -46,71 +46,94 @@ export default function PostRequest() {
 
   return (
     <div className="post-request">
-      <h1>This is request form</h1>
-
       <div className="ask-for-help">
-        <h1 id="ask-for-help-title">Ask for help</h1>
-        <p>You are posting as a guest</p>
+        <h1 id="ask-for-help-title" className="centered-text">
+          Ask for help
+        </h1>
+        <p className="centered-text">You are posting as a guest</p>
         <form id="ask-for-help-form">
-          {/* <label>Email</label> */}
-          <input type="text" placeholder="Please enter your email"></input>
+          <div className="ask-for-help-div">
+            <label>Email</label>
+            <input
+              className="ask-for-help-input"
+              type="text"
+              placeholder="Please enter your email"
+            ></input>
+          </div>
           {/* Log in and Register will need Link tags at some point! */}
-          <p>
+          <p className="centered-text">
             This will be visible as you are posting as a guest. Log in or
             Register to hide your email address.
           </p>
-          {/* <label>Summary</label> */}
-          <input type="text" placeholder="What help would you like?"></input>
-
-          <label htmlFor="categories">Categories</label>
-          <select id="categories" name="categories" defaultValue="">
-            <option value="" disabled>
-              Select One
-            </option>
-            <optgroup label="Household">
-              <option value="cleaning">Cleaning</option>
-              <option value="gardening">Gardening</option>
-              <option value="diy">DIY</option>
-              <option value="dogWalking">Dog Walking</option>
-            </optgroup>
-            <optgroup label="Tutoring">
-              <option value="maths">Maths</option>
-              <option value="dance">Dance</option>
-              <option value="rench">French</option>
-              <option value="italian">Italian</option>
-              <option value="english">English</option>
-              <option value="mandarin">Mandarin</option>
-              <option value="german">German</option>
-              <option value="science">Science</option>
-              <option value="art">Art</option>
-            </optgroup>
-            <optgroup label="Sport & Leisure">
-              <option value="photography">Photography</option>
-              <option value="yoga">Yoga</option>
-              <option value="pianoLessons">Piano lessons</option>
-              <option value="getFit">Get fit</option>
-            </optgroup>
-            <optgroup label="Professional Help">
-              <option value="cvHelp">CV Help</option>
-              <option value="accountingHelp">Accounting Help</option>
-              <option value="legalAdvice">Legal Advice</option>
-            </optgroup>
-            <optgroup label="Transport & Mobility">
-              <option value="localShopping">Local Shopping</option>
-              <option value="movingHouse">Moving House</option>
-              <option value="disabilityHelp">Disability Help</option>
-              <option value="transportingItems">Transporting Items</option>
-            </optgroup>
-            <optgroup label="Other">
-              <option value="justACupOfTea">Just a cup of tea</option>
-            </optgroup>
-          </select>
-          <textarea
-            name="description"
-            rows="10"
-            cols="30"
-            placeholder="What do you need help with?"
-          ></textarea>
+          <div className="ask-for-help-div">
+            <label>Summary</label>
+            <input
+              className="ask-for-help-input"
+              type="text"
+              placeholder="What help would you like?"
+            ></input>{" "}
+          </div>
+          <div className="ask-for-help-div">
+            <label htmlFor="categories">Categories</label>
+            <select
+              className="ask-for-help-input"
+              id="categories"
+              name="categories"
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select One
+              </option>
+              <optgroup label="Household">
+                <option value="cleaning">Cleaning</option>
+                <option value="gardening">Gardening</option>
+                <option value="diy">DIY</option>
+                <option value="dogWalking">Dog Walking</option>
+              </optgroup>
+              <optgroup label="Tutoring">
+                <option value="maths">Maths</option>
+                <option value="dance">Dance</option>
+                <option value="rench">French</option>
+                <option value="italian">Italian</option>
+                <option value="english">English</option>
+                <option value="mandarin">Mandarin</option>
+                <option value="german">German</option>
+                <option value="science">Science</option>
+                <option value="art">Art</option>
+              </optgroup>
+              <optgroup label="Sport & Leisure">
+                <option value="photography">Photography</option>
+                <option value="yoga">Yoga</option>
+                <option value="pianoLessons">Piano lessons</option>
+                <option value="getFit">Get fit</option>
+              </optgroup>
+              <optgroup label="Professional Help">
+                <option value="cvHelp">CV Help</option>
+                <option value="accountingHelp">Accounting Help</option>
+                <option value="legalAdvice">Legal Advice</option>
+              </optgroup>
+              <optgroup label="Transport & Mobility">
+                <option value="localShopping">Local Shopping</option>
+                <option value="movingHouse">Moving House</option>
+                <option value="disabilityHelp">Disability Help</option>
+                <option value="transportingItems">Transporting Items</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="justACupOfTea">Just a cup of tea</option>
+              </optgroup>
+            </select>
+          </div>
+          <div id="description-div" className="ask-for-help-div">
+            <label>Description</label>
+            <textarea
+              className="ask-for-help-input"
+              id="ask-for-help-description"
+              name="description"
+              rows="10"
+              cols="30"
+              placeholder="What do you need help with?"
+            ></textarea>
+          </div>
           <p>Tick all that apply...</p>
           <label>
             <input
@@ -138,6 +161,7 @@ export default function PostRequest() {
           {/* Offer text input */}
           {offer && (
             <select
+              className="ask-for-help-input"
               id="categories"
               name="categories"
               value={offerChoice}
@@ -185,7 +209,7 @@ export default function PostRequest() {
               </optgroup>
             </select>
           )}
-          <button>Create Listing</button>
+          <button id="create-listing-btn">Create Listing</button>
         </form>
       </div>
     </div>
