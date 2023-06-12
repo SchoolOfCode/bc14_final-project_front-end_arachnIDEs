@@ -17,6 +17,11 @@ export default function HomePage() {
         <br></br>
         From moving flats to feeding cats - we have it covered.
       </h3>
+      <div className="home-page-buttons">
+
+        <button className="give-help-button">Give Help</button>
+        <button className="find-help-button">Get Help</button>
+        </div>
     </div>
   );
 }
