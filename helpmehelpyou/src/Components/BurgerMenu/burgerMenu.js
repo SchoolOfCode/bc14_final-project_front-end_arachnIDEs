@@ -31,7 +31,7 @@ export default function BurgerMenu() {
         isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}>
         <ul>
           <li>
-            <a href="/">Home</a>
+          <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/give">Give Help</Link>

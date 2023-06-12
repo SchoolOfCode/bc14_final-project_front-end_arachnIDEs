@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./giveHelp.css";
 import image from "./givehelp-image.png";
 import dummyData from "./DummyData";
+import { Link } from "react-router-dom";
 
 // Create skeleton code for GiveHelp page.
 // A list of all listings to render by default.
@@ -47,7 +48,7 @@ Listing - <h1> for title / summary
         <input type="text" onChange={storeInput} className="search-box"></input>
         <button className="search-button">🔍</button>
       </section>  <section id="post-request-link-from-givehelp">      
-        <p className="post-request">Need hepl? <a href="/findhelpform">Post a request.</a></p>
+        <p className="post-request">Need hepl? <Link to ="/findhelpform">Post a request. </Link></p>
       </section>
       <section id="listings">
         <h3 className="recent-listings">Recent listings...</h3>
