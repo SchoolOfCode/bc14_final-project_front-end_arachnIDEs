@@ -24,7 +24,7 @@ margin-right: 25px;}
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   padding: 0 18px;
   line-height: 50px;
@@ -43,7 +43,7 @@ margin-right: 25px;}
 }
 
 .home-page-buttons:active {
-  box-shadow: #422800 2px 2px 0 0;
+  box-shadow: #000000 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
 
@@ -52,4 +52,15 @@ margin-right: 25px;}
     min-width: 120px;
     padding: 0 25px;
   }
+}
+
+.carousel-container {
+    background-color: #e9c5c5;
+    border-radius: 25px;
+    color: #000000;
+    box-shadow: #000000 4px 4px 0 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 400px;
+    min-width: 300px;
 }
