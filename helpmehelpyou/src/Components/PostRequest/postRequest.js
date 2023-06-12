@@ -45,36 +45,47 @@ export default function PostRequest() {
   };
 
   return (
-    <div className="post-request">
+    <div className="post-request-container">
       <div className="ask-for-help">
         <h1 id="ask-for-help-title" className="centered-text">
           Ask for help
         </h1>
-        <p className="centered-text">You are posting as a guest</p>
+        <p className="centered-text small-text">You are posting as a guest</p>
         <form id="ask-for-help-form">
           <div className="ask-for-help-div">
-            <label>Email</label>
+            <label className="ask-for-help-label">Email</label>
             <input
               className="ask-for-help-input"
               type="text"
               placeholder="Please enter your email"
             ></input>
           </div>
+          <div className="ask-for-help-div">
+            <label className="ask-for-help-label">Display Name</label>
+            <input
+              className="ask-for-help-input"
+              type="text"
+              placeholder="Please enter a display name"
+            ></input>
+          </div>
           {/* Log in and Register will need Link tags at some point! */}
-          <p className="centered-text">
+          <p className="centered-text small-text">
             This will be visible as you are posting as a guest. Log in or
             Register to hide your email address.
           </p>
           <div className="ask-for-help-div">
-            <label>Summary</label>
+            <label className="ask-for-help-label">Summary</label>
             <input
               className="ask-for-help-input"
               type="text"
               placeholder="What help would you like?"
             ></input>{" "}
           </div>
+
           <div className="ask-for-help-div">
-            <label htmlFor="categories">Categories</label>
+            <label className="ask-for-help-label" htmlFor="categories">
+              Category
+            </label>
             <select
               className="ask-for-help-input"
               id="categories"
@@ -124,7 +135,7 @@ export default function PostRequest() {
             </select>
           </div>
           <div id="description-div" className="ask-for-help-div">
-            <label>Description</label>
+            <label className="ask-for-help-label">Description</label>
             <textarea
               className="ask-for-help-input"
               id="ask-for-help-description"
@@ -134,27 +145,29 @@ export default function PostRequest() {
               placeholder="What do you need help with?"
             ></textarea>
           </div>
-          <p>Tick all that apply...</p>
-          <label>
-            <input
-              type="checkbox"
-              id="urgent-request"
-              name="urgent-request"
-              onChange={handleUrgentChange}
-            ></input>{" "}
-            My request is urgent
-          </label>
-
+          {/* <p>Tick all that apply...</p> */}
+          <div className="ask-for-help-div">
+            <label className="ask-for-help-label">
+              <input
+                type="checkbox"
+                id="urgent-request"
+                name="urgent-request"
+                onChange={handleUrgentChange}
+              ></input>{" "}
+              My request is urgent
+            </label>
+          </div>
           {/* Timescale input - we haven't added state to save the date yet*/}
           {urgent && (
             <input
+              className="ask-for-help-input"
               type="date"
               placeholder="Select timescale"
               value={timeFrame}
               onChange={handleTimeFrameChange}
             />
           )}
-          <label>
+          <label className="ask-for-help-label">
             <input type="checkbox" onChange={handleOfferChange}></input> I can
             offer something in return
           </label>
