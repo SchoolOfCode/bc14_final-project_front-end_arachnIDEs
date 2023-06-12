@@ -140,7 +140,7 @@ export default function PostRequest() {
               className="ask-for-help-input"
               id="ask-for-help-description"
               name="description"
-              rows="10"
+              rows="7"
               cols="30"
               placeholder="What do you need help with?"
             ></textarea>
