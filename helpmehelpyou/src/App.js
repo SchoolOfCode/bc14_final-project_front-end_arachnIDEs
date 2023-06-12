@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <BurgerMenu />
-      <div>
+      <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />        
           <Route path="/give" element={<GiveHelpPage />} />
