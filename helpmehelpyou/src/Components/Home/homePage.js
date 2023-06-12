@@ -1,6 +1,7 @@
 import "./homePage.css";
 import image from "./home_image.png";
 import logo from "./logo.png";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
@@ -18,12 +19,15 @@ export default function HomePage() {
         From moving flats to feeding cats - we have it covered.
       </h3>
       <div className="button-container">
-        <button className="home-page-buttons" id="give-help-button">
+            <Link to = "/give">
+            <button className="home-page-buttons" id="give-help-button">
           Give Help
-        </button>
-        <button className="home-page-buttons" id="find-help-button">
+           </button> </Link>
+            <Link to = "/find">      
+              <button className="home-page-buttons" id="find-help-button">
           Get Help
         </button>
+        </Link>
       </div>
     </div>
   );
