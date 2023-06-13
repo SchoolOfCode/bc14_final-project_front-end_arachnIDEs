@@ -5,21 +5,25 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function HomePage() {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const cards = [
-      { id: 1, title: "MEET AMY...", content: "This is card 1" },
-      { id: 2, title: "MEET STEVE...", content: "This is card 2" },
-      { id: 3, title: "MEET ROBERT...", content: "This is card 3" },
-      { id: 3, title: "MEET CLARE...", content: "This is card 4" },
-    ];
-  
-    const handlePrev = () => {
-      setActiveIndex((prevIndex) => (prevIndex === 0 ? cards.length - 1 : prevIndex - 1));
-    };
-  
-    const handleNext = () => {
-      setActiveIndex((prevIndex) => (prevIndex === cards.length - 1 ? 0 : prevIndex + 1));
-    };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cards = [
+    { id: 1, title: "MEET AMY...", content: "This is card 1" },
+    { id: 2, title: "MEET STEVE...", content: "This is card 2" },
+    { id: 3, title: "MEET ROBERT...", content: "This is card 3" },
+    { id: 4, title: "MEET CLARE...", content: "This is card 4" },
+  ];
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? cards.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === cards.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
   return (
     <div className="home-page">
@@ -48,25 +52,26 @@ export default function HomePage() {
         </Link>
       </div>
       <div className="carousel">
-      <button className="left-arrow" onClick={handlePrev}>
-        ←
-      </button>
-      <div className="card">
-        <h2>{cards[activeIndex].title}</h2>
-        <p>{cards[activeIndex].content}</p>
+        <button className="left-arrow" onClick={handlePrev}>
+          ←
+        </button>
+        <div className="card">
+          <h2>{cards[activeIndex].title}</h2>
+          <p>{cards[activeIndex].content}</p>
+        </div>
+        <button className="right-arrow" onClick={handleNext}>
+          →
+        </button>
+        <div className="dots">
+          {cards.map((card, index) => (
+            <span
+              key={card.id}
+              className={index === activeIndex ? "dot active" : "dot"}
+              onClick={() => setActiveIndex(index)}
+            ></span>
+          ))}
+        </div>{" "}
       </div>
-      <button className="right-arrow" onClick={handleNext}>
-      →
-      </button>
-      <div className="dots">
-        {cards.map((card, index) => (
-          <span
-            key={card.id}
-            className={index === activeIndex ? "dot active" : "dot"}
-            onClick={() => setActiveIndex(index)}
-          ></span>
-        ))}
-      </div> </div>
     </div>
   );
 }
