@@ -1,18 +1,23 @@
-import React from "react";
-import {useState} from "react";
-import "./burgerMenu.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./burgerMenu.css";
 
 export default function BurgerMenu() {
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
-    return  <nav className="burgerMenu">
-    <a href="/" className="link">
-    </a>
-    <button
-      className="hamburger"
-      onClick={() => {
-        setIsNavExpanded(!isNavExpanded);
-      }}>
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
+  const handleNavToggle = () => {
+    setIsNavExpanded(!isNavExpanded);
+  };
+
+  const handleLinkClick = () => {
+    setIsNavExpanded(false);
+  };
+
+  return (
+    <nav className="burgerMenu">
+      <Link to="/" className="link"></Link>
+      <button className="hamburger" onClick={handleNavToggle}>
+        {/* Hamburger SVG code */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -27,19 +32,27 @@ export default function BurgerMenu() {
           />
         </svg>
       </button>
-      <div className={
-        isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}>
+      <div
+        className={isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}
+      >
         <ul>
           <li>
-          <Link to="/">Home</Link>
+            <Link to="/" onClick={handleLinkClick}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/give">Give Help</Link>
+            <Link to="/give" onClick={handleLinkClick}>
+              Give Help
+            </Link>
           </li>
           <li>
-          <Link to="/find">Find Help</Link>
+            <Link to="/find" onClick={handleLinkClick}>
+              Find Help
+            </Link>
           </li>
         </ul>
       </div>
     </nav>
+  );
 }
