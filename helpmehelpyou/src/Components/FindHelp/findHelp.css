@@ -1,0 +1,109 @@
+.findHelpContainer {margin-top: 100px;
+    align-self: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+text-align: center;}
+
+.find-help-image {height: 200px;
+width:150px;
+text-align: center;
+margin-bottom: 20px;}
+
+#find-help-search {display: flex;
+    flex-direction: row;
+margin-bottom: 20px;}
+
+.search-box {border-radius: 25px;
+width: 280px;
+height: 30px;
+box-shadow: inset 2px 1px 5px 2px #9f9c9c;
+margin-right: 10px;}
+
+.search-button {font-size: 16pt;
+    border-radius: 50px;
+    border-style: none;
+background-color: rgb(255, 255, 255);
+margin-left: 10px;}
+
+.recent-listings {text-align: left;
+font-size: 18pt;}
+
+.individual-listing {
+    font-size: 14pt;
+    align-self: center;
+background-color: #A8C2DA;
+width: 350px;
+height: 10%;
+border-radius: 25px;
+margin-top: 30px;
+border: 1px solid black;
+box-shadow:2px 2px 10px 2px #9f9c9c;}
+
+.sub-title {display: flex;
+    flex-direction: row;
+align-items: center;
+justify-content: space-between;
+font-size: smaller;
+margin-left: 20px;
+margin-right: 20px;}
+
+.user-info {margin-left: 40px;
+    margin-right: 10px;
+    display: flex;
+flex-direction: row;
+align-items: center;}
+
+.image-container {
+    margin-right: 60px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.listing-title {font-size: 16pt;}
+
+.date-posted {margin-right: 20px;}
+
+.listing-details {font-size: 15pt;
+margin-left: 20px;
+margin-right: 20px;}
+
+.s-s-c-id {font-weight: bold;
+margin-left: 20px;}
+
+.helper-list {
+    font-size: 18pt;
+    text-align: left;
+}
+
+.profile-picture {border-radius: 50px;
+width: 50px;
+height: 50px;}
+
+.display-name {font-weight: bolder;}
+
+.user-contact {display: flex;
+    flex-direction: row;
+justify-content: space-around;
+padding-bottom: 30px;
+font-weight: bolder;}
+
+
+
+.contact-user {background-color: #78AF72;
+border: black;
+border-radius: 25px;
+font-size: 14pt;
+font-weight: bolder;
+min-height: 40px;
+margin-left: 10px;
+margin-right: 5px;}
+
+.visit-profile {background-color: #78AF72;
+    border: black;
+    font-weight: bolder;
+    border-radius: 25px;
+    font-size: 14pt;
+    min-height: 40px;
+margin-left: 5px;
+margin-right: 10px;}

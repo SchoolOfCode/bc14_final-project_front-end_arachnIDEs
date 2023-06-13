@@ -1,0 +1,80 @@
+.post-request-container {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 390px;
+}
+
+/* Box for the component */
+.ask-for-help {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #000000;
+  border-radius: 20px;
+  margin: 20px;
+  max-width: 350px;
+  text-align: left;
+  padding: 10px 30px;
+  background-color: #7db8fa;
+}
+
+#ask-for-help-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#ask-for-help-title {
+  text-align: center;
+  margin: 0;
+}
+
+#create-listing-btn {
+  background-color: #78af72;
+  border-radius: 20px;
+  border: 3px solid #000000;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  align-self: center;
+}
+/* Styles each input box */
+.ask-for-help-input {
+  border-radius: 6px;
+  margin-left: 30px;
+  border: 1.5px solid #000000;
+  margin: 10px 0px 10px 30px;
+  width: 160px;
+}
+
+/* Text area sizing */
+#ask-for-help-description {
+  width: 160px;
+  height: 100px;
+}
+/* Centers the smaller text on the page */
+.centered-text {
+  text-align: center;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+/* Aligns the textarea with the label */
+#description-div {
+  display: flex;
+}
+
+/* Lines up labels and inputs */
+.ask-for-help-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Lining up labels with input boxes */
+.ask-for-help-label {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
