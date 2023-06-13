@@ -33,7 +33,9 @@ export default function BurgerMenu() {
         </svg>
       </button>
       <div
-        className={isNavExpanded ? "navigation-menu expanded" : "navigation-menu"}
+        className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }
       >
         <ul>
           <li>
@@ -43,12 +45,12 @@ export default function BurgerMenu() {
           </li>
           <li>
             <Link to="/give" onClick={handleLinkClick}>
-              Give Help 
+              Give Help
             </Link>
           </li>
           <li>
             <Link to="/find" onClick={handleLinkClick}>
-              Find Help .
+              Find Help
             </Link>
           </li>
         </ul>
