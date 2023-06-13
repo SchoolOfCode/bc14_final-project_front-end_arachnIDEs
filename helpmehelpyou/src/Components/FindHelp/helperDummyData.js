@@ -16,10 +16,10 @@ const helperDummyData = [
     profile_picture:
       "https://www.inmybag.co.za/wp-content/uploads/2015/09/old-man-smiling.jpg",
     email_address: "johndoe@pretendemail.co.uk",
-    listing_id: "9r8q7p6o5n4m3l2k1j0i9h8g7f6e5d4c3b2a1",
-    borough_id: "Croydon",
-    ssc_name: "Gardening",
-    about_me: "I'm retired and love meeting new people and staying active, I can help with anything outdoorsy and I'm available during working hours",
+    borough_name: "Croydon",
+    skills_offered: "Gardening",
+    skills_needed: "Just A Cup Of Tea",
+    about_me: "I'm retired and love meeting new people and staying active, I can help with anything outdoorsy and I'm available during working hours. If you have time, a cup of tea and a chat would be fantastic.",
       rating: "⭐️⭐️⭐️⭐️⭐️"
   },
   {
@@ -28,9 +28,9 @@ const helperDummyData = [
     profile_picture:
       "https://media.istockphoto.com/id/517234226/photo/i-see-no-good-reason-to-act-my-age.jpg?s=612x612&w=0&k=20&c=qx2j21ZtwPWJuvrLD8uvegXz9z4YSQQnflUyGlBkyic=",
     email_address: "jane_smith@pretendemail.com",
-    listing_id: "8s7r6q5p4o3n2m1l0k9j8i7h6g5f4e3d2c1b0a",
-    borough_id: "Camden",
-    ssc_name: "Cleaning",
+    borough_name: "Camden",
+    skills_offered: "Cleaning",
+    skills_needed: "Baking",
     about_me:  "I've recently sold my business to take a step back to focus on myself and my community. I can help with household tasks, and I'm also available for general chat and companionship",
       rating: "⭐️⭐️⭐️⭐️"
   },
@@ -40,10 +40,10 @@ const helperDummyData = [
     profile_picture:
       "https://media.istockphoto.com/id/499781775/photo/positive-attitudes-are-the-way-to-go.jpg?s=612x612&w=0&k=20&c=E0_pJaRiiSBh9ZTOMScxRMQgb1tp1-_OrZRRja04Liw=",
     email_address: "mikejo@heresanemail.com",
-    listing_id: "9r8q7p6o5n4m3l2k1j0i9h8g7f6e5d4c3b2a1",
-    borough_id: "Lewisham",
-    ssc_name: "Dog Walking",
-    about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
+    borough_name: "Lewisham",
+    skills_offered: "Dog Walking",
+    skills_needed: "DIY",
+    about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling. Any help with DIY would be brilliant.",
       rating: "⭐️⭐️⭐️"
   },
 ];

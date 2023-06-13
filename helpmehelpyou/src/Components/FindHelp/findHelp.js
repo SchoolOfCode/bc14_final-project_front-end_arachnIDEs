@@ -57,14 +57,14 @@ export default function FindHelp() {
               </div>
               <div className="user-details-container">
                 <p className="display-name">{listing.display_name}</p>
-                <p className="borough-id">{listing.borough_id}</p>
+                <p className="borough-id">{listing.borough_name}</p>
               </div>
             </div>
             <p className="about-me">{listing.about_me}</p>
             <p className="s-s-c-id">
-              I can offer... {listing.ssc_name}
+              I can offer... {listing.skills_offered}
             </p>
-            <p className="s-s-c-id">I need... {listing.ssc_name}</p>
+            <p className="s-s-c-id">I need... {listing.skills_needed}</p>
             <div className="user-contact">
               <button
                 className="contact-user"
