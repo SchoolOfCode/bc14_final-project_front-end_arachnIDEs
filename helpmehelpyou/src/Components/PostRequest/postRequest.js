@@ -34,7 +34,7 @@ export default function PostRequest() {
   });
   const [urgent, setUrgent] = useState(false);
 
-  const [offer, setOffer] = useState(false);
+  const [offer, setOffer] = useState(true);
 
   // functions to display textboxes after checkboxes
   const handleUrgentChange = (event) => {
@@ -46,6 +46,8 @@ export default function PostRequest() {
     setOffer(event.target.checked);
     console.log(offer);
   };
+
+  // document.getElementById("offer-something-checkbox").checked = true;
 
   // function to save the whole setForm
   const handleMakeAPostSubmit = (event) => {
@@ -68,8 +70,9 @@ export default function PostRequest() {
         <form id="ask-for-help-form" onSubmit={handleMakeAPostSubmit}>
           <div className="ask-for-help-div">
             {/* Email */}
-            <label className="ask-for-help-label">Email</label>
+            <label className="ask-for-help-label">Email*</label>
             <input
+              required
               className="ask-for-help-input"
               type="text"
               placeholder="Please enter your email"
@@ -87,8 +90,9 @@ export default function PostRequest() {
           </div>
           {/* Display Name */}
           <div className="ask-for-help-div">
-            <label className="ask-for-help-label">Display Name</label>
+            <label className="ask-for-help-label">Display Name*</label>
             <input
+              required
               className="ask-for-help-input"
               type="text"
               placeholder="Please enter a display name"
@@ -111,8 +115,9 @@ export default function PostRequest() {
           </p>
           {/* Summary */}
           <div className="ask-for-help-div">
-            <label className="ask-for-help-label">Summary</label>
+            <label className="ask-for-help-label">Summary*</label>
             <input
+              required
               className="ask-for-help-input"
               type="text"
               placeholder="What help would you like?"
@@ -131,9 +136,10 @@ export default function PostRequest() {
           {/* Category drop down */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label" htmlFor="categories">
-              Category
+              Category*
             </label>
             <select
+              required
               className="ask-for-help-input"
               id="categories-skills-wanted"
               name="categories"
@@ -193,9 +199,10 @@ export default function PostRequest() {
           {/* Borough dropdown */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label" htmlFor="boroughs">
-              Borough
+              Borough*
             </label>
             <select
+              required
               className="ask-for-help-input"
               id="boroughs"
               name="boroughs"
@@ -254,8 +261,9 @@ export default function PostRequest() {
           </div>
           {/* Description */}
           <div id="description-div" className="ask-for-help-div">
-            <label className="ask-for-help-label">Description</label>
+            <label className="ask-for-help-label">Description*</label>
             <textarea
+              required
               className="ask-for-help-input"
               id="ask-for-help-description"
               name="description"
@@ -310,8 +318,13 @@ export default function PostRequest() {
             </div>
           )}
           <label className="ask-for-help-label">
-            <input type="checkbox" onChange={handleOfferChange}></input> I can
-            offer something in return
+            <input
+              id="offer-something-checkbox"
+              type="checkbox"
+              onChange={handleOfferChange}
+              checked={offer}
+            ></input>{" "}
+            I can offer something in return
           </label>
           {/* Skills Offered dropdown */}
           {offer && (
@@ -381,7 +394,7 @@ export default function PostRequest() {
           {/* Submit button */}
           <button
             id="create-listing-btn"
-            onClick={() => alert("This will send the form")}
+            // onClick={() => alert("This will send the form")}
           >
             Create Listing
           </button>
