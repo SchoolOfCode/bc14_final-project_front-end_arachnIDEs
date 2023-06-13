@@ -184,6 +184,7 @@ export default function PostRequest() {
                 <option value="CV Help">CV Help</option>
                 <option value="Accounting Help">Accounting Help</option>
                 <option value="Legal Advice">Legal Advice</option>
+                <option value="Proof Reading">Proof Reading</option>
               </optgroup>
               <optgroup label="Transport & Mobility">
                 <option value="Local Shopping">Local Shopping</option>
@@ -378,6 +379,7 @@ export default function PostRequest() {
                   <option value="CV Help">CV Help</option>
                   <option value="Accounting Help">Accounting Help</option>
                   <option value="Legal Advice">Legal Advice</option>
+                  <option value="Proof Reading">Proof Reading</option>
                 </optgroup>
                 <optgroup label="Transport & Mobility">
                   <option value="Local Shopping">Local Shopping</option>
