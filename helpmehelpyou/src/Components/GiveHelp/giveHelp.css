@@ -42,65 +42,85 @@ margin-top: 30px;
 border: 1px solid black;
 box-shadow:2px 2px 10px 2px #9f9c9c;}
 
-.sub-title {display: flex;
-    flex-direction: row;
-align-items: center;
-justify-content: space-between;
-font-size: smaller;
-margin-left: 20px;
-margin-right: 20px;}
-
-.user-info {margin-left: 40px;
-    margin-right: 10px;
-    display: flex;
-flex-direction: row;
-align-items: center;}
-
-.image-container {
-    margin-right: 60px;
-    margin-left: 10px;
-    margin-top: 15px;
+.sub-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: smaller;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.listing-title {font-size: 16pt;}
+.user-info {
+  margin-left: 40px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
-.date-posted {margin-right: 20px;}
+.image-container {
+  margin-right: 60px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
 
-.listing-details {font-size: 15pt;
-margin-left: 20px;
-margin-right: 20px;}
+.listing-title {
+  font-size: 16pt;
+}
 
-.s-s-c-id { font-weight: bold;
-margin-left: 20px;}
+.date-posted {
+  margin-right: 20px;
+}
 
-.profile-picture {border-radius: 50px;
-width: 50px;
-height: 50px;}
+.listing-details {
+  font-size: 15pt;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
-.display-name {font-weight: bolder;}
+.s-s-c-id {
+  font-weight: bold;
+  margin-left: 20px;
+}
 
-.user-contact {display: flex;
-    flex-direction: row;
-justify-content: space-around;
-padding-bottom: 30px;
-font-weight: bolder;}
+.profile-picture {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
 
+.display-name {
+  font-weight: bolder;
+}
 
+.user-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 30px;
+  font-weight: bolder;
+}
 
-.contact-user {background-color: #78AF72;
-border: black;
-border-radius: 25px;
-font-size: 14pt;
-font-weight: bolder;
-min-height: 40px;
-margin-left: 10px;
-margin-right: 5px;}
+.contact-user {
+  background-color: #78af72;
+  border: black;
+  border-radius: 25px;
+  font-size: 14pt;
+  font-weight: bolder;
+  min-height: 40px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
 
-.visit-profile {background-color: #78AF72;
-    border: black;
-    font-weight: bolder;
-    border-radius: 25px;
-    font-size: 14pt;
-    min-height: 40px;
-margin-left: 5px;
-margin-right: 10px;}
+.visit-profile {
+  background-color: #78af72;
+  border: black;
+  font-weight: bolder;
+  border-radius: 25px;
+  font-size: 14pt;
+  min-height: 40px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
