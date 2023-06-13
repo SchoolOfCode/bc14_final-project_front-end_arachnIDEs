@@ -5,19 +5,24 @@ align-items: center;
 max-width: 390px;
 min-width: 390px;}
 
-.home-image {width: 220px;
+.home-image {width: 200px;
     align-self: center;
-    height: 200px;
+    height: 180px;
 margin-right: 25px;}
 
-.app-logo {height: 100px;
-    width: 200px;}
+.app-logo {height: 70px;
+    width: 140px;}
 
 .intro-text {
     text-align: center;
     max-width: 350px;
     font-size: 16pt;
     margin-top: 40px;}
+
+    .button-container {
+      max-width: 350px;
+      display: inline-flex;
+;}
 
 
 .home-page-buttons {
@@ -30,7 +35,6 @@ margin-right: 25px;}
   display: inline-block;
   font-weight: 700;
   font-size: 20px;
-  padding: 0 18px;
   line-height: 50px;
   text-align: center;
   text-decoration: none;
@@ -51,7 +55,7 @@ margin-right: 25px;}
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .home-page-buttons {
     min-width: 120px;
     padding: 0 25px;
@@ -62,7 +66,6 @@ margin-right: 25px;}
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
     max-width: 390px;
     min-width: 350px;
 }
