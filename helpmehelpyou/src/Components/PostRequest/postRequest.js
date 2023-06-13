@@ -193,7 +193,7 @@ export default function PostRequest() {
                 <option value="Transporting Items">Transporting Items</option>
               </optgroup>
               <optgroup label="Other">
-                <option value="Just A Cup Of Tea">Just a cup of tea</option>
+                <option value="Just a cup of tea">Just a cup of tea</option>
               </optgroup>
             </select>
           </div>
@@ -388,7 +388,7 @@ export default function PostRequest() {
                   <option value="Transporting Items">Transporting Items</option>
                 </optgroup>
                 <optgroup label="Other">
-                  <option value="Just A Cup Of Tea">Just a cup of tea</option>
+                  <option value="Just a cup of tea">Just a cup of tea</option>
                 </optgroup>
               </select>
             </div>
