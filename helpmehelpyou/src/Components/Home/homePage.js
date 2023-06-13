@@ -90,9 +90,9 @@ export default function HomePage() {
         <br></br>
         <li className= "about-list-item">Eager to help? take a look through our bulliein board to find those in need of help in your local community - 90% of our users offer a favour in return, so it's win win for both of you! </li>
         <br></br>
-        <li className= "about-list-item">Accept what they're offering, suggest something that you need, or be super selfless and help out without a return favour.  </li>
+        <li className= "about-list-item">Accept what the other person is offering in return, suggest something that you need instead, or even be super selfless and help out without a return favour. </li>
         <br></br>
-        <li className= "about-list-item">Create a profile showcasing what you can offer and what you'd like in return, then let the community come to you.</li>
+        <li className= "about-list-item">You can also create a profile showcasing what you can offer and what you need, then let the community come to you.</li>
         </ul>
       </div>
       <div className="carousel">
