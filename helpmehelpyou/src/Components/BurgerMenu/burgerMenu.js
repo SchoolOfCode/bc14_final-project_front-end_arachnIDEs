@@ -43,12 +43,12 @@ export default function BurgerMenu() {
           </li>
           <li>
             <Link to="/give" onClick={handleLinkClick}>
-              Give Help
+              Give Help 
             </Link>
           </li>
           <li>
             <Link to="/find" onClick={handleLinkClick}>
-              Find Help
+              Find Help .
             </Link>
           </li>
         </ul>

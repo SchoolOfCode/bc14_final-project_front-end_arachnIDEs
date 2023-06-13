@@ -25,6 +25,7 @@
   }
   
   .navigation-menu ul {
+    width: 100%;
     display: flex;
     padding: 0;
     color: #fefefe;
@@ -32,6 +33,7 @@
   .navigation-menu li {
     list-style-type: none;
     margin: 0 1rem;
+    width: 100%;
     color: #78AF72;
   }
   .navigation-menu li a {
@@ -60,6 +62,7 @@
   
   .hamburger:hover {
     background-color: #5ea856;
+  
   }
   
   @media screen and (max-width: 5000px) {
@@ -109,7 +112,7 @@
   
   @media screen and (max-width: 5000px) {
     .navigation-menu.expanded ul {
-      display: block;
+      display: block;     
     }
   }
   
