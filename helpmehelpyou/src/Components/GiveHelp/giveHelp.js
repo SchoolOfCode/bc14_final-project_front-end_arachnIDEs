@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./giveHelp.css";
+import "../../giveAndFindHelp.css";
 import image from "./givehelp-image.png";
 import dummyData from "./DummyData";
 import { Link } from "react-router-dom";
@@ -38,7 +38,7 @@ Listing - <h1> for title / summary
 
   return (
     // Parent container
-    <div className="give-help-container">
+    <div className="give-and-find-help-container">
       <h1 className="give-help-title">Give Help</h1>
       {/* Logo */}
       <img
@@ -47,9 +47,9 @@ Listing - <h1> for title / summary
         alt="cartoon person helping another person to climb a ladder"
       ></img>
       {/* Search bar and button */}
-      <section id="give-help-search">
-        <input type="text" onChange={storeInput} className="give-help-search-box"></input>
-        <button className="give-help-search-button">🔍</button>
+      <section id="give-and-find-help-search-section">
+        <input type="text" onChange={storeInput} className="give-and-find-help-search-box"></input>
+        <button className="give-and-find-help-search-button">🔍</button>
       </section>  <section id="give-help-post-request-link-from-givehelp">      
 
         <p className="give-help-post-request">Need help? <Link to ="/findhelpform">Post a request </Link></p>
@@ -57,13 +57,13 @@ Listing - <h1> for title / summary
       </section>
       {/* Recent listings fetched from DB */}
       <section id="give-help-listings">
-        <h3 className="give-help-recent-listings">Recent listings</h3>
+        <h3 className="give-and-find-help-listings-area-title">Recent listings</h3>
         {dummyData.map((listing) => (
-          <div key={listing.listing_id} className="give-help-individual-listing">
-            <h1 className="give-help-listing-title">{listing.listing_title}</h1>
+          <div key={listing.listing_id} className="give-and-find-help-individual-listing">
+            <h1 className="give-and-find-help-listing-title">{listing.listing_title}</h1>
             <div className="give-help-sub-title">
               {/* Are there skills wanted in the guest listings DB? */}
-              <p className="give-help-ssc-id">{listing.ssc_wanted}</p>
+              <p className="give-and-find-help-skills">{listing.ssc_wanted}</p>
               {/* Date stamp - this needs editing */}
               <p className="give-help-date-posted">{listing.created_at}</p>
             </div>
@@ -84,18 +84,25 @@ Listing - <h1> for title / summary
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
               <div className="give-help-user-details-container">
-                <p className="give-help-display-name">{listing.display_name}</p>
-                <p className="give-help-borough-name">{listing.borough_name}</p>
+                <div className="give-help-posted-by-div">
+                <p className="give-and-find-help-display-name">Posted by:</p>
+                <p className="give-and-find-help-display-name">{listing.display_name}</p>
+                </div>
+                <div className="give-help-location-div">
+                <p className="give-and-find-help-display-name">Location:</p>
+                <p className="give-and-find-help-display-name">{listing.borough_name}</p>
+                </div>
+                <p className="give-help-borough-name"> </p>
               </div>
             {/* </div> */}
-            <div className="give-help-user-contact">
+            <div className="give-and-find-help-user-contact">
               <button
-                className="give-help-contact-user"
+                className="give-and-find-help-contact-user"
                 onClick={() => contactUser(listing.email_address)}
               >
                 Contact user
               </button>
-              <button className="give-help-visit-profile">View Profile</button>
+              <button className="give-and-find-help-visit-profile">View Profile</button>
             </div>
           </div>
         ))}

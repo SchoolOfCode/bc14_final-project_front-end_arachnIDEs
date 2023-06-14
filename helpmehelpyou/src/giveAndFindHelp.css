@@ -1,0 +1,196 @@
+/* GIVE AND FIND HELP STYLING */
+
+/* Parent containers */
+.give-and-find-help-container {
+  margin-top: 50px;
+  align-self: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Logos */
+.find-help-image {
+  height: 180px;
+  width: 240px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.give-help-image {
+  height: 180px;
+  width: 190px;
+  margin-bottom: 20px;
+}
+
+/* Search bar and button div */
+#give-and-find-help-search-section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.give-and-find-help-search-box {
+  border-radius: 15px;
+  width: 280px;
+  height: 30px;
+  box-shadow: inset 0.5px 0.5px 5px 0.5px #9f9c9c;
+  margin-right: 10px;
+}
+
+.give-and-find-help-search-button {
+  font-size: 16pt;
+  border-radius: 50px;
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+
+/* Individual box for each listing */
+.give-and-find-help-individual-listing {
+  display: flex;
+  flex-direction: column;
+  font-size: 14pt;
+  align-self: center;
+  background-color: #a8c2da;
+  max-width: 350px;
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 10px 2px #9f9c9c;
+}
+
+/* Listings Area title */
+.give-and-find-help-listings-area-title {
+  text-align: left;
+  font-size: 18pt;
+}
+
+/* Listing Title */
+.give-and-find-help-listing-title {
+  font-size: 16pt;
+}
+
+/* Contact user button */
+.give-and-find-help-contact-user {
+  background-color: #78af72;
+  border: 1px solid black;
+  border-radius: 25px;
+  font-size: 13pt;
+  font-weight: bolder;
+  min-height: 40px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+/* Visit profile button */
+.give-and-find-help-visit-profile {
+  background-color: #78af72;
+  border: 1px solid black;
+  font-weight: bolder;
+  border-radius: 25px;
+  font-size: 13pt;
+  min-height: 40px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.give-and-find-help-skills {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.give-and-find-help-display-name {
+  font-weight: bolder;
+}
+
+.give-and-find-help-user-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 30px;
+  font-weight: bolder;
+}
+
+/* GIVE HELP SECTION */
+
+/* Title in each listing box */
+.give-help-listing-title {
+  font-size: 16pt;
+}
+
+/* Listing details */
+.give-help-listing-details {
+  font-size: 15pt;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Sub-title under the listing title: skills wanted and date created */
+.give-help-sub-title {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  font-size: smaller;
+  /* margin: auto; */
+}
+
+/* THIS IS CURRENTLY NOT BEING USED - SEE giveHelp.js file
+.give-help-user-info {
+    margin-left: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+ No image showing on here at the moment
+.give-help-image-container {
+  margin-right: 60px;
+  margin-left: 10px;
+  margin-top: 15px;
+} 
+
+No profile picture in DB yet
+.give-help-profile-picture {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+*/
+
+/* Posted by and location */
+.give-help-posted-by-div, 
+.give-help-location-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.give-help-date-posted {
+  margin: auto;
+}
+
+/* FIND HELP SECTION */
+
+/* Profile img and rating section */
+.find-help-user-img-and-rating {
+  margin-left: 40px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.find-help-image-container {
+  margin-right: 60px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.find-help-profile-picture {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+}

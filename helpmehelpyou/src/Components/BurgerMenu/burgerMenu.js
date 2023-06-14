@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./logo.png";
+import horizontalLogo from "./horizontal_logo.jpg"
 
 import "./burgerMenu.css";
 
@@ -17,7 +18,11 @@ export default function BurgerMenu() {
 
   return (
     <nav className="burgerMenu">
-    <img src={logo} alt="HelpMeHelpYou logo" className="logo"></img>
+      <div className = "login-register-buttons">
+        <button className="login-button">Login</button>
+        <button className="register-button">Register</button>
+      </div>
+    <Link to="/"><img src={horizontalLogo} alt="HelpMeHelpYou logo" className="logo"></img></Link>
       <Link to="/" className="link"></Link>
       <button className="hamburger" onClick={handleNavToggle}>
         {/* Hamburger SVG code */}
