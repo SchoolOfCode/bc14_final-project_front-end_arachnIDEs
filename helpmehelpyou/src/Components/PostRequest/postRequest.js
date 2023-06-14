@@ -198,7 +198,7 @@ export default function PostRequest() {
               <optgroup label="Sport & Leisure">
                 <option value="Photography">Photography</option>
                 <option value="Yoga">Yoga</option>
-                <option value="Piano Lessons">Piano lessons</option>
+                <option value="Piano Lessons">Piano Lessons</option>
                 <option value="Get Fit">Get fit</option>
               </optgroup>
               <optgroup label="Professional Help">
