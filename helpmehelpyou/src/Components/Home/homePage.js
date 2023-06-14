@@ -43,6 +43,7 @@ export default function HomePage() {
       offer: "I can help you by offering a free haircut",
       image: female_3,
     },
+
   ];
 
   const handlePrev = () => {
@@ -100,6 +101,7 @@ export default function HomePage() {
           ←
         </button>
         <div className="card">
+
           <h2 className="profile-title">{`Meet `+cards[activeIndex].title}</h2>
           <h3>{"Location: " + cards[activeIndex].borough}</h3>
           <p>{cards[activeIndex].need}</p>
@@ -108,19 +110,23 @@ export default function HomePage() {
             <img src={cards[activeIndex].image} alt="profile" className= "profile-image"></img>
             <img src={cards[activeIndex].image} alt="profile" className= "profile-image"></img>
           </div>{" "}
+
         </div>
         <button className="right-arrow" onClick={handleNext}>
           →
         </button>
+
+        <div className="dots">
+          {cards.map((card, index) => (
+            <span
+              key={card.id}
+              className={index === activeIndex ? "dot active" : "dot"}
+              onClick={() => setActiveIndex(index)}
+            ></span>
+          ))}
+        </div>{" "}
       </div>
-      <div className="dots"></div>
-      {cards.map((card, index) => (
-        <span
-          key={card.id}
-          className={index === activeIndex ? "dot active" : "dot"}
-          onClick={() => setActiveIndex(index)}
-        ></span>
-      ))}
+
     </div>
   );
 }
