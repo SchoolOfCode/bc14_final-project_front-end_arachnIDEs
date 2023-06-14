@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../giveAndFindHelp.css";
+import "../giveAndFindHelp.css"
 import image from "./findHelpImage.png";
 import helperDummyData from "./helperDummyData"
 import { Link } from "react-router-dom";
