@@ -37,7 +37,7 @@ Listing - <h1> for title / summary
 <button> to close the component? */
 
   return (
-    <div className="giveHelpContainer">
+    <div className="give-help-container">
       <h1 className="give-help-title">Give Help</h1>
       <img
         className="give-help-image"
@@ -45,48 +45,48 @@ Listing - <h1> for title / summary
         alt="cartoon person helping another person to climb a ladder"
       ></img>
       <section id="give-help-search">
-        <input type="text" onChange={storeInput} className="search-box"></input>
-        <button className="search-button">🔍</button>
-      </section>  <section id="post-request-link-from-givehelp">      
+        <input type="text" onChange={storeInput} className="give-help-search-box"></input>
+        <button className="give-help-search-button">🔍</button>
+      </section>  <section id="give-help-post-request-link-from-givehelp">      
 
-        <p className="post-request">Need hepl? <Link to ="/findhelpform">Post a request. </Link></p>
+        <p className="give-help-post-request">Need help? <Link to ="/findhelpform">Post a request </Link></p>
 
       </section>
-      <section id="listings">
-        <h3 className="recent-listings">Recent listings...</h3>
+      <section id="give-help-listings">
+        <h3 className="give-help-recent-listings">Recent listings...</h3>
         {dummyData.map((listing) => (
-          <div className="individual-listing">
-            <h1 className="listing-title">{listing.listing_title}</h1>
-            <div className="sub-title">
-              <p className="s-s-c-id">{listing.ssc_name}</p>
-              <p className="date-posted">{listing.date_posted}</p>
+          <div className="give-help-individual-listing">
+            <h1 className="give-help-listing-title">{listing.listing_title}</h1>
+            <div className="give-help-sub-title">
+              <p className="give-help-ssc-id">{listing.ssc_name}</p>
+              <p className="give-help-date-posted">{listing.date_posted}</p>
             </div>
-            <p className="listing-details">{listing.listing_details}</p>
-            <p className="offer-details">
+            <p className="give-help-listing-details">{listing.listing_details}</p>
+            <p className="give-help-offer-details">
               I can offer... {listing.offer_details}
             </p>
-            <div className="user-info">
-              <div className="image-container">
+            <div className="give-help-user-info">
+              <div className="give-help-image-container">
                 <img
-                  className="profile-picture"
+                  className="give-help-profile-picture"
                   src={listing.profile_picture}
                   alt="profile"
                 />
-                <p className="rating">{listing.rating}</p>
+                <p className="give-help-rating">{listing.rating}</p>
               </div>
-              <div className="user-details-container">
-                <p className="display-name">{listing.display_name}</p>
-                <p className="borough-id">{listing.borough_id}</p>
+              <div className="give-help-user-details-container">
+                <p className="give-help-display-name">{listing.display_name}</p>
+                <p className="give-help-borough-name">{listing.borough_id}</p>
               </div>
             </div>
-            <div className="user-contact">
+            <div className="give-help-user-contact">
               <button
-                className="contact-user"
+                className="give-help-contact-user"
                 onClick={() => contactUser(listing.email_address)}
               >
                 Contact user
               </button>
-              <button className="visit-profile">View Profile</button>
+              <button className="give-help-visit-profile">View Profile</button>
             </div>
           </div>
         ))}

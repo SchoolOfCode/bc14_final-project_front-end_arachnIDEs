@@ -78,6 +78,9 @@ font-weight: bold;
 .about-info-list {font-size: 14pt;
 }
 
+.card-contents-container {display: flex;
+  flex-direction: column;}
+
 .about-list-item {}
 
 .carousel {display: flex;
@@ -124,14 +127,26 @@ margin-right: 10px
   height: 60px;
   margin: 20px;}
   
-
+  .message-icon { width: 50px;
+    height: 40px;
+    margin: 20px;}
 
 .profile-title{
+  margin-right: 20px;
+  color: #120EEA;
   display: flex;  
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
+
+.meet {margin-left: 20px;}
+
+.meet-title-container {display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: space-evenly;}
 
 .image-icon-container{
   display: flex;
