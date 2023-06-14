@@ -7,6 +7,7 @@ import female_2 from "./female_2.png";
 import female_3 from "./female_3.png";
 import male_1 from "./male_1.png";
 import male_2 from "./male_2.png";
+import icon from "./message_icon.png"
 
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -108,7 +109,7 @@ export default function HomePage() {
           <p>{cards[activeIndex].offer}</p>
           <div className="image-icon-container">
             <img src={cards[activeIndex].image} alt="profile" className= "profile-image"></img>
-            <img src={cards[activeIndex].image} alt="profile" className= "profile-image"></img>
+            <img src={icon} alt="message" className= "message-icon"></img>
           </div>{" "}
 
         </div>
