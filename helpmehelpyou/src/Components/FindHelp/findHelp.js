@@ -23,56 +23,56 @@ export default function FindHelp() {
 
 
   return (
-    <div className="findHelpContainer">
+    <div className="find-help-container">
       <h1 className="find-help-title">Find Help</h1>
       <img
         className="find-help-image"
         src={image}
         alt="cartoon person helping another person to climb a ladder"
       ></img>
-      <section id="find-help-search">
-        <input type="text" onChange={storeInput} className="search-box"></input>
-        <button className="search-button">🔍</button>
+      <section id="find-help-search-section">
+        <input type="text" onChange={storeInput} className="find-help-search-box"></input>
+        <button className="find-help-search-button">🔍</button>
       </section>
 
-      <section id="post-request-link">      
+      <section id="find-help-post-request-link">      
 
-        <p className="post-request">Need help? <Link to ="/findhelpform">Post a request. </Link></p>
+        <p className="find-help-post-request">Need something specific? <Link to ="/findhelpform">Post a request </Link></p>
 
       </section>
 
-      <section id="helpers">
-        <h3 className="helper-list">Browse Helpers...</h3>
+      <section id="find-help-helpers">
+        <h3 className="find-help-helper-list">Helpers:</h3>
         {helperDummyData.map((listing) => (
-          <div className="individual-listing">
-            <h1 className="listing-title">{listing.listing_title}</h1>
-            <div className="user-info">
-              <div className="image-container">
+          <div className="find-help-individual-listing">
+            <h1 className="find-help-listing-title">{listing.listing_title}</h1>
+            <div className="find-help-user-info">
+              <div className="find-help-image-container">
                 <img
-                  className="profile-picture"
+                  className="find-help-profile-picture"
                   src={listing.profile_picture}
                   alt="profile"
                 />
-                <p className="rating">{listing.rating}</p>
+                <p className="find-help-rating">{listing.rating}</p>
               </div>
-              <div className="user-details-container">
-                <p className="display-name">{listing.display_name}</p>
-                <p className="borough-id">{listing.borough_id}</p>
+              <div className="find-help-user-details-container">
+                <p className="find-help-display-name">{listing.display_name}</p>
+                <p className="find-help-borough-name">{listing.borough_id}</p>
               </div>
             </div>
-            <p className="about-me">{listing.about_me}</p>
-            <p className="s-s-c-id">
+            <p className="find-help-about-me">{listing.about_me}</p>
+            <p className="find-help-ssc-id">
               I can offer... {listing.ssc_name}
             </p>
-            <p className="s-s-c-id">I need... {listing.ssc_name}</p>
-            <div className="user-contact">
+            <p className="find-help-ssc-id">I need... {listing.ssc_name}</p>
+            <div className="find-help-user-contact">
               <button
-                className="contact-user"
+                className="find-help-contact-user"
                 onClick={() => contactUser(listing.email_address)}
               >
                 Contact user
               </button>
-              <button className="visit-profile">View Profile</button>
+              <button className="find-help-visit-profile">View Profile</button>
             </div>
           </div>
         ))}
