@@ -8,6 +8,7 @@ import female_3 from "./female_3.png";
 import male_1 from "./male_1.png";
 import male_2 from "./male_2.png";
 import icon from "./message_icon.png";
+import map from "./london_map.png";
 
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -88,25 +89,25 @@ export default function HomePage() {
         <h2 className="about-title">How it works...</h2>
         <ul className="about-info-list">
           <li className="about-list-item">
-            Need something? Browse our community to find a local Helper who is
+            <b>Need something?</b> Browse our community to find a local Helper who is
             happy to swap skills or favours, or post a bulleitin outlining what
             you need and we'll share it with our Helper network.{" "}
           </li>
           <br></br>
           <li className="about-list-item">
-            Eager to help? take a look through our bulliein board to find those
+            <b>Eager to help? </b>take a look through our bulliein board to find those
             in need of help in your local community - 90% of our users offer a
             favour in return, so it's win win for both of you!{" "}
           </li>
           <br></br>
           <li className="about-list-item">
             Accept what the other person is offering in return, suggest
-            something that you need instead, or even be super selfless and help
+            <b> something that you need</b> instead, or even be super selfless and help
             out without a return favour.{" "}
           </li>
           <br></br>
           <li className="about-list-item">
-            You can also create a profile showcasing what you can offer and what
+            You can also <b>create a profile</b> showcasing what you can offer and what
             you need, then let the community come to you.
           </li>
         </ul>
@@ -131,7 +132,7 @@ export default function HomePage() {
               alt="profile"
               className="profile-image"
             ></img>
-            <img src={icon} alt="message" className="message-icon"></img>
+        <img src={icon} alt="message" className="message-icon"></img>
           </div>{" "} </div>
         </div>
         <button className="right-arrow" onClick={handleNext}>
@@ -147,6 +148,9 @@ export default function HomePage() {
           ))}
         </div>{" "}
       </div>
+      <div className="map-container">
+      <h2 className = "map-text">📍 Now active across all 32 London boroughs</h2>
+      <img src={map} alt="map of London" className="home-page-map"></img> </div>
     </div>
   );
 }

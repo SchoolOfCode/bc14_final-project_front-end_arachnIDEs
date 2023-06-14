@@ -17,6 +17,7 @@
   text-align: left;
   padding: 10px 30px;
   background-color: #7db8fa;
+  box-shadow:2px 2px 10px 2px #9f9c9c;
 }
 
 #ask-for-help-form {

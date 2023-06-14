@@ -39,11 +39,7 @@ background-color: rgb(255, 255, 255);
 margin-left: 10px;
 }
 
-.find-help-recent-listings {
-    text-align: left;
-font-size: 18pt;
-}
-
+/* Individual box for each listing */
 .find-help-individual-listing {
     font-size: 14pt;
     align-self: center;
@@ -55,6 +51,7 @@ margin-top: 30px;
 border: 1px solid black;
 box-shadow:2px 2px 10px 2px #9f9c9c;}
 
+
 .find-help-sub-title {
     display: flex;
     flex-direction: row;
@@ -65,7 +62,8 @@ margin-left: 20px;
 margin-right: 20px;
 }
 
-.find-help-user-info {
+/* Profile img and rating section */
+.find-help-user-img-and-rating {
     margin-left: 40px;
     margin-right: 10px;
     display: flex;
@@ -79,13 +77,17 @@ align-items: center;
     margin-top: 15px;
 }
 
+.find-help-profile-picture {
+    border-radius: 50px;
+width: 50px;
+height: 50px;
+}
+
+
 .find-help-listing-title {
     font-size: 16pt;
 }
 
-.find-help-date-posted {
-    margin-right: 20px;
-}
 
 .find-help-listing-details {
     font-size: 15pt;
@@ -93,7 +95,8 @@ margin-left: 20px;
 margin-right: 20px;
 }
 
-.find-help-ssc-id {
+/* Skills offered and needed */
+.find-help-skills {
     font-weight: bold;
 margin-left: 20px;
 }
@@ -103,11 +106,6 @@ margin-left: 20px;
     text-align: left;
 }
 
-.find-help-profile-picture {
-    border-radius: 50px;
-width: 50px;
-height: 50px;
-}
 
 .find-help-display-name {
     font-weight: bolder;

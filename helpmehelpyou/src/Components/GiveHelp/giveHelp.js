@@ -37,13 +37,16 @@ Listing - <h1> for title / summary
 <button> to close the component? */
 
   return (
+    // Parent container
     <div className="give-help-container">
       <h1 className="give-help-title">Give Help</h1>
+      {/* Logo */}
       <img
         className="give-help-image"
         src={image}
         alt="cartoon person helping another person to climb a ladder"
       ></img>
+      {/* Search bar and button */}
       <section id="give-help-search">
         <input type="text" onChange={storeInput} className="give-help-search-box"></input>
         <button className="give-help-search-button">🔍</button>
@@ -52,33 +55,39 @@ Listing - <h1> for title / summary
         <p className="give-help-post-request">Need help? <Link to ="/findhelpform">Post a request </Link></p>
 
       </section>
+      {/* Recent listings fetched from DB */}
       <section id="give-help-listings">
-        <h3 className="give-help-recent-listings">Recent listings...</h3>
+        <h3 className="give-help-recent-listings">Recent listings</h3>
         {dummyData.map((listing) => (
-          <div className="give-help-individual-listing">
+          <div key={listing.listing_id} className="give-help-individual-listing">
             <h1 className="give-help-listing-title">{listing.listing_title}</h1>
             <div className="give-help-sub-title">
-              <p className="give-help-ssc-id">{listing.ssc_name}</p>
-              <p className="give-help-date-posted">{listing.date_posted}</p>
+              {/* Are there skills wanted in the guest listings DB? */}
+              <p className="give-help-ssc-id">{listing.ssc_wanted}</p>
+              {/* Date stamp - this needs editing */}
+              <p className="give-help-date-posted">{listing.created_at}</p>
             </div>
             <p className="give-help-listing-details">{listing.listing_details}</p>
-            <p className="give-help-offer-details">
-              I can offer... {listing.offer_details}
+            <p className="give-help-skills-offer-details">
+              I can offer... {listing.skills_offered}
             </p>
-            <div className="give-help-user-info">
-              <div className="give-help-image-container">
+            {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+            <div className="give-help-user-info"> */}
+              {/* <div className="give-help-image-container">
+                {/* There is no image in the DB at the moment 
                 <img
                   className="give-help-profile-picture"
                   src={listing.profile_picture}
                   alt="profile"
                 />
+                There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
-              </div>
+              </div> */}
               <div className="give-help-user-details-container">
                 <p className="give-help-display-name">{listing.display_name}</p>
-                <p className="give-help-borough-name">{listing.borough_id}</p>
+                <p className="give-help-borough-name">{listing.borough_name}</p>
               </div>
-            </div>
+            {/* </div> */}
             <div className="give-help-user-contact">
               <button
                 className="give-help-contact-user"
