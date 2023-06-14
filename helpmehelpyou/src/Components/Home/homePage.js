@@ -23,7 +23,7 @@ export default function HomePage() {
     },
     {
       id: 2,
-      title: "KESHAV...",
+      title: "MAX...",
       borough: "Croydon",
       need: "I need help tending to my garden",
       offer: "I can help you move house",
@@ -34,7 +34,7 @@ export default function HomePage() {
       title: "STEVE...",
       borough: "Ealing",
       need: "I need help with my CV",
-      offer: "I can teach you how to cook Filipino food",
+      offer: "I can teach you how to cook some delicious Filipino food",
       image: male_1,
     },
     {
@@ -123,9 +123,11 @@ export default function HomePage() {
            {`` + cards[activeIndex].title}
           </h2> </div>
           <div className="card-contents-container">
-          <h3>{"Location: " + cards[activeIndex].borough}</h3>
+            <div className="card-contents">
+          <h3 className= "location">{"Location: " + cards[activeIndex].borough}</h3>
           <p>{cards[activeIndex].need}</p>
           <p>{cards[activeIndex].offer}</p>
+          </div>
           <div className="image-icon-container">
             <img
               src={cards[activeIndex].image}

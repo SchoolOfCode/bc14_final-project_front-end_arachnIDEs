@@ -111,6 +111,10 @@ margin-top: 200px;
 margin-left: 10px
 }
 
+.location {
+  font-size: 12pt;
+}
+
 .left-arrow {height: 30px;
     font-size: 20pt;
     display: inline block;
@@ -131,6 +135,14 @@ margin-right: 10px
     height: 40px;
     margin: 20px;}
 
+.card-contents {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  justify-items: center;
+  justify-self: center;
+}
+
 .profile-title{
   margin-right: 20px;
   color: #120EEA;
@@ -148,7 +160,7 @@ text-align: center;
 justify-content: space-evenly;}
 
 .image-icon-container{
-  display: flex;
+  display: inline;
   flex-direction: row;
   justify-content: center;
   align-items: center;
