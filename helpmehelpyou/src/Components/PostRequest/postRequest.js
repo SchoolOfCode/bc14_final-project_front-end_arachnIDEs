@@ -26,7 +26,7 @@ export default function PostRequest() {
     listing_title: "",
     created_at: new Date().toString(),
     listing_details: "",
-    email: "",
+    email_address: "",
     skills_wanted: "",
     skills_offered: "",
     borough_name: "",
@@ -76,7 +76,7 @@ export default function PostRequest() {
               className="ask-for-help-input"
               type="text"
               placeholder="Please enter your email"
-              value={form.email}
+              value={form.email_address}
               onChange={(e) => {
                 setForm(
                   {
@@ -193,7 +193,7 @@ export default function PostRequest() {
                 <option value="Transporting Items">Transporting Items</option>
               </optgroup>
               <optgroup label="Other">
-                <option value="Just A Cup Of Tea">Just a cup of tea</option>
+                <option value="Just a cup of tea">Just a cup of tea</option>
               </optgroup>
             </select>
           </div>
@@ -388,7 +388,7 @@ export default function PostRequest() {
                   <option value="Transporting Items">Transporting Items</option>
                 </optgroup>
                 <optgroup label="Other">
-                  <option value="Just A Cup Of Tea">Just a cup of tea</option>
+                  <option value="Just a cup of tea">Just a cup of tea</option>
                 </optgroup>
               </select>
             </div>

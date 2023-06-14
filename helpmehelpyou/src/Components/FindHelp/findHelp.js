@@ -55,17 +55,20 @@ export default function FindHelp() {
                 />
                 <p className="find-help-rating">{listing.rating}</p>
               </div>
-              <div className="find-help-user-details-container">
-                <p className="find-help-display-name">{listing.display_name}</p>
-                <p className="find-help-borough-name">{listing.borough_id}</p>
+
+              <div className="user-details-container">
+                <p className="display-name">{listing.display_name}</p>
+                <p className="borough-id">{listing.borough_name}</p>
               </div>
             </div>
-            <p className="find-help-about-me">{listing.about_me}</p>
-            <p className="find-help-ssc-id">
-              I can offer... {listing.ssc_name}
+            <p className="about-me">{listing.about_me}</p>
+            <p className="s-s-c-id">
+              I can offer... {listing.skills_offered}
             </p>
-            <p className="find-help-ssc-id">I need... {listing.ssc_name}</p>
-            <div className="find-help-user-contact">
+            <p className="s-s-c-id">I need... {listing.skills_needed}</p>
+            <div className="user-contact">
+
+
               <button
                 className="find-help-contact-user"
                 onClick={() => contactUser(listing.email_address)}
