@@ -20,17 +20,26 @@ import { v4 as uuidv4 } from "uuid";
 import "./postRequest.css";
 export default function PostRequest() {
   // state goes here
+  // const [form, setForm] = useState({
+  //   listing_id: uuidv4(),
+  //   display_name: "",
+  //   listing_title: "",
+  //   created_at: new Date().toString(),
+  //   listing_details: "",
+  //   email_address: "",
+  //   skills_wanted: "",
+  //   skills_offered: "",
+  //   borough_name: "",
+  //   timescale: "",
+  // });
   const [form, setForm] = useState({
-    listing_id: uuidv4(),
     display_name: "",
     listing_title: "",
-    created_at: new Date().toString(),
     listing_details: "",
-    email_address: "",
     skills_wanted: "",
     skills_offered: "",
     borough_name: "",
-    timescale: "",
+    email_address: "",
   });
   const [urgent, setUrgent] = useState(false);
 
@@ -55,7 +64,19 @@ export default function PostRequest() {
     event.preventDefault();
     // prints the form into the console
     console.log(form);
+
+    // From here, we want the front end to send the object called form to the server for it to send it to the db.
+    postToDb();
   };
+
+  async function postToDb() {
+    const res = await fetch("http://localhost:5001/api/listings", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    console.log("The following has now been added to the database:", { res });
+  }
 
   return (
     // Parent container
@@ -81,7 +102,7 @@ export default function PostRequest() {
                 setForm(
                   {
                     ...form,
-                    email: e.target.value,
+                    email_address: e.target.value,
                   }
                   // console.log(form)
                 );
@@ -177,7 +198,7 @@ export default function PostRequest() {
               <optgroup label="Sport & Leisure">
                 <option value="Photography">Photography</option>
                 <option value="Yoga">Yoga</option>
-                <option value="Piano Lessons">Piano lessons</option>
+                <option value="Piano Lessons">Piano Lessons</option>
                 <option value="Get Fit">Get fit</option>
               </optgroup>
               <optgroup label="Professional Help">
