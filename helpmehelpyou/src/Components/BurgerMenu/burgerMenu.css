@@ -115,12 +115,12 @@
   display: none;
 }
 
-.hamburger:hover {
+.hamburger-.hamburger-dropdown-menu {
   background-color: #5ea856;
 }
 
 @media screen and (max-width: 5000px) {
-  .hamburger {
+  .hamburger-dropdown-menu {
     display: block;
   }
 }
