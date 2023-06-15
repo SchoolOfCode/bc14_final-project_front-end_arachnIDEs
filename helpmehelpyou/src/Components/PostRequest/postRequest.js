@@ -16,7 +16,8 @@ button - Create Listing
 */
 
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
+// import { v4 as uuidv4 } from "uuid";
 import "./postRequest.css";
 export default function PostRequest() {
   // state goes here
@@ -40,10 +41,12 @@ export default function PostRequest() {
     skills_offered: "",
     borough_name: "",
     email_address: "",
+    timescale: "",
   });
   const [urgent, setUrgent] = useState(false);
-
   const [offer, setOffer] = useState(true);
+
+  const navigate = useNavigate();
 
   // functions to display textboxes after checkboxes
   const handleUrgentChange = (event) => {
@@ -67,6 +70,8 @@ export default function PostRequest() {
 
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
     postToDb();
+
+    navigate("/give");
   };
 
   async function postToDb() {
