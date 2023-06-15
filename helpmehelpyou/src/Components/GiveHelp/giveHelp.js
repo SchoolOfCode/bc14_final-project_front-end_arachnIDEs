@@ -99,6 +99,9 @@ Listing - <h1> for title / summary
             <p className="give-help-skills-offer-details">
               I can offer... {listing.skills_offered}
             </p>
+            <p className="give-help-skills-offer-details">
+              I need... {listing.skills_wanted}
+            </p>
             {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
             {/* <div className="give-help-image-container">
