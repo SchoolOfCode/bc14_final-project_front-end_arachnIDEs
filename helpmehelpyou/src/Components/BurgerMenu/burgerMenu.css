@@ -16,51 +16,55 @@
   color: white;
 }
 
-.login-register-buttons {display: flex;
-flex-direction: column;}
-
-.login-button {
-    background-color: #9ee795;
-    border: 2px solid #000000;
-    border-radius: 30px;
-    box-shadow: #000000 2px 2px 0 0;
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    margin-bottom: 5px;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-
-.register-button {
-      background-color: #425fdd;
-      border: 2px solid #000000;
-      border-radius: 30px;
-      box-shadow: #000000 2px 2px 0 0;
-      color: #ffffff;
-      cursor: pointer;
-      display: inline-block;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: center;
-      text-decoration: none;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
+.login-register-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {max-height: 35px;
+.login-button {
+  background-color: #9ee795;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  box-shadow: #000000 2px 2px 0 0;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  margin-bottom: 5px;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.register-button {
+  background-color: #425fdd;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  box-shadow: #000000 2px 2px 0 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.logo {
+  max-height: 35px;
   min-height: 35px;
   min-width: 65px;
-max-width: 65px;
-margin-bottom: 20px;}
+  max-width: 65px;
+  margin-bottom: 20px;
+}
 
 .brand-name {
   text-decoration: none;
@@ -94,7 +98,7 @@ margin-bottom: 20px;}
   color: #ffffff;
 }
 
-.hamburger {
+.hamburger-dropdown-menu {
   box-shadow: #000000 2px 2px 0 0;
   height: 40px;
   width: 40px;

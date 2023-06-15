@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./logo.png";
+// import logo from "./logo.png";
 import horizontalLogo from "./horizontal_logo.jpg"
 
 import "./burgerMenu.css";
@@ -24,7 +24,7 @@ export default function BurgerMenu() {
       </div>
     <Link to="/"><img src={horizontalLogo} alt="HelpMeHelpYou logo" className="logo"></img></Link>
       <Link to="/" className="link"></Link>
-      <button className="hamburger" onClick={handleNavToggle}>
+      <button className="hamburger-dropdown-menu" onClick={handleNavToggle}>
         {/* Hamburger SVG code */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
