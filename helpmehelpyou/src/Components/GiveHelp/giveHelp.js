@@ -27,6 +27,7 @@ export default function GiveHelp() {
     alert(`Here's the email address: ${email}`);
   }
 
+  // function to call the listings from the database
   async function fetchAllListings() {
     const res = await fetch("http://localhost:5001/api/listings");
     const data = await res.json();
@@ -81,6 +82,7 @@ Listing - <h1> for title / summary
           <div
             key={listing.listing_id}
             className="give-and-find-help-individual-listing"
+            data-testid="listing"
           >
             <h1 className="give-and-find-help-listing-title">
               {listing.listing_title}

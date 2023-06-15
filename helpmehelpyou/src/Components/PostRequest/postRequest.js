@@ -81,7 +81,7 @@ export default function PostRequest() {
                 setForm(
                   {
                     ...form,
-                    email: e.target.value,
+                    email_address: e.target.value,
                   }
                   // console.log(form)
                 );
