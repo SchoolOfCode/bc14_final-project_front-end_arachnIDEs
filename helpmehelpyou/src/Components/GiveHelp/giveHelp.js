@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "./giveHelp.css";
+import React, { useState, useEffect } from "react";
+import "../giveAndFindHelp.css";
 import image from "./givehelp-image.png";
-import dummyData from "./DummyData";
+// import dummyData from "./DummyData";
 import { Link } from "react-router-dom";
 
 // Create skeleton code for GiveHelp page.
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 export default function GiveHelp() {
   // state goes here
   const [userInput, setUserInput] = useState("");
+  const [listings, setListings] = useState([]);
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -21,12 +22,24 @@ export default function GiveHelp() {
     console.log(userInput);
   }
 
- 
-
   function contactUser(email) {
     // Display email address of user
     alert(`Here's the email address: ${email}`);
   }
+
+  // function to call the listings from the database
+  async function fetchAllListings() {
+    const res = await fetch("http://localhost:5001/api/listings");
+    const data = await res.json();
+    const dummyData = data.payload;
+    setListings(dummyData);
+  }
+
+  // Fetch listings before rendering
+  useEffect(() => {
+    fetchAllListings();
+  }, []);
+
   /*renders:
 Header
 Nav Bar
@@ -37,56 +50,96 @@ Listing - <h1> for title / summary
 <button> to close the component? */
 
   return (
-    <div className="giveHelpContainer">
+    // Parent container
+    <div className="give-and-find-help-container">
       <h1 className="give-help-title">Give Help</h1>
+      {/* Logo */}
       <img
         className="give-help-image"
         src={image}
         alt="cartoon person helping another person to climb a ladder"
       ></img>
-      <section id="give-help-search">
-        <input type="text" onChange={storeInput} className="search-box"></input>
-        <button className="search-button">🔍</button>
-      </section>  <section id="post-request-link-from-givehelp">      
-
-        <p className="post-request">Need hepl? <Link to ="/findhelpform">Post a request. </Link></p>
-
+      {/* Search bar and button */}
+      <section id="give-and-find-help-search-section">
+        <input
+          type="text"
+          onChange={storeInput}
+          className="give-and-find-help-search-box"
+        ></input>
+        <button className="give-and-find-help-search-button">🔍</button>
+      </section>{" "}
+      <section id="give-help-post-request-link-from-givehelp">
+        <p className="give-help-post-request">
+          Need help? <Link to="/findhelpform">Post a request </Link>
+        </p>
       </section>
-      <section id="listings">
-        <h3 className="recent-listings">Recent listings...</h3>
-        {dummyData.map((listing) => (
-          <div className="individual-listing">
-            <h1 className="listing-title">{listing.listing_title}</h1>
-            <div className="sub-title">
-              <p className="s-s-c-id">{listing.ssc_name}</p>
-              <p className="date-posted">{listing.date_posted}</p>
+      {/* Recent listings fetched from DB */}
+      <section id="give-help-listings">
+        <h3 className="give-and-find-help-listings-area-title">
+          Recent listings
+        </h3>
+        {listings.map((listing) => (
+          <div
+            key={listing.listing_id}
+            className="give-and-find-help-individual-listing"
+            data-testid="listing"
+          >
+            <h1 className="give-and-find-help-listing-title">
+              {listing.listing_title}
+            </h1>
+            <div className="give-help-sub-title">
+              {/* Are there skills wanted in the guest listings DB? */}
+              <p className="give-and-find-help-skills">{listing.ssc_wanted}</p>
+              {/* Date stamp - this needs editing */}
+              <p className="give-help-date-posted">{listing.created_at}</p>
             </div>
-            <p className="listing-details">{listing.listing_details}</p>
-            <p className="offer-details">
-              I can offer... {listing.offer_details}
+            <p className="give-help-listing-details">
+              {listing.listing_details}
             </p>
-            <div className="user-info">
-              <div className="image-container">
+            <p className="give-help-skills-offer-details">
+              I can offer... {listing.skills_offered}
+            </p>
+            <p className="give-help-skills-offer-details">
+              I need... {listing.skills_wanted}
+            </p>
+            {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+            <div className="give-help-user-info"> */}
+            {/* <div className="give-help-image-container">
+                {/* There is no image in the DB at the moment 
                 <img
-                  className="profile-picture"
+                  className="give-help-profile-picture"
                   src={listing.profile_picture}
                   alt="profile"
                 />
-                <p className="rating">{listing.rating}</p>
+                There is no rating yet - we need to do a join to the user table 
+                <p className="give-help-rating">{listing.rating}</p>
+              </div> */}
+            <div className="give-help-user-details-container">
+              <div className="give-help-posted-by-div">
+                <p className="give-and-find-help-display-name">Posted by:</p>
+                <p className="give-and-find-help-display-name">
+                  {listing.display_name}
+                </p>
               </div>
-              <div className="user-details-container">
-                <p className="display-name">{listing.display_name}</p>
-                <p className="borough-id">{listing.borough_id}</p>
+              <div className="give-help-location-div">
+                <p className="give-and-find-help-display-name">Location:</p>
+                <p className="give-and-find-help-display-name">
+                  {listing.borough_name}
+                </p>
               </div>
+              <p className="give-help-borough-name"> </p>
             </div>
-            <div className="user-contact">
+            {/* </div> */}
+            <div className="give-and-find-help-user-contact">
               <button
-                className="contact-user"
+                className="give-and-find-help-contact-user"
                 onClick={() => contactUser(listing.email_address)}
               >
                 Contact user
               </button>
-              <button className="visit-profile">View Profile</button>
+              <button className="give-and-find-help-visit-profile">
+                View Profile
+              </button>
             </div>
           </div>
         ))}

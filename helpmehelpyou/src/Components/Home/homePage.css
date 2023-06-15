@@ -55,7 +55,7 @@ margin-right: 25px;}
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 5000px) {
   .home-page-buttons {
     min-width: 120px;
     padding: 0 25px;
@@ -78,6 +78,9 @@ font-weight: bold;
 .about-info-list {font-size: 14pt;
 }
 
+.card-contents-container {display: flex;
+  flex-direction: column;}
+
 .about-list-item {}
 
 .carousel {display: flex;
@@ -90,7 +93,7 @@ font-weight: bold;
    /* color: #000000;*/
     box-shadow: #000000 4px 4px 0 0;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     min-width: 230px;
     max-width: 230px;
     min-height: 350px;
@@ -106,6 +109,10 @@ background-color: white;
 text-align: center;
 margin-top: 200px;
 margin-left: 10px
+}
+
+.location {
+  font-size: 12pt;
 }
 
 .left-arrow {height: 30px;
@@ -124,20 +131,40 @@ margin-right: 10px
   height: 60px;
   margin: 20px;}
   
+  .message-icon { width: 50px;
+    height: 40px;
+    margin: 20px;}
 
+.card-contents {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  justify-items: center;
+  justify-self: center;
+}
 
 .profile-title{
+  margin-right: 20px;
+  color: #120EEA;
   display: flex;  
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
+.meet {margin-left: 20px;}
+
+.meet-title-container {display: flex;
+flex-direction: row;
+text-align: center;
+justify-content: space-evenly;}
+
 .image-icon-container{
-  display: flex;
+  display: inline;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 #find-help-button {background-color: #92d18f;
@@ -159,4 +186,24 @@ margin-right: 10px
 #give-help-button:hover {background-color: #92d18f;
   color: black;
   font-size: larger;  
+}
+
+.home-page-map {min-width: 350px;
+  border-radius: 15px;
+  max-width: 350px;
+min-height: 280px;
+max-height: 280px;
+align-self: center;
+}
+
+.map-container {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.map-text {font-size: 12pt;
+  margin-top: 10px;
+  text-align: center;
 }

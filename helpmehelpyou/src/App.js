@@ -2,9 +2,10 @@ import React from "react";
 import { Route, Routes} from "react-router-dom";
 import "./App.css";
 import HomePage from "./Components/Home/homePage";
-// to import Page not a componrnt(and giveHelpPage on line 18)
+// to import Page not a component(and giveHelpPage on line 18)
 import GiveHelpPage from "./pages/GiveHelp";
 import FindHelpPage from "./pages/FindHelp";
+import Footer from "./Components/Footer/footer";
 
 import BurgerMenu from "./Components/BurgerMenu/burgerMenu";
 //import FindHelp from "./Components/FindHelp/findHelp";
@@ -22,7 +23,8 @@ function App() {
           <Route path="/findhelpform" element ={<PostRequestPage/>}/>
         </Routes>
       </div>
-    </>
+      <Footer/>
+      </>
   );
 }
 
