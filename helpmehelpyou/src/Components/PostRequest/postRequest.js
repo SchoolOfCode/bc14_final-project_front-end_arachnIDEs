@@ -16,6 +16,7 @@ button - Create Listing
 */
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import "./postRequest.css";
 export default function PostRequest() {
@@ -32,6 +33,9 @@ export default function PostRequest() {
   //   borough_name: "",
   //   timescale: "",
   // });
+
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     display_name: "",
     listing_title: "",
@@ -67,6 +71,8 @@ export default function PostRequest() {
 
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
     postToDb();
+
+    navigate("/give");
   };
 
   async function postToDb() {
