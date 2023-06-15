@@ -22,17 +22,27 @@ export default function GiveHelp() {
   const [listings, setListings] = useState([]);
   const [filteredListings, setfilteredListings] = useState([]);
 
+  // function filterListings() {
+  //   console.log("button has been clicked.");
+  //   const newArray = listings.filter((item) => {
+  //     console.log(item);
+  //     console.log(`userInput === ${userInput} and item === ${item}`);
+  //     if (item.title === userInput) {
+  //       return true;
+  //     }
+  //   });
+  //   console.log(newArray);
+  //   setfilteredListings(newArray);
+  // }
+
   function filterListings() {
-    console.log("button has been clicked.");
-    const newArray = listings.filter((item) => {
-      console.log(item);
-      console.log(`userInput === ${userInput} and item === ${item}`);
-      if (item.title === userInput) {
-        return false;
-      }
-    });
-    console.log(newArray);
-    setfilteredListings(newArray);
+    if (listings && listings.length > 0) {
+      const newArray = listings.filter((item) => {
+        console.log(item.listing_title.includes(userInput));
+        return item.listing_title.includes(userInput);
+      });
+      setfilteredListings(newArray);
+    }
   }
 
   // functions: saving input from input box, click on button in listing to get email address of user.
