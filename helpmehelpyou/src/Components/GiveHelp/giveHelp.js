@@ -38,7 +38,7 @@ export default function GiveHelp() {
   // Fetch listings before rendering
   useEffect(() => {
     fetchAllListings();
-  });
+  }, []);
 
   /*renders:
 Header
