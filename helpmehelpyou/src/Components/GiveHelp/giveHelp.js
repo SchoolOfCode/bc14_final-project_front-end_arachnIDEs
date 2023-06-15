@@ -58,7 +58,9 @@ export default function GiveHelp() {
 
   // function to call the listings from the database
   async function fetchAllListings() {
-    const res = await fetch("http://localhost:5001/api/listings");
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/listings"
+    );
     const data = await res.json();
     const dummyData = data.payload;
     console.log(dummyData);
