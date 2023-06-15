@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../giveAndFindHelp.css";
 import image from "./givehelp-image.png";
-import dummyData from "./DummyData";
+// import dummyData from "./DummyData";
 import { Link } from "react-router-dom";
 
 // Create skeleton code for GiveHelp page.
@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 export default function GiveHelp() {
   // state goes here
   const [userInput, setUserInput] = useState("");
+  const [listings, setListings] = useState([]);
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -25,6 +26,20 @@ export default function GiveHelp() {
     // Display email address of user
     alert(`Here's the email address: ${email}`);
   }
+
+  // function to call the listings from the database
+  async function fetchAllListings() {
+    const res = await fetch("http://localhost:5001/api/listings");
+    const data = await res.json();
+    const dummyData = data.payload;
+    setListings(dummyData);
+  }
+
+  // Fetch listings before rendering
+  useEffect(() => {
+    fetchAllListings();
+  }, []);
+
   /*renders:
 Header
 Nav Bar
@@ -63,10 +78,11 @@ Listing - <h1> for title / summary
         <h3 className="give-and-find-help-listings-area-title">
           Recent listings
         </h3>
-        {dummyData.map((listing) => (
+        {listings.map((listing) => (
           <div
             key={listing.listing_id}
             className="give-and-find-help-individual-listing"
+            data-testid="listing"
           >
             <h1 className="give-and-find-help-listing-title">
               {listing.listing_title}
