@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Routes} from "react-router-dom";
 import "./App.css";
-import HomePage from "./Components/Home/homePage";
+import HomePage from "./Components/Home/homePage.js";
 // to import Page not a component(and giveHelpPage on line 18)
-import GiveHelpPage from "./pages/GiveHelp";
-import FindHelpPage from "./pages/FindHelp";
-import Footer from "./Components/Footer/footer";
+import GiveHelpPage from "./pages/GiveHelp.js";
+import FindHelpPage from "./pages/FindHelp.js";
+import Footer from "./Components/Footer/footer.js";
 
-import BurgerMenu from "./Components/BurgerMenu/burgerMenu";
+import BurgerMenu from "./Components/BurgerMenu/burgerMenu.js";
 //import FindHelp from "./Components/FindHelp/findHelp";
-import PostRequestPage from "./pages/PostRequest";
+import PostRequestPage from "./pages/PostRequest.js";
 
 function App() {
   return (

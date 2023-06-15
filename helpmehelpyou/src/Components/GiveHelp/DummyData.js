@@ -11,10 +11,12 @@ s-s-c_name - what they need
 listing_details
 */
 
-const res = await fetch("http://localhost:5001/api/listings");
-const data = await res.json();
-const dummyData = data.payload;
-console.log(dummyData);
+// export default async function fetchAllListings() {
+// const res = await fetch("http://localhost:5002/api/listings");
+// const data = await res.json();
+// const dummyData = data.payload;
+// return dummyData;
+// }
 
 // const dummyData = [
 //   {
@@ -67,4 +69,3 @@ console.log(dummyData);
 //   },
 // ];
 
-export default dummyData;

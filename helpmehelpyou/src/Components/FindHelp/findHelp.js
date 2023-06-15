@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../giveAndFindHelp.css"
 import image from "./findHelpImage.png";
-import helperDummyData from "./helperDummyData"
+import helperDummyData from "./helperDummyData.js"
 import { Link } from "react-router-dom";
 
 
