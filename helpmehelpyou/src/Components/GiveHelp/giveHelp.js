@@ -121,6 +121,7 @@ Listing - <h1> for title / summary
             <img
               src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
               alt="Loading gif"
+              className="give-and-find-help-loading-gif"
             ></img>
           </div>
         ) : filteredListings.length === 0 ? (

@@ -114,6 +114,11 @@
   font-weight: bolder;
 }
 
+.give-and-find-help-loading-gif {
+  height: 50px;
+  width: auto;
+}
+
 /* GIVE HELP SECTION */
 
 /* Title in each listing box */
@@ -162,7 +167,7 @@ No profile picture in DB yet
 */
 
 /* Posted by and location */
-.give-help-posted-by-div, 
+.give-help-posted-by-div,
 .give-help-location-div {
   display: flex;
   justify-content: space-around;
