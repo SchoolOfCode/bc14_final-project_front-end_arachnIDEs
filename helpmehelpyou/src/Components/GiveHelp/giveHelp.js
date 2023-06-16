@@ -115,36 +115,45 @@ Listing - <h1> for title / summary
         <h3 className="give-and-find-help-listings-area-title">
           Recent listings
         </h3>
-        {filteredListings.length === 0
-          ? listings.map((listing) => (
-              <div
-                key={listing.listing_id}
-                className="give-and-find-help-individual-listing"
-                data-testid="listing"
-              >
-                <h1 className="give-and-find-help-listing-title">
-                  {listing.listing_title}
-                </h1>
-                <div className="give-help-sub-title">
-                  {/* Are there skills wanted in the guest listings DB? */}
-                  <p className="give-and-find-help-skills">
-                    {listing.ssc_wanted}
-                  </p>
-                  {/* Date stamp - this needs editing */}
-                  <p className="give-help-date-posted">{listing.created_at}</p>
-                </div>
-                <p className="give-help-listing-details">
-                  {listing.listing_details}
+        {listings.length === 0 ? (
+          <div className="loading-div">
+            <p>Loading listings...</p>
+            <img
+              src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
+              alt="Loading gif"
+              className="give-and-find-help-loading-gif"
+            ></img>
+          </div>
+        ) : filteredListings.length === 0 ? (
+          listings.map((listing) => (
+            <div
+              key={listing.listing_id}
+              className="give-and-find-help-individual-listing"
+              data-testid="listing"
+            >
+              <h1 className="give-and-find-help-listing-title">
+                {listing.listing_title}
+              </h1>
+              <div className="give-help-sub-title">
+                {/* Are there skills wanted in the guest listings DB? */}
+                <p className="give-and-find-help-skills">
+                  {listing.ssc_wanted}
                 </p>
-                <p className="give-help-skills-offer-details">
-                  I can offer... {listing.skills_offered}
-                </p>
-                <p className="give-help-skills-offer-details">
-                  I need... {listing.skills_wanted}
-                </p>
-                {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+                {/* Date stamp - this needs editing */}
+                <p className="give-help-date-posted">{listing.created_at}</p>
+              </div>
+              <p className="give-help-listing-details">
+                {listing.listing_details}
+              </p>
+              <p className="give-help-skills-offer-details">
+                I can offer... {listing.skills_offered}
+              </p>
+              <p className="give-help-skills-offer-details">
+                I need... {listing.skills_wanted}
+              </p>
+              {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
-                {/* <div className="give-help-image-container">
+              {/* <div className="give-help-image-container">
                 {/* There is no image in the DB at the moment 
                 <img
                   className="give-help-profile-picture"
@@ -154,66 +163,65 @@ Listing - <h1> for title / summary
                 There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
-                <div className="give-help-user-details-container">
-                  <div className="give-help-posted-by-div">
-                    <p className="give-and-find-help-display-name">
-                      Posted by:
-                    </p>
-                    <p className="give-and-find-help-display-name">
-                      {listing.display_name}
-                    </p>
-                  </div>
-                  <div className="give-help-location-div">
-                    <p className="give-and-find-help-display-name">Location:</p>
-                    <p className="give-and-find-help-display-name">
-                      {listing.borough_name}
-                    </p>
-                  </div>
-                  <p className="give-help-borough-name"> </p>
-                </div>
-                {/* </div> */}
-                <div className="give-and-find-help-user-contact">
-                  <button
-                    className="give-and-find-help-contact-user"
-                    onClick={() => contactUser(listing.email_address)}
-                  >
-                    Contact user
-                  </button>
-                  <button className="give-and-find-help-visit-profile">
-                    View Profile
-                  </button>
-                </div>
-              </div>
-            ))
-          : filteredListings.map((listing) => (
-              <div
-                key={listing.listing_id}
-                className="give-and-find-help-individual-listing"
-                data-testid="listing"
-              >
-                <h1 className="give-and-find-help-listing-title">
-                  {listing.listing_title}
-                </h1>
-                <div className="give-help-sub-title">
-                  {/* Are there skills wanted in the guest listings DB? */}
-                  <p className="give-and-find-help-skills">
-                    {listing.ssc_wanted}
+              <div className="give-help-user-details-container">
+                <div className="give-help-posted-by-div">
+                  <p className="give-and-find-help-display-name">Posted by:</p>
+                  <p className="give-and-find-help-display-name">
+                    {listing.display_name}
                   </p>
-                  {/* Date stamp - this needs editing */}
-                  <p className="give-help-date-posted">{listing.created_at}</p>
                 </div>
-                <p className="give-help-listing-details">
-                  {listing.listing_details}
+                <div className="give-help-location-div">
+                  <p className="give-and-find-help-display-name">Location:</p>
+                  <p className="give-and-find-help-display-name">
+                    {listing.borough_name}
+                  </p>
+                </div>
+                <p className="give-help-borough-name"> </p>
+              </div>
+              {/* </div> */}
+              <div className="give-and-find-help-user-contact">
+                <button
+                  className="give-and-find-help-contact-user"
+                  onClick={() => contactUser(listing.email_address)}
+                >
+                  Contact user
+                </button>
+                <button className="give-and-find-help-visit-profile">
+                  View Profile
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          filteredListings.map((listing) => (
+            <div
+              key={listing.listing_id}
+              className="give-and-find-help-individual-listing"
+              data-testid="listing"
+            >
+              <h1 className="give-and-find-help-listing-title">
+                {listing.listing_title}
+              </h1>
+              <div className="give-help-sub-title">
+                {/* Are there skills wanted in the guest listings DB? */}
+                <p className="give-and-find-help-skills">
+                  {listing.ssc_wanted}
                 </p>
-                <p className="give-help-skills-offer-details">
-                  I can offer... {listing.skills_offered}
-                </p>
-                <p className="give-help-skills-offer-details">
-                  I need... {listing.skills_wanted}
-                </p>
-                {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+                {/* Date stamp - this needs editing */}
+                <p className="give-help-date-posted">{listing.created_at}</p>
+              </div>
+              <p className="give-help-listing-details">
+                {listing.listing_details}
+              </p>
+              <p className="give-help-skills-offer-details">
+                I can offer... {listing.skills_offered}
+              </p>
+              <p className="give-help-skills-offer-details">
+                I need... {listing.skills_wanted}
+              </p>
+              {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
-                {/* <div className="give-help-image-container">
+              {/* <div className="give-help-image-container">
                 {/* There is no image in the DB at the moment 
                 <img
                   className="give-help-profile-picture"
@@ -223,37 +231,36 @@ Listing - <h1> for title / summary
                 There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
-                <div className="give-help-user-details-container">
-                  <div className="give-help-posted-by-div">
-                    <p className="give-and-find-help-display-name">
-                      Posted by:
-                    </p>
-                    <p className="give-and-find-help-display-name">
-                      {listing.display_name}
-                    </p>
-                  </div>
-                  <div className="give-help-location-div">
-                    <p className="give-and-find-help-display-name">Location:</p>
-                    <p className="give-and-find-help-display-name">
-                      {listing.borough_name}
-                    </p>
-                  </div>
-                  <p className="give-help-borough-name"> </p>
+              <div className="give-help-user-details-container">
+                <div className="give-help-posted-by-div">
+                  <p className="give-and-find-help-display-name">Posted by:</p>
+                  <p className="give-and-find-help-display-name">
+                    {listing.display_name}
+                  </p>
                 </div>
-                {/* </div> */}
-                <div className="give-and-find-help-user-contact">
-                  <button
-                    className="give-and-find-help-contact-user"
-                    onClick={() => contactUser(listing.email_address)}
-                  >
-                    Contact user
-                  </button>
-                  <button className="give-and-find-help-visit-profile">
-                    View Profile
-                  </button>
+                <div className="give-help-location-div">
+                  <p className="give-and-find-help-display-name">Location:</p>
+                  <p className="give-and-find-help-display-name">
+                    {listing.borough_name}
+                  </p>
                 </div>
+                <p className="give-help-borough-name"> </p>
               </div>
-            ))}
+              {/* </div> */}
+              <div className="give-and-find-help-user-contact">
+                <button
+                  className="give-and-find-help-contact-user"
+                  onClick={() => contactUser(listing.email_address)}
+                >
+                  Contact user
+                </button>
+                <button className="give-and-find-help-visit-profile">
+                  View Profile
+                </button>
+              </div>
+            </div>
+          ))
+        )}
       </section>
     </div>
   );
