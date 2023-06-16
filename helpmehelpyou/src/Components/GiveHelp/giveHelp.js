@@ -11,10 +11,39 @@ import { Link } from "react-router-dom";
 // State to store input box input. ✅
 // Render a list results.
 
+// Search Plan...
+// Store the userInput ✅
+// When the search button is clicked, we want to run a function called filterListings which sets a new filtered array (called filteredListings) to any/all elements in the full listings array if they meet the search criteria and render that instead of listings.
+// If the search box is empty and the button is clicked, then show the full listings array.
+
 export default function GiveHelp() {
   // state goes here
   const [userInput, setUserInput] = useState("");
   const [listings, setListings] = useState([]);
+  const [filteredListings, setfilteredListings] = useState([]);
+
+  // function filterListings() {
+  //   console.log("button has been clicked.");
+  //   const newArray = listings.filter((item) => {
+  //     console.log(item);
+  //     console.log(`userInput === ${userInput} and item === ${item}`);
+  //     if (item.title === userInput) {
+  //       return true;
+  //     }
+  //   });
+  //   console.log(newArray);
+  //   setfilteredListings(newArray);
+  // }
+
+  function filterListings() {
+    if (listings && listings.length > 0) {
+      const newArray = listings.filter((item) => {
+        console.log(item.listing_title.includes(userInput));
+        return item.listing_title.includes(userInput);
+      });
+      setfilteredListings(newArray);
+    }
+  }
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -29,9 +58,12 @@ export default function GiveHelp() {
 
   // function to call the listings from the database
   async function fetchAllListings() {
-    const res = await fetch("http://localhost:5001/api/listings");
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/listings"
+    );
     const data = await res.json();
     const dummyData = data.payload;
+    console.log(dummyData);
     setListings(dummyData);
   }
 
@@ -66,7 +98,12 @@ Listing - <h1> for title / summary
           onChange={storeInput}
           className="give-and-find-help-search-box"
         ></input>
-        <button className="give-and-find-help-search-button">🔍</button>
+        <button
+          className="give-and-find-help-search-button"
+          onClick={filterListings}
+        >
+          Search
+        </button>
       </section>{" "}
       <section id="give-help-post-request-link-from-givehelp">
         <p className="give-help-post-request">
@@ -78,33 +115,36 @@ Listing - <h1> for title / summary
         <h3 className="give-and-find-help-listings-area-title">
           Recent listings
         </h3>
-        {listings.map((listing) => (
-          <div
-            key={listing.listing_id}
-            className="give-and-find-help-individual-listing"
-            data-testid="listing"
-          >
-            <h1 className="give-and-find-help-listing-title">
-              {listing.listing_title}
-            </h1>
-            <div className="give-help-sub-title">
-              {/* Are there skills wanted in the guest listings DB? */}
-              <p className="give-and-find-help-skills">{listing.ssc_wanted}</p>
-              {/* Date stamp - this needs editing */}
-              <p className="give-help-date-posted">{listing.created_at}</p>
-            </div>
-            <p className="give-help-listing-details">
-              {listing.listing_details}
-            </p>
-            <p className="give-help-skills-offer-details">
-              I can offer... {listing.skills_offered}
-            </p>
-            <p className="give-help-skills-offer-details">
-              I need... {listing.skills_wanted}
-            </p>
-            {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+        {filteredListings.length === 0
+          ? listings.map((listing) => (
+              <div
+                key={listing.listing_id}
+                className="give-and-find-help-individual-listing"
+                data-testid="listing"
+              >
+                <h1 className="give-and-find-help-listing-title">
+                  {listing.listing_title}
+                </h1>
+                <div className="give-help-sub-title">
+                  {/* Are there skills wanted in the guest listings DB? */}
+                  <p className="give-and-find-help-skills">
+                    {listing.ssc_wanted}
+                  </p>
+                  {/* Date stamp - this needs editing */}
+                  <p className="give-help-date-posted">{listing.created_at}</p>
+                </div>
+                <p className="give-help-listing-details">
+                  {listing.listing_details}
+                </p>
+                <p className="give-help-skills-offer-details">
+                  I can offer... {listing.skills_offered}
+                </p>
+                <p className="give-help-skills-offer-details">
+                  I need... {listing.skills_wanted}
+                </p>
+                {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
-            {/* <div className="give-help-image-container">
+                {/* <div className="give-help-image-container">
                 {/* There is no image in the DB at the moment 
                 <img
                   className="give-help-profile-picture"
@@ -114,35 +154,106 @@ Listing - <h1> for title / summary
                 There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
-            <div className="give-help-user-details-container">
-              <div className="give-help-posted-by-div">
-                <p className="give-and-find-help-display-name">Posted by:</p>
-                <p className="give-and-find-help-display-name">
-                  {listing.display_name}
-                </p>
+                <div className="give-help-user-details-container">
+                  <div className="give-help-posted-by-div">
+                    <p className="give-and-find-help-display-name">
+                      Posted by:
+                    </p>
+                    <p className="give-and-find-help-display-name">
+                      {listing.display_name}
+                    </p>
+                  </div>
+                  <div className="give-help-location-div">
+                    <p className="give-and-find-help-display-name">Location:</p>
+                    <p className="give-and-find-help-display-name">
+                      {listing.borough_name}
+                    </p>
+                  </div>
+                  <p className="give-help-borough-name"> </p>
+                </div>
+                {/* </div> */}
+                <div className="give-and-find-help-user-contact">
+                  <button
+                    className="give-and-find-help-contact-user"
+                    onClick={() => contactUser(listing.email_address)}
+                  >
+                    Contact user
+                  </button>
+                  <button className="give-and-find-help-visit-profile">
+                    View Profile
+                  </button>
+                </div>
               </div>
-              <div className="give-help-location-div">
-                <p className="give-and-find-help-display-name">Location:</p>
-                <p className="give-and-find-help-display-name">
-                  {listing.borough_name}
-                </p>
-              </div>
-              <p className="give-help-borough-name"> </p>
-            </div>
-            {/* </div> */}
-            <div className="give-and-find-help-user-contact">
-              <button
-                className="give-and-find-help-contact-user"
-                onClick={() => contactUser(listing.email_address)}
+            ))
+          : filteredListings.map((listing) => (
+              <div
+                key={listing.listing_id}
+                className="give-and-find-help-individual-listing"
+                data-testid="listing"
               >
-                Contact user
-              </button>
-              <button className="give-and-find-help-visit-profile">
-                View Profile
-              </button>
-            </div>
-          </div>
-        ))}
+                <h1 className="give-and-find-help-listing-title">
+                  {listing.listing_title}
+                </h1>
+                <div className="give-help-sub-title">
+                  {/* Are there skills wanted in the guest listings DB? */}
+                  <p className="give-and-find-help-skills">
+                    {listing.ssc_wanted}
+                  </p>
+                  {/* Date stamp - this needs editing */}
+                  <p className="give-help-date-posted">{listing.created_at}</p>
+                </div>
+                <p className="give-help-listing-details">
+                  {listing.listing_details}
+                </p>
+                <p className="give-help-skills-offer-details">
+                  I can offer... {listing.skills_offered}
+                </p>
+                <p className="give-help-skills-offer-details">
+                  I need... {listing.skills_wanted}
+                </p>
+                {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+            <div className="give-help-user-info"> */}
+                {/* <div className="give-help-image-container">
+                {/* There is no image in the DB at the moment 
+                <img
+                  className="give-help-profile-picture"
+                  src={listing.profile_picture}
+                  alt="profile"
+                />
+                There is no rating yet - we need to do a join to the user table 
+                <p className="give-help-rating">{listing.rating}</p>
+              </div> */}
+                <div className="give-help-user-details-container">
+                  <div className="give-help-posted-by-div">
+                    <p className="give-and-find-help-display-name">
+                      Posted by:
+                    </p>
+                    <p className="give-and-find-help-display-name">
+                      {listing.display_name}
+                    </p>
+                  </div>
+                  <div className="give-help-location-div">
+                    <p className="give-and-find-help-display-name">Location:</p>
+                    <p className="give-and-find-help-display-name">
+                      {listing.borough_name}
+                    </p>
+                  </div>
+                  <p className="give-help-borough-name"> </p>
+                </div>
+                {/* </div> */}
+                <div className="give-and-find-help-user-contact">
+                  <button
+                    className="give-and-find-help-contact-user"
+                    onClick={() => contactUser(listing.email_address)}
+                  >
+                    Contact user
+                  </button>
+                  <button className="give-and-find-help-visit-profile">
+                    View Profile
+                  </button>
+                </div>
+              </div>
+            ))}
       </section>
     </div>
   );

@@ -75,11 +75,14 @@ export default function PostRequest() {
   };
 
   async function postToDb() {
-    const res = await fetch("http://localhost:5001/api/listings", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/listings",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      }
+    );
     console.log("The following has now been added to the database:", { res });
   }
 
