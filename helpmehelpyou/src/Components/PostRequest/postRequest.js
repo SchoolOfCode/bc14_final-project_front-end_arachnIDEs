@@ -103,7 +103,7 @@ export default function PostRequest() {
             <input
               required
               className="ask-for-help-input"
-              type="text"
+              type="email"
               placeholder="Please enter your email"
               value={form.email_address}
               onChange={(e) => {
@@ -117,14 +117,14 @@ export default function PostRequest() {
               }}
             ></input>
           </div>
-          {/* Display Name */}
+          {/* Display Name  should we specify character limit in display name*/}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Display Name*</label>
             <input
               required
               className="ask-for-help-input"
               type="text"
-              placeholder="Please enter a display name"
+              placeholder="Create a display name"
               value={form.display_name}
               onChange={(e) => {
                 setForm(
@@ -362,7 +362,9 @@ export default function PostRequest() {
               <label className="ask-for-help-label" htmlFor="categories">
                 Category
               </label>
+             
               <select
+                required
                 className="ask-for-help-input"
                 id="categoreis-skills-offered"
                 name="categories"
