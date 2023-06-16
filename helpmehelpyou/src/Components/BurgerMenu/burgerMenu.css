@@ -1,11 +1,14 @@
 .burgerMenu {
   height: 40px;
-  width: 390px;
+  width: auto;
+  /* min-width: 390px; */
+  /* position: absolute;
+  left: 0;
+  right: 0; */
   padding-top: 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
   align-items: center;
   top: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -84,12 +87,14 @@
   padding: 0;
   color: #fefefe;
 }
+
 .navigation-menu li {
   list-style-type: none;
   /* margin: 0 1rem; */
   /* width: auto; */
   color: #78af72;
 }
+
 .navigation-menu li a {
   text-decoration: none;
   width: 100%;
