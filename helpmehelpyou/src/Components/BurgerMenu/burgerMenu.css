@@ -1,7 +1,7 @@
 .burgerMenu {
   height: 40px;
-  width: auto;
-  /* min-width: 390px; */
+  width: 100%;
+  min-width: 390px;
   /* position: absolute;
   left: 0;
   right: 0; */
@@ -14,10 +14,16 @@
   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
   padding-bottom: 9px;
-  margin-bottom: 400px;
+  /* margin-bottom: 200px; */
   background-color: #ffffff;
   color: white;
 }
+
+/* .login-register-buttons,
+.logo-div,
+.burger-menu-button-div {
+  width: 30%;
+} */
 
 .login-register-buttons {
   display: flex;
@@ -31,7 +37,7 @@
   box-shadow: #000000 2px 2px 0 0;
   color: black;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -50,7 +56,7 @@
   box-shadow: #000000 2px 2px 0 0;
   color: #ffffff;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
@@ -61,25 +67,30 @@
   touch-action: manipulation;
 }
 
+/* Logo in Navbar */
 .logo {
   max-height: 35px;
-  min-height: 35px;
-  min-width: 65px;
+  min-width: 120px;
+  min-height: 20px;
+  margin-top: 40px;
   max-width: 65px;
   margin-bottom: 20px;
 }
 
+/* THIS IS NOT CURRENTLY BEING USED.
 .brand-name {
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration-style: "";
   font-size: 2.5rem;
-  /* margin-left: 1rem; */
+  /* margin-left: 1rem;
 }
-/* .navigation-menu {
+*/
+
+.navigation-menu {
   margin-left: auto;
-} */
+}
 
 .navigation-menu ul {
   display: flex;
@@ -98,11 +109,12 @@
 .navigation-menu li a {
   text-decoration: none;
   width: 100%;
-  display: block;
+  /* display: block; */
   /* width: auto; */
   color: #ffffff;
 }
 
+/* Hamburger Dropdown Menu Button */
 .hamburger-dropdown-menu {
   box-shadow: #000000 2px 2px 0 0;
   height: 40px;
@@ -113,30 +125,25 @@
   background-color: #78af72;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   right: 1px;
   transform: translateY(-50%);
   display: none;
 }
 
-.hamburger-.hamburger-dropdown-menu {
+/* .hamburger-.hamburger-dropdown-menu {
   background-color: #5ea856;
-}
+} */
 
+/* Media Queries */
 @media screen and (max-width: 5000px) {
   .hamburger-dropdown-menu {
     display: block;
   }
-}
-
-@media screen and (max-width: 5000px) {
   .navigation-menu ul {
     display: none;
   }
-}
-
-@media screen and (max-width: 5000px) {
   .navigation-menu ul {
     position: absolute;
     top: 60px;
@@ -161,22 +168,16 @@
   .navigation-menu li:hover {
     background-color: #78af72;
   }
-}
-
-@media screen and (max-width: 5000px) {
   .navigation-menu ul {
     display: none;
   }
-}
-
-@media screen and (max-width: 5000px) {
   .navigation-menu.expanded ul {
     display: block;
   }
 }
 
-.logo {
+/* .logo {
   min-width: 120px;
   min-height: 20px;
   margin-top: 40px;
-}
+} */

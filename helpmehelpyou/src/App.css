@@ -1,7 +1,13 @@
 .app {
-  max-width: auto;
+  /* max-width: auto; */
   /* max-width: 390px;
   min-width: 390px; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+html {
   display: flex;
   justify-content: center;
 }
