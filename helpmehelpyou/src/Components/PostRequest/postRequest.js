@@ -362,7 +362,9 @@ export default function PostRequest() {
               <label className="ask-for-help-label" htmlFor="categories">
                 Category
               </label>
+             
               <select
+                required
                 className="ask-for-help-input"
                 id="categoreis-skills-offered"
                 name="categories"
