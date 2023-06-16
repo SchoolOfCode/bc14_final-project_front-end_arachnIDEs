@@ -116,7 +116,13 @@ Listing - <h1> for title / summary
           Recent listings
         </h3>
         {listings.length === 0 ? (
-          <p>Loading listings...</p>
+          <div className="loading-div">
+            <p>Loading listings...</p>
+            <img
+              src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
+              alt="Loading gif"
+            ></img>
+          </div>
         ) : filteredListings.length === 0 ? (
           listings.map((listing) => (
             <div
