@@ -5,7 +5,7 @@ import horizontalLogo from "./horizontal_logo.jpg"
 
 import "./burgerMenu.css";
 
-export default function BurgerMenu() {
+export default function BurgerMenu({handleLogout}) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const handleNavToggle = () => {
@@ -19,8 +19,8 @@ export default function BurgerMenu() {
   return (
     <nav className="burgerMenu">
       <div className = "login-register-buttons">
-        <button className="login-button">Login</button>
-        <button className="register-button">Register</button>
+        <button className="login-button" onClick={handleLogout}>Logout</button>
+        {/* <button className="register-button">Register</button> */}
       </div>
     <Link to="/"><img src={horizontalLogo} alt="HelpMeHelpYou logo" className="logo"></img></Link>
       <Link to="/" className="link"></Link>
