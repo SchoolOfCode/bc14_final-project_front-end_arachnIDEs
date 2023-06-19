@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.give-and-find-help-title {
+  font-size: 2.5rem;
+}
+
 /* Logos */
 .find-help-image {
   height: 180px;
@@ -40,23 +44,33 @@
 }
 
 .give-and-find-help-search-button {
-  font-size: 16pt;
+  font-size: 1.1rem;
   border-radius: 50px;
   border-style: none;
   background-color: rgb(255, 255, 255);
   margin-left: 10px;
 }
 
+/* Listings / Users Area */
+.give-and-find-help-listings-area {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* Individual box for each listing */
 .give-and-find-help-individual-listing {
   display: flex;
   flex-direction: column;
-  font-size: 14pt;
-  align-self: center;
-  background-color: #a8c2da;
+  font-size: 1.2rem;
+  justify-content: center;
+  /* align-self: center; */
+  background-color: #7db8fa;
   max-width: 350px;
   border-radius: 20px;
   margin-top: 30px;
+  margin: 3%;
   padding: 5px;
   border: 1px solid black;
   box-shadow: 2px 2px 10px 2px #9f9c9c;
@@ -64,13 +78,12 @@
 
 /* Listings Area title */
 .give-and-find-help-listings-area-title {
-  text-align: left;
-  font-size: 18pt;
+  font-size: 1.8rem;
 }
 
 /* Listing Title */
 .give-and-find-help-listing-title {
-  font-size: 16pt;
+  font-size: 1.6rem;
 }
 
 /* Contact user button */
@@ -78,7 +91,7 @@
   background-color: #78af72;
   border: 1px solid black;
   border-radius: 25px;
-  font-size: 13pt;
+  font-size: 1.2rem;
   font-weight: bolder;
   min-height: 40px;
   margin-left: 10px;
@@ -91,21 +104,30 @@
   border: 1px solid black;
   font-weight: bolder;
   border-radius: 25px;
-  font-size: 13pt;
+  font-size: 1.2rem;
   min-height: 40px;
   margin-left: 5px;
   margin-right: 10px;
 }
 
-.give-and-find-help-skills {
-  font-weight: bold;
-  margin-left: 20px;
+/* Div to style the subheading and info */
+.give-and-find-help-info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.give-and-find-help-display-name {
+/* Styling for subheadings within the listings */
+.give-and-find-help-subheading {
   font-weight: bolder;
 }
 
+/* Styling for info within the listings */
+.give-and-find-help-info {
+  font-size: 1.1rem;
+}
+
+/* Contact user button */
 .give-and-find-help-user-contact {
   display: flex;
   flex-direction: row;
@@ -114,6 +136,7 @@
   font-weight: bolder;
 }
 
+/* Loading gif */
 .give-and-find-help-loading-gif {
   height: 50px;
   width: auto;
@@ -121,26 +144,27 @@
 
 /* GIVE HELP SECTION */
 
-/* Title in each listing box */
+/* Title in each listing box! */
 .give-help-listing-title {
-  font-size: 16pt;
+  font-size: 1.1rem;
 }
 
 /* Listing details */
-.give-help-listing-details {
-  font-size: 15pt;
-  margin-left: 20px;
-  margin-right: 20px;
+#give-help-listing-details {
+  margin: 3%;
+  font-size: 1.1rem;
 }
 
 /* Sub-title under the listing title: skills wanted and date created */
-.give-help-sub-title {
+/* NOT BEING USED */
+/* .give-help-sub-title {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-between;
-  font-size: smaller;
-  /* margin: auto; */
+  font-size: 1.1rem;
+  /* margin: auto;
 }
+*/
 
 /* THIS IS CURRENTLY NOT BEING USED - SEE giveHelp.js file
 .give-help-user-info {
