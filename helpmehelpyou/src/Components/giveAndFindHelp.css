@@ -136,6 +136,7 @@
   font-weight: bolder;
 }
 
+/* Loading gif */
 .give-and-find-help-loading-gif {
   height: 50px;
   width: auto;
@@ -143,7 +144,7 @@
 
 /* GIVE HELP SECTION */
 
-/* Title in each listing box */
+/* Title in each listing box! */
 .give-help-listing-title {
   font-size: 1.1rem;
 }
