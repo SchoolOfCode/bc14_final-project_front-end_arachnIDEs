@@ -134,23 +134,29 @@ Listing - <h1> for title / summary
               <h1 className="give-and-find-help-listing-title">
                 {listing.listing_title}
               </h1>
-              <div className="give-help-sub-title">
-                {/* Are there skills wanted in the guest listings DB? */}
-                <p className="give-and-find-help-skills">
-                  {listing.ssc_wanted}
-                </p>
-                {/* Date stamp - this needs editing */}
-                <p className="give-help-date-posted">{listing.created_at}</p>
-              </div>
-              <p className="give-help-listing-details">
+              <p className="give-and-find-help-info">
+                {listing.created_at.substring(0, 10)}
+              </p>
+              {/* <div className="give-help-sub-title"> */}
+              {/* Are there skills wanted in the guest listings DB? */}
+              {/* <p className="give-and-find-help-info">{listing.ssc_wanted}</p> */}
+              {/* Date stamp - this needs editing */}
+              {/* </div> */}
+              <p className="give-and-find-help-info">
                 {listing.listing_details}
               </p>
-              <p className="give-help-skills-offer-details">
-                I can offer... {listing.skills_offered}
-              </p>
-              <p className="give-help-skills-offer-details">
-                I need... {listing.skills_wanted}
-              </p>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">I can offer:</p>
+                <p className="give-and-find-help-info">
+                  {listing.skills_offered}
+                </p>
+              </div>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">I need:</p>
+                <p className="give-and-find-help-info">
+                  {listing.skills_wanted}
+                </p>
+              </div>
               {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">
@@ -163,22 +169,19 @@ Listing - <h1> for title / summary
                 There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
-              <div className="give-help-user-details-container">
-                <div className="give-help-posted-by-div">
-                  <p className="give-and-find-help-display-name">Posted by:</p>
-                  <p className="give-and-find-help-display-name">
-                    {listing.display_name}
-                  </p>
-                </div>
-                <div className="give-help-location-div">
-                  <p className="give-and-find-help-display-name">Location:</p>
-                  <p className="give-and-find-help-display-name">
-                    {listing.borough_name}
-                  </p>
-                </div>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Posted by:</p>
+                <p className="give-and-find-help-info">
+                  {listing.display_name}
+                </p>
+              </div>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Location:</p>
+                <p className="give-and-find-help-info">
+                  {listing.borough_name}
+                </p>
                 <p className="give-help-borough-name"> </p>
               </div>
-              {/* </div> */}
               <div className="give-and-find-help-user-contact">
                 <button
                   className="give-and-find-help-contact-user"
@@ -204,9 +207,9 @@ Listing - <h1> for title / summary
               </h1>
               <div className="give-help-sub-title">
                 {/* Are there skills wanted in the guest listings DB? */}
-                <p className="give-and-find-help-skills">
+                {/* <p className="give-and-find-help-skills">
                   {listing.ssc_wanted}
-                </p>
+                </p> */}
                 {/* Date stamp - this needs editing */}
                 <p className="give-help-date-posted">{listing.created_at}</p>
               </div>

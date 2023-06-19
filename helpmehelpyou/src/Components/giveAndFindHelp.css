@@ -116,8 +116,13 @@
   margin-left: 20px;
 }
 
-.give-and-find-help-display-name {
+/* Styling for subheadings */
+.give-and-find-help-subheading {
   font-weight: bolder;
+}
+
+.give-and-find-help-info {
+  font-size: 1.1rem;
 }
 
 .give-and-find-help-user-contact {
@@ -131,6 +136,12 @@
 .give-and-find-help-loading-gif {
   height: 50px;
   width: auto;
+}
+
+.give-and-find-help-info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* GIVE HELP SECTION */
@@ -148,13 +159,15 @@
 }
 
 /* Sub-title under the listing title: skills wanted and date created */
-.give-help-sub-title {
+/* NOT BEING USED */
+/* .give-help-sub-title {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-between;
   font-size: 1.1rem;
-  /* margin: auto; */
+  /* margin: auto;
 }
+*/
 
 /* THIS IS CURRENTLY NOT BEING USED - SEE giveHelp.js file
 .give-help-user-info {
