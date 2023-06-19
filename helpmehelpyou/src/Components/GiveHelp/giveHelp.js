@@ -180,7 +180,6 @@ Listing - <h1> for title / summary
                 <p className="give-and-find-help-info">
                   {listing.borough_name}
                 </p>
-                <p className="give-help-borough-name"> </p>
               </div>
               <div className="give-and-find-help-user-contact">
                 <button
@@ -234,20 +233,17 @@ Listing - <h1> for title / summary
                 There is no rating yet - we need to do a join to the user table 
                 <p className="give-help-rating">{listing.rating}</p>
               </div> */}
-              <div className="give-help-user-details-container">
-                <div className="give-help-posted-by-div">
-                  <p className="give-and-find-help-display-name">Posted by:</p>
-                  <p className="give-and-find-help-display-name">
-                    {listing.display_name}
-                  </p>
-                </div>
-                <div className="give-help-location-div">
-                  <p className="give-and-find-help-display-name">Location:</p>
-                  <p className="give-and-find-help-display-name">
-                    {listing.borough_name}
-                  </p>
-                </div>
-                <p className="give-help-borough-name"> </p>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Posted by:</p>
+                <p className="give-and-find-help-info">
+                  {listing.display_name}
+                </p>
+              </div>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Location:</p>
+                <p className="give-and-find-help-info">
+                  {listing.borough_name}
+                </p>
               </div>
               {/* </div> */}
               <div className="give-and-find-help-user-contact">
