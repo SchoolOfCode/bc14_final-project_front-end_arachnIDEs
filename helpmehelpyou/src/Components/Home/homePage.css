@@ -7,16 +7,16 @@ align-items: center;
 /* max-width: 390px;
 min-width: 390px;} */ }
 
-.home-image {max-width: 55%;
-  max-width: 60%;
-  max-height: 30%;
+.home-image {
+  max-width: 70%;
+  max-height: 40%;
     align-self: center;
     height: 180px;
 margin-right: 25px;}
 
-.app-logo {min-height: 20%;
-  max-height: 25%;
-  min-width: 15%;
+.app-logo {min-height: 15%;
+  max-height: 20%;
+  min-width: 20%;
     max-width: 20%;
   margin-top: 60px;}
 
@@ -100,7 +100,7 @@ font-weight: bold;
     box-shadow: #000000 4px 4px 0 0;
     margin-top: 50px;
     margin-bottom: 60px;
-    width: 100%;
+    width: 80%;
     height: 5%;
 }
 
@@ -116,7 +116,7 @@ margin-left: 10px
 }
 
 .location {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .left-arrow {height: 30px;
@@ -168,7 +168,7 @@ justify-content: space-evenly;}
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 5%;
 }
 
 #find-help-button {background-color: #92d18f;
@@ -206,7 +206,7 @@ align-self: center;
   justify-content: center;
 }
 
-.map-text {font-size: 12pt;
+.map-text {font-size: 1.25rem;
   margin-top: 10px;
   text-align: center;
 }
