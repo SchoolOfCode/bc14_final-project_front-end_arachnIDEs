@@ -64,6 +64,7 @@ export default function HomePage() {
     <div className= "media-section">
     <div className= "logo-and-image">
       <img className="app-logo" src={logo} alt="logo"></img>
+      <br></br>
       <img
         className="home-image"
         src={image}
