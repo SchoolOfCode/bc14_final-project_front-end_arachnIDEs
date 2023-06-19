@@ -84,7 +84,7 @@ Listing - <h1> for title / summary
   return (
     // Parent container
     <div className="give-and-find-help-container">
-      <h1 className="give-help-title">Give Help</h1>
+      <h1 className="give-and-find-help-title">Give Help</h1>
       {/* Logo */}
       <img
         className="give-help-image"
@@ -110,11 +110,11 @@ Listing - <h1> for title / summary
           Need help? <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
+      <h3 className="give-and-find-help-listings-area-title">
+        Recent listings
+      </h3>
       {/* Recent listings fetched from DB */}
-      <section id="give-help-listings">
-        <h3 className="give-and-find-help-listings-area-title">
-          Recent listings
-        </h3>
+      <section className="give-and-find-help-listings-area">
         {listings.length === 0 ? (
           <div className="loading-div">
             <p>Loading listings...</p>
