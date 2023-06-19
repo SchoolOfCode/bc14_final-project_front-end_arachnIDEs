@@ -118,9 +118,10 @@ export default function HomePage() {
         </button>
         <div className="card">
         <div className= "meet-title-container">
-        <h2 className="meet">MEET</h2>
+        <h2 className="meet">MEET 
+        </h2>
           <h2 className="profile-title">
-           {`` + cards[activeIndex].title}
+           {cards[activeIndex].title}
           </h2> </div>
           <div className="card-contents-container">
             <div className="card-contents">
