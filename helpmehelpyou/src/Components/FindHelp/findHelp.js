@@ -74,12 +74,16 @@ export default function FindHelp() {
               </div>
             </div>
             <p className="find-help-about-me">{listing.about_me}</p>
-            <p className="give-and-find-help-skills">
-              I can offer... {listing.skills_offered}
-            </p>
-            <p className="give-and-find-help-skills">
-              I need... {listing.skills_needed}
-            </p>
+            <div className="give-and-find-help-info-container">
+              <p className="give-and-find-help-subheading">I can offer:</p>
+              <p className="give-and-find-help-info">
+                {listing.skills_offered}
+              </p>
+            </div>
+            <div className="give-and-find-help-info-container">
+              <p className="give-and-find-help-subheading">I need:</p>
+              <p className="give-and-find-help-info">{listing.skills_needed}</p>
+            </div>
             <div className="give-and-find-help-user-contact">
               <button
                 className="give-and-find-help-contact-user"

@@ -134,15 +134,23 @@ Listing - <h1> for title / summary
               <h1 className="give-and-find-help-listing-title">
                 {listing.listing_title}
               </h1>
-              <p className="give-and-find-help-info">
-                {listing.created_at.substring(0, 10)}
-              </p>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Date posted: </p>
+                <p className="give-and-find-help-info">
+                  {listing.created_at.substring(8, 10)}
+                  {listing.created_at.substring(4, 8)}
+                  {listing.created_at.substring(0, 4)}
+                </p>
+              </div>
               {/* <div className="give-help-sub-title"> */}
               {/* Are there skills wanted in the guest listings DB? */}
               {/* <p className="give-and-find-help-info">{listing.ssc_wanted}</p> */}
               {/* Date stamp - this needs editing */}
               {/* </div> */}
-              <p className="give-and-find-help-info">
+              <p
+                className="give-and-find-help-info"
+                id="give-help-listing-details"
+              >
                 {listing.listing_details}
               </p>
               <div className="give-and-find-help-info-container">
@@ -204,23 +212,37 @@ Listing - <h1> for title / summary
               <h1 className="give-and-find-help-listing-title">
                 {listing.listing_title}
               </h1>
-              <div className="give-help-sub-title">
-                {/* Are there skills wanted in the guest listings DB? */}
-                {/* <p className="give-and-find-help-skills">
-                  {listing.ssc_wanted}
-                </p> */}
-                {/* Date stamp - this needs editing */}
-                <p className="give-help-date-posted">{listing.created_at}</p>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">Date posted: </p>
+                <p className="give-and-find-help-info">
+                  {listing.created_at.substring(8, 10)}
+                  {listing.created_at.substring(4, 8)}
+                  {listing.created_at.substring(0, 4)}
+                </p>
               </div>
-              <p className="give-help-listing-details">
+              {/* <div className="give-help-sub-title"> */}
+              {/* Are there skills wanted in the guest listings DB? */}
+              {/* <p className="give-and-find-help-info">{listing.ssc_wanted}</p> */}
+              {/* Date stamp - this needs editing */}
+              {/* </div> */}
+              <p
+                className="give-and-find-help-info"
+                id="give-help-listing-details"
+              >
                 {listing.listing_details}
               </p>
-              <p className="give-help-skills-offer-details">
-                I can offer... {listing.skills_offered}
-              </p>
-              <p className="give-help-skills-offer-details">
-                I need... {listing.skills_wanted}
-              </p>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">I can offer:</p>
+                <p className="give-and-find-help-info">
+                  {listing.skills_offered}
+                </p>
+              </div>
+              <div className="give-and-find-help-info-container">
+                <p className="give-and-find-help-subheading">I need:</p>
+                <p className="give-and-find-help-info">
+                  {listing.skills_wanted}
+                </p>
+              </div>
               {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">

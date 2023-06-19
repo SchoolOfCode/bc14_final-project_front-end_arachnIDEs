@@ -78,13 +78,12 @@
 
 /* Listings Area title */
 .give-and-find-help-listings-area-title {
-  text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 /* Listing Title */
 .give-and-find-help-listing-title {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 /* Contact user button */
@@ -111,20 +110,24 @@
   margin-right: 10px;
 }
 
-.give-and-find-help-skills {
-  font-weight: bold;
-  margin-left: 20px;
+/* Div to style the subheading and info */
+.give-and-find-help-info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-/* Styling for subheadings */
+/* Styling for subheadings within the listings */
 .give-and-find-help-subheading {
   font-weight: bolder;
 }
 
+/* Styling for info within the listings */
 .give-and-find-help-info {
   font-size: 1.1rem;
 }
 
+/* Contact user button */
 .give-and-find-help-user-contact {
   display: flex;
   flex-direction: row;
@@ -138,12 +141,6 @@
   width: auto;
 }
 
-.give-and-find-help-info-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 /* GIVE HELP SECTION */
 
 /* Title in each listing box */
@@ -152,10 +149,9 @@
 }
 
 /* Listing details */
-.give-help-listing-details {
+#give-help-listing-details {
+  margin: 3%;
   font-size: 1.1rem;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 /* Sub-title under the listing title: skills wanted and date created */
