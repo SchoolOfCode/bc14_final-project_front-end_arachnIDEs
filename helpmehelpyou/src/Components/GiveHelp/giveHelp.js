@@ -17,7 +17,6 @@ import { Link } from "react-router-dom";
 // If the search box is empty and the button is clicked, then show the full listings array.
 
 export default function GiveHelp() {
-
   const [activeIndex, setActiveIndex] = useState(0);
   const cards = [
     {
@@ -143,43 +142,41 @@ Listing - <h1> for title / summary
           Need help? <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
-     
       <div className="carousel">
-  <div className="givehelp-card-container">
-    <button className="givehelp-left-arrow" onClick={handlePrev}>
-      ←
-    </button>
-    {cards.map((card, index) => (
-      <div
-        className={`givehelp-card ${
-          index >= activeIndex && index < activeIndex + 3 ? "active" : ""
-        }`}
-        key={card.id}
-      >
-        <div className="givehelp-card-contents">
-          <p>{card.category}</p>
+        <div className="givehelp-card-container">
+          <button className="givehelp-left-arrow" onClick={handlePrev}>
+            ←
+          </button>
+          {cards.map((card, index) => (
+            <div
+              className={`givehelp-card ${
+                index >= activeIndex && index < activeIndex + 3 ? "active" : ""
+              }`}
+              key={card.id}
+            >
+              <div className="givehelp-card-contents">
+                <p>{card.category}</p>
+              </div>
+            </div>
+          ))}
+          <button className="givehelp-right-arrow" onClick={handleNext}>
+            →
+          </button>
         </div>
       </div>
-    ))}
-    <button className="givehelp-right-arrow" onClick={handleNext}>
-      →
-    </button>
-  </div>
-</div>
- <div className="givehelp-dots">
-      {cards.map((card, index) => (
-        <span
-          key={card.id}
-          className={
-           index >= activeIndex && index < activeIndex + 3
-          ? "givehelp-dot active"
-          : "givehelp-dot"
-          }
-          onClick={() => setActiveIndex(index)}
-        ></span>
-      ))}
-    </div>
-
+      <div className="givehelp-dots">
+        {cards.map((card, index) => (
+          <span
+            key={card.id}
+            className={
+              index >= activeIndex && index < activeIndex + 3
+                ? "givehelp-dot active"
+                : "givehelp-dot"
+            }
+            onClick={() => setActiveIndex(index)}
+          ></span>
+        ))}
+      </div>
       {/* Recent listings fetched from DB */}
       <section id="give-help-listings">
         <h3 className="give-and-find-help-listings-area-title">
