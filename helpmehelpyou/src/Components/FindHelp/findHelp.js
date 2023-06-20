@@ -35,7 +35,7 @@ export default function FindHelp() {
           onChange={storeInput}
           className="give-and-find-help-search-box"
         ></input>
-        <button className="give-and-find-help-search-button">🔍</button>
+        <button className="give-and-find-help-search-button">Search</button>
       </section>
       {/* Link to the Post a request page */}
       <section id="find-help-post-request-link">
