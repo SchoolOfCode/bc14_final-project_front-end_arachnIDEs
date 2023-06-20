@@ -22,6 +22,7 @@ export default function GiveHelp() {
   const [listings, setListings] = useState([]);
   const [filteredListings, setfilteredListings] = useState([]);
 
+  // V1
   // function filterListings() {
   //   console.log("button has been clicked.");
   //   const newArray = listings.filter((item) => {
@@ -35,11 +36,39 @@ export default function GiveHelp() {
   //   setfilteredListings(newArray);
   // }
 
+  // V2: Manually searching through select keys individually.
+  // function filterListings() {
+  //   if (listings && listings.length > 0) {
+  //     const newArray = listings.filter((item) => {
+  //       return (
+  //         item.listing_title.toLowerCase().includes(userInput.toLowerCase()) ||
+  //         item.listing_details.toLowerCase().includes(userInput.toLowerCase())
+  //       );
+  //     });
+  //     setfilteredListings(newArray);
+  //   }
+  // }
+
+  // V3: using a for...in loop to search through all keys where value is of type string.
   function filterListings() {
+    // If listings is populated...
     if (listings && listings.length > 0) {
       const newArray = listings.filter((item) => {
-        console.log(item.listing_title.includes(userInput));
-        return item.listing_title.includes(userInput);
+        let found = false;
+        for (let key in item) {
+          // First, check if the type of the value at position key is string...
+          if (typeof item[key] === "string") {
+            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+            if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
+              found = true;
+              break;
+            }
+          } else {
+            // if type of the value at position key is NOT string, continue to next key.
+            continue;
+          }
+        }
+        return found;
       });
       setfilteredListings(newArray);
     }
