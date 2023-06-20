@@ -38,6 +38,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
@@ -62,6 +63,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
