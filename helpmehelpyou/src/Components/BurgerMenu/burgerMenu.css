@@ -11,6 +11,8 @@
   color: white;
 }
 
+
+
 .nav-menu-container {
   display: flex;
   align-items: center;
@@ -43,6 +45,11 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+.login-button:hover {
+  background-color: #4563e7;
+  color: white;
+  text-emphasis-color: white;
+}
 
 .register-button {
   background-color: #425fdd;
@@ -60,6 +67,11 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.register-button:hover {
+  background-color: #9ee795;
+  color: black;
+  text-emphasis-color: white;
 }
 
 /* .logo {
@@ -121,6 +133,11 @@
   right: 1px;
   transform: translateY(-50%); */
   display: none;
+}
+.hamburger-dropdown-menu:hover {
+  background-color: #4563e7;
+  color: white;
+  text-emphasis-color: white;
 }
 
 .hamburger-.hamburger-dropdown-menu {
