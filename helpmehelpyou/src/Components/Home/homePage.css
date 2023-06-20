@@ -9,7 +9,8 @@
 
 .logo-and-image {
   width: 100%;
-height: 100%;}
+  height: 100%;
+}
 
 .home-image {
   max-width: 90%;
@@ -28,7 +29,8 @@ height: 100%;}
   margin-top: 50px;
 }
 
-.media-section {display: flex;
+.media-section {
+  display: flex;
   flex-direction: column;
   margin-top: 70px;
   text-align: center;
@@ -36,8 +38,9 @@ height: 100%;}
   align-items: center;
 }
 
-.intro-and-buttons {text-align: center;
-  display:flex;
+.intro-and-buttons {
+  text-align: center;
+  display: flex;
   flex-direction: column;
   width: 100%;
   justify-items: center;
@@ -89,27 +92,30 @@ height: 100%;}
 
 @media (min-width: 700px) {
   .logo-and-image {
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin-top: 5%;
     width: 100%;
-height: 100%;}
+    height: 100%;
+  }
 
-  .media-section {display: flex;
+  .media-section {
+    display: flex;
     flex-direction: row;
     width: 100%;
     margin-top: 50px;
   }
 
-.home-image {
-  margin-left: 10%;
-  max-width: 80%;
-max-height: 80%;}
+  .home-image {
+    margin-left: 10%;
+    max-width: 80%;
+    max-height: 80%;
+  }
 
-.intro-and-buttons {
-  margin-top: 0.5%;
-  margin-left: 1%;
-}
+  .intro-and-buttons {
+    margin-top: 0.5%;
+    margin-left: 1%;
+  }
 
   .app-logo {
     margin-top: 0;
@@ -131,104 +137,120 @@ max-height: 80%;}
     margin-top: 10px;
   }
 
-  .profile-image {border-radius: 50px;
+  .profile-image {
+    border-radius: 50px;
     width: 60px;
     height: 60px;
-    margin: 30px;}
-    
-    .message-icon { 
-      width: 50px;
-      height: 40px;
-      margin: 30px;
-    margin-bottom: 30px;}
+    margin: 30px;
+  }
 
-  .home-page-buttons {margin: 5%}
+  .message-icon {
+    width: 50px;
+    height: 40px;
+    margin: 30px;
+    margin-bottom: 30px;
+  }
 
-  .map-container {max-height: 20%;
-  max-width: 70%;}
+  .home-page-buttons {
+    margin: 5%;
+  }
 
-
+  .map-container {
+    max-height: 20%;
+    max-width: 70%;
+  }
 }
 
-
-.about {display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    width: 80%;
-}
-
-.about-title {max-width: 80%;
-font-size: 2rem;
-font-weight: bold;
-}
-
-.about-info-list {font-size: 1.25rem;
-}
-
-.card-contents-container {display: flex;
+.about {
+  display: flex;
   flex-direction: column;
-min-width: 100%;}
-
-.about-list-item {}
-
-.carousel {display: flex;
-    flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
   width: 80%;
-justify-content: centre;
-padding-left: 15%}
-
-.card { display: inline-block;
-    background-color: #7db8fa;
-    text-align: center;
-    border-radius: 25px;
-   /* color: #000000;*/
-    box-shadow: #000000 4px 4px 0 0;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    width: 70%;
-    height: 5%;
 }
 
-.right-arrow {height: 30px;
-    font-size: 20pt;
-    display: inline block;
-width: 30px;
-border: none;
-background-color: white;
-text-align: center;
-margin-top: 200px;
-margin-left: 10px
+.about-title {
+  max-width: 80%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.about-info-list {
+  font-size: 1.25rem;
+}
+
+.card-contents-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+}
+
+/* .about-list-item {} */
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: centre;
+  padding-left: 15%;
+}
+
+.card {
+  display: inline-block;
+  background-color: #7db8fa;
+  text-align: center;
+  border-radius: 25px;
+  /* color: #000000;*/
+  box-shadow: #000000 4px 4px 0 0;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  width: 70%;
+  height: 5%;
+}
+
+.right-arrow {
+  height: 30px;
+  font-size: 20pt;
+  display: inline block;
+  width: 30px;
+  border: none;
+  background-color: white;
+  text-align: center;
+  margin-top: 200px;
+  margin-left: 10px;
 }
 
 .location {
   font-size: 1rem;
 }
 
-.left-arrow {height: 30px;
-    font-size: 20pt;
-    display: inline block;
-width: 30px;
-border: none;
-background-color: white;
-text-align: center;
-margin-top: 200px;
-margin-right: 10px;
+.left-arrow {
+  height: 30px;
+  font-size: 20pt;
+  display: inline block;
+  width: 30px;
+  border: none;
+  background-color: white;
+  text-align: center;
+  margin-top: 200px;
+  margin-right: 10px;
 }
 
-.profile-image {border-radius: 50px;
+.profile-image {
+  border-radius: 50px;
   width: 60px;
   height: 60px;
-  margin: 20px;}
-  
-  .message-icon { 
-    width: 50px;
-    height: 40px;
-    margin: 20px;
-  margin-bottom: 30px;}
+  margin: 20px;
+}
+
+.message-icon {
+  width: 50px;
+  height: 40px;
+  margin: 20px;
+  margin-bottom: 30px;
+}
 
 .card-contents {
- 
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
@@ -236,26 +258,29 @@ margin-right: 10px;
   justify-self: center;
 }
 
-.meet-title-container {display: flex;
+.meet-title-container {
+  display: flex;
   word-spacing: 20px;
   flex-direction: row;
   text-align: center;
   width: 100%;
-  justify-content: space-around;}
+  justify-content: space-around;
+}
 
-#meet{
+#meet {
   color: black;
-  display: flex;  
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .person {
-  color:black;
-  text-align: center;}
+  color: black;
+  text-align: center;
+}
 
-.image-icon-container{
+.image-icon-container {
   display: inline;
   flex-direction: row;
   justify-content: center;
@@ -264,32 +289,36 @@ margin-right: 10px;
   padding-bottom: 5%;
 }
 
-#find-help-button {background-color: #92d18f;
+#find-help-button {
+  background-color: #92d18f;
   color: black;
   font-size: 20px;
-
 }
 
-#find-help-button:hover {background-color: #4563e7;
+#find-help-button:hover {
+  background-color: #4563e7;
   color: white;
-  font-size: larger;  
+  font-size: larger;
 }
 
-#give-help-button {background-color: #4563e7;
-  color: white;;
-  font-size: 20px;  
+#give-help-button {
+  background-color: #4563e7;
+  color: white;
+  font-size: 20px;
 }
 
-#give-help-button:hover {background-color: #92d18f;
+#give-help-button:hover {
+  background-color: #92d18f;
   color: black;
-  font-size: larger;  
+  font-size: larger;
 }
 
-.home-page-map {width: 70%;
+.home-page-map {
+  width: 70%;
   height: 50%;
   height: auto;
   border-radius: 15px;
-align-self: center;
+  align-self: center;
 }
 
 .map-container {
@@ -299,7 +328,8 @@ align-self: center;
   justify-content: center;
 }
 
-.map-text {font-size: 1.25rem;
+.map-text {
+  font-size: 1.25rem;
   margin-top: 10px;
   text-align: center;
 }
