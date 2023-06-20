@@ -103,12 +103,15 @@
 } */
 
 .navigation-menu ul {
+
   display: flex;
   /* width: auto; */
   padding: 0;
   color: #fefefe;
 }
 .navigation-menu li {
+  /* width: fit-content; */
+  width: 35%;
   list-style-type: none;
   /* margin: 0 1rem; */
   /* width: auto; */
@@ -116,8 +119,10 @@
 }
 .navigation-menu li a {
   text-decoration: none;
-  width: 100%;
+  width: 35%;
   display: block;
+ 
+  /* padding: 10%; */
   /* width: auto; */
   color: #ffffff;
 }
@@ -183,6 +188,7 @@
     border-right: 1px solid black;
   }
   .navigation-menu li:hover {
+    /* width: auto; */
     background-color: #78af72;
   }
 }
