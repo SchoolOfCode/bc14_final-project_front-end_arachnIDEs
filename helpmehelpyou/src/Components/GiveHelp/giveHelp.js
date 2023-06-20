@@ -38,8 +38,9 @@ export default function GiveHelp() {
   function filterListings() {
     if (listings && listings.length > 0) {
       const newArray = listings.filter((item) => {
-        console.log(item.listing_title.includes(userInput));
-        return item.listing_title.includes(userInput);
+        console.log(item.listing_title.toLowerCase().includes(userInput.toLowerCase()));
+
+        return item.listing_title.toLowerCase().includes(userInput.toLowerCase());
       });
       setfilteredListings(newArray);
     }
