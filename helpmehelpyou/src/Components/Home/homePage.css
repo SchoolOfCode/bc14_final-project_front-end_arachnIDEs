@@ -1,5 +1,5 @@
 .home-page {
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,13 +48,13 @@ height: 100%;}
   max-width: 80%;
   margin-left: 10%;
   font-size: 1.25rem;
-  margin-top: 40px;
+  margin-top: 5%;
 }
 
 .button-container {
-  max-width: 100%;
-  margin-left: 20%;
-  display: inline-flex;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .home-page-buttons {
@@ -71,7 +71,7 @@ height: 100%;}
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin: 30px;
+  margin: 10%;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -87,18 +87,18 @@ height: 100%;}
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 701px) {
+@media (min-width: 700px) {
   .logo-and-image {
     display:flex;
     flex-direction: column;
     margin-top: 5%;
-    width: 150%;
-height: 150%;}
+    width: 100%;
+height: 100%;}
 
   .media-section {display: flex;
     flex-direction: row;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 50px;
   }
 
 .home-image {
@@ -107,7 +107,8 @@ height: 150%;}
 max-height: 80%;}
 
 .intro-and-buttons {
-  margin-left: 5%;
+  margin-top: 0.5%;
+  margin-left: 1%;
 }
 
   .app-logo {
@@ -121,17 +122,34 @@ max-height: 80%;}
     max-width: 80%;
     text-align: left;
     margin-top: 15%;
-    margin-left: 15px;
+    margin-right: 30%;
+    margin-left: 10px;
   }
 
   .button-container {
-    display: flex;
-    justify-content: centre;
-    align-items: center;
+    text-align: left;
     margin-top: 10px;
-    margin-left: 15px;
   }
+
+  .profile-image {border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    margin: 30px;}
+    
+    .message-icon { 
+      width: 50px;
+      height: 40px;
+      margin: 30px;
+    margin-bottom: 30px;}
+
+  .home-page-buttons {margin: 5%}
+
+  .map-container {max-height: 20%;
+  max-width: 70%;}
+
+
 }
+
 
 .about {display: flex;
     flex-direction: column;
@@ -157,11 +175,11 @@ min-width: 100%;}
 .carousel {display: flex;
     flex-direction: row;
   width: 80%;
-  text-align: center;
-justify-content: centre;}
+justify-content: centre;
+padding-left: 15%}
 
 .card { display: inline-block;
-    background-color: #e9c5c5;
+    background-color: #7db8fa;
     text-align: center;
     border-radius: 25px;
    /* color: #000000;*/
@@ -195,7 +213,6 @@ border: none;
 background-color: white;
 text-align: center;
 margin-top: 200px;
-margin-left: 10%;
 margin-right: 10px;
 }
 
@@ -204,9 +221,11 @@ margin-right: 10px;
   height: 60px;
   margin: 20px;}
   
-  .message-icon { width: 50px;
+  .message-icon { 
+    width: 50px;
     height: 40px;
-    margin: 20px;}
+    margin: 20px;
+  margin-bottom: 30px;}
 
 .card-contents {
  
@@ -224,8 +243,8 @@ margin-right: 10px;
   width: 100%;
   justify-content: space-around;}
 
-.meet{
-  color: #000000;
+#meet{
+  color: black;
   display: flex;  
   flex-direction: row;
   justify-content: center;
@@ -233,7 +252,7 @@ margin-right: 10px;
 }
 
 .person {
-  color: #4563e7;
+  color:black;
   text-align: center;}
 
 .image-icon-container{
@@ -241,6 +260,7 @@ margin-right: 10px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding-bottom: 5%;
 }
 
