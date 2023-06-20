@@ -21,6 +21,7 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .give-help-image {
@@ -28,20 +29,22 @@
   width: 190px;
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* Search bar and button div */
 #give-and-find-help-search-section {
   display: flex;
+
   justify-content: center;
-  /* height: 50px; */
+
   margin-top: 20px;
   margin-bottom: 20px;
   align-items: center;
 }
 
 .give-and-find-help-search-box {
-  flex: 1;
+
   border-radius: 12px;
   width: 280px;
   height: 30px;
@@ -58,13 +61,14 @@
   box-shadow: #000000 2px 2px 0 0;
   font-size: 1.2rem;
   font-weight: bolder;
-  min-height: 40px;
+  min-height: 35px;
   margin-left: 10px;
   margin-right: 5px;
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
 }
+
 .give-and-find-help-search-button:hover {
   background-color: #4563e7;
   color: white;
