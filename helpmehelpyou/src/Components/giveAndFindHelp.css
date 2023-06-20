@@ -19,6 +19,7 @@
   height: 180px;
   width: 240px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -26,6 +27,7 @@
 .give-help-image {
   height: 180px;
   width: 190px;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -33,11 +35,16 @@
 /* Search bar and button div */
 #give-and-find-help-search-section {
   display: flex;
+
+  justify-content: center;
+
   margin-top: 20px;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .give-and-find-help-search-box {
+
   border-radius: 12px;
   width: 280px;
   height: 30px;
@@ -46,6 +53,7 @@
   font-size: 1.2rem;
 }
 
+/* Search button */
 .give-and-find-help-search-button {
   background-color: #92d18f;
   border: 2px solid black;
@@ -145,7 +153,6 @@
   color: white;
 }
 
-
 /* Div to style the subheading and info */
 .give-and-find-help-info-container {
   display: flex;
@@ -171,9 +178,7 @@
   /* padding-bottom: 30px; */
   font-weight: bolder;
   margin-bottom: 0px;
-  
 }
-
 
 /* Loading gif */
 .give-and-find-help-loading-gif {

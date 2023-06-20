@@ -45,6 +45,7 @@
   margin-bottom: 5px;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 .login-button:hover {
   background-color: #4563e7;
@@ -69,6 +70,7 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 .register-button:hover {
   background-color: #9ee795;
