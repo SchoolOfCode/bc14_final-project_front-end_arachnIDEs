@@ -104,7 +104,7 @@ Listing - <h1> for title / summary
         >
           Search
         </button>
-      </section>{" "}
+      </section>
       <section id="give-help-post-request-link-from-givehelp">
         <p className="give-help-post-request">
           Need help? <Link to="/findhelpform">Post a request </Link>
@@ -180,7 +180,7 @@ Listing - <h1> for title / summary
                   {listing.created_at.substring(4, 8)}
                   {listing.created_at.substring(0, 4)}
                 </p>
-              </div>             
+              </div>
               {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">
@@ -262,7 +262,7 @@ Listing - <h1> for title / summary
                   {listing.created_at.substring(4, 8)}
                   {listing.created_at.substring(0, 4)}
                 </p>
-              </div>             
+              </div>
               {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">

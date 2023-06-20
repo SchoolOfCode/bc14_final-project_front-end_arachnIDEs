@@ -41,6 +41,7 @@
   font-weight: bolder;
   box-shadow: #000000 2px 2px 0 0;
 }
+
 #create-listing-btn:hover {
   background-color: #4563e7;
   color: white;
@@ -103,10 +104,13 @@
     max-width: 100%; /* Changed from '15.625rem' to '100%' */
     padding: 0.3125rem 0.9375rem; /* 5px 15px */
   }
-
+  #boroughs.ask-for-help-input {
+    cursor: pointer;
+  }
   .ask-for-help-input {
     margin-left: 0.9375rem; /* 15px */
     width: 7.5rem; /* 120px */
+    cursor: pointer;
   }
 
   #ask-for-help-description {
