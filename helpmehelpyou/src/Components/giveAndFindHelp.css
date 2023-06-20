@@ -20,27 +20,30 @@
   width: 240px;
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .give-help-image {
   height: 180px;
   width: 190px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* Search bar and button div */
 #give-and-find-help-search-section {
   display: flex;
-  flex-direction: row;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .give-and-find-help-search-box {
-  border-radius: 15px;
+  border-radius: 12px;
   width: 280px;
   height: 30px;
-  box-shadow:  0.5px 0.5px 5px 0.5px #9f9c9c;
+  box-shadow: 0.5px 0.5px 5px 0.5px #9f9c9c;
   margin-right: 10px;
+  font-size: 1.2rem;
 }
 
 .give-and-find-help-search-button {
