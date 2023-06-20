@@ -99,6 +99,11 @@
   margin-right: 5px;
   margin-bottom: 10px;
 }
+.give-and-find-help-contact-user:hover {
+  background-color: #4563e7;
+  color: white;
+  text-emphasis-color: white;
+}
 
 /* Visit profile button */
 .give-and-find-help-visit-profile {
@@ -114,9 +119,8 @@
   margin-bottom: 10px;
 }
 .give-and-find-help-visit-profile:hover {
-  background-color: #120EEA;
-  /*color: black;*/
-  text-emphasis-color: white;
+  background-color: #4563e7;
+  color: white;
 }
 
 
