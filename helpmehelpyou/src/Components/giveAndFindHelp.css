@@ -35,16 +35,12 @@
 /* Search bar and button div */
 #give-and-find-help-search-section {
   display: flex;
-
   justify-content: center;
-
   margin-top: 20px;
   margin-bottom: 20px;
-  align-items: center;
 }
 
 .give-and-find-help-search-box {
-
   border-radius: 12px;
   width: 280px;
   height: 30px;
@@ -126,7 +122,9 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
+
 .give-and-find-help-contact-user:hover {
   background-color: #4563e7;
   color: white;
@@ -147,6 +145,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
 .give-and-find-help-visit-profile:hover {
   background-color: #4563e7;
@@ -156,8 +155,10 @@
 /* Div to style the subheading and info */
 .give-and-find-help-info-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-left: 19px;
+  margin-right: 14px;
 }
 
 /* Styling for subheadings within the listings */
@@ -173,11 +174,12 @@
 /* Contact user button */
 .give-and-find-help-user-contact {
   display: flex;
-  flex-direction: row;
+  flex: 1;
   justify-content: space-around;
+  justify-self: flex-end;
   /* padding-bottom: 30px; */
   font-weight: bolder;
-  margin-bottom: 0px;
+  /* margin-bottom: 0px; */
 }
 
 /* Loading gif */

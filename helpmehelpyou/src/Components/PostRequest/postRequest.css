@@ -43,6 +43,17 @@
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
 }
+#boroughs.ask-for-help-input{
+  cursor: pointer;
+}
+
+#categories-skills-wanted.ask-for-help-input{
+  cursor: pointer;
+}
+
+#categories-skills-offered.ask-for-help-input{
+  cursor: pointer;
+}
 
 #create-listing-btn:hover {
   background-color: #4563e7;
@@ -57,12 +68,12 @@
   margin-left: 1.875rem; /* 30px */
   border: 0.09375rem solid #000000; /* 1.5px */
   margin: 0.625rem 0px 0.625rem 1.875rem; /* 10px 0px 10px 30px */
-  width: 10rem; /* 160px */
+  width: 20rem; /* 160px */
 }
 
 /* Text area sizing */
-#ask-for-help-description {
-  width: 10rem; /* 160px */
+#ask-for-help-description.ask-for-help-input {
+  width: 20rem; /* 160px */
   height: 6.25rem; /* 100px */
 }
 
@@ -72,7 +83,7 @@
 }
 
 .small-text {
-  font-size: 0.75rem; /* 12px */
+  font-size: 0.9rem /*0.75rem; /* 12px */
 }
 
 /* Aligns the textarea with the label */
@@ -89,7 +100,7 @@
 /* Lining up labels with input boxes */
 .ask-for-help-label {
   margin-top: 0.5rem; /* 8px */
-  font-size: 0.875rem; /* 14px */
+  font-size: 1rem ;/*0.875rem; /* 14px */
   font-weight: bold;
 }
 
@@ -107,9 +118,7 @@
     max-width: 100%; /* Changed from '15.625rem' to '100%' */
     padding: 0.3125rem 0.9375rem; /* 5px 15px */
   }
-  #boroughs.ask-for-help-input{
-    cursor: pointer;
-  }
+ 
   .ask-for-help-input {
     margin-left: 0.9375rem; /* 15px */
     width: 7.5rem; /* 120px */
@@ -132,9 +141,9 @@
   }
 }
 
-.ask-for-help-label{
+/* .ask-for-help-label{
   cursor: pointer;
-}
+} */
 
 @media (min-width: 601px) and (max-width: 900px)  {
   .post-request-container {
