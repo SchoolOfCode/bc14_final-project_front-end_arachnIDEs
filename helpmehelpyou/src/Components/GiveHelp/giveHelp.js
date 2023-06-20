@@ -40,7 +40,7 @@ export default function GiveHelp() {
       const newArray = listings.filter((item) => {
         console.log(item.listing_title.toLowerCase().includes(userInput.toLowerCase()));
 
-        return item.listing_title.toLowerCase().includes(userInput.toLowerCase());
+        return item.listing_title.toLowerCase().includes(userInput.toLowerCase()) || item.listing_details.toLowerCase().includes(userInput.toLowerCase());
       });
       setfilteredListings(newArray);
     }
