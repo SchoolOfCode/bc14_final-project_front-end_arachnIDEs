@@ -38,13 +38,13 @@
   height: 2.5rem; /* 40px */
   align-self: center;
   font-size: 1rem;
-  font-weight: bolder; 
+  font-weight: bolder;
   box-shadow: #000000 2px 2px 0 0;
 }
 #create-listing-btn:hover {
   background-color: #4563e7;
   color: white;
-  font-weight: bolder; 
+  font-weight: bolder;
   text-emphasis-color: white;
 }
 
@@ -92,7 +92,6 @@
 
 /* Media Queries for Responsiveness */
 
-
 @media (max-width: 600px) {
   .post-request-container {
     margin: 70px auto; /* 25px */
@@ -125,18 +124,17 @@
   }
 }
 
-@media (min-width: 601px) and (max-width: 900px)  {
+@media (min-width: 601px) and (max-width: 900px) {
   .post-request-container {
-    margin-top: 90px auto; 
+    margin-top: 90px auto;
     margin: 70px auto;
-    max-width: 80%; 
+    max-width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .ask-for-help {
-    
     margin: 0.625rem; /* 10px */
     max-width: 100%; /* 300px */
   }
@@ -150,7 +148,7 @@
   }
 }
 
-/* // new code goes here */
+/* new code goes here */
 
 @media (min-width: 901px) {
   .post-request-container {
@@ -176,21 +174,18 @@
 /* @media (min-width: 901px) {
   .post-request-container {
       margin: 90px auto; /* Keep the same margin as 900px */
-     /* max-width: 600px; /* 720px */
-   /* }
+/* max-width: 600px; /* 720px */
+/* }
     }*/
 
-  .ask-for-help {
-    
-    margin: 0.625rem; /* 10px */
-    max-width: 30rem; /* 300px */
-  } */
+.ask-for-help {
+  margin: 0.625rem; /* 10px */
+  max-width: 30rem; /* 300px */
+}
+.ask-for-help-input {
+  width: 9.375rem; /* 150px */
+}
 
-  .ask-for-help-input {
-    width: 9.375rem; /* 150px */
-  }
-
-  #ask-for-help-description {
-    width: 9.375rem; /* 150px */
-  }
-
+#ask-for-help-description {
+  width: 9.375rem; /* 150px */
+}
