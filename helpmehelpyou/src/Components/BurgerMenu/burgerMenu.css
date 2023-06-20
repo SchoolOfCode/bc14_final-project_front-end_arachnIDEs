@@ -38,12 +38,14 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
   margin-bottom: 5px;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 .login-button:hover {
   background-color: #4563e7;
@@ -62,11 +64,13 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 .register-button:hover {
   background-color: #9ee795;
