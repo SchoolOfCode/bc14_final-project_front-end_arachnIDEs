@@ -246,12 +246,10 @@ No profile picture in DB yet
   margin: auto;
 }
 
-
 /* Carousel Styling */
 .give-help-card-container {
   display: flex;
-  margin-right: 30%;
-  margin-left: 15%;
+  margin: auto;
   overflow: hidden;
 }
 
@@ -335,7 +333,6 @@ No profile picture in DB yet
 .selected-card {
   background-color: #5d8fc8;
 }
-
 
 /* FIND HELP SECTION */
 /* Profile img and rating section */
