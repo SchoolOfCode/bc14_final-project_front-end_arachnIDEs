@@ -219,7 +219,9 @@ export default function PostRequest() {
                 <option value="Local shopping 🛍️">Local Shopping</option>
                 <option value="Moving house 🏠">Moving House</option>
                 <option value="Disability Help ♿️">Disability Help</option>
-                <option value="Transporting items 🚚">Transporting Items</option>
+                <option value="Transporting items 🚚">
+                  Transporting Items
+                </option>
               </optgroup>
               <optgroup label="Other">
                 <option value="Just a cup of tea 🫖">Just a cup of tea</option>
@@ -315,13 +317,16 @@ export default function PostRequest() {
           {/* <p>Tick all that apply...</p> */}
           {/* Checkboxes - urgent request & skills offered */}
           <div className="ask-for-help-div">
-            <label className="ask-for-help-label">
+            <label
+              className="ask-for-help-label"
+              id="urgent-request-checkbox-label"
+            >
               <input
                 type="checkbox"
                 id="urgent-request"
                 name="urgent-request"
                 onChange={handleUrgentChange}
-              ></input>{" "}
+              ></input>
               My request is urgent
             </label>
           </div>
@@ -347,22 +352,27 @@ export default function PostRequest() {
               />
             </div>
           )}
-          <label className="ask-for-help-label">
-            <input
-              id="offer-something-checkbox"
-              type="checkbox"
-              onChange={handleOfferChange}
-              checked={offer}
-            ></input>{" "}
-            I can offer something in return
-          </label>
+          <div className="ask-for-help-div">
+            <label
+              className="ask-for-help-label"
+              id="offer-something-checkbox-label"
+            >
+              <input
+                id="offer-something-checkbox"
+                type="checkbox"
+                onChange={handleOfferChange}
+                checked={offer}
+              ></input>
+              I can offer something in return
+            </label>
+          </div>
           {/* Skills Offered dropdown */}
           {offer && (
             <div className="ask-for-help-div">
               <label className="ask-for-help-label" htmlFor="categories">
                 Category
               </label>
-             
+
               <select
                 required
                 className="ask-for-help-input"
@@ -416,10 +426,14 @@ export default function PostRequest() {
                   <option value="Local shopping 🛍️">Local Shopping</option>
                   <option value="Moving house 🏠">Moving House</option>
                   <option value="Disability Help ♿️">Disability Help</option>
-                  <option value="Transporting items 🚚">Transporting Items</option>
+                  <option value="Transporting items 🚚">
+                    Transporting Items
+                  </option>
                 </optgroup>
                 <optgroup label="Other">
-                  <option value="Just a cup of tea 🫖">Just a cup of tea</option>
+                  <option value="Just a cup of tea 🫖">
+                    Just a cup of tea
+                  </option>
                 </optgroup>
               </select>
             </div>
