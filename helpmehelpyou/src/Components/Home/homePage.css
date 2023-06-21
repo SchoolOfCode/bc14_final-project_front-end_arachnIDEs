@@ -55,7 +55,7 @@
 }
 
 .button-container {
-  width: 90%;
+  width: 60%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -293,12 +293,13 @@
   background-color: #92d18f;
   color: black;
   font-size: 20px;
+  width: 108px;
 }
 
 #find-help-button:hover {
   background-color: #4563e7;
   color: white;
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 #give-help-button {
@@ -310,7 +311,7 @@
 #give-help-button:hover {
   background-color: #92d18f;
   color: black;
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 .home-page-map {
