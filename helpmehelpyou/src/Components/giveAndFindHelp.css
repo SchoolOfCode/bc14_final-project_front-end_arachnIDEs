@@ -44,6 +44,7 @@
 }
 
 .give-and-find-help-search-box {
+
   border-radius: 12px;
   width: 45%;
   height: 30px;
@@ -118,7 +119,7 @@
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: #000000 2px 2px 0 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   min-height: 40px;
   margin-left: 10px;
@@ -126,6 +127,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
 .give-and-find-help-contact-user:hover {
   background-color: #4563e7;
@@ -139,7 +141,7 @@
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: #000000 2px 2px 0 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   min-height: 40px;
   margin-left: 10px;
@@ -147,6 +149,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
 .give-and-find-help-visit-profile:hover {
   background-color: #4563e7;
@@ -173,11 +176,10 @@
 /* Contact user button */
 .give-and-find-help-user-contact {
   display: flex;
-  flex-direction: row;
+  flex: 1;
   justify-content: space-around;
-  /* padding-bottom: 30px; */
+  justify-self: flex-end;
   font-weight: bolder;
-  margin-bottom: 0px;
 }
 
 /* Loading gif */
@@ -210,7 +212,7 @@
 }
 */
 
-/* THIS IS CURRENTLY NOT BEING USED - SEE giveHelp.js file
+/* THIS IS CURRENTLY NOT BEING USED - SEE give-help.js file
 .give-help-user-info {
     margin-left: 40px;
     margin-right: 10px;
@@ -247,7 +249,7 @@ No profile picture in DB yet
 
 /* FIND HELP SECTION */
 /* Profile img and rating section */
-.findhelp-user-img-and-rating {
+.find-help-user-img-and-rating {
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
@@ -271,12 +273,13 @@ No profile picture in DB yet
   border-radius: 50px;
 }
 
-.givehelp-card-container {
+
+
+.give-help-card-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-right: 30%;
+  margin-left: 15%;
   overflow: hidden;
-  position: relative;
 }
 
 .givehelp-card {
@@ -307,7 +310,7 @@ No profile picture in DB yet
   font-size: 10pt;
 }
 
-.givehelp-card.active {
+.give-help-card.active {
   background-color: #64a7e5;
   color: black;
 }
@@ -326,7 +329,7 @@ No profile picture in DB yet
   transform: translateY(-50%);
 }
 
-.givehelp-right-arrow {
+.give-help-right-arrow {
   background-color: transparent;
   border: none;
   font-size: 20pt;
@@ -336,13 +339,13 @@ No profile picture in DB yet
   transform: translateY(-50%);
 }
 
-.givehelp-dots {
+.give-help-dots {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
 }
 
-.givehelp-dot {
+.give-help-dot {
   display: block;
   width: 8px;
   height: 8px;
@@ -352,7 +355,7 @@ No profile picture in DB yet
   cursor: pointer;
 }
 
-.givehelp-dot.active {
+.give-help-dot.active {
   background-color: #333;
 }
 

@@ -4,7 +4,7 @@ import image from "./givehelp-image.png";
 // import dummyData from "./DummyData";
 import { Link } from "react-router-dom";
 
-// Create skeleton code for GiveHelp page.
+// Create skeleton code for give-help page.
 // A list of all listings to render by default.
 // State to store data (i.e. all listings)
 // Users to be able to search for listings with keywords and category filter
@@ -23,7 +23,7 @@ export default function GiveHelp() {
   const [selectedBorough, setSelectedBorough] = useState(null);
   const [userInput, setUserInput] = useState("");
   const [listings, setListings] = useState([]);
-  const [filteredListings, setfilteredListings] = useState([]);
+  const [filteredListings, setFilteredListings] = useState([]);
 
   const cards = [
     //   {
@@ -135,23 +135,22 @@ export default function GiveHelp() {
   function boroughFilter(card) {
     setSelectedCard(card.id);
     setSelectedBorough(card.borough);
-    // the below if statement sets the following code block to only run if something has been searched
-    // it filters through the selected borough and then by the user input again, and displays the results
-    if (found !== false) {
-      const filteredBoroughArray = filteredListings.filter((item) => {
+    // set the following code block to only run if something has been searched
+    if (userInput !== "") {
+      let filteredBoroughArray = filteredListings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
-      const filteredSearchthenBorough = filteredBoroughArray.filter((item) => {
-        return item.listing_title.includes(userInput);
-      });
-      setfilteredListings(filteredSearchthenBorough);
-    } else {
-      // else just filters by borough without any search input
-      const boroughArray = listings.filter((item) => {
+      setFilteredListings(filteredBoroughArray);
+    } else if (userInput === "" && !selectedBorough) {
+      let boroughArray = listings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
-      setfilteredListings(boroughArray);
-      setSelectedBorough(card.borough);
+      setFilteredListings(boroughArray);
+    } else if (userInput === "" && selectedBorough) {
+      let boroughArray = listings.filter((item) => {
+        return item.borough_name.includes(card.borough);
+      });
+      setFilteredListings(boroughArray);
     }
   }
 
@@ -166,7 +165,7 @@ export default function GiveHelp() {
   //     }
   //   });
   //   console.log(newArray);
-  //   setfilteredListings(newArray);
+  //   setFilteredListings(newArray);
   // }
 
   // V2: Manually searching through select keys individually.
@@ -178,50 +177,61 @@ export default function GiveHelp() {
   //         item.listing_details.toLowerCase().includes(userInput.toLowerCase())
   //       );
   //     });
-  //     setfilteredListings(newArray);
+  //     setFilteredListings(newArray);
   //   }
   // }
-  
-     // If listings is populated...
- 
 
-// V3: using a for...in loop to search through all keys where value is of type string.
-function filterListings() {
-  // the below if statement runs if the search is conducted after a borough has already been selected
-  if (listings && listings.length > 0 && selectedBorough !== null) {
-    const newArray = listings.filter((item) => {
-      for (let key in item) {
-        // First, check if the type of the value at position key is string...
-        if (typeof item[key] === "string") {
-          // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-          if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
-            found = true;
+  // If listings is populated...
+
+  // V3: using a for...in loop to search through all keys where value is of type string.
+  function filterListings() {
+    // the below if statement runs if the search is conducted after a borough has already been selected
+    if (listings && listings.length > 0 && selectedBorough) {
+      let newArray = filteredListings.filter((item) => {
+        for (let key in item) {
+          // First, check if the type of the value at position key is string...
+          if (typeof item[key] === "string") {
+            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+            return item[key].toLowerCase().includes(userInput.toLowerCase());
           }
-          let filteredbyBoroughthenSearch = newArray.filter((item) => {
-            return item.borough_name.includes(selectedBorough);
-          });
-          setfilteredListings(filteredbyBoroughthenSearch)
         }
-      }
-      return found;
+        return newArray;
+      });
+      let filteredByBoroughThenSearch = newArray.filter((item) => {
+        return item.borough_name.includes(selectedBorough);
+      });
+      setFilteredListings(filteredByBoroughThenSearch);
     }
-    );
-  }
-  // otherwise performs search as normal
-  else if (listings && listings.length > 0) {
-    let newArray = listings.filter((item) => {
-      for (let key in item) {
-        // First, check if the type of the value at position key is string...
-        if (typeof item[key] === "string") {
-          // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-          if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
-            found = true;
-            break;
+    // otherwise performs search as normal
+    else if (listings && listings.length > 0) {
+      let newArray = listings.filter((item) => {
+        for (let key in item) {
+          // First, check if the type of the value at position key is string...
+          if (typeof item[key] === "string") {
+            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+            if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
+              found = true;
+              break;
+            }
           }
-        }}
-        return found;});
-    setfilteredListings(newArray);}
-}
+        }
+        return found;
+      });
+      setFilteredListings(newArray);
+    } else if (filteredListings && filteredListings.length >= 0) {
+      let newArray = filteredListings.filter((item) => {
+        for (let key in item) {
+          // First, check if the type of the value at position key is string...
+          if (typeof item[key] === "string") {
+            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+            return item[key].toLowerCase().includes(userInput.toLowerCase());
+          }
+        }
+        setFilteredListings(newArray);
+        return newArray;
+      });
+    }
+  }
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -253,7 +263,7 @@ function filterListings() {
   /*renders:
 Header
 Nav Bar
-GiveHelpSearch - searchInput (input box) & searchBtn (button)
+give-helpSearch - searchInput (input box) & searchBtn (button)
 Listing - <h1> for title / summary
 <p> for details
 <img> for profile picture
@@ -283,31 +293,31 @@ Listing - <h1> for title / summary
           Search
         </button>
       </section>
-      <section id="give-help-post-request-link-from-givehelp">
+      <section id="give-help-post-request-link-from-give-help">
         <p className="give-help-post-request">
           Need help? <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
       <h3 className="category-title">Browse by borough:</h3>
       <div className="carousel">
-        <div className="givehelp-card-container">
-          <button className="givehelp-left-arrow" onClick={handlePrev}>
+        <div className="give-help-card-container">
+          <button className="give-help-left-arrow" onClick={handlePrev}>
             ←
           </button>
           {cards.slice(activeIndex, activeIndex + 3).map((card) => (
             <div
-              className={`givehelp-card ${
+              className={`give-help-card ${
                 card.id === selectedCard ? "selected-card" : ""
               }`}
               key={card.id}
               onClick={() => boroughFilter(card)}
             >
-              <div className="givehelp-card-contents">
+              <div className="give-help-card-contents">
                 <p>{card.borough}</p>
               </div>
             </div>
           ))}
-          <button className="givehelp-right-arrow" onClick={handleNext}>
+          <button className="give-help-right-arrow" onClick={handleNext}>
             →
           </button>
         </div>
@@ -493,4 +503,6 @@ Listing - <h1> for title / summary
           ))
         )}
       </section>
-    </div> )}
+    </div>
+  );
+}
