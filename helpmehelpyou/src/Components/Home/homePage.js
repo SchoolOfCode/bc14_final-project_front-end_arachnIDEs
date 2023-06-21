@@ -15,7 +15,7 @@ export default function HomePage() {
   const cards = [
     {
       id: 1,
-      title: "LOUISE...",
+      title: "  LOUISE...",
       borough: "Brent",
       need: "I need to learn how to swim",
       offer: "I can teach you how to play the guitar",
@@ -23,7 +23,7 @@ export default function HomePage() {
     },
     {
       id: 2,
-      title: "MAX...",
+      title: "  MAX...",
       borough: "Croydon",
       need: "I need help tending to my garden",
       offer: "I can help you move house",
@@ -31,7 +31,7 @@ export default function HomePage() {
     },
     {
       id: 3,
-      title: "STEVE...",
+      title: "  STEVE...",
       borough: "Ealing",
       need: "I need help with my CV",
       offer: "I can teach you how to cook some delicious Filipino food",
@@ -39,7 +39,7 @@ export default function HomePage() {
     },
     {
       id: 4,
-      title: "AMY...",
+      title: "  AMY...",
       borough: "Harrow",
       need: "I need help with caring for my cat",
       offer: "I can help you by offering a free haircut",
@@ -61,12 +61,17 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
+    <div className= "media-section">
+    <div className= "logo-and-image">
       <img className="app-logo" src={logo} alt="logo"></img>
+      <br></br>
       <img
         className="home-image"
         src={image}
         alt="cartoon person showing someone how to do something"
       ></img>
+      </div>
+      <div className = "intro-and-buttons">
       <h3 className="intro-text">
         Connect with your local community to give and receive favours, skills,
         and support. <br></br>
@@ -84,6 +89,8 @@ export default function HomePage() {
             Get Help
           </button>
         </Link>
+        </div>
+      </div>
       </div>
       <div className="about">
         <h2 className="about-title">How it works...</h2>
@@ -118,10 +125,7 @@ export default function HomePage() {
         </button>
         <div className="card">
         <div className= "meet-title-container">
-        <h2 className="meet">MEET</h2>
-          <h2 className="profile-title">
-           {`` + cards[activeIndex].title}
-          </h2> </div>
+        <h2 className="person"><span>MEET</span>{cards[activeIndex].title} </h2></div>
           <div className="card-contents-container">
             <div className="card-contents">
           <h3 className= "location">{"Location: " + cards[activeIndex].borough}</h3>
