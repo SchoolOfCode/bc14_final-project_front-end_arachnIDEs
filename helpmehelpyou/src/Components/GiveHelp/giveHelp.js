@@ -127,25 +127,25 @@ export default function GiveHelp() {
     );
   };
 
-  function categoryFilter(card) {
+  function boroughFilter(card) {
     setSelectedCard(card.id);
     setSelectedBorough(card.borough);
-    // set the following code block to only run if something has been searched
+    // the below if statement sets the following code block to only run if something has been searched
+    // it filters through the selected borough and then by the user input again, and displays the results
     if (userInput !== "") {
-      const filteredCategoryArray = filteredListings.filter((item) => {
+      const filteredBoroughArray = filteredListings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
-      // filters through the selected borough by the user input again
-      const filteredSearchandBorough = filteredCategoryArray.filter((item) => {
+      const filteredSearchthenBorough = filteredBoroughArray.filter((item) => {
         return item.listing_title.includes(userInput);
       });
-      setfilteredListings(filteredSearchandBorough);
+      setfilteredListings(filteredSearchthenBorough);
     } else {
-      // else just filters by borough
-      const categoryArray = listings.filter((item) => {
+      // else just filters by borough without any search input
+      const boroughArray = listings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
-      setfilteredListings(categoryArray);
+      setfilteredListings(boroughArray);
       setSelectedBorough(card.borough);
     }
   }
@@ -169,15 +169,15 @@ export default function GiveHelp() {
   // }
 
   function filterListings() {
-    // tells if to do this if the search is conducted after a borough has been selected
+    // the below if statement runs if the search is conducted after a borough has already been selected
     if (listings && listings.length > 0 && selectedBorough !== null) {
       newArray = listings.filter((item) => {
         return item.listing_title.includes(userInput);
       });
-      let filteredbyBoroughandSearch = newArray.filter((item) => {
+      let filteredbyBoroughthenSearch = newArray.filter((item) => {
         return item.borough_name.includes(selectedBorough);
       });
-      setfilteredListings(filteredbyBoroughandSearch);
+      setfilteredListings(filteredbyBoroughthenSearch);
     }
     // otherwise performs search as normal
     else if (listings && listings.length > 0) {
@@ -266,7 +266,7 @@ Listing - <h1> for title / summary
                 card.id === selectedCard ? "selected-card" : ""
               }`}
               key={card.id}
-              onClick={() => categoryFilter(card)}
+              onClick={() => boroughFilter(card)}
             >
               <div className="givehelp-card-contents">
                 <p>{card.borough}</p>
