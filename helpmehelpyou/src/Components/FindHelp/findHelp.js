@@ -108,7 +108,7 @@ const helperCards = [
               key={card.id}
             >
               <div className="give-help-card-contents">
-                <p>{helperCards.borough}</p>
+                <p>{card.borough}</p>
               </div>
             </div>
           ))} 
