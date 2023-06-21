@@ -17,6 +17,139 @@ import { Link } from "react-router-dom";
 // If the search box is empty and the button is clicked, then show the full listings array.
 
 export default function GiveHelp() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const [selectedBorough, setSelectedBorough] = useState(null);
+  let newArray = [];
+  const cards = [
+    //   {
+    //     id: 1,
+    //     category: "All",
+    //   },
+    //   {
+    //     id: 2,
+    //     category: "Household",
+    //   },
+    //   {
+    //     id: 3,
+    //     category: "Tutoring",
+    //   },
+    //   {
+    //     id: 4,
+    //     category: "Sport & Leisure",
+    //   },
+    //   {
+    //     id: 5,
+    //     category: "Professional",
+    //   },
+    //   {
+    //     id: 6,
+    //     category: "Mobility",
+    //   },
+    //   {
+    //     id: 7,
+    //     category: "French",
+    //   },
+    //   {
+    //     id: 8,
+    //     category: "Cleaning",
+    //   },
+    //   {
+    //     id: 9,
+    //     category: "German",
+    //   },
+    //   {
+    //     id: 10,
+    //     category: "Legal advice",
+    //   },
+    //   {
+    //     id: 11,
+    //     category: "Mandarin",
+    //   },
+    //   {
+    //     id: 12,
+    //     category: "Gardening",
+    //   },
+    //   {
+    //     id: 13,
+    //     category: "Piano Lessons",
+    //   },
+    //   {
+    //     id: 14,
+    //     category: "Other",
+    //   },
+    // ];
+    { id: 0.5, borough: "All" },
+    { id: 0, borough: "Barking and Dagenham" },
+    { id: 1, borough: "Barnet" },
+    { id: 2, borough: "Bexley" },
+    { id: 3, borough: "Brent" },
+    { id: 4, borough: "Bromley" },
+    { id: 5, borough: "Camden" },
+    { id: 6, borough: "Croydon" },
+    { id: 7, borough: "Ealing" },
+    { id: 8, borough: "Enfield" },
+    { id: 9, borough: "Greenwich" },
+    { id: 10, borough: "Hackney" },
+    { id: 11, borough: "Hammersmith and Fulham" },
+    { id: 12, borough: "Haringey" },
+    { id: 13, borough: "Harrow" },
+    { id: 14, borough: "Havering" },
+    { id: 15, borough: "Hillingdon" },
+    { id: 16, borough: "Hounslow" },
+    { id: 17, borough: "Islington" },
+    { id: 18, borough: "Kensington and Chelsea" },
+    { id: 19, borough: "Kingston upon Thames" },
+    { id: 20, borough: "Lambeth" },
+    { id: 21, borough: "Lewisham" },
+    { id: 22, borough: "Merton" },
+    { id: 23, borough: "Newham" },
+    { id: 24, borough: "Redbridge" },
+    { id: 25, borough: "Richmond upon Thames" },
+    { id: 26, borough: "Southwark" },
+    { id: 27, borough: "Sutton" },
+    { id: 28, borough: "Tower Hamlets" },
+    { id: 29, borough: "Waltham Forest" },
+    { id: 30, borough: "Wandsworth" },
+    { id: 31, borough: "Westminster" },
+  ];
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? cards.length - 3 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === cards.length - 3 ? 0 : prevIndex + 1
+    );
+  };
+
+  function boroughFilter(card) {
+    setSelectedCard(card.id);
+    setSelectedBorough(card.borough);
+    // the below if statement sets the following code block to only run if something has been searched
+    // it filters through the selected borough and then by the user input again, and displays the results
+    if (userInput !== "") {
+      const filteredBoroughArray = filteredListings.filter((item) => {
+        return item.borough_name.includes(card.borough);
+      });
+      const filteredSearchthenBorough = filteredBoroughArray.filter((item) => {
+        return item.listing_title.includes(userInput);
+      });
+      setfilteredListings(filteredSearchthenBorough);
+    } else {
+      // else just filters by borough without any search input
+      const boroughArray = listings.filter((item) => {
+        return item.borough_name.includes(card.borough);
+      });
+      setfilteredListings(boroughArray);
+      setSelectedBorough(card.borough);
+    }
+  }
+
   // state goes here
   const [userInput, setUserInput] = useState("");
   const [listings, setListings] = useState([]);
@@ -48,11 +181,24 @@ export default function GiveHelp() {
   //     setfilteredListings(newArray);
   //   }
   // }
+  
+     // If listings is populated...
+ 
 
   // V3: using a for...in loop to search through all keys where value is of type string.
   function filterListings() {
-    // If listings is populated...
-    if (listings && listings.length > 0) {
+    // the below if statement runs if the search is conducted after a borough has already been selected
+    if (listings && listings.length > 0 && selectedBorough !== null) {
+      newArray = listings.filter((item) => {
+        return item.listing_title.includes(userInput);
+      });
+      let filteredbyBoroughthenSearch = newArray.filter((item) => {
+        return item.borough_name.includes(selectedBorough);
+      });
+      setfilteredListings(filteredbyBoroughthenSearch);
+    }
+    // otherwise performs search as normal
+     else if (listings && listings.length > 0) {
       const newArray = listings.filter((item) => {
         let found = false;
         for (let key in item) {
@@ -69,10 +215,7 @@ export default function GiveHelp() {
           }
         }
         return found;
-      });
-      setfilteredListings(newArray);
-    }
-  }
+    
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -139,6 +282,30 @@ Listing - <h1> for title / summary
           Need help? <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
+      <h3 className="category-title">Browse by borough:</h3>
+      <div className="carousel">
+        <div className="givehelp-card-container">
+          <button className="givehelp-left-arrow" onClick={handlePrev}>
+            ←
+          </button>
+          {cards.slice(activeIndex, activeIndex + 3).map((card) => (
+            <div
+              className={`givehelp-card ${
+                card.id === selectedCard ? "selected-card" : ""
+              }`}
+              key={card.id}
+              onClick={() => boroughFilter(card)}
+            >
+              <div className="givehelp-card-contents">
+                <p>{card.borough}</p>
+              </div>
+            </div>
+          ))}
+          <button className="givehelp-right-arrow" onClick={handleNext}>
+            →
+          </button>
+        </div>
+      </div>
       <h3 className="give-and-find-help-listings-area-title">
         Recent listings
       </h3>
