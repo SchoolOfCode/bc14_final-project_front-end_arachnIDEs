@@ -19,12 +19,21 @@ import { Link } from "react-router-dom";
 export default function GiveHelp() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
-
   const [selectedBorough, setSelectedBorough] = useState(null);
   const [userInput, setUserInput] = useState("");
   const [listings, setListings] = useState([]);
   const [filteredListings, setFilteredListings] = useState([]);
+  const [allSelected, setAllSelected] = useState(null);
 
+  useEffect(() => {
+    setNoListings(filteredListings.length === 0);
+  }, [filteredListings]);
+
+  useEffect(() => {
+    setAllSelected(selectedCard === 0.5);
+  }, [selectedCard]);
+
+  let [noListings, setNoListings] = useState(null);
   const cards = [
     //   {
     //     id: 1,
@@ -84,7 +93,7 @@ export default function GiveHelp() {
     //   },
     // ];
     { id: 0.5, borough: "All" },
-    { id: 0, borough: "Barking and Dagenham" },
+    { id: 0.75, borough: "Barking and Dagenham" },
     { id: 1, borough: "Barnet" },
     { id: 2, borough: "Bexley" },
     { id: 3, borough: "Brent" },
@@ -134,6 +143,12 @@ export default function GiveHelp() {
 
   function boroughFilter(card) {
     setSelectedCard(card.id);
+    if (selectedCard === 0.5) {
+      setAllSelected(true);
+    }
+    if (selectedCard !== 0.5) {
+      setAllSelected(false);
+    }
     setSelectedBorough(card.borough);
     // set the following code block to only run if something has been searched
     if (userInput !== "") {
@@ -141,16 +156,31 @@ export default function GiveHelp() {
         return item.borough_name.includes(card.borough);
       });
       setFilteredListings(filteredBoroughArray);
+      if (filteredListings.length === 0) {
+        setNoListings(true);
+      } else if (filteredListings.length > 0) {
+        setNoListings(null);
+      }
     } else if (userInput === "" && !selectedBorough) {
       let boroughArray = listings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredListings(boroughArray);
+      if (filteredListings.length === 0) {
+        setNoListings(true);
+      } else if (filteredListings.length > 0) {
+        setNoListings(null);
+      }
     } else if (userInput === "" && selectedBorough) {
       let boroughArray = listings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredListings(boroughArray);
+      if (filteredListings.length === 0) {
+        setNoListings(true);
+      } else if (filteredListings.length > 0) {
+        setNoListings(null);
+      }
     }
   }
 
@@ -201,6 +231,11 @@ export default function GiveHelp() {
         return item.borough_name.includes(selectedBorough);
       });
       setFilteredListings(filteredByBoroughThenSearch);
+      if (filteredListings.length === 0) {
+        setNoListings(true);
+      } else if (filteredListings.length > 0) {
+        setNoListings(null);
+      }
     }
     // otherwise performs search as normal
     else if (listings && listings.length > 0) {
@@ -218,6 +253,11 @@ export default function GiveHelp() {
         return found;
       });
       setFilteredListings(newArray);
+      if (filteredListings.length === 0) {
+        setNoListings(true);
+      } else if (filteredListings.length > 0) {
+        setNoListings(null);
+      }
     } else if (filteredListings && filteredListings.length >= 0) {
       let newArray = filteredListings.filter((item) => {
         for (let key in item) {
@@ -228,17 +268,17 @@ export default function GiveHelp() {
           }
         }
         setFilteredListings(newArray);
+        if (filteredListings.length === 0) {
+          setNoListings(true);
+        } else if (filteredListings.length > 0) {
+          setNoListings(null);
+        }
         return newArray;
       });
     }
   }
 
-  // functions: saving input from input box, click on button in listing to get email address of user.
-  function storeInput(event) {
-    setUserInput(event.target.value);
-    console.log(userInput);
-  }
-
+  // alert the user of the email address of the user who posted the listing
   function contactUser(email) {
     // Display email address of user
     alert(`Here's the email address: ${email}`);
@@ -250,15 +290,26 @@ export default function GiveHelp() {
       "https://arachnides-backend.onrender.com/api/listings"
     );
     const data = await res.json();
-    const dummyData = data.payload;
-    console.log(dummyData);
-    setListings(dummyData);
+    const payload = data.payload;
+    // console.log(payload);
+    setListings(payload);
   }
 
   // Fetch listings before rendering
   useEffect(() => {
     fetchAllListings();
   }, []);
+
+  // Function to clear the filter and reset the page back to all listings
+  function clearFilter() {
+    setFilteredListings([]);
+    setNoListings(null);
+    setUserInput("");
+  }
+
+  function clearInput() {
+    setUserInput("");
+  }
 
   /*renders:
 Header
@@ -283,14 +334,28 @@ Listing - <h1> for title / summary
       <section id="give-and-find-help-search-section">
         <input
           type="text"
-          onChange={storeInput}
+          value={userInput}
+          onChange={(event) => setUserInput(event.target.value)}
           className="give-and-find-help-search-box"
         ></input>
         <button
           className="give-and-find-help-search-button"
-          onClick={filterListings}
+          onClick={() => {
+            filterListings();
+            clearInput("");
+          }}
         >
           Search
+        </button>
+        {/* Button to clear filter and reset the page */}
+        <button
+          className="give-and-find-help-search-button"
+          onClick={() => {
+            clearFilter();
+            clearInput("");
+          }}
+        >
+          Clear
         </button>
       </section>
       <section id="give-help-post-request-link-from-give-help">
@@ -322,8 +387,11 @@ Listing - <h1> for title / summary
           </button>
         </div>
       </div>
+      {noListings && !allSelected && selectedCard && (
+        <h2>No results found in {selectedBorough}</h2>
+      )}
       <h3 className="give-and-find-help-listings-area-title">
-        Recent listings
+        All recently listings:
       </h3>
       {/* Recent listings fetched from DB */}
       <section className="give-and-find-help-listings-area">
@@ -477,6 +545,7 @@ Listing - <h1> for title / summary
               </div>
               {/* This div isn't being used at the moment and was messing up the alignment of the box!
                When an image is added - this div can be added again. 
+              {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">
                 {/* There is no image in the DB at the moment 

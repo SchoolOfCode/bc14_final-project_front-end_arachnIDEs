@@ -90,7 +90,6 @@
   flex-basis: 30%;
   font-size: 1.2rem;
   justify-content: center;
-  /* align-self: center; */
   background-color: #7db8fa;
   max-width: 350px;
   height: auto;
@@ -158,8 +157,10 @@
 /* Div to style the subheading and info */
 .give-and-find-help-info-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-left: 19px;
+  margin-right: 14px;
 }
 
 /* Styling for subheadings within the listings */
@@ -341,6 +342,17 @@ No profile picture in DB yet
 }
 
 /* FIND HELP SECTION */
+
+.find-help-card-container {
+  display: flex;
+  margin: auto;
+  overflow: hidden;
+}
+
+.find-help-carousel {
+  display: inline-flex;
+  padding-left: 0px;
+}
 /* Profile img and rating section */
 .find-help-user-img-and-rating {
   margin-left: 10px;
@@ -365,3 +377,7 @@ No profile picture in DB yet
   min-width: 60px;
   border-radius: 50px;
 }
+
+.find-help-card-container {display: flex;
+  align-items: center;
+flex-direction: row;}
