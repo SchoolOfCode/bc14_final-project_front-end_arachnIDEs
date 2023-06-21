@@ -117,7 +117,7 @@
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: #000000 2px 2px 0 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   min-height: 40px;
   margin-left: 10px;
@@ -125,6 +125,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
 .give-and-find-help-contact-user:hover {
   background-color: #4563e7;
@@ -138,7 +139,7 @@
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: #000000 2px 2px 0 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bolder;
   min-height: 40px;
   margin-left: 10px;
@@ -146,6 +147,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  align-self: flex-end;
 }
 .give-and-find-help-visit-profile:hover {
   background-color: #4563e7;
@@ -172,11 +174,10 @@
 /* Contact user button */
 .give-and-find-help-user-contact {
   display: flex;
-  flex-direction: row;
+  flex: 1;
   justify-content: space-around;
-  /* padding-bottom: 30px; */
+  justify-self: flex-end;
   font-weight: bolder;
-  margin-bottom: 0px;
 }
 
 /* Loading gif */
