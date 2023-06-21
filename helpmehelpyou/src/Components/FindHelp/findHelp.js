@@ -93,16 +93,16 @@ const helperCards = [
           <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
-      <div className="find-help-carousel">
       <h3 className="category-title">Browse by borough:</h3>
+      <div className="find-help-carousel">
         <div className="find-help-card-container">
           <button className="give-help-left-arrow" onClick={handlePrev}>
             ←
           </button>
-          <div>
+          <div className="helperCards">
           {helperCards.slice(activeIndex, activeIndex + 3).map((card) => (
             <div
-              className={`give-help-card ${
+              className={`find-help-card ${
                 card.id === selectedCard ? "selected-card" : ""
               }`}
               key={card.id}
@@ -111,15 +111,13 @@ const helperCards = [
                 <p>{helperCards.borough}</p>
               </div>
             </div>
-          ))}
+          ))} 
+          </div> </div>
           <button className="give-help-right-arrow" onClick={handleNext}>
             →
-          </button>
-        </div>
-      </div>
-      {/* List of helpers */}
+          </button> </div>
+          <h3 className="give-and-find-help-listings-area-title">Helpers</h3>
       <section className="give-and-find-help-listings-area">
-      <h3 className="give-and-find-help-listings-area-title">Helpers</h3>
         {/* List of helpers TITLE */}
         {helperDummyData.map((listing) => (
           // Parent div for each new box
@@ -140,7 +138,7 @@ const helperCards = [
                 <p className="find-help-rating">{listing.rating}</p>
               </div>
               <div className="find-help-user-details-container">
-                <p className="give-and-find-help-display-name">
+                <p className="find-help-display-name">
                   {listing.display_name}
                 </p>
                 <p className="find-help-borough-name">{listing.borough_name}</p>
@@ -170,7 +168,7 @@ const helperCards = [
             </div>
           </div>
         ))}
-      </section>
-    </div> </div>
+        </section>
+    </div>
   );
 }

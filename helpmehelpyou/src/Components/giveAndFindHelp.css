@@ -343,16 +343,6 @@ No profile picture in DB yet
 
 /* FIND HELP SECTION */
 
-.find-help-card-container {
-  display: flex;
-  margin: auto;
-  overflow: hidden;
-}
-
-.find-help-carousel {
-  display: inline-flex;
-  padding-left: 0px;
-}
 /* Profile img and rating section */
 .find-help-user-img-and-rating {
   margin-left: 10px;
@@ -379,5 +369,51 @@ No profile picture in DB yet
 }
 
 .find-help-card-container {display: flex;
+margin: auto;
+overflow: hidden;
+}
+
+.find-help-carousel {
+  display:flex;
+  flex-direction: row;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.helperCards {display:flex;
+flex-direction: row;
+margin-top: 5%;
+margin-bottom: 5%;}
+
+.find-help-display-name {
+  font-size: 1.1rem;
+}
+
+/* Listing details */
+.find-help-about-me {
+  margin: 3%;
+  font-size: 1.1rem;
+}
+
+.find-help-card {
+  transition: background-color 0.3s ease;
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: #7db8fa;
+  color: rgb(0, 0, 0);
+  flex-direction: row;
   align-items: center;
-flex-direction: row;}
+  max-height: 85px;
+  max-width: 90px;
+  min-width: 90px;
+  min-height: 85px;
+  border-radius: 50px;
+  width: 33.33%;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  border: 2px solid #000000;
+  box-shadow: #2c2b2b 2px 2px 0 0;
+}
