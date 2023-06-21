@@ -117,6 +117,11 @@ export default function PostRequest() {
               }}
             ></input>
           </div>
+          {/* Log in and Register will need Link tags at some point! */}
+          <p className="centered-text small-text">
+            This will be visible as you are posting as a guest. Log in or
+            Register to hide your email address.
+          </p>
           {/* Display Name  should we specify character limit in display name*/}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Display Name*</label>
@@ -137,11 +142,6 @@ export default function PostRequest() {
               }}
             ></input>
           </div>
-          {/* Log in and Register will need Link tags at some point! */}
-          <p className="centered-text small-text">
-            This will be visible as you are posting as a guest. Log in or
-            Register to hide your email address.
-          </p>
           {/* Summary */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Summary*</label>
@@ -160,7 +160,7 @@ export default function PostRequest() {
                   // console.log(form)
                 );
               }}
-            ></input>{" "}
+            ></input>
           </div>
           {/* Category drop down */}
           <div className="ask-for-help-div">
@@ -366,7 +366,7 @@ export default function PostRequest() {
               <select
                 required
                 className="ask-for-help-input"
-                id="categoreis-skills-offered"
+                id="categories-skills-offered"
                 name="categories"
                 value={form.skills_offered}
                 onChange={(e) => {
