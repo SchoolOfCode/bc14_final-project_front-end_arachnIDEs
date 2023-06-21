@@ -172,13 +172,15 @@
     top: 60px;
     right: 0;
     flex-direction: column;
-    width: 20%;
+    /* width: fit-content; */
     background-color: #ffffff;
+    /* border: 1px solid black; */
   }
   .navigation-menu li {
     text-align: center;
     margin-left: auto;
     margin-right: 10px;
+    background-color: #78af72;
   }
   .navigation-menu li a {
     color: black;
@@ -189,11 +191,16 @@
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding: 5px;
-    /* border-radius: 30px;
-    margin: 5px; */
+    border-radius: 30px;
+    margin: 5px;
+    box-shadow: #000000 2px 2px 0 0;
   }
   .navigation-menu li:hover {
-    background-color: #78af72;
+    width: fit-content;
+    /* background-color: #78af72; */
+    background-color: #4563e7;
+    border-radius: 30px;
+   
   }
 }
 
