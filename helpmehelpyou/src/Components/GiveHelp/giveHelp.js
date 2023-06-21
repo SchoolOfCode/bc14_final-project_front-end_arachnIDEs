@@ -21,7 +21,10 @@ export default function GiveHelp() {
   const [selectedCard, setSelectedCard] = useState(null);
 
   const [selectedBorough, setSelectedBorough] = useState(null);
-  let newArray = [];
+  const [userInput, setUserInput] = useState("");
+  const [listings, setListings] = useState([]);
+  const [filteredListings, setfilteredListings] = useState([]);
+
   const cards = [
     //   {
     //     id: 1,
@@ -127,12 +130,14 @@ export default function GiveHelp() {
     );
   };
 
+  let found = false;
+
   function boroughFilter(card) {
     setSelectedCard(card.id);
     setSelectedBorough(card.borough);
     // the below if statement sets the following code block to only run if something has been searched
     // it filters through the selected borough and then by the user input again, and displays the results
-    if (userInput !== "") {
+    if (found !== false) {
       const filteredBoroughArray = filteredListings.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
@@ -149,11 +154,6 @@ export default function GiveHelp() {
       setSelectedBorough(card.borough);
     }
   }
-
-  // state goes here
-  const [userInput, setUserInput] = useState("");
-  const [listings, setListings] = useState([]);
-  const [filteredListings, setfilteredListings] = useState([]);
 
   // V1
   // function filterListings() {
@@ -185,37 +185,43 @@ export default function GiveHelp() {
      // If listings is populated...
  
 
-  // V3: using a for...in loop to search through all keys where value is of type string.
-  function filterListings() {
-    // the below if statement runs if the search is conducted after a borough has already been selected
-    if (listings && listings.length > 0 && selectedBorough !== null) {
-      newArray = listings.filter((item) => {
-        return item.listing_title.includes(userInput);
-      });
-      let filteredbyBoroughthenSearch = newArray.filter((item) => {
-        return item.borough_name.includes(selectedBorough);
-      });
-      setfilteredListings(filteredbyBoroughthenSearch);
-    }
-    // otherwise performs search as normal
-     else if (listings && listings.length > 0) {
-      const newArray = listings.filter((item) => {
-        let found = false;
-        for (let key in item) {
-          // First, check if the type of the value at position key is string...
-          if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-            if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
-              found = true;
-              break;
-            }
-          } else {
-            // if type of the value at position key is NOT string, continue to next key.
-            continue;
+// V3: using a for...in loop to search through all keys where value is of type string.
+function filterListings() {
+  // the below if statement runs if the search is conducted after a borough has already been selected
+  if (listings && listings.length > 0 && selectedBorough !== null) {
+    const newArray = listings.filter((item) => {
+      for (let key in item) {
+        // First, check if the type of the value at position key is string...
+        if (typeof item[key] === "string") {
+          // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+          if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
+            found = true;
           }
+          let filteredbyBoroughthenSearch = newArray.filter((item) => {
+            return item.borough_name.includes(selectedBorough);
+          });
+          setfilteredListings(filteredbyBoroughthenSearch)
         }
-        return found;
-    
+      }
+      return found;
+    }
+    );
+  }
+  // otherwise performs search as normal
+  else if (listings && listings.length > 0) {
+    let newArray = listings.filter((item) => {
+      for (let key in item) {
+        // First, check if the type of the value at position key is string...
+        if (typeof item[key] === "string") {
+          // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
+          if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
+            found = true;
+            break;
+          }
+        }}
+        return found;});
+    setfilteredListings(newArray);}
+}
 
   // functions: saving input from input box, click on button in listing to get email address of user.
   function storeInput(event) {
@@ -459,7 +465,8 @@ Listing - <h1> for title / summary
                   {listing.created_at.substring(0, 4)}
                 </p>
               </div>
-              {/* This div isn't being used at the moment and was messing up the alignment of the box! When an image is added - this div can be added again. 
+              {/* This div isn't being used at the moment and was messing up the alignment of the box!
+               When an image is added - this div can be added again. 
             <div className="give-help-user-info"> */}
               {/* <div className="give-help-image-container">
                 {/* There is no image in the DB at the moment 
@@ -486,6 +493,4 @@ Listing - <h1> for title / summary
           ))
         )}
       </section>
-    </div>
-  );
-}
+    </div> )}
