@@ -247,6 +247,12 @@ No profile picture in DB yet
 }
 
 /* Carousel Styling */
+
+.carousel {
+  display: inline-flex;
+  padding-left: 0px;
+}
+
 .give-help-card-container {
   display: flex;
   margin: auto;
@@ -294,7 +300,7 @@ No profile picture in DB yet
   background-color: transparent;
   border: none;
   font-size: 20pt;
-  margin-right: 30px;
+  margin-right: 10px;
   top: 50%;
   margin-top: 50px;
   transform: translateY(-50%);
@@ -304,7 +310,7 @@ No profile picture in DB yet
   background-color: transparent;
   border: none;
   font-size: 20pt;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-top: 50px;
   top: 50%;
   transform: translateY(-50%);
