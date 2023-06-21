@@ -44,7 +44,6 @@
 }
 
 .give-and-find-help-search-box {
-
   border-radius: 12px;
   width: 45%;
   height: 30px;
@@ -273,8 +272,6 @@ No profile picture in DB yet
   border-radius: 50px;
 }
 
-
-
 .give-help-card-container {
   display: flex;
   margin-right: 30%;
@@ -282,7 +279,7 @@ No profile picture in DB yet
   overflow: hidden;
 }
 
-.givehelp-card {
+.give-help-card {
   transition: background-color 0.3s ease;
   flex-grow: 1;
   flex-basis: 0;
@@ -304,7 +301,7 @@ No profile picture in DB yet
   box-shadow: #2c2b2b 2px 2px 0 0;
 }
 
-.givehelp-card-contents {
+.give-help-card-contents {
   margin-top: 30px;
   font-weight: bold;
   font-size: 10pt;
@@ -319,7 +316,7 @@ No profile picture in DB yet
   margin-bottom: 8px;
 }
 
-.givehelp-left-arrow {
+.give-help-left-arrow {
   background-color: transparent;
   border: none;
   font-size: 20pt;
