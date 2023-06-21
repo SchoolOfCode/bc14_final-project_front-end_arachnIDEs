@@ -35,17 +35,17 @@
 /* Search bar and button div */
 #give-and-find-help-search-section {
   display: flex;
-
+  width: 65%;
+  min-width: 300px;
   justify-content: center;
-
   margin-top: 20px;
   margin-bottom: 20px;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .give-and-find-help-search-box {
   border-radius: 12px;
-  width: 280px;
+  width: 45%;
   height: 30px;
   box-shadow: 0.5px 0.5px 5px 0.5px #9f9c9c;
   margin-right: 10px;
@@ -58,8 +58,9 @@
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: #000000 2px 2px 0 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bolder;
+  width: fit-content;
   min-height: 35px;
   margin-left: 10px;
   margin-right: 5px;
@@ -254,18 +255,21 @@ No profile picture in DB yet
   align-items: center;
 }
 
-.find-help-image-container {align-self: left;
+.find-help-image-container {
+  align-self: left;
   display: flex;
-flex-direction: column;
-justify-content: center;
-text-align: center;}
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
-
-.find-help-profile-picture {max-height: 60px;
+.find-help-profile-picture {
+  max-height: 60px;
   max-width: 60px;
   min-height: 60px;
   min-width: 60px;
-border-radius: 50px;}
+  border-radius: 50px;
+}
 
 .givehelp-card-container {
   display: flex;
@@ -274,7 +278,6 @@ border-radius: 50px;}
   overflow: hidden;
   position: relative;
 }
-
 
 .givehelp-card {
   transition: background-color 0.3s ease;
@@ -298,9 +301,11 @@ border-radius: 50px;}
   box-shadow: #2c2b2b 2px 2px 0 0;
 }
 
-.givehelp-card-contents {margin-top: 30px;
+.givehelp-card-contents {
+  margin-top: 30px;
   font-weight: bold;
-  font-size: 10pt;}
+  font-size: 10pt;
+}
 
 .givehelp-card.active {
   background-color: #64a7e5;
@@ -311,11 +316,11 @@ border-radius: 50px;}
   margin-bottom: 8px;
 }
 
-.givehelp-left-arrow{
+.givehelp-left-arrow {
   background-color: transparent;
   border: none;
   font-size: 20pt;
-margin-right: 30px;
+  margin-right: 30px;
   top: 50%;
   margin-top: 50px;
   transform: translateY(-50%);
