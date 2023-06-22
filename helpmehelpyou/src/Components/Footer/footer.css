@@ -1,14 +1,15 @@
 .footer {
-    left: 0;
-    top: 0;
-    width: 390px;
-    background-color: #0f15c2;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 10pt;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    margin-top: 100px;
-    text-transform: uppercase;}
+  left: 0;
+  top: 0;
+  /* width: 390px; */
+  background-color: #5271FF;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 10pt;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-top: 100px;
+  text-transform: uppercase;
+}

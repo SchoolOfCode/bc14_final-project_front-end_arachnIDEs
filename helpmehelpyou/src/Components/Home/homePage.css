@@ -1,52 +1,87 @@
-.home-page {margin-top: 100px;
-    display:flex;
-flex-direction: column;
-align-items: center;
-max-width: 390px;
-min-width: 390px;}
+.home-page {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* max-width: 390px;
+  min-width: 390px; */
+}
 
-.home-image {width: 200px;
-    align-self: center;
-    height: 180px;
-margin-right: 25px;}
+.logo-and-image {
+  width: 100%;
+  height: 100%;
+}
 
-.app-logo {height: 70px;
-    width: 140px;}
+.home-image {
+  max-width: 90%;
+  max-height: 30%;
+  margin-right: 5%;
+  width: 50%;
+  align-self: center;
+  margin-bottom: 25px;
+}
+
+.app-logo {
+  min-height: 50%;
+  min-width: 30%;
+  max-height: 50%;
+  max-width: 15%;
+  margin-top: 50px;
+}
+
+.media-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-and-buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-items: center;
+}
 
 .intro-text {
-    text-align: center;
-    max-width: 350px;
-    font-size: 16pt;
-    margin-top: 40px;}
+  text-align: center;
+  max-width: 80%;
+  margin-left: 10%;
+  font-size: 1.25rem;
+  margin-top: 5%;
+}
 
-    .button-container {
-      max-width: 350px;
-      display: inline-flex;
-;}
-
+.button-container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 .home-page-buttons {
-  /*background-color: #120EEA;*/
+  /* background-color: #120EEA; */
   border: 2px solid #000000;
   border-radius: 30px;
   box-shadow: #000000 4px 4px 0 0;
-  /*color: #ffffff;*/
+  /* color: #ffffff; */
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 50px;
+  font-size: 2rem;
+  line-height: 3rem;
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin: 30px;
+  margin: 10%;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
 .home-page-buttons:hover {
- /* background-color: #92d18f;*/
-  /*color: black;*/
+  /* background-color: #92d18f; */
+  /* color: black; */
   font-size: larger;
 }
 
@@ -55,85 +90,164 @@ margin-right: 25px;}
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 5000px) {
+@media (min-width: 700px) {
+  .logo-and-image {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .home-image {
+    margin-left: 10%;
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .intro-and-buttons {
+    margin-top: 0.5%;
+    margin-left: 1%;
+  }
+
+  .app-logo {
+    margin-top: 0;
+    margin-left: 40%;
+    max-width: 30%;
+    max-height: 30%;
+  }
+
+  .intro-text {
+    max-width: 80%;
+    text-align: left;
+    margin-top: 15%;
+    margin-right: 30%;
+    margin-left: 10px;
+  }
+
+  .button-container {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .profile-image {
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    margin: 30px;
+  }
+
+  .message-icon {
+    width: 50px;
+    height: 40px;
+    margin: 30px;
+    margin-bottom: 30px;
+  }
+
   .home-page-buttons {
-    min-width: 120px;
-    padding: 0 25px;
+    margin: 5%;
+  }
+
+  .map-container {
+    max-height: 20%;
+    max-width: 70%;
   }
 }
 
-.about {display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    max-width: 390px;
-    min-width: 350px;
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 80%;
 }
 
-.about-title {max-width: 200px;
-font-size: 18pt;
-font-weight: bold;
+.about-title {
+  max-width: 80%;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.about-info-list {font-size: 14pt;
+.about-info-list {
+  font-size: 1.25rem;
 }
 
-.card-contents-container {display: flex;
-  flex-direction: column;}
-
-.about-list-item {}
-
-.carousel {display: flex;
-    flex-direction: row;}
-
-.card { display : inline-block;
-    background-color: #e9c5c5;
-    text-align: center;
-    border-radius: 25px;
-   /* color: #000000;*/
-    box-shadow: #000000 4px 4px 0 0;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    min-width: 230px;
-    max-width: 230px;
-    min-height: 350px;
-    max-height: 350px;
+.card-contents-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
 }
 
-.right-arrow {height: 30px;
-    font-size: 20pt;
-    display: inline block;
-width: 30px;
-border: none;
-background-color: white;
-text-align: center;
-margin-top: 200px;
-margin-left: 10px
+/* .about-list-item {} */
+
+.carousel {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  padding-left: 15%;
+}
+
+.card {
+  display: inline-block;
+  background-color: #7db8fa;
+  text-align: center;
+  border-radius: 25px;
+  /* color: #000000;*/
+  box-shadow: #000000 4px 4px 0 0;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  width: 70%;
+  height: 5%;
+}
+
+.right-arrow {
+  height: 30px;
+  font-size: 20pt;
+  display: inline block;
+  width: 30px;
+  border: none;
+  background-color: white;
+  text-align: center;
+  margin-top: 200px;
+  margin-left: 10px;
 }
 
 .location {
-  font-size: 12pt;
+  font-size: 1rem;
 }
 
-.left-arrow {height: 30px;
-    font-size: 20pt;
-    display: inline block;
-width: 30px;
-border: none;
-background-color: white;
-text-align: center;
-margin-top: 200px;
-margin-right: 10px
+.left-arrow {
+  height: 30px;
+  font-size: 20pt;
+  display: inline block;
+  width: 30px;
+  border: none;
+  background-color: white;
+  text-align: center;
+  margin-top: 200px;
+  margin-right: 10px;
 }
 
-.profile-image {border-radius: 50px;
+.profile-image {
+  border-radius: 50px;
   width: 60px;
   height: 60px;
-  margin: 20px;}
-  
-  .message-icon { width: 50px;
-    height: 40px;
-    margin: 20px;}
+  margin: 20px;
+}
+
+.message-icon {
+  width: 50px;
+  height: 40px;
+  margin: 20px;
+  margin-bottom: 30px;
+}
 
 .card-contents {
   margin-left: 20px;
@@ -143,67 +257,80 @@ margin-right: 10px
   justify-self: center;
 }
 
-.profile-title{
-  margin-right: 20px;
-  color: #120EEA;
-  display: flex;  
+.meet-title-container {
+  display: flex;
+  word-spacing: 20px;
+  flex-direction: row;
+  text-align: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#meet {
+  color: black;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.meet {margin-left: 20px;}
+.person {
+  color: black;
+  text-align: center;
+}
 
-.meet-title-container {display: flex;
-flex-direction: row;
-text-align: center;
-justify-content: space-evenly;}
-
-.image-icon-container{
+.image-icon-container {
   display: inline;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
+  text-align: center;
+  padding-bottom: 5%;
 }
 
-#find-help-button {background-color: #92d18f;
+#find-help-button {
+  background-color: #92d18f;
   color: black;
   font-size: 20px;
-
+  font-family: "Aoboshi One", serif;
 }
 
-#find-help-button:hover {background-color: #120EEA;
+#find-help-button:hover {
+  background-color: #4563e7;
   color: white;
-  font-size: larger;  
+  font-size: larger;
 }
 
-#give-help-button {background-color: #120EEA;
-  color: white;;
-  font-size: 20px;  
+#give-help-button {
+  background-color: #4563e7;
+  color: white;
+  font-size: 20px;
+  font-family: "Aoboshi One", serif;
 }
 
-#give-help-button:hover {background-color: #92d18f;
+#give-help-button:hover {
+  background-color: #92d18f;
   color: black;
-  font-size: larger;  
+  font-size: larger;
 }
 
-.home-page-map {min-width: 350px;
+.home-page-map {
+  width: 70%;
+  height: 50%;
+  height: auto;
   border-radius: 15px;
-  max-width: 350px;
-min-height: 280px;
-max-height: 280px;
-align-self: center;
+  align-self: center;
 }
 
 .map-container {
-  margin-left: 20px;
   display: flex;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
 }
 
-.map-text {font-size: 12pt;
+.map-text {
+  font-size: 1.25rem;
   margin-top: 10px;
   text-align: center;
 }

@@ -75,11 +75,14 @@ export default function PostRequest() {
   };
 
   async function postToDb() {
-    const res = await fetch("http://localhost:5001/api/listings", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/listings",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      }
+    );
     console.log("The following has now been added to the database:", { res });
   }
 
@@ -100,7 +103,7 @@ export default function PostRequest() {
             <input
               required
               className="ask-for-help-input"
-              type="text"
+              type="email"
               placeholder="Please enter your email"
               value={form.email_address}
               onChange={(e) => {
@@ -114,14 +117,19 @@ export default function PostRequest() {
               }}
             ></input>
           </div>
-          {/* Display Name */}
+          {/* Log in and Register will need Link tags at some point! */}
+          <p className="centered-text small-text">
+            This will be visible as you are posting as a guest. Log in or
+            Register to hide your email address.
+          </p>
+          {/* Display Name  should we specify character limit in display name*/}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Display Name*</label>
             <input
               required
               className="ask-for-help-input"
               type="text"
-              placeholder="Please enter a display name"
+              placeholder="Create a display name"
               value={form.display_name}
               onChange={(e) => {
                 setForm(
@@ -134,11 +142,6 @@ export default function PostRequest() {
               }}
             ></input>
           </div>
-          {/* Log in and Register will need Link tags at some point! */}
-          <p className="centered-text small-text">
-            This will be visible as you are posting as a guest. Log in or
-            Register to hide your email address.
-          </p>
           {/* Summary */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Summary*</label>
@@ -157,7 +160,7 @@ export default function PostRequest() {
                   // console.log(form)
                 );
               }}
-            ></input>{" "}
+            ></input>
           </div>
           {/* Category drop down */}
           <div className="ask-for-help-div">
@@ -184,42 +187,44 @@ export default function PostRequest() {
                 Select One
               </option>
               <optgroup label="Household">
-                <option value="Cleaning">Cleaning</option>
-                <option value="Gardening">Gardening</option>
-                <option value="DIY">DIY</option>
-                <option value="Dog Walking">Dog Walking</option>
+                <option value="Cleaning 🧹">Cleaning</option>
+                <option value="Gardening 🌻">Gardening</option>
+                <option value="DIY 🔧">DIY</option>
+                <option value="Dog Walking 🐶">Dog Walking</option>
               </optgroup>
               <optgroup label="Tutoring">
-                <option value="Maths">Maths</option>
-                <option value="Dance">Dance</option>
-                <option value="French">French</option>
-                <option value="Italian">Italian</option>
-                <option value="English">English</option>
-                <option value="Mandarin">Mandarin</option>
-                <option value="German">German</option>
-                <option value="Science">Science</option>
-                <option value="Art">Art</option>
+                <option value="Maths 🧮">Maths</option>
+                <option value="Dance 💃🏽">Dance</option>
+                <option value="French 🇫🇷">French</option>
+                <option value="Italian 🇮🇹">Italian</option>
+                <option value="English 🏴󠁧󠁢󠁥󠁮󠁧󠁿">English</option>
+                <option value="Mandarin 🇨🇳">Mandarin</option>
+                <option value="German 🇩🇪">German</option>
+                <option value="Science 🧬">Science</option>
+                <option value="Art 🎨">Art</option>
               </optgroup>
               <optgroup label="Sport & Leisure">
-                <option value="Photography">Photography</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Piano Lessons">Piano Lessons</option>
-                <option value="Get Fit">Get fit</option>
+                <option value="Photography 📸">Photography</option>
+                <option value="Yoga 🧘‍♂️">Yoga</option>
+                <option value="Piano Lessons 🎹">Piano Lessons</option>
+                <option value="Get Fit 🏋️">Get fit</option>
               </optgroup>
               <optgroup label="Professional Help">
-                <option value="CV Help">CV Help</option>
-                <option value="Accounting Help">Accounting Help</option>
-                <option value="Legal Advice">Legal Advice</option>
-                <option value="Proof Reading">Proof Reading</option>
+                <option value="CV Help 📄">CV Help</option>
+                <option value="Accounting help 💰">Accounting Help</option>
+                <option value="Legal advice ⚖️">Legal Advice</option>
+                <option value="Proof-Reading 📚">Proof Reading</option>
               </optgroup>
               <optgroup label="Transport & Mobility">
-                <option value="Local Shopping">Local Shopping</option>
-                <option value="Moving House">Moving House</option>
-                <option value="Disability Help">Disability Help</option>
-                <option value="Transporting Items">Transporting Items</option>
+                <option value="Local shopping 🛍️">Local Shopping</option>
+                <option value="Moving house 🏠">Moving House</option>
+                <option value="Disability Help ♿️">Disability Help</option>
+                <option value="Transporting items 🚚">
+                  Transporting Items
+                </option>
               </optgroup>
               <optgroup label="Other">
-                <option value="Just a cup of tea">Just a cup of tea</option>
+                <option value="Just a cup of tea 🫖">Just a cup of tea</option>
               </optgroup>
             </select>
           </div>
@@ -312,13 +317,16 @@ export default function PostRequest() {
           {/* <p>Tick all that apply...</p> */}
           {/* Checkboxes - urgent request & skills offered */}
           <div className="ask-for-help-div">
-            <label className="ask-for-help-label">
+            <label
+              className="ask-for-help-label"
+              id="urgent-request-checkbox-label"
+            >
               <input
                 type="checkbox"
                 id="urgent-request"
                 name="urgent-request"
                 onChange={handleUrgentChange}
-              ></input>{" "}
+              ></input>
               My request is urgent
             </label>
           </div>
@@ -344,24 +352,31 @@ export default function PostRequest() {
               />
             </div>
           )}
-          <label className="ask-for-help-label">
-            <input
-              id="offer-something-checkbox"
-              type="checkbox"
-              onChange={handleOfferChange}
-              checked={offer}
-            ></input>{" "}
-            I can offer something in return
-          </label>
+          <div className="ask-for-help-div">
+            <label
+              className="ask-for-help-label"
+              id="offer-something-checkbox-label"
+            >
+              <input
+                id="offer-something-checkbox"
+                type="checkbox"
+                onChange={handleOfferChange}
+                checked={offer}
+              ></input>
+              I can offer something in return
+            </label>
+          </div>
           {/* Skills Offered dropdown */}
           {offer && (
             <div className="ask-for-help-div">
               <label className="ask-for-help-label" htmlFor="categories">
                 Category
               </label>
+
               <select
+                required
                 className="ask-for-help-input"
-                id="categoreis-skills-offered"
+                id="categories-skills-offered"
                 name="categories"
                 value={form.skills_offered}
                 onChange={(e) => {
@@ -379,42 +394,46 @@ export default function PostRequest() {
                   Select One
                 </option>
                 <optgroup label="Household">
-                  <option value="Cleaning">Cleaning</option>
-                  <option value="Gardening">Gardening</option>
-                  <option value="DIY">DIY</option>
-                  <option value="Dog Walking">Dog Walking</option>
+                  <option value="Cleaning 🧹">Cleaning</option>
+                  <option value="Gardening 🌻">Gardening</option>
+                  <option value="DIY 🔧">DIY</option>
+                  <option value="Dog Walking 🐶">Dog Walking</option>
                 </optgroup>
                 <optgroup label="Tutoring">
-                  <option value="Maths">Maths</option>
-                  <option value="Dance">Dance</option>
-                  <option value="French">French</option>
-                  <option value="Italian">Italian</option>
-                  <option value="English">English</option>
-                  <option value="Mandarin">Mandarin</option>
-                  <option value="German">German</option>
-                  <option value="Science">Science</option>
-                  <option value="Art">Art</option>
+                  <option value="Maths 🧮">Maths</option>
+                  <option value="Dance 💃🏽">Dance</option>
+                  <option value="French 🇫🇷">French</option>
+                  <option value="Italian 🇮🇹">Italian</option>
+                  <option value="English 🏴󠁧󠁢󠁥󠁮󠁧󠁿">English</option>
+                  <option value="Mandarin 🇨🇳">Mandarin</option>
+                  <option value="German 🇩🇪">German</option>
+                  <option value="Science 🧬">Science</option>
+                  <option value="Art 🎨">Art</option>
                 </optgroup>
                 <optgroup label="Sport & Leisure">
-                  <option value="Photography">Photography</option>
-                  <option value="Yoga">Yoga</option>
-                  <option value="Piano Lessons">Piano lessons</option>
-                  <option value="Get Fit">Get fit</option>
+                  <option value="Photography 📸">Photography</option>
+                  <option value="Yoga 🧘‍♂️">Yoga</option>
+                  <option value="Piano Lessons 🎹">Piano lessons</option>
+                  <option value="Get Fit 🏋️">Get fit</option>
                 </optgroup>
                 <optgroup label="Professional Help">
-                  <option value="CV Help">CV Help</option>
-                  <option value="Accounting Help">Accounting Help</option>
-                  <option value="Legal Advice">Legal Advice</option>
-                  <option value="Proof Reading">Proof Reading</option>
+                  <option value="CV Help 📄">CV Help</option>
+                  <option value="Accounting help 💰">Accounting Help</option>
+                  <option value="Legal advice ⚖️">Legal Advice</option>
+                  <option value="Proof-Reading 📚">Proof Reading</option>
                 </optgroup>
                 <optgroup label="Transport & Mobility">
-                  <option value="Local Shopping">Local Shopping</option>
-                  <option value="Moving House">Moving House</option>
-                  <option value="Disability Help">Disability Help</option>
-                  <option value="Transporting Items">Transporting Items</option>
+                  <option value="Local shopping 🛍️">Local Shopping</option>
+                  <option value="Moving house 🏠">Moving House</option>
+                  <option value="Disability Help ♿️">Disability Help</option>
+                  <option value="Transporting items 🚚">
+                    Transporting Items
+                  </option>
                 </optgroup>
                 <optgroup label="Other">
-                  <option value="Just a cup of tea">Just a cup of tea</option>
+                  <option value="Just a cup of tea 🫖">
+                    Just a cup of tea
+                  </option>
                 </optgroup>
               </select>
             </div>

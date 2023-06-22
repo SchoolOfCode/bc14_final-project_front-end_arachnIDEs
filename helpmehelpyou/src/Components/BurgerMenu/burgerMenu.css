@@ -1,12 +1,7 @@
 .burgerMenu {
-  height: 40px;
-  width: 390px;
-  padding-top: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
+  /* height: 40px; */
+  width: 100%;
+  /* padding-top: 2px; */
   top: 0;
   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
@@ -14,6 +9,15 @@
   margin-bottom: 400px;
   background-color: #ffffff;
   color: white;
+}
+
+.nav-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
 }
 
 .login-register-buttons {
@@ -32,12 +36,20 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
   margin-bottom: 5px;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
+  font-family: "Aoboshi One", serif;
+}
+.login-button:hover {
+  background-color: #4563e7;
+  color: white;
+  text-emphasis-color: white;
 }
 
 .register-button {
@@ -51,19 +63,31 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
+  transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
+  font-family: "Aoboshi One", serif;
+}
+.register-button:hover {
+  background-color: #9ee795;
+  color: black;
+  text-emphasis-color: white;
 }
 
-.logo {
+/* .logo {
   max-height: 35px;
   min-height: 35px;
   min-width: 65px;
   max-width: 65px;
   margin-bottom: 20px;
+} */
+
+.logo-anchor {
+  display: flex;
 }
 
 .brand-name {
@@ -80,22 +104,29 @@
 
 .navigation-menu ul {
   display: flex;
+  width: fit-content;
   /* width: auto; */
   padding: 0;
   color: #fefefe;
 }
 .navigation-menu li {
   list-style-type: none;
+  width: fit-content;
+  margin: 0;
   /* margin: 0 1rem; */
   /* width: auto; */
   color: #78af72;
 }
 .navigation-menu li a {
   text-decoration: none;
-  width: 100%;
+  width: fit-content;
+  /* padding: 10%; */
+  min-width: 100px;
+  /* width: 100%; */
   display: block;
   /* width: auto; */
   color: #ffffff;
+  font-family: "Aoboshi One", serif;
 }
 
 .hamburger-dropdown-menu {
@@ -108,11 +139,16 @@
   background-color: #78af72;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   right: 1px;
-  transform: translateY(-50%);
+  transform: translateY(-50%); */
   display: none;
+}
+.hamburger-dropdown-menu:hover {
+  background-color: #4563e7;
+  color: white;
+  text-emphasis-color: white;
 }
 
 .hamburger-.hamburger-dropdown-menu {
@@ -142,16 +178,20 @@
   }
   .navigation-menu li {
     text-align: center;
-    margin: 0;
+    margin-left: auto;
+    margin-right: 10px;
   }
   .navigation-menu li a {
     color: black;
-    width: 100%;
+    /* width: 100%; */
     /* padding: 5px; */
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    padding: 5px;
+    /* border-radius: 30px;
+    margin: 5px; */
   }
   .navigation-menu li:hover {
     background-color: #78af72;
@@ -171,7 +211,9 @@
 }
 
 .logo {
-  min-width: 120px;
+  /* min-width: 120px;
   min-height: 20px;
-  margin-top: 40px;
+  margin-top: 40px; */
+  height: 30px;
+  width: auto;
 }
