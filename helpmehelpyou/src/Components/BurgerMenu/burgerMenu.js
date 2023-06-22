@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import logo from "./logo.png";
 import horizontalLogo from "./horizontal_logo.jpg";
-
 import "./burgerMenu.css";
+import { createClient } from "@supabase/supabase-js";
 
-export default function BurgerMenu() {
+const supabase = createClient(
+  process.env.REACT_APP_SUPABASE_URL,
+  process.env.REACT_APP_ANON_KEY
+);
+
+export default function BurgerMenu({session}) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const handleNavToggle = () => {
@@ -15,13 +20,18 @@ export default function BurgerMenu() {
   const handleLinkClick = () => {
     setIsNavExpanded(false);
   };
-
+  const handleLogout = async () => {
+    if (session) {
+      await supabase.auth.signOut();
+    }}
   return (
     <nav className="burgerMenu">
       <div className="nav-menu-container">
         <div className="login-register-buttons">
+        <Link to="/login" className="login-link">
           <button className="login-button">Login</button>
-          <button className="register-button">Register</button>
+          </Link>
+          <button className="register-button" onClick={handleLogout}>LogOut</button>
         </div>
         <Link to="/" className="logo-anchor">
           <img
