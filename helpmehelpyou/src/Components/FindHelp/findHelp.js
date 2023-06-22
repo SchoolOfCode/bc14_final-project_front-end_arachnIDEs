@@ -164,62 +164,26 @@ export default function FindHelp() {
     }
   }
 
+  // filters listings based on user input
   function filterHelpers() {
-    // the below if statement runs if the search is conducted after a borough has already been selected
-    if (
-      helperDummyData &&
-      helperDummyData.length > 0 &&
-      selectedBorough &&
-      !allSelected
-    ) {
-      let newArray = filteredHelpers.filter((item) => {
-        for (let key in item) {
-          // First, check if the type of the value at position key is string...
-          if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-            return item[key].toLowerCase().includes(userInput.toLowerCase());
-          }
-        }
-        return newArray;
+    if (helperDummyData && helperDummyData.length > 0) {
+      let filteredArray = filteredHelpers.filter((item) => {
+        return Object.values(item).some((value) => {
+          return (
+            typeof value === "string" &&
+            value.toLowerCase().includes(userInput.toLowerCase())
+          );
+        });
       });
-      let filteredByBoroughThenSearch = newArray.filter((item) => {
-        return item.borough_name.includes(selectedBorough);
-      });
-      setFilteredHelpers(filteredByBoroughThenSearch);
-      if (filteredHelpers.length === 0) {
-        setNoHelpers(true);
-      } else if (filteredHelpers.length > 0) {
-        setNoHelpers(null);
+
+      if (selectedBorough && !allSelected) {
+        filteredArray = filteredArray.filter((item) => {
+          return item.borough_name.includes(selectedBorough);
+        });
       }
-    }
-    // otherwise performs search as normal
-    else if (helperDummyData && helperDummyData.length > 0) {
-      let newArray = filteredHelpers.filter((item) => {
-        for (let key in item) {
-          // First, check if the type of the value at position key is string...
-          if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-            return item[key].toLowerCase().includes(userInput.toLowerCase());
-          }
-        }
-        return newArray;
-      });
-      setFilteredHelpers(newArray);
-      if (filteredHelpers.length === 0) {
-        setNoHelpers(true);
-      } else if (filteredHelpers.length > 0) {
-        setNoHelpers(null);
-      }
-    } else if (filteredHelpers && filteredHelpers.length >= 0) {
-      let searchResults = filteredHelpers.filter((item) => {
-        return item.about_me.toLowerCase().includes(userInput.toLowerCase());
-      });
-      setFilteredHelpers(searchResults);
-      if (filteredHelpers.length === 0) {
-        setNoHelpers(true);
-      } else if (filteredHelpers.length > 0) {
-        setNoHelpers(null);
-      }
+
+      setFilteredHelpers(filteredArray);
+      setNoHelpers(filteredArray.length === 0 ? true : null);
     }
   }
 
