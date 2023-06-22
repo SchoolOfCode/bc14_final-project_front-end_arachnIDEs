@@ -19,9 +19,10 @@ export default function BurgerMenu({handleLogout}) {
   return (
     <nav className="burgerMenu">
       <div className = "login-register-buttons">
-        <button className="login-button" onClick={handleLogout}>Logout</button>
+
+        <Link to = "login"><button className="login-button" onClick={handleLogout}>Login</button></Link>
         {/* <button className="register-button">Register</button> */}
-        {/* Sarah */}
+     
       </div>
     <Link to="/"><img src={horizontalLogo} alt="HelpMeHelpYou logo" className="logo"></img></Link>
       <Link to="/" className="link"></Link>
