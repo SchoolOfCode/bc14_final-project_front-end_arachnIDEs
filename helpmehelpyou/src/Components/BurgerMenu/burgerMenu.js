@@ -21,6 +21,7 @@ export default function BurgerMenu({handleLogout}) {
       <div className = "login-register-buttons">
         <button className="login-button" onClick={handleLogout}>Logout</button>
         {/* <button className="register-button">Register</button> */}
+        {/* Sarah */}
       </div>
     <Link to="/"><img src={horizontalLogo} alt="HelpMeHelpYou logo" className="logo"></img></Link>
       <Link to="/" className="link"></Link>
