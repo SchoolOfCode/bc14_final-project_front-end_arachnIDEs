@@ -48,3 +48,5 @@ export const handlers = [
     }
   ),
 ];
+
+// console.log(handlers);

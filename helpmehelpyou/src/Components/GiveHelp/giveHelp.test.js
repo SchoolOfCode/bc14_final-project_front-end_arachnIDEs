@@ -136,4 +136,8 @@ test("Number of listings rendered should be 3", async () => {
   // Find is used below as it is async and All is used as we expect there to be more than one listing in the DOM (Assuming we passed in multiple listings (see line 21 above)).
   //   const listings = await screen.findAllByRole("listitem");
   //   expect(listings).toHaveLength(3);
+  //   const listing = await waitFor(() =>
+  //     screen.findByText("Hammersmith and Fulham")
+  //   );
+  //   expect(listing).toBeInTheDocument();
 });
