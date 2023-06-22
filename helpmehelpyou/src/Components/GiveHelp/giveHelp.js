@@ -289,9 +289,11 @@ export default function GiveHelp() {
     const res = await fetch(
       "https://arachnides-backend.onrender.com/api/listings"
     );
+    console.log(res);
     const data = await res.json();
+    console.log(data);
     const payload = data.payload;
-    // console.log(payload);
+    console.log(payload);
     setListings(payload);
   }
 
