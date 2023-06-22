@@ -246,6 +246,7 @@ export default function GiveHelp() {
     setFilteredListings([]);
     setNoListings(null);
     setUserInput("");
+    setSelectedCard(null);
   }
 
   function clearInput() {

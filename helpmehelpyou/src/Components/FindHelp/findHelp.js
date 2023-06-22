@@ -15,6 +15,7 @@ export default function FindHelp() {
   const [filteredHelpers, setFilteredHelpers] = useState(helperDummyData);
   const [allSelected, setAllSelected] = useState(null);
 
+  const [noHelpers, setNoHelpers] = useState(null);
   // useEffect functions
   useEffect(() => {
     setNoHelpers(filteredHelpers.length === 0);
@@ -39,8 +40,6 @@ export default function FindHelp() {
   useEffect(() => {}, [selectedCard]);
 
   useEffect(() => {}, [filteredHelpers]);
-
-  let [noHelpers, setNoHelpers] = useState(null);
 
   const helperCards = [
     { id: 0.5, borough: "All" },
