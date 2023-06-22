@@ -2,8 +2,18 @@ import GiveHelpListItem from "./GiveHelpListItem";
 
 function GiveHelpList(props) {
   const { listItems = [], contactUser } = props;
+
   if (!listItems.length) {
-    return null;
+    return (
+      <div className="loading-div">
+        <p>Loading listings...</p>
+        <img
+          src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
+          alt="Loading gif"
+          className="give-and-find-help-loading-gif"
+        ></img>
+      </div>
+    );
   }
 
   return (

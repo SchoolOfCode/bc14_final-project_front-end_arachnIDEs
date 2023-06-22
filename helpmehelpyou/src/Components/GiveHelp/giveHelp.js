@@ -404,16 +404,6 @@ Listing - <h1> for title / summary
       </h3>
       {/* Recent listings fetched from DB */}
       <section className="give-and-find-help-listings-area">
-        {listings.length === 0 && (
-          <div className="loading-div">
-            <p>Loading listings...</p>
-            <img
-              src="https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca_w200.gif"
-              alt="Loading gif"
-              className="give-and-find-help-loading-gif"
-            ></img>
-          </div>
-        )}
         <GiveHelpList
           listItems={listingsToGenerate}
           contactUser={contactUser}

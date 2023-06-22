@@ -4,11 +4,15 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { test, expect } from "@jest/globals";
 import GiveHelp from "./giveHelp";
 import { BrowserRouter } from "react-router-dom";
+import GiveHelpListItem from "./GiveHelpListItem";
+import GiveHelpList from "./GiveHelpList";
 // import API mocking utilities from Mock Service Worker
 // import { rest } from "msw";
 // import { setupServer } from "msw/node";
 
 /*
+I have now undone much of below as my mentor showed me how it wasn't necessary if we broke up GiveHelp into separate components.
+
 Tutorial which I am following: https://www.youtube.com/watch?v=dL_TsWTASfg .
 0. Install msw (Mock Service Worker), by following instructions on https://mswjs.io/docs/getting-started/install . ✅
 1. In src folder, create new folder called mocks. ✅
@@ -126,12 +130,14 @@ test("There is a search button on the page.", () => {
 //   // });
 // });
 
-test("Number of listings rendered should be 3", async () => {
+test("Should render list item", async () => {
   render(
     <BrowserRouter>
-      <GiveHelp />
+      <GiveHelpListItem listing={listings[0]} contactUser={() => jest.fn()} />
     </BrowserRouter>
   );
+
+  expect(await screen.findByText("Hammersmith and Fulham")).toBeVisible();
   // screen.logTestingPlaygroundURL();
   // screen.debug();
   // Find is used below as it is async and All is used as we expect there to be more than one listing in the DOM (Assuming we passed in multiple listings (see line 21 above)).
@@ -142,3 +148,80 @@ test("Number of listings rendered should be 3", async () => {
   //   );
   //   expect(listing).toBeInTheDocument();
 });
+
+test("Should render loading screen", async () => {
+  render(
+    <BrowserRouter>
+      <GiveHelpList listItems={[]} contactUser={() => jest.fn()} />
+    </BrowserRouter>
+  );
+
+  expect(await screen.findByText("Loading listings...")).toBeVisible();
+  // screen.logTestingPlaygroundURL();
+  // screen.debug();
+  // Find is used below as it is async and All is used as we expect there to be more than one listing in the DOM (Assuming we passed in multiple listings (see line 21 above)).
+  // const listings = await screen.findAllByRole("listitem");
+  // expect(listings).toHaveLength(3);
+  //   const listing = await waitFor(() =>
+  //     screen.findByText("Hammersmith and Fulham")
+  //   );
+  //   expect(listing).toBeInTheDocument();
+});
+
+test("Should render 3 list items", async () => {
+  render(
+    <BrowserRouter>
+      <GiveHelpList listItems={listings} contactUser={() => jest.fn()} />
+    </BrowserRouter>
+  );
+
+  // expect(await screen.findByText("Loading listings...")).toBeVisible();
+  // screen.logTestingPlaygroundURL();
+  // screen.debug();
+  // Find is used below as it is async and All is used as we expect there to be more than one listing in the DOM (Assuming we passed in multiple listings (see line 21 above)).
+  const ActualListings = await screen.findAllByTestId("listing");
+  expect(ActualListings).toHaveLength(3);
+  //   const listing = await waitFor(() =>
+  //     screen.findByText("Hammersmith and Fulham")
+  //   );
+  //   expect(listing).toBeInTheDocument();
+});
+
+const listings = [
+  {
+    borough_name: "Hammersmith and Fulham",
+    created_at: "2023-06-21T16:30:13.968168+00:00",
+    display_name: "vgh",
+    email_address: "olga84h@gmail.com",
+    listing_details: "ghghg",
+    listing_id: "beee3ec6-cbf8-4c79-8610-db7a9a0f2223",
+    listing_title: "ghgh",
+    skills_offered: "Photography 📸",
+    skills_wanted: "Gardening 🌻",
+    timescale: "",
+  },
+  {
+    borough_name: "Hammersmith and Fulham",
+    created_at: "2023-06-21T16:30:13.968168+00:00",
+    display_name: "vgh",
+    email_address: "olga84h@gmail.com",
+    listing_details: "ghghg",
+    listing_id: "beee3ec6-cbf8-4c79-8610-db7a9a0f2223",
+    listing_title: "ghgh",
+    skills_offered: "Photography 📸",
+    skills_wanted: "Gardening 🌻",
+    timescale: "",
+  },
+  {
+    borough_name: "Hammersmith and Fulham",
+    created_at: "2023-06-21T16:30:13.968168+00:00",
+    display_name: "vgh",
+    email_address: "olga84h@gmail.com",
+    listing_details: "ghghg",
+    listing_id: "beee3ec6-cbf8-4c79-8610-db7a9a0f2223",
+    listing_title: "ghgh",
+    skills_offered: "Photography 📸",
+    skills_wanted: "Gardening 🌻",
+    timescale: "",
+  },
+];
