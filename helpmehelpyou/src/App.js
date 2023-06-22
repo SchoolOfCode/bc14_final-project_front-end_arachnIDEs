@@ -12,8 +12,8 @@ import PostRequestPage from "./pages/PostRequest";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useEffect, useState } from "react";
+import dotenv from "dotenv";
 import { createClient } from "@supabase/supabase-js";
-import LoginPage from "./pages/Login";
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
   process.env.REACT_APP_ANON_KEY
@@ -21,56 +21,55 @@ const supabase = createClient(
 
 // function to log in 
 function App() {
-// //   const [session, setSession] = useState(null);
-// // // console.log("keay", process.env.REACT_APP_SUPABASE_URL,  process.env.REACT_APP_ANON_KEY);
-// //   useEffect(() => {
-// //     supabase.auth.getSession().then(({ data: { session } }) => {
-// //       setSession(session);
-// //       if (session) {
-// //         //getMessages(session);
-// //         //getUsers();
-// //         // console.log("session", session);
-// //       }
-// //     });
-// //     const {
-// //       data: { subscription },
-// //     } = supabase.auth.onAuthStateChange((_event, session) => {
-// //       setSession(session);
-// //       if (session) {
-// //        // getMessages(session);
-// //         //getUsers();
-// //         // console.log("session", session);
-// //       }
-// //     });
+  dotenv.config();
+  const [session, setSession] = useState(null);
+// console.log("keay", process.env.REACT_APP_SUPABASE_URL,  process.env.REACT_APP_ANON_KEY);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      if (session) {
+        //getMessages(session);
+        //getUsers();
+        // console.log("session", session);
+      }
+    });
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session) {
+       // getMessages(session);
+        //getUsers();
+        // console.log("session", session);
+      }
+    });
 
-// //     return () => subscription.unsubscribe();
-// //   }, []);
-// // // and log out
-// //   const handleLogout = async () => {
-// //     await supabase.auth.signOut();
-// //   };
+    return () => subscription.unsubscribe();
+  }, []);
+// and log out
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
   
-// //     if (!session) {
-// //       return (
-// //         <Auth
-// //           supabaseClient={supabase}
+    if (!session) {
+      return (
+        <Auth
+          supabaseClient={supabase}
 
-// //           providers={["google", "github", "facebook"]}
+          providers={["google", "github", "facebook"]}
 
-// //             />
-//       );
-//     } else {
+            />
+      );
+    } else {
       return (
 <>
-{/* add to burger menu handleLogout={handleLogout} */}
-      <BurgerMenu />
+      <BurgerMenu handleLogout={handleLogout}/>
       <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />        
           <Route path="/give" element={<GiveHelpPage />} />
           <Route path="/find" element={<FindHelpPage/>} />
           <Route path="/findhelpform" element ={<PostRequestPage/>}/>
-          <Route path="/login" element={<Auth supabaseClient={supabase} providers={["google", "github", "facebook"]}/>} />
         </Routes>
       </div>
       <Footer/>
@@ -79,6 +78,6 @@ function App() {
     }
 
  
-// }
+}
 
 export default App;
