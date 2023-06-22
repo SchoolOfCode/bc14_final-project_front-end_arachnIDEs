@@ -12,6 +12,7 @@ export default function FindHelp() {
   const [filteredHelpers, setFilteredHelpers] = useState(helperDummyData);
   const [allSelected, setAllSelected] = useState(null);
 
+  // useEffect functions
   useEffect(() => {
     setNoHelpers(filteredHelpers.length === 0);
   }, [filteredHelpers]);
