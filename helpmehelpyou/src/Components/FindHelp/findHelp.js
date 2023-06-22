@@ -5,10 +5,13 @@ import helperDummyData from "./helperDummyData";
 import { Link } from "react-router-dom";
 
 export default function FindHelp() {
+  // state
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedBorough, setSelectedBorough] = useState(null);
+  // State to save the user input in the search box
   const [userInput, setUserInput] = useState("");
+  // State to save the filtered helpers
   const [filteredHelpers, setFilteredHelpers] = useState(helperDummyData);
   const [allSelected, setAllSelected] = useState(null);
 
