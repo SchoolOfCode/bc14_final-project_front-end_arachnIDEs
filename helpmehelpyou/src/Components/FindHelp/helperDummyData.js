@@ -52,6 +52,66 @@ const helperDummyData = [
     about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
     rating: "⭐️⭐️⭐️",
   },
+
+
+
+
+
+
+
+
+  
+  {
+    user_id: "161c1137-c0a3-42ed-a5ef-2d0c6fd09535",
+    display_name: "Jack Dee",
+    profile_picture:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxL1TUydVgdQtkNBOh0lgCKJsGaS_AJZUnqw&usqp=CAU",
+    email_address: "deejack@mod.gov",
+    borough_name: "Hounslow",
+    skills_needed: "Yoga",
+    skills_offered: "Get Fit",
+    about_me: "Ex-Army, I was a Personal Trainer. Really enjoyed my time so looking to get more people into being fit and being the best they can be. I'm getting old so would love someone to teach me about Yoga as that helps with flexibility",
+    rating: "⭐️⭐️⭐️⭐️",
+  },
+
+
+  
+  {
+    user_id: "bcca149d-f623-4986-ac7e-4a23d9a72b35",
+    display_name: "Robinson Crusoe",
+    profile_picture:
+      "https://static.demilked.com/wp-content/uploads/2016/06/60-year-old-man-becomes-fashion-model-philippe-dumas-6.jpg",
+    email_address: "crusoe@hotmail.com",
+    borough_name: "Barnet",
+    skills_needed: "Just a cup of tea",
+    skills_offered: "Get fit",
+    about_me: "I can help people to get a personal best on their 5K, 10K and Half-Marathon.",
+    rating: "⭐️⭐️⭐️⭐️⭐️",
+  },
+  {
+    user_id: "",
+    display_name: "Maye Musk",
+    profile_picture:
+      "https://www.shutterstock.com/image-photo/elderly-woman-have-ride-boat-260nw-209025709.jpg",
+    email_address: "mayemusk@mail.com",
+    borough_name: "",
+    skills_needed: "",
+    skills_offered: "baby siting?",
+    about_me: "",
+    rating: "⭐️⭐️⭐️",
+  },
+  {
+    user_id: "",
+    display_name: "",
+    profile_picture:
+      "",
+    email_address: "",
+    borough_name: "LEAVE BLANK",
+    skills_needed: "Dog Walking",
+    skills_offered: "DIY",
+    about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
+    rating: "⭐️⭐️⭐️",
+  },
 ];
 
 export default helperDummyData;
