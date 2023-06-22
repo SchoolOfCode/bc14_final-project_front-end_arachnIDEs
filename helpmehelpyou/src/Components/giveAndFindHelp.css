@@ -423,3 +423,13 @@ No profile picture in DB yet
   border: 2px solid #000000;
   box-shadow: #2c2b2b 2px 2px 0 0;
 }
+
+.find-help-card.active {
+  background-color: #64a7e5;
+  color: black;
+}
+
+.selected-card {
+  background-color: #5d8fc8;
+}
+

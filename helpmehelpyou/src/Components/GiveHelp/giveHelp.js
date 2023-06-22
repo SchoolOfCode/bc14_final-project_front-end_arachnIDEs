@@ -17,14 +17,20 @@ import { Link } from "react-router-dom";
 // If the search box is empty and the button is clicked, then show the full listings array.
 
 export default function GiveHelp() {
+  // State for carousel
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState(null);
   const [selectedBorough, setSelectedBorough] = useState(null);
+  // State for search box
   const [userInput, setUserInput] = useState("");
+  // State for all listings
   const [listings, setListings] = useState([]);
+  // State for filtered listings
   const [filteredListings, setFilteredListings] = useState([]);
   const [allSelected, setAllSelected] = useState(null);
+  const [noListings, setNoListings] = useState(null);
 
+  // useEffect call back functions
   useEffect(() => {
     setNoListings(filteredListings.length === 0);
   }, [filteredListings]);
@@ -33,65 +39,8 @@ export default function GiveHelp() {
     setAllSelected(selectedCard === 0.5);
   }, [selectedCard]);
 
-  let [noListings, setNoListings] = useState(null);
+  // cards for carousel
   const cards = [
-    //   {
-    //     id: 1,
-    //     category: "All",
-    //   },
-    //   {
-    //     id: 2,
-    //     category: "Household",
-    //   },
-    //   {
-    //     id: 3,
-    //     category: "Tutoring",
-    //   },
-    //   {
-    //     id: 4,
-    //     category: "Sport & Leisure",
-    //   },
-    //   {
-    //     id: 5,
-    //     category: "Professional",
-    //   },
-    //   {
-    //     id: 6,
-    //     category: "Mobility",
-    //   },
-    //   {
-    //     id: 7,
-    //     category: "French",
-    //   },
-    //   {
-    //     id: 8,
-    //     category: "Cleaning",
-    //   },
-    //   {
-    //     id: 9,
-    //     category: "German",
-    //   },
-    //   {
-    //     id: 10,
-    //     category: "Legal advice",
-    //   },
-    //   {
-    //     id: 11,
-    //     category: "Mandarin",
-    //   },
-    //   {
-    //     id: 12,
-    //     category: "Gardening",
-    //   },
-    //   {
-    //     id: 13,
-    //     category: "Piano Lessons",
-    //   },
-    //   {
-    //     id: 14,
-    //     category: "Other",
-    //   },
-    // ];
     { id: 0.5, borough: "All" },
     { id: 0.75, borough: "Barking and Dagenham" },
     { id: 1, borough: "Barnet" },
@@ -127,6 +76,7 @@ export default function GiveHelp() {
     { id: 31, borough: "Westminster" },
   ];
 
+  // functions for carousel
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? cards.length - 3 : prevIndex - 1
@@ -139,7 +89,7 @@ export default function GiveHelp() {
     );
   };
 
-  let found = false;
+  // let found = false;
 
   function boroughFilter(card) {
     setSelectedCard(card.id);
@@ -215,35 +165,30 @@ export default function GiveHelp() {
 
   // V3: using a for...in loop to search through all keys where value is of type string.
   function filterListings() {
-    // the below if statement runs if the search is conducted after a borough has already been selected
+    let newArray = [];
+
     if (listings && listings.length > 0 && selectedBorough) {
-      let newArray = filteredListings.filter((item) => {
+      newArray = filteredListings.filter((item) => {
         for (let key in item) {
-          // First, check if the type of the value at position key is string...
           if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
-            return item[key].toLowerCase().includes(userInput.toLowerCase());
+            if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
+              return true;
+            }
           }
         }
-        return newArray;
+        return false;
       });
+
       let filteredByBoroughThenSearch = newArray.filter((item) => {
         return item.borough_name.includes(selectedBorough);
       });
+
       setFilteredListings(filteredByBoroughThenSearch);
-      if (filteredListings.length === 0) {
-        setNoListings(true);
-      } else if (filteredListings.length > 0) {
-        setNoListings(null);
-      }
-    }
-    // otherwise performs search as normal
-    else if (listings && listings.length > 0) {
-      let newArray = listings.filter((item) => {
+    } else if (listings && listings.length > 0) {
+      newArray = listings.filter((item) => {
+        let found = false;
         for (let key in item) {
-          // First, check if the type of the value at position key is string...
           if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
             if (item[key].toLowerCase().includes(userInput.toLowerCase())) {
               found = true;
               break;
@@ -252,29 +197,25 @@ export default function GiveHelp() {
         }
         return found;
       });
+
       setFilteredListings(newArray);
-      if (filteredListings.length === 0) {
-        setNoListings(true);
-      } else if (filteredListings.length > 0) {
-        setNoListings(null);
-      }
-    } else if (filteredListings && filteredListings.length >= 0) {
-      let newArray = filteredListings.filter((item) => {
+    } else if (filteredListings) {
+      newArray = filteredListings.filter((item) => {
         for (let key in item) {
-          // First, check if the type of the value at position key is string...
           if (typeof item[key] === "string") {
-            // if the string at position key in lowercase includes the userinput in lowercase, then set found to true, break out of for...in loop, and return found (i.e. true).
             return item[key].toLowerCase().includes(userInput.toLowerCase());
           }
         }
-        setFilteredListings(newArray);
-        if (filteredListings.length === 0) {
-          setNoListings(true);
-        } else if (filteredListings.length > 0) {
-          setNoListings(null);
-        }
-        return newArray;
+        return false;
       });
+
+      setFilteredListings(newArray);
+    }
+
+    if (newArray.length === 0) {
+      setNoListings(true);
+    } else {
+      setNoListings(null);
     }
   }
 
@@ -305,12 +246,20 @@ export default function GiveHelp() {
     setFilteredListings([]);
     setNoListings(null);
     setUserInput("");
+    setSelectedCard(null);
   }
 
   function clearInput() {
     setUserInput("");
   }
 
+  // Function to handle the enter key being pressed
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the default form submission
+      filterListings();
+    }
+  };
   /*renders:
 Header
 Nav Bar
@@ -337,12 +286,13 @@ Listing - <h1> for title / summary
           value={userInput}
           onChange={(event) => setUserInput(event.target.value)}
           className="give-and-find-help-search-box"
+          onKeyDown={handleKeyDown}
+          onMouseDown={clearInput}
         ></input>
         <button
           className="give-and-find-help-search-button"
           onClick={() => {
             filterListings();
-            clearInput("");
           }}
         >
           Search
