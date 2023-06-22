@@ -97,10 +97,6 @@ export default function FindHelp() {
     setUserInput("");
   }
 
-  function clearInput() {
-    setUserInput("");
-  }
-
   function boroughFilter(card) {
     setSelectedCard(card.id);
     setSelectedBorough(card.borough);
@@ -193,6 +189,18 @@ export default function FindHelp() {
     alert(`Here's the email address: ${email}`);
   }
 
+  // Function to handle the enter key being pressed
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the default form submission
+      filterHelpers();
+    }
+  };
+
+  function clearInput() {
+    setUserInput("");
+  }
+
   return (
     // Parent find-help-div
     <div className="give-and-find-help-container">
@@ -210,6 +218,8 @@ export default function FindHelp() {
           value={userInput}
           onChange={(event) => setUserInput(event.target.value)}
           className="give-and-find-help-search-box"
+          onKeyDown={handleKeyDown}
+          onMouseDown={clearInput}
         ></input>
         <button
           className="give-and-find-help-search-button"

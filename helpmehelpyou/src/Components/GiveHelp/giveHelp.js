@@ -166,7 +166,7 @@ export default function GiveHelp() {
   // V3: using a for...in loop to search through all keys where value is of type string.
   function filterListings() {
     let newArray = [];
-  
+
     if (listings && listings.length > 0 && selectedBorough) {
       newArray = filteredListings.filter((item) => {
         for (let key in item) {
@@ -178,11 +178,11 @@ export default function GiveHelp() {
         }
         return false;
       });
-  
+
       let filteredByBoroughThenSearch = newArray.filter((item) => {
         return item.borough_name.includes(selectedBorough);
       });
-  
+
       setFilteredListings(filteredByBoroughThenSearch);
     } else if (listings && listings.length > 0) {
       newArray = listings.filter((item) => {
@@ -197,7 +197,7 @@ export default function GiveHelp() {
         }
         return found;
       });
-  
+
       setFilteredListings(newArray);
     } else if (filteredListings) {
       newArray = filteredListings.filter((item) => {
@@ -208,17 +208,17 @@ export default function GiveHelp() {
         }
         return false;
       });
-  
+
       setFilteredListings(newArray);
     }
-  
+
     if (newArray.length === 0) {
       setNoListings(true);
     } else {
       setNoListings(null);
     }
   }
-  
+
   // alert the user of the email address of the user who posted the listing
   function contactUser(email) {
     // Display email address of user
@@ -252,6 +252,13 @@ export default function GiveHelp() {
     setUserInput("");
   }
 
+  // Function to handle the enter key being pressed
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevent the default form submission
+      filterListings();
+    }
+  };
   /*renders:
 Header
 Nav Bar
@@ -278,12 +285,13 @@ Listing - <h1> for title / summary
           value={userInput}
           onChange={(event) => setUserInput(event.target.value)}
           className="give-and-find-help-search-box"
+          onKeyDown={handleKeyDown}
+          onMouseDown={clearInput}
         ></input>
         <button
           className="give-and-find-help-search-button"
           onClick={() => {
             filterListings();
-            clearInput("");
           }}
         >
           Search
