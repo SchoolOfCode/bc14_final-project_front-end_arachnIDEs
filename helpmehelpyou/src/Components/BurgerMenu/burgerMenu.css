@@ -11,8 +11,6 @@
   color: white;
 }
 
-
-
 .nav-menu-container {
   display: flex;
   align-items: center;
@@ -46,6 +44,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  font-family: "Aoboshi One", serif;
 }
 .login-button:hover {
   background-color: #4563e7;
@@ -71,6 +70,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  font-family: "Aoboshi One", serif;
 }
 .register-button:hover {
   background-color: #9ee795;
@@ -120,6 +120,7 @@
   display: block;
   /* width: auto; */
   color: #ffffff;
+  font-family: "Aoboshi One", serif;
 }
 
 .hamburger-dropdown-menu {

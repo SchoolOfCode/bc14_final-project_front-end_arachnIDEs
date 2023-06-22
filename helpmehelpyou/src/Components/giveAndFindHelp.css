@@ -67,6 +67,7 @@
   margin-bottom: 10px;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
+  font-family: "Aoboshi One", serif;
 }
 
 .give-and-find-help-search-button:hover {
@@ -126,6 +127,7 @@
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   align-self: flex-end;
+  font-family: "Aoboshi One", serif;
 }
 .give-and-find-help-contact-user:hover {
   background-color: #4563e7;
@@ -148,6 +150,7 @@
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
   align-self: flex-end;
+  font-family: "Aoboshi One", serif;
 }
 .give-and-find-help-visit-profile:hover {
   background-color: #4563e7;
@@ -368,23 +371,26 @@ No profile picture in DB yet
   border-radius: 50px;
 }
 
-.find-help-card-container {display: flex;
-margin: auto;
-overflow: hidden;
+.find-help-card-container {
+  display: flex;
+  margin: auto;
+  overflow: hidden;
 }
 
 .find-help-carousel {
-  display:flex;
+  display: flex;
   flex-direction: row;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.helperCards {display:flex;
-flex-direction: row;
-margin-top: 5%;
-margin-bottom: 5%;}
+.helperCards {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 .find-help-display-name {
   font-size: 1.1rem;
