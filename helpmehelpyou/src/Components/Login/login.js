@@ -12,7 +12,15 @@ const supabase = createClient(
 
 export default function Login({session, setSession}) {
     console.log("Hi this is im loged", session);
-  
+  //testing to log in with github
+    // async function signInWithGitHub() {
+    //     const { data, error } = await supabase.auth.signInWithOAuth({
+    //       provider: 'github',
+    //     })
+    //   }
+    //   async function signout() {
+    //     const { error } = await supabase.auth.signOut()
+    //   }
 
     useEffect(() => {
         
@@ -52,7 +60,7 @@ export default function Login({session, setSession}) {
               
             }}
             onSignOut={() => setSession(null)}
-            providers={["google", "facebook"]}
+            providers={["google", "facebook", "github"]}
           />
   {session ? (
         <p>Logged in as: {session.user.email}</p>
