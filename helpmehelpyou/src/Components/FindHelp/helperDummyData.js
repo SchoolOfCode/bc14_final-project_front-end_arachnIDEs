@@ -25,7 +25,8 @@ const helperDummyData = [
     borough_name: "Croydon",
     skills_needed: "Gardening",
     skills_offered: "Dog Walking",
-    about_me: "I'm retired and love meeting new people and staying active, I can help with anything outdoorsy and I'm available during working hours",
+    about_me:
+      "I'm retired and love meeting new people and staying active, I can help with anything outdoorsy and I'm available during working hours",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
@@ -37,7 +38,8 @@ const helperDummyData = [
     borough_name: "Camden",
     skills_needed: "Cleaning",
     skills_offered: "Dog Walking",
-    about_me: "I've recently sold my business to take a step back to focus on myself and my community. I can help with household tasks, and I'm also available for general chat and companionship",
+    about_me:
+      "I've recently sold my business to take a step back to focus on myself and my community. I can help with household tasks, and I'm also available for general chat and companionship",
     rating: "⭐️⭐️⭐️⭐️",
   },
   {
@@ -49,18 +51,11 @@ const helperDummyData = [
     borough_name: "Lewisham",
     skills_needed: "Dog Walking",
     skills_offered: "DIY",
-    about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
+    about_me:
+      "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
     rating: "⭐️⭐️⭐️",
   },
 
-
-
-
-
-
-
-
-  
   {
     user_id: "161c1137-c0a3-42ed-a5ef-2d0c6fd09535",
     display_name: "Jack Dee",
@@ -70,12 +65,11 @@ const helperDummyData = [
     borough_name: "Hounslow",
     skills_needed: "Yoga",
     skills_offered: "Get Fit",
-    about_me: "Ex-Army, I was a Personal Trainer. Really enjoyed my time so looking to get more people into being fit and being the best they can be. I'm getting old so would love someone to teach me about Yoga as that helps with flexibility",
+    about_me:
+      "Ex-Army, I was a Personal Trainer. Really enjoyed my time so looking to get more people into being fit and being the best they can be. I'm getting old so would love someone to teach me about Yoga as that helps with flexibility",
     rating: "⭐️⭐️⭐️⭐️",
   },
 
-
-  
   {
     user_id: "bcca149d-f623-4986-ac7e-4a23d9a72b35",
     display_name: "Robinson Crusoe",
@@ -85,31 +79,34 @@ const helperDummyData = [
     borough_name: "Barnet",
     skills_needed: "Just a cup of tea",
     skills_offered: "Get fit",
-    about_me: "I can help people to get a personal best on their 5K, 10K and Half-Marathon.",
+    about_me:
+      "I can help people to get a personal best on their 5K, 10K and Half-Marathon.",
     rating: "⭐️⭐️⭐️⭐️⭐️",
   },
   {
-    user_id: "",
+    user_id: "bcca149d-f623-4986-ac7e-4a23d9a72b36",
     display_name: "Maye Musk",
     profile_picture:
       "https://www.shutterstock.com/image-photo/elderly-woman-have-ride-boat-260nw-209025709.jpg",
     email_address: "mayemusk@mail.com",
-    borough_name: "",
-    skills_needed: "",
-    skills_offered: "baby siting?",
-    about_me: "",
+    borough_name: "Hackney",
+    skills_needed: "English",
+    skills_offered: "Italian",
+    about_me:
+      "I've just moved to London from Italy and would love to improve my English. I can offer Italian conversation in return!",
     rating: "⭐️⭐️⭐️",
   },
   {
-    user_id: "",
-    display_name: "",
+    user_id: "bcca149d-f623-4986-ac7e-4a23d9a72b34",
+    display_name: "Travis B",
     profile_picture:
-      "",
-    email_address: "",
-    borough_name: "LEAVE BLANK",
-    skills_needed: "Dog Walking",
-    skills_offered: "DIY",
-    about_me: "I'm a dog lover through and through, and am around for pet sitting and dog walking when I'm not travelling",
+      "https://imgix.bustle.com/uploads/getty/2021/2/14/80f51fdb-aba9-4897-ab25-58881b172174-getty-1301828732.jpg?w=800&fit=crop&crop=focalpoint&auto=format%2Ccompress&q=50&fp-x=0.5251017639077341&fp-y=0.439918533604888&dpr=2",
+    email_address: "travisb@gmail.com",
+    borough_name: "Bromley",
+    skills_needed: "Proof reading",
+    skills_offered: "Household",
+    about_me:
+      "I'm a stay at home dad who used to be a teacher. I'm happy to help with any academic struggles that anybody might be having, and all I ask in return is a little help around the house",
     rating: "⭐️⭐️⭐️",
   },
 ];
