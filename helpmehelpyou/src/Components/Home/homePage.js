@@ -97,20 +97,20 @@ export default function HomePage() {
         <ul className="about-info-list">
           <li className="about-list-item">
             <b>Need something?</b> Browse our community to find a local Helper who is
-            happy to swap skills or favours, or post a bulleitin outlining what
-            you need and we'll share it with our Helper network.{" "}
+            happy to swap skills or favours, or post a bulletin outlining what
+            you need and we'll share it with our Helper network.
           </li>
           <br></br>
           <li className="about-list-item">
-            <b>Eager to help? </b>take a look through our bulliein board to find those
+            <b>Eager to help? </b> Take a look through our bulletin board to find those
             in need of help in your local community - 90% of our users offer a
-            favour in return, so it's win win for both of you!{" "}
+            favour in return, so it's win win for both of you!
           </li>
           <br></br>
           <li className="about-list-item">
             Accept what the other person is offering in return, suggest
             <b> something that you need</b> instead, or even be super selfless and help
-            out without a return favour.{" "}
+            out without a return favour.
           </li>
           <br></br>
           <li className="about-list-item">
