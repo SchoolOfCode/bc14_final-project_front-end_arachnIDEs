@@ -109,6 +109,20 @@ const helperDummyData = [
       "I'm a stay at home dad who used to be a teacher. I'm happy to help with any academic struggles that anybody might be having, and all I ask in return is a little help around the house",
     rating: "⭐️⭐️⭐️",
   },
+
+  {
+    user_id: "bcca149d-f623-4986-ac7e-4a23d9a7555",
+    display_name: "Steven",
+    profile_picture:
+      "https://media.istockphoto.com/id/501277671/photo/since-opportunity-didnt-knock-he-decided-to-build-a-door.jpg?s=612x612&w=0&k=20&c=2xGM5620uwHWpQsS52Sb_v1le8ChM3AYIL9OOjSzVSM=",
+    email_address: "steven@gmail.com",
+    borough_name: "Wandsworth",
+    skills_needed: "Accounting Help",
+    skills_offered: "DIY",
+    about_me:
+      "I'm a carpenter and have every tool imaginable if anybody ever needs to borrow one! I can even come and drop it off in my van. My carpentry business has taken off recently, so if anybody could help me to get my books in order than that would be amazing, but not essential!",
+    rating: "⭐️⭐️⭐️",
+  },
 ];
 
 export default helperDummyData;
