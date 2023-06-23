@@ -107,7 +107,7 @@ const helperDummyData = [
     skills_offered: "Household",
     about_me:
       "I'm a stay at home dad who used to be a teacher. I'm happy to help with any academic struggles that anybody might be having, and all I ask in return is a little help around the house",
-    rating: "⭐️⭐️⭐️",
+    rating: "⭐️⭐️",
   },
 
   {
