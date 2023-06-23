@@ -185,6 +185,10 @@
   font-weight: bolder;
 }
 
+.contact-user-link {
+  align-self: flex-end;
+}
+
 /* Loading gif */
 .give-and-find-help-loading-gif {
   height: 50px;

@@ -316,12 +316,17 @@ export default function FindHelp() {
               <p className="give-and-find-help-info">{listing.skills_needed}</p>
             </div>
             <div className="give-and-find-help-user-contact">
-              <button
-                className="give-and-find-help-contact-user"
-                onClick={() => contactUser(listing.email_address)}
+              <a
+                href={`mailto:${listing.email_address}`}
+                className="contact-user-link"
               >
-                Contact user
-              </button>
+                <button
+                  className="give-and-find-help-contact-user"
+                  // onClick={() => contactUser(email_address)}
+                >
+                  Contact user
+                </button>{" "}
+              </a>
               <button className="give-and-find-help-visit-profile">
                 View Profile
               </button>
