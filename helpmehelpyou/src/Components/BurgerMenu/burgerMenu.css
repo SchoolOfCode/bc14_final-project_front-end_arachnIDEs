@@ -22,7 +22,9 @@
 
 .login-register-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .login-button {
@@ -40,10 +42,12 @@
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin-bottom: 5px;
+  margin: 2.5px;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  height: 40px;
+  width: 65px;
   font-family: "Aoboshi One", serif;
 }
 .login-button:hover {
@@ -67,10 +71,14 @@
   text-align: center;
   text-decoration: none;
   user-select: none;
+  margin: 2.5px;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  height: 40px;
+  width: 65px;
   font-family: "Aoboshi One", serif;
+
 }
 .register-button:hover {
   background-color: #9ee795;
