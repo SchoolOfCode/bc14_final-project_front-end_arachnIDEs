@@ -350,7 +350,7 @@ Listing - <h1> for title / summary
         <h2>No results found in {selectedBorough}</h2>
       )}
       <h3 className="give-and-find-help-listings-area-title">
-        All recently listings:
+        All recent listings:
       </h3>
       {/* Recent listings fetched from DB */}
       <section className="give-and-find-help-listings-area">
