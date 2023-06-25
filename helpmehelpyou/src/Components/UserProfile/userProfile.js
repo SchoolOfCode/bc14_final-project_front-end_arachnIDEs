@@ -10,7 +10,7 @@ export default function UserProfile(form) {
       <h1>My Profile</h1>
       <div className="pic-and-info-container">
       <div className="profile-pic-container"><img className="profile-pic" src="https://i.ibb.co/YcXqprM/a.png"></img>
-      <h3>⭐️⭐️⭐️⭐️</h3></div>
+      <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3></div>
         <div className="icons-container">
         <h3 className="borough">🏠:{form.borough_name}</h3>{" "}
       <h3 className="gender">⚥:</h3></div>
