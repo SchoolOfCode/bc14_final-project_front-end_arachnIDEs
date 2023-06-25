@@ -242,8 +242,8 @@ export default function RegForm() {
             <label className="reg-label">
               Tell us about yourself...
               <p className="about_me_desc">
-                Give your community a flavour of you you are and how you can
-                help
+                Give your community a flavour of who you are and how you can
+                help.
               </p>
             </label>
             <textarea

@@ -15,6 +15,7 @@ export default function UserProfile(form) {
       <h3 className="gender">⚥:</h3></div>
       </div>
       <div className="profile-details">
+      <h3 className="full-name">Full name: {form.full_name}<p className="full-name-info">This isn't visible to other users</p> </h3>
       <h3 className="display-name">Display name: {form.display_name}</h3>
       <h3 className="age">Age: {form.age}</h3>
       <h3 className="about-me">About me... {form.about_me}</h3>
@@ -43,7 +44,6 @@ export default function UserProfile(form) {
         </a>
       </div>
       </div>
-      <h3 className="full-name">Full name: {form.full_name}<p className="full-name-info">This isn't visible to other users</p> </h3>
     </div>
     </div>
   );
