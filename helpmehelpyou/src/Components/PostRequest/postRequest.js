@@ -191,6 +191,8 @@ export default function PostRequest() {
                 <option value="Gardening 🌻">Gardening</option>
                 <option value="DIY 🔧">DIY</option>
                 <option value="Dog Walking 🐶">Dog Walking</option>
+                <option value="Cooking 🍝">Cooking</option>
+                <option value="Baking 🍰">Baking</option>
               </optgroup>
               <optgroup label="Tutoring">
                 <option value="Maths 🧮">Maths</option>
@@ -214,6 +216,7 @@ export default function PostRequest() {
                 <option value="Accounting help 💰">Accounting Help</option>
                 <option value="Legal advice ⚖️">Legal Advice</option>
                 <option value="Proof-Reading 📚">Proof Reading</option>
+                <option value="IT support 💻">IT Support</option>
               </optgroup>
               <optgroup label="Transport & Mobility">
                 <option value="Local shopping 🛍️">Local Shopping</option>
@@ -398,6 +401,8 @@ export default function PostRequest() {
                   <option value="Gardening 🌻">Gardening</option>
                   <option value="DIY 🔧">DIY</option>
                   <option value="Dog Walking 🐶">Dog Walking</option>
+                  <option value="Cooking 🍝">Cooking</option>
+                <option value="Baking 🍰">Baking</option>
                 </optgroup>
                 <optgroup label="Tutoring">
                   <option value="Maths 🧮">Maths</option>
@@ -421,6 +426,7 @@ export default function PostRequest() {
                   <option value="Accounting help 💰">Accounting Help</option>
                   <option value="Legal advice ⚖️">Legal Advice</option>
                   <option value="Proof-Reading 📚">Proof Reading</option>
+                  <option value="IT support 💻">IT Support</option>
                 </optgroup>
                 <optgroup label="Transport & Mobility">
                   <option value="Local shopping 🛍️">Local Shopping</option>

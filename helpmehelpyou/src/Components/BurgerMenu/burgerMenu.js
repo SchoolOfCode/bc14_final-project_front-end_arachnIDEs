@@ -21,7 +21,8 @@ export default function BurgerMenu() {
       <div className="nav-menu-container">
         <div className="login-register-buttons">
           <button className="login-button">Login</button>
-          <button className="register-button">Register</button>
+          <Link to="/registration" onClick={handleLinkClick}>
+          <button className="register-button">Register</button></Link>
         </div>
         <Link to="/" className="logo-anchor">
           <img

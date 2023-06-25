@@ -10,6 +10,8 @@ import Footer from "./Components/Footer/footer";
 import BurgerMenu from "./Components/BurgerMenu/burgerMenu";
 //import FindHelp from "./Components/FindHelp/findHelp";
 import PostRequestPage from "./pages/PostRequest";
+import RegFormPage from "./pages/RegFormPage"
+import UserProfilePage from "./pages/UserProfilePage"
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/give" element={<GiveHelpPage />} />
             <Route path="/find" element={<FindHelpPage />} />
             <Route path="/findhelpform" element={<PostRequestPage />} />
+            <Route path="/registration" element={<RegFormPage />} />
+            <Route path="/myprofile" element={<UserProfilePage />} />
           </Routes>
         </div>
         <Footer />
