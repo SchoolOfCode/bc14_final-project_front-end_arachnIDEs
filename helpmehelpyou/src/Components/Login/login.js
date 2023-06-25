@@ -44,7 +44,7 @@ export default function Login({session, setSession}) {
     
         return () => subscription.unsubscribe();
 
-      }, []);
+      },[]);
 
       
       
@@ -60,7 +60,7 @@ export default function Login({session, setSession}) {
               
             }}
             onSignOut={() => setSession(null)}
-            providers={["google", "facebook", "github"]}
+            providers={["github"]}
           />
   {session ? (
         <p>Logged in as: {session.user.email}</p>
