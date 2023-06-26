@@ -1,4 +1,4 @@
-# Help Me Help You
+# arachnIDEs present:
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
 
@@ -63,3 +63,5 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 ### ⚙️ How to deploy locally (npm...) ⚙️
 
 ### 🙏 Acknowledgements 🙏
+
+A huge thank you to [School Of Code](https://www.schoolofcode.co.uk/) for allowing us to take part in this course and providing us with the skills to complete this project. we would also like to thank the wider tech community for providing us with so many resources to use in our project.
