@@ -1,9 +1,9 @@
 # arachnIDEs present:
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
-
-<img align="center" src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
-
+<div align="center">
+<img src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
+</div>
 https://helpme-helpyou-favour.netlify.app/
 
 > Connect with your local community to give and receive favours, skills, and support.
