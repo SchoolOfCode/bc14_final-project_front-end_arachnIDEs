@@ -30,8 +30,13 @@ export default function BurgerMenu({session}) {
         <div className="login-register-buttons">
         <Link to="/login" className="login-link">
           <button className="login-button">Login</button>
+
           </Link>
-          <button className="register-button" onClick={handleLogout}>LogOut</button>
+//           <button className="register-button" onClick={handleLogout}>LogOut</button>
+
+          <Link to="/registration" onClick={handleLinkClick}>
+          <button className="register-button">Register</button></Link>
+
         </div>
         <Link to="/" className="logo-anchor">
           <img

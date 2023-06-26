@@ -185,6 +185,10 @@
   font-weight: bolder;
 }
 
+.contact-user-link {
+  align-self: flex-end;
+}
+
 /* Loading gif */
 .give-and-find-help-loading-gif {
   height: 50px;
@@ -267,8 +271,8 @@ No profile picture in DB yet
   transition: background-color 0.3s ease;
   flex-grow: 1;
   flex-basis: 0;
-  background-color: #7db8fa;
-  color: rgb(0, 0, 0);
+  background-color:  #92d18f;
+  color: black;
   flex-direction: column;
   align-items: center;
   max-height: 85px;
@@ -292,7 +296,7 @@ No profile picture in DB yet
 }
 
 .give-help-card.active {
-  background-color: #64a7e5;
+  background-color:  #92d18f;
   color: black;
 }
 
@@ -341,7 +345,7 @@ No profile picture in DB yet
 }
 
 .selected-card {
-  background-color: #5d8fc8;
+  background-color:  #1eb95d;
 }
 
 /* FIND HELP SECTION */
@@ -406,8 +410,8 @@ No profile picture in DB yet
   transition: background-color 0.3s ease;
   flex-grow: 1;
   flex-basis: 0;
-  background-color: #7db8fa;
-  color: rgb(0, 0, 0);
+  background-color:  #92d18f;
+  color: black;
   flex-direction: row;
   align-items: center;
   max-height: 85px;
@@ -425,11 +429,11 @@ No profile picture in DB yet
 }
 
 .find-help-card.active {
-  background-color: #64a7e5;
+  background-color: #92d18f;
   color: black;
 }
 
 .selected-card {
-  background-color: #5d8fc8;
+  background-color:  #1eb95d;
 }
 
