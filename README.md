@@ -2,7 +2,7 @@
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
 
-<img src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
+<img align="center" src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
 
 https://helpme-helpyou-favour.netlify.app/
 
