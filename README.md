@@ -1,14 +1,15 @@
 # arachnIDEs present:
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
+
 <div align="center">
 <img src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
 </div>
-https://helpme-helpyou-favour.netlify.app/
+[Find our app here](https://helpme-helpyou-favour.netlify.app/)
 
-> Connect with your local community to give and receive favours, skills, and support.
->
-> From moving flats to feeding cats - we have it covered.
+<p align="center">Connect with your local community to give and receive favours, skills, and support.
+
+From moving flats to feeding cats - we have it covered.</p>
 
 ## 📖 Contents 📖
 
