@@ -183,10 +183,10 @@ export default function FindHelp() {
   }
 
   // alert the user of the email address of the user who posted the listing
-  function contactUser(email) {
-    // Display email address of user
-    alert(`Here's the email address: ${email}`);
-  }
+  // function contactUser(email) {
+  //   // Display email address of user
+  //   alert(`Here's the email address: ${email}`);
+  // }
 
   // Function to handle the enter key being pressed
   const handleKeyDown = (event) => {
@@ -320,7 +320,6 @@ export default function FindHelp() {
               >
                 <button
                   className="give-and-find-help-contact-user"
-                  // onClick={() => contactUser(email_address)}
                 >
                   Contact user
                 </button>{" "}
