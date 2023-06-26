@@ -319,29 +319,29 @@ Listing - <h1> for title / summary
       </section>
       <section id="give-help-post-request-link-from-give-help">
         <p className="give-help-post-request">
-          Need help? <Link to="/findhelpform">Post a request </Link>
+          Need help? {" "} <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
       <h3 className="category-title">Browse by borough:</h3>
       <div className="carousel">
-        <div className="give-help-card-container">
-          <button className="give-help-left-arrow" onClick={handlePrev}>
+        <div className="give-and-find-help-card-container">
+          <button className="give-and-find-help-left-arrow" onClick={handlePrev}>
             ←
           </button>
           {cards.slice(activeIndex, activeIndex + 3).map((card) => (
             <div
-              className={`give-help-card ${
+              className={`give-and-find-help-card ${
                 card.id === selectedCard ? "selected-card" : ""
               }`}
               key={card.id}
               onClick={() => boroughFilter(card)}
             >
-              <div className="give-help-card-contents">
+              <div className="give-and-find-help-card-contents">
                 <p>{card.borough}</p>
               </div>
             </div>
           ))}
-          <button className="give-help-right-arrow" onClick={handleNext}>
+          <button className="give-and-find-help-right-arrow" onClick={handleNext}>
             →
           </button>
         </div>
