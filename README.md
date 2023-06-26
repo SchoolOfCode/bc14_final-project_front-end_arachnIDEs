@@ -2,7 +2,8 @@
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
 
-![QR code to link to Help Me Help You](./helpmehelpyou/help-me-help-you-qr-code.png "Scan me!")
+<img src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
+
 https://helpme-helpyou-favour.netlify.app/
 
 > Connect with your local community to give and receive favours, skills, and support.
@@ -26,7 +27,7 @@ https://helpme-helpyou-favour.netlify.app/
 [Mohammed Farah](https://github.com/Mfar121)  
 [Olga Khristoliubova](https://github.com/olgaKhristo)  
 [Sarah Salmean](https://github.com/sarahsalmean)  
-[Tom Webb](https://github.com/tomwebb2022)  
+[Tom Webb](https://github.com/tomwebb2022)
 
 ### 🧐 Problem & Solution 💡
 
@@ -48,7 +49,7 @@ React JS
 React router  
 Node JS  
 CSS  
-Jest  
+Jest
 
 ### 🤩 Future Scope 🤩
 
