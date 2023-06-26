@@ -3,6 +3,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const supabase = createClient(
@@ -11,7 +12,11 @@ const supabase = createClient(
   );
 
 export default function Login({session, setSession}) {
-    console.log("Hi this is im loged", session);
+  const navigate = useNavigate();
+    console.log("Logged in", session);
+    if (session) {
+      navigate("/myprofile");
+    }
   
   //testing to log in with github
     // async function signInWithGitHub() {
@@ -26,9 +31,10 @@ export default function Login({session, setSession}) {
     useEffect(() => {
         
         supabase.auth.getSession().then(({ data: { session } }) => {
+          console.log("session is being set below this line (line 29)")
           setSession(session);
           if (session) {
-            console.log(session.user)
+            console.log(session.user);
           }
 
         });
@@ -36,6 +42,7 @@ export default function Login({session, setSession}) {
         const {
           data: { subscription },
         } = supabase.auth.onAuthStateChange((_event, session) => {
+          console.log("session is being set below this line (line 40)")
           setSession(session);
           if (session) {
             // getTasks();
@@ -65,6 +72,7 @@ export default function Login({session, setSession}) {
             providers={["github"]}
           />
   {session ? (
+
         <p>Logged in as: {session.user.email}</p>
       ) : (
         <p>Not logged in</p>

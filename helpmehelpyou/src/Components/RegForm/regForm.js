@@ -1,17 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
 import "./regForm.css";
-export default function RegForm() {
+export default function RegForm({session}) {
+
+  let userID;
+  let emailAddress;
+
+  useEffect(() => {
+  }, [session]);
+
+  if (session) {
+    console.log("there is a session")
+    userID = session.user.id
+    emailAddress = session.user.email
+    console.log("these are the values from the user object within the session object itself - ", session.user.id, session.user.email)
+    console.log("These are the variables - ", userID, emailAddress)
+  } else {
+    console.log("No session found.")
+  }
+
   const [form, setForm] = useState({
     full_name: "",
     display_name: "",
-    email_address: "",
+    email_address: `${emailAddress}`,
     about_me: "",
     gender: "",
     age: "",
     skills_wanted: "",
     skills_offered: "",
+    user_id: userID,
     borough_name: "",
     social_media: "",
     profile_picture: "https://i.ibb.co/YcXqprM/a.png",
@@ -34,7 +52,7 @@ export default function RegForm() {
 
   async function register() {
     const res = await fetch(
-      "https://arachnides-backend.onrender.com/api/user_profile_tbl",
+      "https://arachnides-backend.onrender.com/api/users",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

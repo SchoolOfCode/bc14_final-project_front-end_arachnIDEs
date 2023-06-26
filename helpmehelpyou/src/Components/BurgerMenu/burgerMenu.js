@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import logo from "./logo.png";
 import horizontalLogo from "./horizontal_logo.jpg";
 import "./burgerMenu.css";
 import { createClient } from "@supabase/supabase-js";
+import { useNavigate } from "react-router-dom";
+
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
@@ -17,27 +19,39 @@ export default function BurgerMenu({session}) {
     setIsNavExpanded(!isNavExpanded);
   };
 
+  const navigate = useNavigate();
+
   const handleLinkClick = () => {
     setIsNavExpanded(false);
   };
+
   const handleLogout = async () => {
     if (session) {
-      await supabase.auth.signOut();
+      await supabase.auth.signOut()
+      navigate("/");
     }}
+
+    useEffect(() => {
+      const checkSession = () => {
+        if (!session) {
+          handleLogout();
+        }
+      };
+  
+      checkSession();
+    }, [session, handleLogout]);
+  
+
   return (
     <nav className="burgerMenu">
       <div className="nav-menu-container">
+      {(!session &&
         <div className="login-register-buttons">
-        <Link to="/login" className="login-link">
-          <button className="login-button">Login</button>
-
-          </Link>
-//           <button className="register-button" onClick={handleLogout}>LogOut</button>
-
-          <Link to="/registration" onClick={handleLinkClick}>
-          <button className="register-button">Register</button></Link>
-
-        </div>
+            <Link to="/login" className="login-link">
+            <button className="login-button">Login / Register</button> </Link>
+        </div> )}
+{(session && <button className="register-button" onClick={handleLogout}>LogOut</button>
+)}
         <Link to="/" className="logo-anchor">
           <img
             src={horizontalLogo}
