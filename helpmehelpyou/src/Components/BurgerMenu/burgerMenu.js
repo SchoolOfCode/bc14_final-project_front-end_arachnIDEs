@@ -30,8 +30,6 @@ export default function BurgerMenu() {
             className="logo"
           ></img>
         </Link>
-        {/* <Link to="/" className="link"></Link> */}
-
         <div>
           <button
             className="hamburger-dropdown-menu"

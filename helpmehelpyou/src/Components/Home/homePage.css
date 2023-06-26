@@ -56,8 +56,7 @@
 
 .button-container {
   width: 60%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: auto;
 }
 
 .home-page-buttons {

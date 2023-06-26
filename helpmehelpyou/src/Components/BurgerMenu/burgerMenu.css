@@ -9,6 +9,7 @@
   margin-bottom: 400px;
   background-color: #ffffff;
   color: white;
+  z-index: 1;
 }
 
 .nav-menu-container {
@@ -36,13 +37,13 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin: 2.5px;
+  margin: 0.1rem;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
@@ -65,20 +66,19 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin: 2.5px;
+  margin: 0.1rem;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
   height: 40px;
   width: 65px;
   font-family: "Aoboshi One", serif;
-
 }
 .register-button:hover {
   background-color: #9ee795;
@@ -147,10 +147,6 @@
   background-color: #78af72;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  /* position: absolute;
-  top: 50%;
-  right: 1px;
-  transform: translateY(-50%); */
   display: none;
 }
 .hamburger-dropdown-menu:hover {
@@ -161,6 +157,58 @@
 
 .hamburger-.hamburger-dropdown-menu {
   background-color: #5ea856;
+}
+
+@media screen and (max-width: 400px) {
+  .burgerMenu {
+    width: 100%;
+  }
+  .nav-menu-container {
+    display: flex;
+    align-items: center;
+    margin-right: 0.7rem;
+  }
+  .navigation-menu {
+    margin-left: auto;
+  }
+  .navigation-menu ul {
+    display: none;
+  }
+  .hamburger-dropdown-menu {
+    display: block;
+  }
+  .expanded {
+    position: fixed;
+    top: 0.9rem;
+    right: 3rem;
+    width: 100%;
+  }
+
+  .expanded ul {
+    margin-top: 0.8rem;
+  }
+
+  .expanded li {
+    background-color: #ffffff;
+  }
+
+  /* Show the login and register buttons in column when viewed on a small screen */
+  .login-register-buttons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .login-button {
+    margin-bottom: 0.1rem;
+  }
+  .register-button {
+    margin-top: 0.1rem;
+  }
+  /* Make the logo have smaller margins on a small screen*/
+  .logo-anchor {
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 5000px) {
