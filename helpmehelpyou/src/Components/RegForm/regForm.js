@@ -2,22 +2,24 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
 import "./regForm.css";
-export default function RegForm({session}) {
-
+export default function RegForm({ session }) {
   let userID;
   let emailAddress;
 
-  useEffect(() => {
-  }, [session]);
+  useEffect(() => {}, [session]);
 
   if (session) {
-    console.log("there is a session")
-    userID = session.user.id
-    emailAddress = session.user.email
-    console.log("these are the values from the user object within the session object itself - ", session.user.id, session.user.email)
-    console.log("These are the variables - ", userID, emailAddress)
+    console.log("there is a session");
+    userID = session.user.id;
+    emailAddress = session.user.email;
+    console.log(
+      "these are the values from the user object within the session object itself - ",
+      session.user.id,
+      session.user.email
+    );
+    console.log("These are the variables - ", userID, emailAddress);
   } else {
-    console.log("No session found.")
+    console.log("No session found.");
   }
 
   const [form, setForm] = useState({
@@ -27,7 +29,7 @@ export default function RegForm({session}) {
     about_me: "",
     gender: "",
     age: "",
-    skills_wanted: "",
+    skills_needed: "",
     skills_offered: "",
     user_id: userID,
     borough_name: "",
@@ -73,14 +75,11 @@ export default function RegForm({session}) {
         <form id="reg-form" onSubmit={handleRegSubmit}>
           {/* Display Name  should we specify character limit in display name*/}
           <div className="reg-div-email">
-            <label className="reg-label">
-              Please confirm your email address:
-            </label>
+            <label className="reg-label">My email:</label>
             <input
-              required
+              disabled
               className="reg-input"
               type="text"
-              placeholder="myemail@email.com"
               value={form.email_address}
               onChange={(e) => {
                 setForm(

@@ -11,6 +11,7 @@ export default function FindHelp() {
   const [selectedBorough, setSelectedBorough] = useState(null);
   // State to save the user input in the search box
   const [userInput, setUserInput] = useState("");
+  const [helpers, setHelpers] = useState("");
   // State to save the filtered helpers
   const [filteredHelpers, setFilteredHelpers] = useState(helperDummyData);
   const [allSelected, setAllSelected] = useState(null);
@@ -76,6 +77,25 @@ export default function FindHelp() {
     { id: 30, borough: "Wandsworth" },
     { id: 31, borough: "Westminster" },
   ];
+
+  // function to call the listings from the database
+  async function fetchAllHelpers() {
+    console.log("Attempting to fetch listings from database...");
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/listings"
+    );
+    console.log(res);
+    const data = await res.json();
+    console.log(data);
+    const payload = data.payload;
+    console.log(payload);
+    setHelpers(payload);
+  }
+
+  // Fetch listings before rendering
+  // useEffect(() => {
+  //   fetchAllHelpers();
+  // }, []);
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>

@@ -2,12 +2,15 @@ import { Form } from "react-router-dom";
 import React, { useState } from "react";
 import RegForm from "../RegForm/regForm";
 import "./userProfile.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function UserProfile(form) {
   return (
     <div className="profile-container">
       <div className="profile-background">
-        <h1>My Profile</h1>
+        <h1>My Profile</h1> <Link to="/registration"> Edit profile</Link>
         <div className="pic-and-info-container">
           <div className="profile-pic-container">
             <img
