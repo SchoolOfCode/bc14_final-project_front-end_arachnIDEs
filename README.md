@@ -43,12 +43,12 @@ Our solution to this problem is the development of a platform called 'Help Me He
 
 ### 💻 Tech Stack 💻
 
-techstack
-React JS
-React router
-Node JS
-CSS
-Jest
+techstack  
+React JS  
+React router  
+Node JS  
+CSS  
+Jest  
 
 ### 🤩 Future Scope 🤩
 
