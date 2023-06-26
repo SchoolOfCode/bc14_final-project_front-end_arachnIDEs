@@ -166,7 +166,6 @@ export default function GiveHelp() {
   // V3: using a for...in loop to search through all keys where value is of type string.
   function filterListings() {
     let newArray = [];
-
     if (listings && listings.length > 0 && selectedBorough) {
       newArray = filteredListings.filter((item) => {
         for (let key in item) {
