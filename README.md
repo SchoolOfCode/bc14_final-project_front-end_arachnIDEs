@@ -21,12 +21,12 @@ https://helpme-helpyou-favour.netlify.app/
 
 ### ✍️ Authors ✍️
 
-[Catherine Broadbent](https://github.com/CGreen789)
-[Christopher Webb](https://github.com/Webbocoder)
-[Mohammed Farah](https://github.com/Mfar121)
-[Olga Khristoliubova](https://github.com/olgaKhristo)
-[Sarah Salmean](https://github.com/sarahsalmean)
-[Tom Webb](https://github.com/tomwebb2022)
+[Catherine Broadbent](https://github.com/CGreen789)  
+[Christopher Webb](https://github.com/Webbocoder)  
+[Mohammed Farah](https://github.com/Mfar121)  
+[Olga Khristoliubova](https://github.com/olgaKhristo)  
+[Sarah Salmean](https://github.com/sarahsalmean)  
+[Tom Webb](https://github.com/tomwebb2022)  
 
 ### 🧐 Problem & Solution 💡
 
