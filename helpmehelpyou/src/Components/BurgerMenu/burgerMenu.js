@@ -6,13 +6,12 @@ import "./burgerMenu.css";
 import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 
-
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
   process.env.REACT_APP_ANON_KEY
 );
 
-export default function BurgerMenu({session}) {
+export default function BurgerMenu({ session, setSession }) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const handleNavToggle = () => {
@@ -27,31 +26,27 @@ export default function BurgerMenu({session}) {
 
   const handleLogout = async () => {
     if (session) {
-      await supabase.auth.signOut()
+      await supabase.auth.signOut();
       navigate("/");
-    }}
-
-    useEffect(() => {
-      const checkSession = () => {
-        if (!session) {
-          handleLogout();
-        }
-      };
-  
-      checkSession();
-    }, [session, handleLogout]);
-  
+      setSession(null);
+    }
+  };
 
   return (
     <nav className="burgerMenu">
       <div className="nav-menu-container">
-      {(!session &&
-        <div className="login-register-buttons">
+        {!session && (
+          <div className="login-register-buttons">
             <Link to="/login" className="login-link">
-            <button className="login-button">Login / Register</button> </Link>
-        </div> )}
-{(session && <button className="register-button" onClick={handleLogout}>LogOut</button>
-)}
+              <button className="login-button">Login / Register</button>{" "}
+            </Link>
+          </div>
+        )}
+        {session && (
+          <button className="register-button" onClick={handleLogout}>
+            LogOut
+          </button>
+        )}
         <Link to="/" className="logo-anchor">
           <img
             src={horizontalLogo}

@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <BurgerMenu session={session}/>
+        <BurgerMenu session={session} setSession={setSession}/>
         <div className="app">
           <Routes>
             <Route path="/" element={<HomePage />} />
