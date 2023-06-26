@@ -12,6 +12,7 @@ const supabase = createClient(
 
 export default function Login({session, setSession}) {
     console.log("Hi this is im loged", session);
+  
   //testing to log in with github
     // async function signInWithGitHub() {
     //     const { data, error } = await supabase.auth.signInWithOAuth({
@@ -27,8 +28,9 @@ export default function Login({session, setSession}) {
         supabase.auth.getSession().then(({ data: { session } }) => {
           setSession(session);
           if (session) {
-          
+            console.log(session.user)
           }
+
         });
     
         const {
