@@ -4,12 +4,13 @@
 
 <div align="center">
 <img src="./helpmehelpyou/help-me-help-you-qr-code.png" alt="QR Code" width="200"/>
-</div>
-[Find our app here](https://helpme-helpyou-favour.netlify.app/)
 
-<p align="center">Connect with your local community to give and receive favours, skills, and support.
+[Help Me Help You](https://helpme-helpyou-favour.netlify.app/)
 
+<p>Connect with your local community to give and receive favours, skills, and support.  
 From moving flats to feeding cats - we have it covered.</p>
+
+</div>
 
 ## 📖 Contents 📖
 
