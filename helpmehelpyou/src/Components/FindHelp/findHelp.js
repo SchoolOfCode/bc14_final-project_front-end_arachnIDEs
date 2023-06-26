@@ -12,11 +12,11 @@ export default function FindHelp() {
   const [selectedBorough, setSelectedBorough] = useState(null);
   // State to save the user input in the search box
   const [userInput, setUserInput] = useState("");
-  const [helpers, setHelpers] = useState([]);
+  const [allHelpers, setHelpers] = useState([]);
   // State to save the filtered helpers
-  const [filteredHelpers, setFilteredHelpers] = useState(helpers);
+  const [filteredHelpers, setFilteredHelpers] = useState(allHelpers);
   const [allSelected, setAllSelected] = useState(null);
-  const helpersToGenerate = filteredHelpers.length ? filteredHelpers : helpers;
+  const helpersToGenerate = filteredHelpers.length ? filteredHelpers : allHelpers;
   const [noHelpers, setNoHelpers] = useState(null);
 
   // useEffect functions
@@ -34,9 +34,9 @@ export default function FindHelp() {
 
   useEffect(() => {}, [filteredHelpers.length]);
 
-  useEffect(() => {
-    setFilteredHelpers(helpers);
-  }, [allSelected]);
+  // useEffect(() => {
+  //   setFilteredHelpers(allHelpers);
+  // }, [allSelected]);
 
   useEffect(() => {}, [selectedCard]);
 
@@ -111,7 +111,7 @@ export default function FindHelp() {
   };
 
   function clearFilter() {
-    setFilteredHelpers(helpers);
+    setFilteredHelpers(allHelpers);
     setNoHelpers(null);
     setSelectedCard(null);
     setUserInput("");
@@ -128,7 +128,7 @@ export default function FindHelp() {
       setAllSelected(false);
     }
     if (allSelected) {
-      setFilteredHelpers(helpers);
+      setFilteredHelpers(allHelpers);
     }
     // set the following code block to only run if something has been searched
     if (userInput !== "" && !allSelected) {
@@ -142,7 +142,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && !selectedBorough && !allSelected) {
-      let boroughArray = helpers.filter((item) => {
+      let boroughArray = allHelpers.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredHelpers(boroughArray);
@@ -152,7 +152,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && selectedBorough && !allSelected) {
-      let boroughArray = helpers.filter((item) => {
+      let boroughArray = allHelpers.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredHelpers(boroughArray);
@@ -162,7 +162,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && allSelected) {
-      let boroughArray = helpers;
+      let boroughArray = allHelpers;
       setFilteredHelpers(boroughArray);
       if (filteredHelpers.length === 0) {
         setNoHelpers(true);
@@ -182,7 +182,7 @@ export default function FindHelp() {
 
   // filters listings based on user input
   function filterHelpers() {
-    if (helpers && helpers.length > 0) {
+    if (allHelpers && allHelpers.length > 0) {
       let filteredArray = filteredHelpers.filter((item) => {
         return Object.values(item).some((value) => {
           return (
