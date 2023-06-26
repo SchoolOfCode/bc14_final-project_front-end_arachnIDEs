@@ -14,13 +14,13 @@ From moving flats to feeding cats - we have it covered.</p>
 
 ## 📖 Contents 📖
 
-1. [✍️ Authors ✍️](#✍️-authors-✍️)
-2. [🧐 Problem & Solution 💡](#🧐-problem--solution-💡)
-3. [📹 Instructions or Demo video 📹](#📹-instructions-or-demo-video-📹)
-4. [💻 Tech Stack 💻](#💻-tech-stack-💻)
-5. [🤩 Future Scope 🤩](#🤩-future-scope-🤩)
-6. [⚙️ How to deploy locally (npm...) ⚙️](#⚙️-how-to-deploy-locally-npm-⚙️)
-7. [🙏 Acknowledgements 🙏](#🙏-acknowledgements-🙏)
+- [✍️ Authors ✍️](#authors)
+- [🧐 Problem and Solution 💡](#problem-and-solution)
+- [📹 Instructions or Demo video 📹](#instructions-or-demo-video)
+- [💻 Tech Stack 💻](#tech-stack)
+- [🤩 Future Scope 🤩](#future-scope)
+- [⚙️ How to deploy locally ⚙️](#how-to-deploy-locally)
+- [🙏 Acknowledgements 🙏](#acknowledgements)
 
 ### ✍️ Authors ✍️
 
@@ -31,7 +31,7 @@ From moving flats to feeding cats - we have it covered.</p>
 [Sarah Salmean](https://github.com/sarahsalmean)  
 [Tom Webb](https://github.com/tomwebb2022)
 
-### 🧐 Problem & Solution 💡
+### 🧐 Problem and Solution 💡
 
 In a post-Covid world, many people are struggling with a lack of a support system. This struggle is compounded by a cost-of-living crisis, preventing individuals from meeting their basic and auxiliary needs, whether due to financial issues or physical limitations.
 Developing community cohesion is a challenge that requires effort from members within the community, many of whom are also struggling with the cost of living.
@@ -62,7 +62,18 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 - [ ] A proximity feature, showing you how close/far another user is from you. At the moment, it only displays the borough in which a user resides.
 - [ ] A few extra pages, including a potential blog, news page, and testimonials page.
 
-### ⚙️ How to deploy locally (npm...) ⚙️
+### ⚙️ How to deploy locally ⚙️
+
+we have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
+
+clone the project:
+git clone https://link-to-project
+Go to the project directory:
+cd helpmehelpyou
+Install the required dependencies:
+npm i
+Start the server:
+npm start
 
 ### 🙏 Acknowledgements 🙏
 
