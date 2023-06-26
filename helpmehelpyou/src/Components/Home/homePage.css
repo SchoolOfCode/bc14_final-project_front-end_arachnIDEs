@@ -56,8 +56,7 @@
 
 .button-container {
   width: 60%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: auto;
 }
 
 .home-page-buttons {
@@ -185,7 +184,6 @@
   min-width: 100%;
 }
 
-/* .about-list-item {} */
 
 .carousel {
   display: flex;
@@ -210,7 +208,7 @@
 
 .right-arrow {
   height: 30px;
-  font-size: 20pt;
+  font-size: 1.6rem;
   display: inline block;
   width: 30px;
   border: none;
@@ -221,12 +219,12 @@
 }
 
 .location {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .left-arrow {
   height: 30px;
-  font-size: 20pt;
+  font-size: 1.6rem;
   display: inline block;
   width: 30px;
   border: none;
@@ -256,6 +254,7 @@
   text-align: center;
   justify-items: center;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .meet-title-container {
@@ -335,4 +334,9 @@
   font-size: 1.25rem;
   margin-top: 10px;
   text-align: center;
+}
+
+.meet-title-container {
+  display: flex;
+  justify-content: center;
 }
