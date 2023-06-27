@@ -15,11 +15,11 @@ if checked, show another input - input box - I can offer... - skills_offered
 button - Create Listing
 */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
 import "./postRequest.css";
-export default function PostRequest() {
+export default function PostRequest({ session, user }) {
   // state goes here
   // const [form, setForm] = useState({
   //   listing_id: uuidv4(),
@@ -74,6 +74,28 @@ export default function PostRequest() {
     navigate("/give");
   };
 
+  useEffect(() => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      // add below back in when fetch is fixed - 🚨
+      // display_name: user.display_name,
+      // email_address: session.user.email,
+    }));
+  }, [session, user]);
+
+  // CONDITIONALLY RENDER EMAIL AND DISPLAY NAME SECTION ONCE FETCH IS FIXED 🚨
+
+  // if (session) {setForm({
+  //   display_name: "",
+  //   listing_title: "",
+  //   listing_details: "",
+  //   skills_wanted: "",
+  //   skills_offered: "",
+  //   borough_name: "",
+  //   email_address: session.user.email,
+  //   timescale: "",
+  // })}
+
   async function postToDb() {
     const res = await fetch(
       "https://arachnides-backend.onrender.com/api/listings",
@@ -94,7 +116,9 @@ export default function PostRequest() {
         <h1 id="ask-for-help-title" className="centered-text">
           Ask for help
         </h1>
-        <p className="centered-text small-text">You are posting as a guest</p>
+        {!session && (
+          <p className="centered-text small-text">You are posting as a guest</p>
+        )}
         {/* Put an onSubmit in the form element - callback function/call a function already written. */}
         <form id="ask-for-help-form" onSubmit={handleMakeAPostSubmit}>
           <div className="ask-for-help-div">
@@ -118,10 +142,12 @@ export default function PostRequest() {
             ></input>
           </div>
           {/* Log in and Register will need Link tags at some point! */}
-          <p className="centered-text small-text">
-            This will be visible as you are posting as a guest. Log in or
-            Register to hide your email address.
-          </p>
+          {!session && (
+            <p className="centered-text small-text">
+              This will be visible as you are posting as a guest. Log in or
+              Register to hide your email address.
+            </p>
+          )}
           {/* Display Name  should we specify character limit in display name*/}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Display Name*</label>
@@ -402,7 +428,7 @@ export default function PostRequest() {
                   <option value="DIY 🔧">DIY</option>
                   <option value="Dog Walking 🐶">Dog Walking</option>
                   <option value="Cooking 🍝">Cooking</option>
-                <option value="Baking 🍰">Baking</option>
+                  <option value="Baking 🍰">Baking</option>
                 </optgroup>
                 <optgroup label="Tutoring">
                   <option value="Maths 🧮">Maths</option>

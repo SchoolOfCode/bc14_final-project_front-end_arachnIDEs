@@ -5,8 +5,7 @@ import "./userProfile.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export default function UserProfile({ session }) {
-  const [user, setUser] = useState({});
+export default function UserProfile({ session, user, setUser }) {
   const navigate = useNavigate();
 
   console.log("here is the session in userProfile: ", session);
@@ -45,7 +44,8 @@ export default function UserProfile({ session }) {
 
   return (
     <div className="profile-container">
-      {user !== null && (
+    </div>
+  )}/* {user !== null && (
         <div className="profile-background">
           <h1>My Profile</h1> <Link to="/registration"> Edit profile</Link>
           <div className="pic-and-info-container">
@@ -103,6 +103,6 @@ export default function UserProfile({ session }) {
           </div>
         </div>
       )}
-    </div>
+    </div>}
   );
-}
+}*/ 
