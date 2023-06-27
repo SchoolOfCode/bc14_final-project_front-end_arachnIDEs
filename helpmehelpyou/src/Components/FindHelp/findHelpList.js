@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 import FindHelpListItem from "./findHelpListItem.js";
 
 export default function FindHelpList(props) {
-  const {listItems} = props;
+  const { listItems } = props;
   if (!listItems.length) {
     return (
       <div className="loading-div">
@@ -21,12 +21,7 @@ export default function FindHelpList(props) {
     <>
       {listItems.map((listItem) => {
         console.log();
-        return (
-          <FindHelpListItem
-            helpers={listItem}
-            key={listItem.user_id}
-          />
-        );
+        return <FindHelpListItem helper={listItem} key={listItem.user_id} />;
       })}
     </>
   );

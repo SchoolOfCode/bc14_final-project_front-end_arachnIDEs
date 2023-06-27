@@ -82,7 +82,7 @@ export default function FindHelp() {
 
   // function to call the listings from the database
   async function fetchAllHelpers() {
-    console.log("Attempting to fetch listings from database...");
+    console.log("Attempting to fetch users from database...");
     const res = await fetch(
       "https://arachnides-backend.onrender.com/api/users"
     );
