@@ -43,24 +43,28 @@ export default function UserProfile({ session }) {
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
           </div>
           <div className="icons-container">
-            <h3 className="borough">🏠:{user.borough_name}</h3>{" "}
+            <h3 className="borough">🏠:{user && user.borough_name}</h3>{" "}
             <h3 className="gender">⚥:</h3>
           </div>
         </div>
         <div className="profile-details">
           <h3 className="full-name">
-            Full name: {user.full_name}
+            Full name: {user && user.full_name}
             <p className="full-name-info">
               This isn't visible to other users
             </p>{" "}
           </h3>
-          <h3 className="display-name">Display name: {user.display_name}</h3>
-          <h3 className="age">Age: {user.age}</h3>
-          <h3 className="about-me">About me... {user.about_me}</h3>
-          <h3 className="skills-offered">
-            I can offer... {user.skills_offered}
+          <h3 className="display-name">
+            Display name: {user && user.display_name}
           </h3>
-          <h3 className="skills-wanted">I need... {user.skills_wanted}</h3>
+          <h3 className="age">Age: {user && user.age}</h3>
+          <h3 className="about-me">About me... {user && user.about_me}</h3>
+          <h3 className="skills-offered">
+            I can offer... {user && user.skills_offered}
+          </h3>
+          <h3 className="skills-wanted">
+            I need... {user && user.skills_needed}
+          </h3>
         </div>
         <div className="profile-buttons">
           <div className="user-contact">
@@ -74,17 +78,19 @@ export default function UserProfile({ session }) {
             </a>
           </div>
           <div className="user-contact">
-            <a
-              href={`mailto:${user.email_address}`}
-              className="contact-user-link"
-            >
-              <button
-                className="contact-user"
-                // onClick={() => contactUser(email_address)}
+            {session && (
+              <a
+                href={`mailto:${session.user.email}`}
+                className="contact-user-link"
               >
-                Email me
-              </button>{" "}
-            </a>
+                <button
+                  className="contact-user"
+                  // onClick={() => contactUser(email_address)}
+                >
+                  Email me
+                </button>{" "}
+              </a>
+            )}
           </div>
         </div>
       </div>
