@@ -20,8 +20,6 @@ export default function FindHelpListItem(props) {
       {" "}
       <section className="give-and-find-help-listings-area">
         {/* List of helpers TITLE */}
-        {helper.map(() => (
-          // Parent div for each new box
           <div key={user_id} className="give-and-find-help-individual-listing">
             {/* REMOVED FOR NOW - THERE IS NO LISTING TITLE IN THE USER DB 
         <h1 className="find-help-listing-title">{listing.listing_title}</h1> */}
@@ -60,7 +58,6 @@ export default function FindHelpListItem(props) {
               </button>
             </div>
           </div>
-        ))}
       </section>
     </div>
   );
