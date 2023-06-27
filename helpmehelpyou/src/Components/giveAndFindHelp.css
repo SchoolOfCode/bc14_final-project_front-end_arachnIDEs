@@ -92,6 +92,7 @@
   font-size: 1.2rem;
   justify-content: center;
   background-color: #7db8fa;
+  min-width: 350px;
   max-width: 350px;
   height: auto;
   border-radius: 20px;
@@ -228,21 +229,21 @@
     display: flex;
     align-items: center;
   }
-
+​
  No image showing on here at the moment
 .give-help-image-container {
   margin-right: 60px;
   margin-left: 10px;
   margin-top: 15px;
 } 
-
+​
 No profile picture in DB yet
 .give-help-profile-picture {
   border-radius: 50px;
   width: 50px;
   height: 50px;
 }
-
+​
 */
 
 /* Posted by and location */

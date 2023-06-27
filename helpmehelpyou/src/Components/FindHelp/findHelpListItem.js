@@ -4,7 +4,6 @@ export default function FindHelpListItem(props) {
   const { helper } = props;
   if (!helper) return null;
   const {
-    user_id,
     display_name,
     email_address,
     borough_name,
@@ -16,11 +15,10 @@ export default function FindHelpListItem(props) {
   } = helper;
 
   return (
-    <div>
+    // <section className="give-and-find-help-listings-area">
+    <div className="give-and-find-help-individual-listing">
       {" "}
-      <section className="give-and-find-help-listings-area">
         {/* List of helpers TITLE */}
-          <div key={user_id} className="give-and-find-help-individual-listing">
             {/* REMOVED FOR NOW - THERE IS NO LISTING TITLE IN THE USER DB 
         <h1 className="find-help-listing-title">{listing.listing_title}</h1> */}
             <div className="find-help-user-img-and-rating">
@@ -58,7 +56,6 @@ export default function FindHelpListItem(props) {
               </button>
             </div>
           </div>
-      </section>
-    </div>
+      // </section>
   );
 }
