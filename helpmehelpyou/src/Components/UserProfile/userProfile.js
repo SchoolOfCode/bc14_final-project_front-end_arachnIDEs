@@ -5,9 +5,11 @@ import "./userProfile.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export default function UserProfile({ session }) {
-  const [user, setUser] = useState({});
+export default function UserProfile({ session, user, setUser }) {
+  const navigate = useNavigate();
+
   console.log("here is the session in userProfile: ", session);
+  // const id = session.user.id
 
   const navigate = useNavigate();
 
@@ -30,6 +32,8 @@ export default function UserProfile({ session }) {
       // console.log(user);
       return data;
     } else {
+      console.log("res doesn't exist", res);
+
       navigate("/registration");
     }
   }
@@ -42,6 +46,9 @@ export default function UserProfile({ session }) {
   useEffect(() => {
     // setInterval(console.log(user), 3000);
     console.log(user);
+    // if (!user) {
+    //   navigate("/registration");
+    // }
   }, [user]);
 
   return (
@@ -107,7 +114,7 @@ export default function UserProfile({ session }) {
             )}
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </div>}
   );
-}
+}*/ 
