@@ -91,6 +91,7 @@
   font-size: 1.2rem;
   justify-content: center;
   background-color: #7db8fa;
+  min-width: 350px;
   max-width: 350px;
   height: auto;
   border-radius: 20px;
@@ -409,6 +410,7 @@ No profile picture in DB yet
   }
 
   .give-and-find-help-individual-listing {
+    min-width: 310px;
     max-width: 310px;
   }
 
