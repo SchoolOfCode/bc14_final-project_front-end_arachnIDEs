@@ -1,4 +1,10 @@
-.post-request-container {
+.about_me_desc {
+  font-size: 10pt;
+  font-weight: 200;
+}
+
+
+.reg-container {
   margin: 7rem auto;
   display: flex;
   flex-direction: column;
@@ -7,8 +13,10 @@
   max-width: 90%;
 }
 
+
+
 /* Box for the component */
-.ask-for-help {
+.registration {
   display: flex;
   flex-direction: column;
   border: 0.1875rem solid #000000;
@@ -20,17 +28,18 @@
   background-color: #7db8fa;
 }
 
-#ask-for-help-form {
+#reg-form {
   display: flex;
   flex-direction: column;
 }
 
-#ask-for-help-title {
+#reg-title {
   text-align: center;
   margin: 0;
+  margin-bottom: 50px;
 }
 
-#create-listing-btn {
+#reg-btn {
   background-color: #78af72;
   border-radius: 1.25rem;
   border: 0.1875rem solid #000000;
@@ -43,21 +52,20 @@
   box-shadow: #000000 2px 2px 0 0;
   transition: background-color 0.2s ease-in-out;
   cursor: pointer;
-  font-family: "Aoboshi One", serif;
 }
-#boroughs.ask-for-help-input {
+#boroughs.reg-input {
   cursor: pointer;
 }
 
-#categories-skills-wanted.ask-for-help-input {
+#categories-skills-wanted.reg-input {
   cursor: pointer;
 }
 
-#categories-skills-offered.ask-for-help-input {
+#categories-skills-offered.reg-input {
   cursor: pointer;
 }
 
-#create-listing-btn:hover {
+#reg-btn:hover {
   background-color: #4563e7;
   color: white;
   font-weight: bolder;
@@ -65,7 +73,7 @@
 }
 
 /* Styles each input box */
-.ask-for-help-input {
+.reg-input {
   float: left;
   width: 75%;
   border-radius: 0.375rem;
@@ -77,7 +85,7 @@
 }
 
 /* Text area sizing */
-#ask-for-help-description.ask-for-help-input {
+#reg-description.reg-input {
   width: 35%;
   height: 6.25rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -102,13 +110,19 @@
 }
 
 /* Lines up labels and inputs */
-.ask-for-help-div {
+.reg-div {
   display: flex;
   justify-content: space-between;
 }
 
+.reg-div-email {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 /* Lining up labels with input boxes */
-.ask-for-help-label {
+.reg-label {
   float: left;
   width: 25%;
   margin-top: 0.5rem;
@@ -116,37 +130,30 @@
   font-weight: bold;
 }
 
-/* Get the checkbox label to be on one line, not wrapped */
-#urgent-request-checkbox-label {
-  flex: 1;
-}
 
-#offer-something-checkbox-label {
-  flex: 1;
-}
 /* Media Queries for Responsiveness */
 
 @media (max-width: 600px) {
-  .ask-for-help {
+  .registration {
     margin: 0.3125rem;
     max-width: 100%;
   }
 
-  .ask-for-help-input {
+  .reg-input {
     float: left;
     width: 75%;
     margin-left: 0.9375rem;
     cursor: pointer;
   }
 
-  #ask-for-help-description {
+  #reg-description {
     width: 9.325rem;
     height: 4.6875rem;
     box-sizing: border-box;
     width: 65%;
   }
 
-  .ask-for-help-label {
+  .reg-label {
     margin-top: 0.3125rem;
     float: left;
     width: 25%;
@@ -154,24 +161,24 @@
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
-  .ask-for-help {
+  .registration {
     margin: 0.3125rem;
     max-width: 100%;
   }
 
-  .ask-for-help-input {
+  .reg-input {
     float: left;
     width: 75%;
   }
 
-  #ask-for-help-description {
+  #reg-description {
     width: 9.325rem;
     height: 4.6875rem;
     box-sizing: border-box;
     width: 65%;
   }
 
-  .ask-for-help-label {
+  .reg-label {
     float: left;
     width: 25%;
   }
@@ -182,32 +189,32 @@
     min-width: 810px;
     max-width: 75%;
   } */
-  .ask-for-help-input {
+  .reg-input {
     float: left;
     width: 75%;
   }
 
-  .ask-for-help-label {
+  .reg-label {
     float: left;
     width: 25%;
   }
 
-  .ask-for-help {
+  .registration {
     margin: 0.3125rem;
     max-width: 100%;
   }
 
-  #input.ask-for-help-input {
+  #input.reg-input {
     float: left;
     width: 75%;
   }
 
-  .ask-for-help-label {
+  .reg-label {
     float: left;
     width: 25%;
   }
 
-  #ask-for-help-description {
+  #reg-description {
     width: 9.375rem;
   }
 }

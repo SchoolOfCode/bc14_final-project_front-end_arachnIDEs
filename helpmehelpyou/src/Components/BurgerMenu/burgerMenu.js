@@ -1,28 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import logo from "./logo.png";
 import horizontalLogo from "./horizontal_logo.jpg";
-
 import "./burgerMenu.css";
+import { createClient } from "@supabase/supabase-js";
+import { useNavigate } from "react-router-dom";
 
-export default function BurgerMenu() {
+const supabase = createClient(
+  process.env.REACT_APP_SUPABASE_URL,
+  process.env.REACT_APP_ANON_KEY
+);
+
+export default function BurgerMenu({ session, setSession }) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   const handleNavToggle = () => {
     setIsNavExpanded(!isNavExpanded);
   };
 
+  const navigate = useNavigate();
+
   const handleLinkClick = () => {
     setIsNavExpanded(false);
+  };
+
+  const handleLogout = async () => {
+    if (session) {
+      await supabase.auth.signOut();
+      navigate("/");
+      setSession(null);
+    }
   };
 
   return (
     <nav className="burgerMenu">
       <div className="nav-menu-container">
-        <div className="login-register-buttons">
-          <button className="login-button">Login</button>
-          <button className="register-button">Register</button>
-        </div>
+        {!session && (
+          <div className="login-register-buttons">
+            <Link to="/login" className="login-link">
+              <button className="login-button">Login / Register</button>{" "}
+            </Link>
+          </div>
+        )}
+        {session && (
+          <button className="register-button" onClick={handleLogout}>
+            LogOut
+          </button>
+        )}
         <Link to="/" className="logo-anchor">
           <img
             src={horizontalLogo}
@@ -30,8 +54,6 @@ export default function BurgerMenu() {
             className="logo"
           ></img>
         </Link>
-        {/* <Link to="/" className="link"></Link> */}
-
         <div>
           <button
             className="hamburger-dropdown-menu"
@@ -64,6 +86,13 @@ export default function BurgerMenu() {
                   Home
                 </Link>
               </li>
+              {session && (
+                <li>
+                <Link to="/myprofile" onClick={handleLinkClick}>
+                  My Profile
+                </Link>
+              </li>
+        )}
               <li>
                 <Link to="/give" onClick={handleLinkClick}>
                   Give Help

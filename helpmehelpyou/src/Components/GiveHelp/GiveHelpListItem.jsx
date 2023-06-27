@@ -1,5 +1,9 @@
+
+import React from 'react'
+// import { Link } from "react-router-dom";
+
 function GiveHelpListItem(props) {
-  const { listing, contactUser } = props;
+  const { listing} = props;
   if (!listing) return null;
 
   const {
@@ -70,12 +74,9 @@ function GiveHelpListItem(props) {
           <p className="give-help-rating">{listing.rating}</p>
         </div> */}
       <div className="give-and-find-help-user-contact">
-        <button
-          className="give-and-find-help-contact-user"
-          onClick={() => contactUser(email_address)}
-        >
-          Contact user
-        </button>
+      <a href={`mailto:${email_address}`} className="contact-user-link">   
+        <button className="give-and-find-help-contact-user"
+          >Contact user</button> </a>
         <button className="give-and-find-help-visit-profile">
           View Profile
         </button>

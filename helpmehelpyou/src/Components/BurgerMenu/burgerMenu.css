@@ -9,20 +9,21 @@
   margin-bottom: 400px;
   background-color: #ffffff;
   color: white;
+  z-index: 1;
 }
 
 .nav-menu-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
   padding: 5px;
 }
 
 .login-register-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .login-button {
@@ -34,16 +35,18 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
-  margin-bottom: 5px;
+  margin: 0.1rem;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  height: 40px;
+  width: 4.6rem;
   font-family: "Aoboshi One", serif;
 }
 .login-button:hover {
@@ -61,15 +64,18 @@
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.8rem;
+  line-height: 1rem;
   transition: background-color 0.2s ease-in-out;
   text-align: center;
   text-decoration: none;
   user-select: none;
+  margin: 0.1rem;
   -webkit-user-select: none;
   touch-action: manipulation;
   cursor: pointer;
+  height: 40px;
+  width: 65px;
   font-family: "Aoboshi One", serif;
 }
 .register-button:hover {
@@ -78,43 +84,24 @@
   text-emphasis-color: white;
 }
 
-/* .logo {
-  max-height: 35px;
-  min-height: 35px;
-  min-width: 65px;
-  max-width: 65px;
-  margin-bottom: 20px;
-} */
-
-.logo-anchor {
-  display: flex;
-}
-
 .brand-name {
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration-style: "";
   font-size: 2.5rem;
-  /* margin-left: 1rem; */
 }
-/* .navigation-menu {
-  margin-left: auto;
-} */
 
 .navigation-menu ul {
+  text-align: center;
   display: flex;
-  width: fit-content;
-  /* width: auto; */
+  max-width: 7.6rem;
   padding: 0;
   color: #fefefe;
 }
 .navigation-menu li {
   list-style-type: none;
   width: fit-content;
-  margin: 0;
-  /* margin: 0 1rem; */
-  /* width: auto; */
   color: #78af72;
 }
 .navigation-menu li a {
@@ -122,6 +109,7 @@
   width: fit-content;
   /* padding: 10%; */
   min-width: 100px;
+  padding-right: 10px;
   /* width: 100%; */
   display: block;
   /* width: auto; */
@@ -139,10 +127,6 @@
   background-color: #78af72;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  /* position: absolute;
-  top: 50%;
-  right: 1px;
-  transform: translateY(-50%); */
   display: none;
 }
 .hamburger-dropdown-menu:hover {
@@ -153,6 +137,71 @@
 
 .hamburger-.hamburger-dropdown-menu {
   background-color: #5ea856;
+}
+
+/* Logo styling */
+.logo {
+  height: 30px;
+  width: auto;
+}
+
+@media screen and (max-width: 430px) {
+  .burgerMenu {
+    width: 100%;
+  }
+  .nav-menu-container {
+    display: flex;
+    align-items: center;
+    margin-right: 0.3rem;
+  }
+  .navigation-menu {
+    margin-left: auto;
+  }
+  .navigation-menu ul {
+    display: none;
+  }
+  .hamburger-dropdown-menu {
+    display: block;
+  }
+  .expanded {
+    position: fixed;
+    top: 0.9rem;
+    right: 3rem;
+    width: 100%;
+  }
+
+  .expanded ul {
+    margin-top: 0.8rem;
+  }
+
+  .expanded li {
+    background-color: #ffffff;
+  }
+
+  /* Show the login and register buttons in column when viewed on a small screen */
+  .login-register-buttons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .login-button {
+    margin-bottom: 0.1rem;
+    max-width: fit-content;
+  }
+  .register-button {
+    margin-top: 0.1rem;
+  }
+  /* Make the logo have smaller margins on a small screen*/
+  .logo-anchor {
+    margin: 0.5rem auto;
+    display: flex;
+    justify-items: center;
+  }
+
+  /* .login-link {
+    max-width: 1rem;
+  } */
 }
 
 @media screen and (max-width: 5000px) {
@@ -170,29 +219,24 @@
 @media screen and (max-width: 5000px) {
   .navigation-menu ul {
     position: absolute;
-    top: 60px;
+    top: 40px;
     right: 0;
+    margin-right: 20px;
     flex-direction: column;
-    width: 20%;
+    width: 100px;
     background-color: #ffffff;
   }
-  .navigation-menu li {
-    text-align: center;
-    margin-left: auto;
-    margin-right: 10px;
-  }
+
   .navigation-menu li a {
     color: black;
-    /* width: 100%; */
-    /* padding: 5px; */
+    right: 0;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    padding: 5px;
-    /* border-radius: 30px;
-    margin: 5px; */
+    padding-bottom: 5px;
   }
+
   .navigation-menu li:hover {
     background-color: #78af72;
   }
@@ -208,12 +252,4 @@
   .navigation-menu.expanded ul {
     display: block;
   }
-}
-
-.logo {
-  /* min-width: 120px;
-  min-height: 20px;
-  margin-top: 40px; */
-  height: 30px;
-  width: auto;
 }
