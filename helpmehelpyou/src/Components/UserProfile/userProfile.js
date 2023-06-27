@@ -16,14 +16,16 @@ export default function UserProfile({ session }) {
     const res = await fetch(
       `https://arachnides-backend.onrender.com/api/users/${id}`
     );
+    const data = await res.json();
+    console.log({ data });
     let payloadExists = false;
-    for (let key in res) {
+    for (let key in data) {
+      console.log("Hello from inside for...in loop.");
       if (key === "payload") {
         payloadExists = true;
       }
     }
     if (payloadExists === true) {
-      const data = await res.json();
       setUser(data.payload[0]);
       // console.log(user);
       return data;
