@@ -1,4 +1,4 @@
-# arachnIDEs present:  
+# arachnIDEs present:
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
 
@@ -14,15 +14,15 @@ From moving flats to feeding cats - we have it covered.</p>
 
 ## 📖 Contents 📖
 
-- [Authors](#Authors)
-- [Problem and Solution](#problem-and-solution)
-- [Instructions or Demo video](#instructions-or-demo-video)
-- [Tech Stack](#💻-Tech-Stack-💻)
-- [Future Scope](#future-scope)
-- [How to deploy locally](#how-to-deploy-locally)
-- [Acknowledgements](#acknowledgements)
+- [Authors](#authors)
+- [Problem and Solution](#🧐-problem-and-solution-💡)
+- [Instructions or Demo video](#📹-instructions-or-demo-video-📹)
+- [Tech Stack](#💻-tech-stack-💻)
+- [Future Scope](#🤩-future-scope-🤩)
+- [How to deploy locally](#⚙️-how-to-deploy-locally-⚙️)
+- [Acknowledgements](#🙏-acknowledgements-🙏)
 
-### ✍️ Authors ✍️
+### Authors
 
 [Catherine Broadbent](https://github.com/CGreen789)  
 [Christopher Webb](https://github.com/Webbocoder)  
@@ -46,17 +46,29 @@ Our solution to this problem is the development of a platform called 'Help Me He
 
 ### 💻 Tech Stack 💻
 
+#### Front-End
+
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+#### Back-End
+
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)  
-React JS
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)  
-React router  
-Node JS
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)  
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)  
+![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)  
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)  
-Supabase ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)  
-CSS  
-Jest
-![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)  
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+
+#### Testing
+
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+#### Planning and Design
+
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
 
 ### 🤩 Future Scope 🤩
@@ -72,19 +84,23 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 
 We have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
 
-  
 # Clone the project
-<button class="copy-button" data-clipboard-target="#clone-command">Copy Code</button>
 
- # Go to the project directory
+git clone https://link-to-project
+
+# Go to the project directory
+
+```
 cd helpmehelpyou
+```
 
 # Install the required dependencies
+
 npm install
 
 # Start the server
-npm start
 
+npm start
 
 ### 🙏 Acknowledgements 🙏
 
