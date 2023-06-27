@@ -9,7 +9,6 @@ import Footer from "./Components/Footer/footer";
 import LoginPage from "./pages/LoginPage";
 import{useState} from "react";
 import BurgerMenu from "./Components/BurgerMenu/burgerMenu";
-//import FindHelp from "./Components/FindHelp/findHelp";
 import PostRequestPage from "./pages/PostRequest";
 import RegFormPage from "./pages/RegFormPage"
 import UserProfilePage from "./pages/UserProfilePage"
@@ -20,7 +19,7 @@ function App() {
   return (
     <>
       <div className="app-container">
-        <BurgerMenu session={session}/>
+        <BurgerMenu session={session} setSession={setSession}/>
         <div className="app">
           <Routes>
             <Route path="/" element={<HomePage />} />

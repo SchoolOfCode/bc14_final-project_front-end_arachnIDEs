@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../giveAndFindHelp.css";
 import image from "./findHelpImage.png";
-import helperDummyData from "./helperDummyData";
+// import helperDummyData from "./helperDummyData";
 import { Link } from "react-router-dom";
+import FindHelpList from "./findHelpList.js";
 
 export default function FindHelp() {
   // state
@@ -11,11 +12,13 @@ export default function FindHelp() {
   const [selectedBorough, setSelectedBorough] = useState(null);
   // State to save the user input in the search box
   const [userInput, setUserInput] = useState("");
+  const [allHelpers, setHelpers] = useState([]);
   // State to save the filtered helpers
-  const [filteredHelpers, setFilteredHelpers] = useState(helperDummyData);
+  const [filteredHelpers, setFilteredHelpers] = useState(allHelpers);
   const [allSelected, setAllSelected] = useState(null);
-
+  const helpersToGenerate = filteredHelpers.length ? filteredHelpers : allHelpers;
   const [noHelpers, setNoHelpers] = useState(null);
+
   // useEffect functions
   useEffect(() => {
     setNoHelpers(filteredHelpers.length === 0);
@@ -31,9 +34,9 @@ export default function FindHelp() {
 
   useEffect(() => {}, [filteredHelpers.length]);
 
-  useEffect(() => {
-    setFilteredHelpers(helperDummyData);
-  }, [allSelected]);
+  // useEffect(() => {
+  //   setFilteredHelpers(allHelpers);
+  // }, [allSelected]);
 
   useEffect(() => {}, [selectedCard]);
 
@@ -77,6 +80,24 @@ export default function FindHelp() {
     { id: 31, borough: "Westminster" },
   ];
 
+  // function to call the listings from the database
+  async function fetchAllHelpers() {
+    console.log("Attempting to fetch users from database...");
+    const res = await fetch(
+      "https://arachnides-backend.onrender.com/api/users"
+    );
+    console.log(res);
+    const data = await res.json();
+    console.log(data);
+    const payload = data.payload;
+    console.log(payload);
+    setHelpers(payload);
+  }
+
+  useEffect(() => {
+    fetchAllHelpers();
+  }, []);
+
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? helperCards.length - 3 : prevIndex - 1
@@ -90,7 +111,7 @@ export default function FindHelp() {
   };
 
   function clearFilter() {
-    setFilteredHelpers(helperDummyData);
+    setFilteredHelpers(allHelpers);
     setNoHelpers(null);
     setSelectedCard(null);
     setUserInput("");
@@ -107,7 +128,7 @@ export default function FindHelp() {
       setAllSelected(false);
     }
     if (allSelected) {
-      setFilteredHelpers(helperDummyData);
+      setFilteredHelpers(allHelpers);
     }
     // set the following code block to only run if something has been searched
     if (userInput !== "" && !allSelected) {
@@ -121,7 +142,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && !selectedBorough && !allSelected) {
-      let boroughArray = helperDummyData.filter((item) => {
+      let boroughArray = allHelpers.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredHelpers(boroughArray);
@@ -131,7 +152,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && selectedBorough && !allSelected) {
-      let boroughArray = helperDummyData.filter((item) => {
+      let boroughArray = allHelpers.filter((item) => {
         return item.borough_name.includes(card.borough);
       });
       setFilteredHelpers(boroughArray);
@@ -141,7 +162,7 @@ export default function FindHelp() {
         setNoHelpers(null);
       }
     } else if (userInput === "" && allSelected) {
-      let boroughArray = helperDummyData;
+      let boroughArray = allHelpers;
       setFilteredHelpers(boroughArray);
       if (filteredHelpers.length === 0) {
         setNoHelpers(true);
@@ -161,7 +182,7 @@ export default function FindHelp() {
 
   // filters listings based on user input
   function filterHelpers() {
-    if (helperDummyData && helperDummyData.length > 0) {
+    if (allHelpers && allHelpers.length > 0) {
       let filteredArray = filteredHelpers.filter((item) => {
         return Object.values(item).some((value) => {
           return (
@@ -181,13 +202,6 @@ export default function FindHelp() {
       setNoHelpers(filteredArray.length === 0 ? true : null);
     }
   }
-
-  // alert the user of the email address of the user who posted the listing
-  function contactUser(email) {
-    // Display email address of user
-    alert(`Here's the email address: ${email}`);
-  }
-
   // Function to handle the enter key being pressed
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -242,35 +256,33 @@ export default function FindHelp() {
       {/* Link to the Post a request page */}
       <section id="find-help-post-request-link">
         <p className="find-help-post-request">
-          Need something specific?{" "}
+          Need something specific? {" "}
           <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
       <h3 className="category-title">Browse by borough:</h3>
-      <div className="find-help-carousel">
-        <div className="find-help-card-container">
-          <button className="give-help-left-arrow" onClick={handlePrev}>
+      <div className="carousel">
+        <div className="give-and-find-help-card-container">
+          <button className="give-and-find-help-left-arrow" onClick={handlePrev}>
             ←
           </button>
-          <div className="helperCards">
             {helperCards.slice(activeIndex, activeIndex + 3).map((card) => (
               <div
-                className={`find-help-card ${
+                className={`give-and-find-help-card ${
                   card.id === selectedCard ? "selected-card" : ""
                 }`}
                 key={card}
                 onClick={() => boroughFilter(card)}
               >
-                <div className="give-help-card-contents">
+                <div className="give-and-find-help-card-contents">
                   <p>{card.borough}</p>
                 </div>
               </div>
             ))}
-          </div>{" "}
         </div>
-        <button className="give-help-right-arrow" onClick={handleNext}>
+        <button className="give-and-find-help-right-arrow" onClick={handleNext}>
           →
-        </button>{" "}
+        </button>
       </div>
       {noHelpers && !allSelected && selectedCard && (
         <h2>No helpers found in {selectedBorough}</h2>
@@ -280,59 +292,7 @@ export default function FindHelp() {
         <h3 className="give-and-find-help-listings-area-title">Helpers</h3>
       )}
       <section className="give-and-find-help-listings-area">
-        {/* List of helpers TITLE */}
-        {filteredHelpers.map((listing) => (
-          // Parent div for each new box
-          <div
-            key={listing.user_id}
-            className="give-and-find-help-individual-listing"
-          >
-            {/* REMOVED FOR NOW - THERE IS NO LISTING TITLE IN THE USER DB 
-            <h1 className="find-help-listing-title">{listing.listing_title}</h1> */}
-            <div className="find-help-user-img-and-rating">
-              <div className="find-help-image-container">
-                {/* Img from user profile */}
-                <img
-                  className="find-help-profile-picture"
-                  src={listing.profile_picture}
-                  alt="profile"
-                />
-                <p className="find-help-rating">{listing.rating}</p>
-              </div>
-              <div className="find-help-user-details-container">
-                <p className="find-help-display-name">{listing.display_name}</p>
-                <p className="find-help-borough-name">{listing.borough_name}</p>
-              </div>
-            </div>
-            <p className="find-help-about-me">{listing.about_me}</p>
-            <div className="give-and-find-help-info-container">
-              <p className="give-and-find-help-subheading">I can offer:</p>
-              <p className="give-and-find-help-info">
-                {listing.skills_offered}
-              </p>
-            </div>
-            <div className="give-and-find-help-info-container">
-              <p className="give-and-find-help-subheading">I need:</p>
-              <p className="give-and-find-help-info">{listing.skills_needed}</p>
-            </div>
-            <div className="give-and-find-help-user-contact">
-              <a
-                href={`mailto:${listing.email_address}`}
-                className="contact-user-link"
-              >
-                <button
-                  className="give-and-find-help-contact-user"
-                  // onClick={() => contactUser(email_address)}
-                >
-                  Contact user
-                </button>{" "}
-              </a>
-              <button className="give-and-find-help-visit-profile">
-                View Profile
-              </button>
-            </div>
-          </div>
-        ))}
+        <FindHelpList listItems={helpersToGenerate} />
       </section>
     </div>
   );
