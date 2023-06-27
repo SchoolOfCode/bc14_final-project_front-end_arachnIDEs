@@ -1,9 +1,9 @@
-import { Form } from "react-router-dom";
-import React, { useState } from "react";
-import RegForm from "../RegForm/regForm";
+// import { Form } from "react-router-dom";
+import React from "react";
+// import RegForm from "../RegForm/regForm";
 import "./userProfile.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 
 export default function UserProfile(form) {
@@ -14,7 +14,7 @@ export default function UserProfile(form) {
         <div className="pic-and-info-container">
           <div className="profile-pic-container">
             <img
-              className="profile-pic" src="https://i.ibb.co/YcXqprM/a.png"
+              alt="profile" className="profile-pic" src="https://i.ibb.co/YcXqprM/a.png"
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
           </div>
