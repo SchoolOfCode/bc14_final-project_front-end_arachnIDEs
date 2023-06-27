@@ -7,8 +7,9 @@
 
 [Help Me Help You](https://helpme-helpyou-favour.netlify.app/)
 
-<p>Connect with your local community to give and receive favours, skills, and support.  
-From moving flats to feeding cats - we have it covered.</p>
+<p><em>Connect with your local community to give and receive favours, skills, and support.
+
+From moving flats to feeding cats - we have it covered.</em></p>
 
 </div>
 
@@ -16,13 +17,13 @@ From moving flats to feeding cats - we have it covered.</p>
 
 ---
 
-- [Authors](#authors)
-- [Problem and Solution](#🧐-problem-and-solution-💡)
-- [Instructions or Demo video](#📹-instructions-or-demo-video-📹)
-- [Tech Stack](#💻-tech-stack-💻)
-- [Future Scope](#🤩-future-scope-🤩)
-- [How to deploy locally](#⚙️-how-to-deploy-locally-⚙️)
-- [Acknowledgements](#🙏-acknowledgements-🙏)
+1. [Authors](#authors)
+2. [Problem and Solution](#🧐-problem-and-solution-💡)
+3. [Instructions or Demo video](#📹-instructions-or-demo-video-📹)
+4. [Tech Stack](#💻-tech-stack-💻)
+5. [Future Scope](#🤩-future-scope-🤩)
+6. [How to deploy locally](#⚙️-how-to-deploy-locally-⚙️)
+7. [Acknowledgements](#🙏-acknowledgements-🙏)
 
 ## Authors
 
@@ -62,7 +63,8 @@ Our solution to this problem is the development of a platform called 'Help Me He
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)  
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
 #### Back-End
 
@@ -70,7 +72,8 @@ Our solution to this problem is the development of a platform called 'Help Me He
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)  
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
 
 #### Testing
 
@@ -118,4 +121,4 @@ We have provided a link for the hosted version of the application above, but if 
 
 ---
 
-A huge thank you to [School Of Code](https://www.schoolofcode.co.uk/) for allowing us to take part in this course and providing us with the skills to complete this project. we would also like to thank the wider tech community for providing us with so many resources to use in our project.
+A huge thank you to [School Of Code](https://www.schoolofcode.co.uk/) for allowing us to take part in this course and providing us with the skills to complete this project. We would also like to thank the wider tech community for providing us with so many resources to use in our project.
