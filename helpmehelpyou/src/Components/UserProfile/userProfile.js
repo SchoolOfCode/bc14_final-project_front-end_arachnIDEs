@@ -1,17 +1,23 @@
 import { Form } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RegForm from "../RegForm/regForm";
 import "./userProfile.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const [user, setUser] = useState("");
 
-async function fetchUser(id) {
-  const user = await fetch();
-}
+export default function UserProfile(form, session) {
+  const [user, setUser] = useState([]);
+  
+  async function fetchUser(id) {
+    const res = await fetch(`https://arachnides-backend.onrender.com/api/users/${id}`);
+    const data = await res.json();
+    setUser(data);
+    console.log(user);
+    return data;
+  }
+  useEffect(()=>{if (session){  fetchUser(session.user.id)}}, []);
 
-export default function UserProfile(form) {
   return (
     <div className="profile-container">
       <div className="profile-background">

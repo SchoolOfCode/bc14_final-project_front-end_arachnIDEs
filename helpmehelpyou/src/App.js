@@ -28,7 +28,7 @@ function App() {
             <Route path="/findhelpform" element={<PostRequestPage />} />
             <Route path="/login" element={<LoginPage  session={session} setSession={setSession}/>} />
             <Route path="/registration" element={<RegFormPage session={session} />} />
-            <Route path="/myprofile" element={<UserProfilePage />} />
+            <Route path="/myprofile" element={<UserProfilePage session={session} />} />
 
           </Routes>
         </div>
