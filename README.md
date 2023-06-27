@@ -1,4 +1,4 @@
-# arachnIDEs present:
+# arachnIDEs present:  
 
 ![Help Me Help You logo](./helpmehelpyou/src/Components/BurgerMenu/horizontal_logo.jpg "Help Me Help You")
 
@@ -14,10 +14,10 @@ From moving flats to feeding cats - we have it covered.</p>
 
 ## 📖 Contents 📖
 
-- [Authors](#authors)
+- [Authors](#Authors)
 - [Problem and Solution](#problem-and-solution)
 - [Instructions or Demo video](#instructions-or-demo-video)
-- [Tech Stack](#tech-stack)
+- [Tech Stack](#💻-Tech-Stack-💻)
 - [Future Scope](#future-scope)
 - [How to deploy locally](#how-to-deploy-locally)
 - [Acknowledgements](#acknowledgements)
@@ -70,16 +70,21 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 
 ### ⚙️ How to deploy locally ⚙️
 
-we have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
+We have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
 
-clone the project:  
-git clone https://link-to-project  
-Go to the project directory:  
-cd helpmehelpyou  
-Install the required dependencies:  
-npm i  
-Start the server:  
+  
+# Clone the project
+<button class="copy-button" data-clipboard-target="#clone-command">Copy Code</button>
+
+ # Go to the project directory
+cd helpmehelpyou
+
+# Install the required dependencies
+npm install
+
+# Start the server
 npm start
+
 
 ### 🙏 Acknowledgements 🙏
 
