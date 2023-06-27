@@ -15,8 +15,6 @@ From moving flats to feeding cats - we have it covered.</em></p>
 
 ## 📖 Contents 📖
 
----
-
 1. [Authors](#authors)
 2. [Problem and Solution](#🧐-problem-and-solution-💡)
 3. [Instructions or Demo video](#📹-instructions-or-demo-video-📹)
@@ -27,8 +25,6 @@ From moving flats to feeding cats - we have it covered.</em></p>
 
 ## Authors
 
----
-
 [Catherine Broadbent](https://github.com/CGreen789)  
 [Christopher Webb](https://github.com/Webbocoder)  
 [Mohammed Farah](https://github.com/Mfar121)  
@@ -37,8 +33,6 @@ From moving flats to feeding cats - we have it covered.</em></p>
 [Tom Webb](https://github.com/tomwebb2022)
 
 ## 🧐 Problem and Solution 💡
-
----
 
 In a post-Covid world, many people are struggling with a lack of a support system. This struggle is compounded by a cost-of-living crisis, preventing individuals from meeting their basic and auxiliary needs, whether due to financial issues or physical limitations.
 Developing community cohesion is a challenge that requires effort from members within the community, many of whom are also struggling with the cost of living.
@@ -49,13 +43,11 @@ Our solution to this problem is the development of a platform called 'Help Me He
 
 ## 📹 Instructions or Demo video 📹
 
----
 
 (post link to video here)
 
 ## 💻 Tech Stack 💻
 
----
 
 #### Front-End
 
@@ -63,8 +55,9 @@ Our solution to this problem is the development of a platform called 'Help Me He
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)  
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 #### Back-End
 
@@ -72,8 +65,9 @@ Our solution to this problem is the development of a platform called 'Help Me He
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)  
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 #### Testing
 
@@ -83,10 +77,9 @@ Our solution to this problem is the development of a platform called 'Help Me He
 
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
+![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
 
 ## 🤩 Future Scope 🤩
-
----
 
 As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks were spent coding), we tried to limit the scope of our project. Given more time, we would have developed more features to create a more complete user experience that does not require the user to leave the app. This would include, but not be limited to:
 
@@ -96,8 +89,6 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 - [ ] A few extra pages, including a potential blog, news page, and testimonials page.
 
 ## ⚙️ How to deploy locally ⚙️
-
----
 
 We have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
 
@@ -117,8 +108,11 @@ We have provided a link for the hosted version of the application above, but if 
 
         npm start
 
+## Back End Repo
+
+[See the back end repo here](https://github.com/SchoolOfCode/bc14_final-project_back-end_arachnIDEs)
+
 ## 🙏 Acknowledgements 🙏
 
----
 
 A huge thank you to [School Of Code](https://www.schoolofcode.co.uk/) for allowing us to take part in this course and providing us with the skills to complete this project. We would also like to thank the wider tech community for providing us with so many resources to use in our project.
