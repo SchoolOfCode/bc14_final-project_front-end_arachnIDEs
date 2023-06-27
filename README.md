@@ -86,7 +86,7 @@ As we had a very tight 5 weeks to complete the project (of which only 2.5 weeks 
 - [ ] A proximity feature, showing you how close/far another user is from you. At the moment, it only displays the borough in which a user resides.
 - [ ] A few extra pages, including a potential blog, news page, and testimonials page.
 
-## ⚙️ How to deploy locally ⚙️
+## How to deploy locally
 
 We have provided a link for the hosted version of the application above, but if you would like to run it locally please take the following steps:
 
