@@ -18,14 +18,14 @@ export default function UserProfile({ session }) {
     );
     const data = await res.json();
     console.log({ data });
-    let payloadExists = false;
-    for (let key in data) {
-      console.log("Hello from inside for...in loop.");
-      if (key === "payload") {
-        payloadExists = true;
-      }
-    }
-    if (payloadExists === true) {
+    // let payloadExists = false;
+    // for (let key in data) {
+    //   console.log("Hello from inside for...in loop.");
+    //   if (key === "payload") {
+    //     payloadExists = true;
+    //   }
+    // }
+    if (data.payload.length > 0) {
       setUser(data.payload[0]);
       // console.log(user);
       return data;
