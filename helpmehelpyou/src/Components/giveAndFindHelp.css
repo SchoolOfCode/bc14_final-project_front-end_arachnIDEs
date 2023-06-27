@@ -183,6 +183,7 @@
 .give-and-find-help-user-contact {
   display: flex;
   flex: 1;
+  padding-top: 40px;
   justify-content: space-around;
   justify-self: flex-end;
   font-weight: bolder;
@@ -378,6 +379,8 @@ No profile picture in DB yet
 
 /* Listing details */
 .find-help-about-me {
+  width: 330px;
+  height: 200px;
   margin: 0.7rem;
   font-size: 1.1rem;
 }
