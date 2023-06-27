@@ -5,6 +5,11 @@ import "./userProfile.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+const [user, setUser] = useState("");
+
+async function fetchUser(id) {
+  const user = await fetch();
+}
 
 export default function UserProfile(form) {
   return (
@@ -14,7 +19,8 @@ export default function UserProfile(form) {
         <div className="pic-and-info-container">
           <div className="profile-pic-container">
             <img
-              className="profile-pic" src="https://i.ibb.co/YcXqprM/a.png"
+              className="profile-pic"
+              src="https://i.ibb.co/YcXqprM/a.png"
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
           </div>
