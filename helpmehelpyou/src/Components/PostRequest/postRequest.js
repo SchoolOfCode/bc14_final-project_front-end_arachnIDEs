@@ -78,8 +78,8 @@ export default function PostRequest({ session, user }) {
     setForm((prevForm) => ({
       ...prevForm,
       // add below back in when fetch is fixed - 🚨
-      // display_name: user.display_name,
-      // email_address: session.user.email,
+      display_name: user.display_name,
+      email_address: user.email,
     }));
   }, [session, user]);
 
@@ -121,7 +121,7 @@ export default function PostRequest({ session, user }) {
         )}
         {/* Put an onSubmit in the form element - callback function/call a function already written. */}
         <form id="ask-for-help-form" onSubmit={handleMakeAPostSubmit}>
-          <div className="ask-for-help-div">
+        {!session && (<div className="ask-for-help-div">
             {/* Email */}
             <label className="ask-for-help-label">Email*</label>
             <input
@@ -140,7 +140,7 @@ export default function PostRequest({ session, user }) {
                 );
               }}
             ></input>
-          </div>
+          </div>)}
           {/* Log in and Register will need Link tags at some point! */}
           {!session && (
             <p className="centered-text small-text">
@@ -149,7 +149,7 @@ export default function PostRequest({ session, user }) {
             </p>
           )}
           {/* Display Name  should we specify character limit in display name*/}
-          <div className="ask-for-help-div">
+          {!session && ( <div className="ask-for-help-div">
             <label className="ask-for-help-label">Display Name*</label>
             <input
               required
@@ -167,7 +167,7 @@ export default function PostRequest({ session, user }) {
                 );
               }}
             ></input>
-          </div>
+          </div>)}
           {/* Summary */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Summary*</label>
