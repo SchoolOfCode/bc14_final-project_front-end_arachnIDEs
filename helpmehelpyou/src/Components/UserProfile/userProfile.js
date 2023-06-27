@@ -9,15 +9,27 @@ export default function UserProfile({ session }) {
   const [user, setUser] = useState({});
   console.log("here is the session in userProfile: ", session);
 
+  const navigate = useNavigate();
+
   async function fetchUser(id) {
     console.log("id: ", id);
     const res = await fetch(
       `https://arachnides-backend.onrender.com/api/users/${id}`
     );
-    const data = await res.json();
-    setUser(data.payload[0]);
-    // console.log(user);
-    return data;
+    let payloadExists = false;
+    for (let key in res) {
+      if (key === "payload") {
+        payloadExists = true;
+      }
+    }
+    if (payloadExists === true) {
+      const data = await res.json();
+      setUser(data.payload[0]);
+      // console.log(user);
+      return data;
+    } else {
+      navigate("/registration");
+    }
   }
   useEffect(() => {
     if (session && session.user) {
