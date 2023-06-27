@@ -30,7 +30,6 @@ export default function BurgerMenu({session}) {
       await supabase.auth.signOut()
       navigate("/");
     }}
-
     useEffect(() => {
       const checkSession = () => {
         if (!session) {
