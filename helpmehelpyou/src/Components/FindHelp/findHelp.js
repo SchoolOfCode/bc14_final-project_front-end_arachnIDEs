@@ -256,35 +256,33 @@ export default function FindHelp() {
       {/* Link to the Post a request page */}
       <section id="find-help-post-request-link">
         <p className="find-help-post-request">
-          Need something specific?{" "}
+          Need something specific? {" "}
           <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
       <h3 className="category-title">Browse by borough:</h3>
-      <div className="find-help-carousel">
-        <div className="find-help-card-container">
-          <button className="give-help-left-arrow" onClick={handlePrev}>
+      <div className="carousel">
+        <div className="give-and-find-help-card-container">
+          <button className="give-and-find-help-left-arrow" onClick={handlePrev}>
             ←
           </button>
-          <div className="helperCards">
             {helperCards.slice(activeIndex, activeIndex + 3).map((card) => (
               <div
-                className={`find-help-card ${
+                className={`give-and-find-help-card ${
                   card.id === selectedCard ? "selected-card" : ""
                 }`}
                 key={card}
                 onClick={() => boroughFilter(card)}
               >
-                <div className="give-help-card-contents">
+                <div className="give-and-find-help-card-contents">
                   <p>{card.borough}</p>
                 </div>
               </div>
             ))}
-          </div>{" "}
         </div>
-        <button className="give-help-right-arrow" onClick={handleNext}>
+        <button className="give-and-find-help-right-arrow" onClick={handleNext}>
           →
-        </button>{" "}
+        </button>
       </div>
       {noHelpers && !allSelected && selectedCard && (
         <h2>No helpers found in {selectedBorough}</h2>

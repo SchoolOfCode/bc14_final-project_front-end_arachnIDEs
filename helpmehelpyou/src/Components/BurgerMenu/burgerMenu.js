@@ -54,8 +54,6 @@ export default function BurgerMenu({ session, setSession }) {
             className="logo"
           ></img>
         </Link>
-        {/* <Link to="/" className="link"></Link> */}
-
         <div>
           <button
             className="hamburger-dropdown-menu"
