@@ -88,11 +88,9 @@
 .give-and-find-help-individual-listing {
   display: flex;
   flex-direction: column;
-  /* flex-basis: 30%; */
   font-size: 1.2rem;
   justify-content: center;
   background-color: #7db8fa;
-  min-width: 350px;
   max-width: 350px;
   height: auto;
   border-radius: 20px;
@@ -297,7 +295,7 @@ No profile picture in DB yet
   margin: auto;
   align-content: center;
   font-weight: bold;
-  font-size: 0.89rem;
+  font-size: 0.8rem;
 }
 
 .give-and-find-help-card.active {
@@ -379,7 +377,7 @@ No profile picture in DB yet
 
 /* Listing details */
 .find-help-about-me {
-  width: 330px;
+  /* width: 330px; */
   height: 200px;
   margin: 0.7rem;
   font-size: 1.1rem;
@@ -409,7 +407,11 @@ No profile picture in DB yet
     justify-content: center;
     margin-top: 7rem;
   }
-  
+
+  .give-and-find-help-individual-listing {
+    max-width: 310px;
+  }
+
   .give-and-find-help-card {
     max-height: 75px;
     max-width: 75px;
@@ -420,5 +422,4 @@ No profile picture in DB yet
   .give-and-find-help-card-contents {
     font-size: 0.72rem;
   }
-  
 }
