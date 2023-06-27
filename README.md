@@ -100,7 +100,7 @@ We have provided a link for the hosted version of the application above, but if 
 
 ### Clone the project
 
-[Clone the project from our repository](https://github.com/SchoolOfCode/bc14_final-project_front-end_arachnIDEs)
+        https://github.com/SchoolOfCode/bc14_final-project_front-end_arachnIDEs.git
 
 ### Go to the project directory
 
