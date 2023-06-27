@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function UserProfile({ session, user, setUser }) {
-  const navigate = useNavigate();
-
   console.log("here is the session in userProfile: ", session);
   // const id = session.user.id
 
@@ -110,11 +108,11 @@ export default function UserProfile({ session, user, setUser }) {
                 >
                   Email me
                 </button>{" "}
-              </a>
+                </a>
             )}
           </div>
         </div>
-      )}
-    </div>}
+      </div>
+    </div>
   );
-}*/ 
+}
