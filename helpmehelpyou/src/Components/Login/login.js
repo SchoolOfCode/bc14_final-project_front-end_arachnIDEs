@@ -50,6 +50,7 @@ export default function Login({ session, setSession }) {
     });
 
     return () => subscription.unsubscribe();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -59,7 +60,10 @@ export default function Login({ session, setSession }) {
         appearance={{
           theme: ThemeSupa,
         }}
-        onSignOut={() => setSession(null)}
+        onSignOut={() => {
+          console.log("signing out");
+          setSession(null);
+        }}
         providers={["github"]}
       />
       {session ? (

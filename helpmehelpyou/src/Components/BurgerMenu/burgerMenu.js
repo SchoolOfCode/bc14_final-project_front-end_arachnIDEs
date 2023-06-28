@@ -88,11 +88,11 @@ export default function BurgerMenu({ session, setSession }) {
               </li>
               {session && (
                 <li>
-                <Link to="/myprofile" onClick={handleLinkClick}>
-                  My Profile
-                </Link>
-              </li>
-        )}
+                  <Link to="/myprofile" onClick={handleLinkClick}>
+                    My Profile
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link to="/give" onClick={handleLinkClick}>
                   Give Help

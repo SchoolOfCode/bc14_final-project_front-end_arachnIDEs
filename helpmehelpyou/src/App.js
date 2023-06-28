@@ -15,6 +15,8 @@ import UserProfilePage from "./pages/UserProfilePage"
 
 function App() {
   const [session, setSession] = useState(null);
+  const [user, setUser] = useState({});
+
   console.log("Here is the session at App level:", session)
   return (
     <>
@@ -25,10 +27,10 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/give" element={<GiveHelpPage />} />
             <Route path="/find" element={<FindHelpPage />} />
-            <Route path="/findhelpform" element={<PostRequestPage />} />
+            <Route path="/findhelpform" element={<PostRequestPage session={session}  user={user}/>} />
             <Route path="/login" element={<LoginPage  session={session} setSession={setSession}/>} />
             <Route path="/registration" element={<RegFormPage session={session} />} />
-            <Route path="/myprofile" element={<UserProfilePage />} />
+            <Route path="/myprofile" element={<UserProfilePage session={session} user={user} setUser={setUser}/>} />
 
           </Routes>
         </div>
