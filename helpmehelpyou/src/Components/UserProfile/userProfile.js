@@ -56,7 +56,7 @@ export default function UserProfile({ session, user, setUser }) {
           <div className="profile-pic-container">
             <img
               className="profile-pic"
-              src="https://i.ibb.co/YcXqprM/a.png"
+              src={user && user.profile_picture}
               alt="profile"
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>

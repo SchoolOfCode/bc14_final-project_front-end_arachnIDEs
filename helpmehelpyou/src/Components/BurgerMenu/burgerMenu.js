@@ -59,6 +59,7 @@ export default function BurgerMenu({ session, setSession }) {
             className="hamburger-dropdown-menu"
             alt="dropdown menu"
             onClick={handleNavToggle}
+            aria-label="dropdown menu"
           >
             {/* Hamburger SVG code */}
             <svg
