@@ -16,7 +16,9 @@ export default function FindHelp() {
   // State to save the filtered helpers
   const [filteredHelpers, setFilteredHelpers] = useState(allHelpers);
   const [allSelected, setAllSelected] = useState(null);
-  const helpersToGenerate = filteredHelpers.length ? filteredHelpers : allHelpers;
+  const helpersToGenerate = filteredHelpers.length
+    ? filteredHelpers
+    : allHelpers;
   const [noHelpers, setNoHelpers] = useState(null);
 
   // useEffect functions
@@ -86,11 +88,11 @@ export default function FindHelp() {
     const res = await fetch(
       "https://arachnides-backend.onrender.com/api/users"
     );
-    console.log(res);
+    // console.log(res);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     const payload = data.payload;
-    console.log(payload);
+    // console.log(payload);
     setHelpers(payload);
   }
 
@@ -183,7 +185,7 @@ export default function FindHelp() {
   // filters listings based on user input
   function filterHelpers() {
     if (allHelpers && allHelpers.length > 0) {
-      let filteredArray = filteredHelpers.filter((item) => {
+      let filteredArray = allHelpers.filter((item) => {
         return Object.values(item).some((value) => {
           return (
             typeof value === "string" &&
@@ -256,29 +258,32 @@ export default function FindHelp() {
       {/* Link to the Post a request page */}
       <section id="find-help-post-request-link">
         <p className="find-help-post-request">
-          Need something specific? {" "}
+          Need something specific?{" "}
           <Link to="/findhelpform">Post a request </Link>
         </p>
       </section>
       <h3 className="category-title">Browse by borough:</h3>
       <div className="carousel">
         <div className="give-and-find-help-card-container">
-          <button className="give-and-find-help-left-arrow" onClick={handlePrev}>
+          <button
+            className="give-and-find-help-left-arrow"
+            onClick={handlePrev}
+          >
             ←
           </button>
-            {helperCards.slice(activeIndex, activeIndex + 3).map((card) => (
-              <div
-                className={`give-and-find-help-card ${
-                  card.id === selectedCard ? "selected-card" : ""
-                }`}
-                key={card}
-                onClick={() => boroughFilter(card)}
-              >
-                <div className="give-and-find-help-card-contents">
-                  <p>{card.borough}</p>
-                </div>
+          {helperCards.slice(activeIndex, activeIndex + 3).map((card) => (
+            <div
+              className={`give-and-find-help-card ${
+                card.id === selectedCard ? "selected-card" : ""
+              }`}
+              key={card}
+              onClick={() => boroughFilter(card)}
+            >
+              <div className="give-and-find-help-card-contents">
+                <p>{card.borough}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
         <button className="give-and-find-help-right-arrow" onClick={handleNext}>
           →
