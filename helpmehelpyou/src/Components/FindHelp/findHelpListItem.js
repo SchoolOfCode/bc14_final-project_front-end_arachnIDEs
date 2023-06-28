@@ -4,6 +4,7 @@ export default function FindHelpListItem(props) {
   const { helper } = props;
   if (!helper) return null;
   const {
+    user_id,
     display_name,
     email_address,
     borough_name,
