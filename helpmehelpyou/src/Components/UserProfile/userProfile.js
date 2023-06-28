@@ -83,7 +83,7 @@ export default function UserProfile({ session, user, setUser }) {
         </div>
         <div className="my-profile-info-container">
           <p className="my-profile-subheading">About me...</p>
-          <p className="my-profile-info">{user && user.about_me}</p>
+          <div className="about_content"><p className="my-profile-info">{user && user.about_me}</p></div>
         </div>
         <div className="my-profile-info-container">
           <p className="my-profile-subheading"> I can offer...</p>

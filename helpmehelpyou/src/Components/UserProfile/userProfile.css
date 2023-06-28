@@ -123,3 +123,43 @@
   background-color: #4563e7;
   color: white;
 }
+
+.about_content {
+  margin-left: 40%;
+
+}
+/* media queries */
+@media (max-width: 600px) {
+  .my-profile-container {
+    min-width: 95%;
+    max-width: 95%;
+    justify-content: center; 
+    flex-direction: column;
+  }
+  .my-profile-info-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }}
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .my-profile-container {
+      max-height: fit-content;
+      max-width: 95%;
+    }
+    .my-profile-info-container {
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+    }
+
+    @media (min-width: 901px){
+      .my-profile-container
+      {
+        min-width: 855px;
+        max-width: 855px;
+      }
+      .my-profile-info-container {
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+    }
