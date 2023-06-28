@@ -1,6 +1,4 @@
-import { Form } from "react-router-dom";
-import React, { useState, useEffect } from "react";
-import RegForm from "../RegForm/regForm";
+import React, { useEffect } from "react";
 import "./userProfile.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -39,6 +37,7 @@ export default function UserProfile({ session, user, setUser }) {
     if (session && session.user) {
       fetchUser(session.user.id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -58,12 +57,13 @@ export default function UserProfile({ session, user, setUser }) {
             <img
               className="profile-pic"
               src="https://i.ibb.co/YcXqprM/a.png"
+              alt="profile"
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
           </div>
           <div className="icons-container">
             <h3 className="borough">🏠:{user && user.borough_name}</h3>{" "}
-            <h3 className="gender">⚥:</h3>
+            <h3 className="gender">⚥: {user && user.gender}</h3>
           </div>
         </div>
         <div className="profile-details">
@@ -108,7 +108,7 @@ export default function UserProfile({ session, user, setUser }) {
                 >
                   Email me
                 </button>{" "}
-                </a>
+              </a>
             )}
           </div>
         </div>
