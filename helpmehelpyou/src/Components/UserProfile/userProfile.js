@@ -49,11 +49,11 @@ export default function UserProfile({ session, user, setUser }) {
   }, [user]);
 
   return (
-    <div className="profile-container">
-      <div className="profile-background">
+    <div className="profile-parent-container">
+      <div className="my-profile-container">
         <h1>My Profile</h1> <Link to="/registration"> Edit profile</Link>
-        <div className="pic-and-info-container">
-          <div className="profile-pic-container">
+        <div className="pic-rating-and-icons-container">
+          <div className="profile-pic-and-rating-container">
             <img
               className="profile-pic"
               src={user && user.profile_picture}
@@ -61,39 +61,42 @@ export default function UserProfile({ session, user, setUser }) {
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
           </div>
-          <div className="icons-container">
-            <h3 className="borough">🏠:{user && user.borough_name}</h3>{" "}
+          <div className="my-profile-icons">
+            {" "}
+            <h3 className="borough">🏠: {user && user.borough_name}</h3>
             <h3 className="gender">⚥: {user && user.gender}</h3>
           </div>
         </div>
-        <div className="profile-details">
-          <h3 className="full-name">
-            Full name: {user && user.full_name}
-            <p className="full-name-info">
-              This isn't visible to other users
-            </p>{" "}
-          </h3>
-          <h3 className="display-name">
-            Display name: {user && user.display_name}
-          </h3>
-          <h3 className="age">Age: {user && user.age}</h3>
-          <h3 className="about-me">About me... {user && user.about_me}</h3>
-          <h3 className="skills-offered">
-            I can offer... {user && user.skills_offered}
-          </h3>
-          <h3 className="skills-wanted">
-            I need... {user && user.skills_needed}
-          </h3>
+        <div className="my-profile-info-container">
+          <p className="my-profile-subheading">Full name:</p>
+          <p className="my-profile-info">{user && user.full_name}</p>
         </div>
-        <div className="profile-buttons">
+        <p className="full-name-info">This isn't visible to other users</p>{" "}
+        <div className="my-profile-info-container">
+          <p className="my-profile-subheading">Display name: </p>
+          <p className="my-profile-info">{user && user.display_name}</p>
+        </div>
+        <div className="my-profile-info-container">
+          {" "}
+          <p className="my-profile-subheading">Age: </p>
+          <p className="my-profile-info">{user && user.age}</p>
+        </div>
+        <div className="my-profile-info-container">
+          <p className="my-profile-subheading">About me...</p>
+          <div className="about_content"><p className="my-profile-info">{user && user.about_me}</p></div>
+        </div>
+        <div className="my-profile-info-container">
+          <p className="my-profile-subheading"> I can offer...</p>
+          <p className="my-profile-info">{user && user.skills_offered}</p>
+        </div>
+        <div className="my-profile-info-container">
+          <p className="my-profile-subheading"> I need...</p>
+          <p className="my-profile-info">{user && user.skills_needed}</p>
+        </div>
+        <div className="my-profile-info-container-buttons">
           <div className="user-contact">
             <a href={"{user.social_media}"} className="contact-user-link">
-              <button
-                className="contact-user"
-                // onClick={() => contactUser(email_address)}
-              >
-                Social Media
-              </button>{" "}
+              <button className="social-media">Social Media</button>{" "}
             </a>
           </div>
           <div className="user-contact">
