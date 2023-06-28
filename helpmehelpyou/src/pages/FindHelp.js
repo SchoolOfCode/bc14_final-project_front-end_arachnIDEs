@@ -4,10 +4,7 @@ import FindHelp from "../Components/FindHelp/findHelp";
 export default function FindHelpPage() {
     return(
         <div>   
-     
-
          <FindHelp/>
-         
          </div>
     )
 }

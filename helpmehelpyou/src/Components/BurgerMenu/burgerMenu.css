@@ -16,8 +16,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
   padding: 5px;
 }
 
@@ -48,7 +46,7 @@
   touch-action: manipulation;
   cursor: pointer;
   height: 40px;
-  width: 120px;
+  width: 4.6rem;
   font-family: "Aoboshi One", serif;
 }
 .login-button:hover {
@@ -86,30 +84,13 @@
   text-emphasis-color: white;
 }
 
-/* .logo {
-  max-height: 35px;
-  min-height: 35px;
-  min-width: 65px;
-  max-width: 65px;
-  margin-bottom: 20px;
-} */
-
-.logo-anchor {
-  display: flex;
-  align-self: flex-end;
-}
-
 .brand-name {
   text-decoration: none;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration-style: "";
   font-size: 2.5rem;
-  /* margin-left: 1rem; */
 }
-/* .navigation-menu {
-  margin-left: auto;
-} */
 
 .navigation-menu ul {
   text-align: center;
@@ -158,6 +139,12 @@
   background-color: #5ea856;
 }
 
+/* Logo styling */
+.logo {
+  height: 30px;
+  width: auto;
+}
+
 @media screen and (max-width: 430px) {
   .burgerMenu {
     width: 100%;
@@ -165,7 +152,7 @@
   .nav-menu-container {
     display: flex;
     align-items: center;
-    margin-right: 0.7rem;
+    margin-right: 0.3rem;
   }
   .navigation-menu {
     margin-left: auto;
@@ -200,14 +187,21 @@
   }
   .login-button {
     margin-bottom: 0.1rem;
+    max-width: fit-content;
   }
   .register-button {
     margin-top: 0.1rem;
   }
   /* Make the logo have smaller margins on a small screen*/
   .logo-anchor {
-    margin: auto;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-items: center;
   }
+
+  /* .login-link {
+    max-width: 1rem;
+  } */
 }
 
 @media screen and (max-width: 5000px) {
@@ -232,26 +226,17 @@
     width: 100px;
     background-color: #ffffff;
   }
-  .navigation-menu li {
-    text-align: center;
-    margin-left: auto;
-    right: 0;
-    padding-right: 20px;
-  }
+
   .navigation-menu li a {
-    padding-right: 20px;
     color: black;
     right: 0;
-    /* width: 100%; */
-    /* padding: 5px; */
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding-bottom: 5px;
-    /* border-radius: 30px;
-    margin: 5px; */
   }
+
   .navigation-menu li:hover {
     background-color: #78af72;
   }
@@ -267,14 +252,4 @@
   .navigation-menu.expanded ul {
     display: block;
   }
-}
-
-.logo {
-  /* min-width: 120px;
-  min-height: 20px;
-  margin-top: 40px; */
-  height: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-  width: auto;
 }

@@ -287,8 +287,8 @@ export default function FindHelp() {
       {noHelpers && !allSelected && selectedCard && (
         <h2>No helpers found in {selectedBorough}</h2>
       )}
-      {noHelpers && !selectedCard && <h2>No helpers found</h2>}
-      {!noHelpers && (
+      {/* {noHelpers && !selectedCard && <h2>No helpers found</h2>} */}
+      {allHelpers && (
         <h3 className="give-and-find-help-listings-area-title">Helpers</h3>
       )}
       <section className="give-and-find-help-listings-area">

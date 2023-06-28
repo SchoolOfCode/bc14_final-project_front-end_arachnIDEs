@@ -88,10 +88,10 @@
 .give-and-find-help-individual-listing {
   display: flex;
   flex-direction: column;
-  /* flex-basis: 30%; */
   font-size: 1.2rem;
   justify-content: center;
   background-color: #7db8fa;
+  min-width: 350px;
   max-width: 350px;
   height: auto;
   border-radius: 20px;
@@ -182,6 +182,7 @@
 .give-and-find-help-user-contact {
   display: flex;
   flex: 1;
+  padding-top: 40px;
   justify-content: space-around;
   justify-self: flex-end;
   font-weight: bolder;
@@ -228,21 +229,21 @@
     display: flex;
     align-items: center;
   }
-
+​
  No image showing on here at the moment
 .give-help-image-container {
   margin-right: 60px;
   margin-left: 10px;
   margin-top: 15px;
 } 
-
+​
 No profile picture in DB yet
 .give-help-profile-picture {
   border-radius: 50px;
   width: 50px;
   height: 50px;
 }
-
+​
 */
 
 /* Posted by and location */
@@ -295,7 +296,7 @@ No profile picture in DB yet
   margin: auto;
   align-content: center;
   font-weight: bold;
-  font-size: 0.89rem;
+  font-size: 0.8rem;
 }
 
 .give-and-find-help-card.active {
@@ -377,6 +378,8 @@ No profile picture in DB yet
 
 /* Listing details */
 .find-help-about-me {
+  /* width: 330px; */
+  height: 200px;
   margin: 0.7rem;
   font-size: 1.1rem;
 }
@@ -405,7 +408,12 @@ No profile picture in DB yet
     justify-content: center;
     margin-top: 7rem;
   }
-  
+
+  .give-and-find-help-individual-listing {
+    min-width: 310px;
+    max-width: 310px;
+  }
+
   .give-and-find-help-card {
     max-height: 75px;
     max-width: 75px;
@@ -416,5 +424,4 @@ No profile picture in DB yet
   .give-and-find-help-card-contents {
     font-size: 0.72rem;
   }
-  
 }
