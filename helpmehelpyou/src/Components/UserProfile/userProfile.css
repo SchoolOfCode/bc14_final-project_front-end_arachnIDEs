@@ -1,121 +1,165 @@
-.profile-container  {
-    margin: 7rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 90%;
-  }
+/* Any luck Mo? */
 
-  .profile-details {align-self: flex-start;
-margin-left: 20%;
-margin-right: 20%;}
-
-  .full-name-info {font-weight: 200;}
-
-  .user-contact {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    justify-self: flex-end;
-    font-weight: bolder;
-  }
-  
-  .contact-user-link {
-    align-self: flex-end;
-  }
-
-  .social-link{
-    background-color: #92d18f;
-    border: 2px solid black;
-    border-radius: 30px;
-    box-shadow: #000000 2px 2px 0 0;
-    font-size: 1.1rem;
-    font-weight: bolder;
-    min-height: 40px;
-    margin-left: 10px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
-    align-self: flex-end;
-    font-family: "Aoboshi One", serif;
-  }
-
-  .profile-pic {
-    max-width: 100px;
-  }
-
-  .profile-background {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 0.1875rem solid #000000;
-    border-radius: 1rem;
-    /* max-width: 21.875rem; */
-    text-align: left;
-    background-color: #7db8fa;
-    padding-bottom: 40px;
-    min-width: 60%;
-    max-width: 90%;
-  }
-
-  .pic-and-info-container {
-    align-self: flex-start;
-    display: flex;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: 50%;
-    flex-direction: row;
-  }
-
-.icons-container {
-    padding-left: 40px;
+/* Profile Parent Container */
+.profile-parent-container {
+  margin: 7rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 90%;
 }
 
-  .profile-buttons {
-    margin-top: 30px;
-    width: 70%;
-    display: flex;
-    justify-content: space-evenly;
-  }
+/* Box for component */
+.my-profile-container {
+  display: flex;
+  flex-direction: column;
+  border: 0.1875rem solid #000000;
+  border-radius: 1rem;
+  /* max-width: 21.875rem; */
+  background-color: #7db8fa;
+  padding-bottom: 40px;
+  min-width: 60%;
+  max-width: 90%;
+}
+/* Div below Edit profile */
+.pic-rating-and-icons-container {
+  align-self: center;
+  display: flex;
+  margin-top: 1rem;
+}
 
-  .contact-user {
-    background-color: #92d18f;
-    border: 2px solid black;
-    border-radius: 30px;
-    box-shadow: #000000 2px 2px 0 0;
-    font-size: 1.1rem;
-    font-weight: bolder;
-    min-height: 70px;
-    max-height: 70px;
-    margin-left: 10px;
-    min-width: 120px;
-    max-width: 120px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
-    align-self: flex-end;
-    font-family: "Aoboshi One", serif;
-  }
+.profile-pic-and-rating-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+}
 
-  .social-media {
-    background-color: #92d18f;
-    border: 2px solid black;
-    border-radius: 30px;
-    box-shadow: #000000 2px 2px 0 0;
-    font-size: 1.1rem;
-    font-weight: bolder;
-    min-height: 70px;
-    max-height: 70px;
-    margin-left: 10px;
-    min-width: 120px;
-    max-width: 120px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
-    align-self: flex-end;
-    font-family: "Aoboshi One", serif;
+.profile-pic {
+  max-width: 100px;
+  border-radius: 11%;
+}
+
+.my-profile-icons {
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Div to style the subheading and info */
+.my-profile-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+/* Styling for subheadings within the listings */
+.my-profile-subheading {
+  float: left;
+  /* width: 25%; */
+  font-weight: bolder;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+
+/* Button container */
+.my-profile-info-container-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Buttons styling */
+.contact-user {
+  background-color: #92d18f;
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: #000000 2px 2px 0 0;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  min-height: 70px;
+  max-height: 70px;
+  margin-left: 10px;
+  min-width: 120px;
+  max-width: 120px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  align-self: flex-end;
+  font-family: "Aoboshi One", serif;
+}
+.contact-user:hover {
+  background-color: #4563e7;
+  color: white;
+}
+
+.social-media {
+  background-color: #92d18f;
+  border: 2px solid black;
+  border-radius: 30px;
+  box-shadow: #000000 2px 2px 0 0;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  min-height: 70px;
+  max-height: 70px;
+  margin-left: 10px;
+  min-width: 120px;
+  max-width: 120px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  align-self: flex-end;
+  font-family: "Aoboshi One", serif;
+}
+.social-media:hover {
+  background-color: #4563e7;
+  color: white;
+}
+
+.about_content {
+  margin-left: 40%;
+
+}
+/* media queries */
+@media (max-width: 600px) {
+  .my-profile-container {
+    min-width: 95%;
+    max-width: 95%;
+    justify-content: center; 
+    flex-direction: column;
   }
+  .my-profile-info-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }}
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .my-profile-container {
+      max-height: fit-content;
+      max-width: 95%;
+    }
+    .my-profile-info-container {
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+    }
+
+    @media (min-width: 901px){
+      .my-profile-container
+      {
+        min-width: 855px;
+        max-width: 855px;
+      }
+      .my-profile-info-container {
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+    }
