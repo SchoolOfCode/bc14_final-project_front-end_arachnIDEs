@@ -46,6 +46,12 @@ export default function RegForm({ session }) {
     // prints the form into the console
     console.log(form);
 
+    // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id.
+    // Store result in state called fetchAttempt.
+    // When fetchAttempt has populated (i.e. use useEffect), do the following...
+    // If the payload is empty, do a POST request. (Then nav to myprofile)
+    // If not, do a PATCH request. (Then nav to myprofile)
+
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
     register();
 
