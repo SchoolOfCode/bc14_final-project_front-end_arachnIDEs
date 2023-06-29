@@ -60,7 +60,10 @@ export default function Login({ session, setSession }) {
         appearance={{
           theme: ThemeSupa,
         }}
-        onSignOut={() => setSession(null)}
+        onSignOut={() => {
+          console.log("signing out");
+          setSession(null);
+        }}
         providers={["github"]}
       />
       {session ? (
