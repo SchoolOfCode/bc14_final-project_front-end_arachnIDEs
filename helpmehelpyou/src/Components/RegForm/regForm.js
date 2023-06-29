@@ -94,6 +94,7 @@ export default function RegForm({ session }) {
   async function attemptingFetch(id) {
     const res = await fetch(`${url}/${id}`);
     const data = await res.json();
+    console.log({ data });
     setFetchAttempt(data);
   }
 
@@ -443,12 +444,12 @@ export default function RegForm({ session }) {
               className="reg-input"
               id="categories-skills-wanted"
               name="categories"
-              value={form.skills_wanted}
+              value={form.skills_needed}
               onChange={(e) => {
                 setForm(
                   {
                     ...form,
-                    skills_wanted: e.target.value,
+                    skills_needed: e.target.value,
                   }
                   // console.log(form)
                 );
