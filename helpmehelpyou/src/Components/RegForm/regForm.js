@@ -48,6 +48,8 @@ export default function RegForm({ session }) {
     // prints the form into the console
     console.log(form);
 
+    // See commit messages regarding the below.
+
     // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id. ✅
     attemptingFetch(session.user.id);
     // Store result in state called fetchAttempt. ✅
