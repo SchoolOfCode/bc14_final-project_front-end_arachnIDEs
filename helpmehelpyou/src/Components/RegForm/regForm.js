@@ -8,6 +8,8 @@ export default function RegForm({ session }) {
 
   const [fetchAttempt, setFetchAttempt] = useState([]);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {}, [session]);
 
   if (session) {
@@ -50,8 +52,18 @@ export default function RegForm({ session }) {
 
     // See commit messages regarding the below.
 
+    // New Plan
+    // state: isEditing(false)
+    // When page loads, attemptFetch(session.user.id).
+    // If the payload is empty, setIsEdit(false) ready for a POST request after save.
+    // If not, setIsEdit(true) ready for a PATCH request.
+    // setForm(fetchAttempt).
+    // When submit button is pressed, do POST or PATCH request according to state of isEdit.
+    // nav to myprofile.
+
+    // Ignore below.
     // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id. ✅
-    attemptingFetch(session.user.id);
+    // attemptingFetch(session.user.id);
     // Store result in state called fetchAttempt. ✅
     // When fetchAttempt has populated (i.e. use useEffect), do the following...
     // If the payload is empty, do a POST request. (Then nav to myprofile)
@@ -60,7 +72,7 @@ export default function RegForm({ session }) {
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
     // register();
 
-    // navigate("/myprofile");
+    navigate("/myprofile");
   };
 
   async function attemptingFetch(id) {
@@ -71,19 +83,19 @@ export default function RegForm({ session }) {
     setFetchAttempt(data);
   }
 
-  useEffect(() => {
-    console.log(fetchAttempt);
-    if (fetchAttempt.length !== 0) {
-      if (fetchAttempt.payload.length === 0) {
-        register();
-        navigate("/myprofile");
-      } else {
-        patchUser(session.user.id);
-        navigate("/myprofile");
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetchAttempt]);
+  // useEffect(() => {
+  //   console.log(fetchAttempt);
+  //   if (fetchAttempt.length !== 0) {
+  //     if (fetchAttempt.payload.length === 0) {
+  //       register();
+  //       navigate("/myprofile");
+  //     } else {
+  //       patchUser(session.user.id);
+  //       navigate("/myprofile");
+  //     }
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [fetchAttempt]);
 
   async function patchUser(id) {
     const res = await fetch(
