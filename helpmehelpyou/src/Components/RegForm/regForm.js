@@ -7,10 +7,14 @@ export default function RegForm({ session }) {
   let emailAddress;
 
   const [fetchAttempt, setFetchAttempt] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    attemptingFetch(session.user.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  useEffect(() => {}, [session]);
+  // useEffect(() => {}, [session]);
 
   if (session) {
     console.log("there is a session");
@@ -53,19 +57,29 @@ export default function RegForm({ session }) {
     // See commit messages regarding the below.
 
     // New Plan
-    // state: isEditing(false)
-    // When page loads, attemptFetch(session.user.id).
-    // If the payload is empty, setIsEdit(false) ready for a POST request after save.
-    // If not, setIsEdit(true) ready for a PATCH request.
-    // setForm(fetchAttempt).
-    // When submit button is pressed, do POST or PATCH request according to state of isEdit.
-    // nav to myprofile.
+    // state: isEditing(false) ✅
+    // When page loads, attemptingFetch(session.user.id).✅
+    // Store result in state called fetchAttempt. ✅
+    // When fetchAttempt has populated (i.e. use useEffect),✅ do the following...
+    // If the payload is empty, setIsEdit(false) ready for a POST request after save.✅
+    // If not, setIsEdit(true) ready for a PATCH request.✅
+    //  setForm(fetchAttempt).✅
+    // When submit button is pressed, do POST or PATCH request according to state of isEdit.✅
+    // nav to myprofile.✅
+
+    if (isEditing) {
+      console.log("isEditing is true. About to patch...");
+      patchUser(session.user.id);
+    } else {
+      console.log("isEditing is false. About to post...");
+      register();
+    }
 
     // Ignore below.
     // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id. ✅
     // attemptingFetch(session.user.id);
     // Store result in state called fetchAttempt. ✅
-    // When fetchAttempt has populated (i.e. use useEffect), do the following...
+    // When fetchAttempt has populated (i.e. use useEffect),✅ do the following...
     // If the payload is empty, do a POST request. (Then nav to myprofile)
     // If not, do a PATCH request. (Then nav to myprofile)
 
@@ -83,21 +97,33 @@ export default function RegForm({ session }) {
     setFetchAttempt(data);
   }
 
-  // useEffect(() => {
-  //   console.log(fetchAttempt);
-  //   if (fetchAttempt.length !== 0) {
-  //     if (fetchAttempt.payload.length === 0) {
-  //       register();
-  //       navigate("/myprofile");
-  //     } else {
-  //       patchUser(session.user.id);
-  //       navigate("/myprofile");
-  //     }
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [fetchAttempt]);
+  useEffect(() => {
+    console.log(fetchAttempt);
+    if (fetchAttempt.length !== 0) {
+      if (fetchAttempt.payload.length === 0) {
+        setIsEditing(false);
+        // register();
+        // navigate("/myprofile");
+      } else {
+        setIsEditing(true);
+        setForm(fetchAttempt.payload[0]);
+        // patchUser(session.user.id);
+        // navigate("/myprofile");
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchAttempt]);
+
+  useEffect(() => {
+    console.log({ form });
+  }, [form]);
+
+  useEffect(() => {
+    console.log({ isEditing });
+  }, [isEditing]);
 
   async function patchUser(id) {
+    console.log("Attempting to patch...");
     const res = await fetch(
       `https://arachnides-backend.onrender.com/api/users/${id}`,
       {
@@ -106,6 +132,7 @@ export default function RegForm({ session }) {
         body: JSON.stringify(form),
       }
     );
+    console.log({ res });
   }
 
   async function register() {
