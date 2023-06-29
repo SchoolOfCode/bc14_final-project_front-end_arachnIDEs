@@ -5,6 +5,8 @@ import "./regForm.css";
 export default function RegForm({ session }) {
   let userID;
   let emailAddress;
+  // const url = "https://arachnides-backend.onrender.com/api/users";
+  const url = "http://localhost:5001/api/users";
 
   const [fetchAttempt, setFetchAttempt] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -90,9 +92,7 @@ export default function RegForm({ session }) {
   };
 
   async function attemptingFetch(id) {
-    const res = await fetch(
-      `https://arachnides-backend.onrender.com/api/users/${id}`
-    );
+    const res = await fetch(`${url}/${id}`);
     const data = await res.json();
     setFetchAttempt(data);
   }
@@ -124,26 +124,20 @@ export default function RegForm({ session }) {
 
   async function patchUser(id) {
     console.log("Attempting to patch...");
-    const res = await fetch(
-      `https://arachnides-backend.onrender.com/api/users/${id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      }
-    );
+    const res = await fetch(`${url}/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     console.log({ res });
   }
 
   async function register() {
-    const res = await fetch(
-      "https://arachnides-backend.onrender.com/api/users",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      }
-    );
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     console.log("The following has now been added to the database:", { res });
   }
 
