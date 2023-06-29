@@ -5,8 +5,8 @@ import "./regForm.css";
 export default function RegForm({ session }) {
   let userID;
   let emailAddress;
-  // const url = "https://arachnides-backend.onrender.com/api/users";
-  const url = "http://localhost:5001/api/users";
+  const url = "https://arachnides-backend.onrender.com/api/users";
+  // const url = "http://localhost:5001/api/users";
 
   const [fetchAttempt, setFetchAttempt] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -50,7 +50,7 @@ export default function RegForm({ session }) {
   const navigate = useNavigate();
 
   // function to save the whole setForm
-  const handleRegSubmit = (event) => {
+  const handleRegSubmit = async (event) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     // prints the form into the console
@@ -71,10 +71,10 @@ export default function RegForm({ session }) {
 
     if (isEditing) {
       console.log("isEditing is true. About to patch...");
-      patchUser(session.user.id);
+      await patchUser(session.user.id);
     } else {
       console.log("isEditing is false. About to post...");
-      register();
+      await register();
     }
 
     // Ignore below.
@@ -131,6 +131,7 @@ export default function RegForm({ session }) {
       body: JSON.stringify(form),
     });
     console.log({ res });
+    return res;
   }
 
   async function register() {
@@ -140,6 +141,7 @@ export default function RegForm({ session }) {
       body: JSON.stringify(form),
     });
     console.log("The following has now been added to the database:", { res });
+    return res;
   }
 
   return (
