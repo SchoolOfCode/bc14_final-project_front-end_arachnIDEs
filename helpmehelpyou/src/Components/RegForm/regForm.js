@@ -6,6 +6,8 @@ export default function RegForm({ session }) {
   let userID;
   let emailAddress;
 
+  const [fetchAttempt, setFetchAttempt] = useState([]);
+
   useEffect(() => {}, [session]);
 
   if (session) {
@@ -46,17 +48,51 @@ export default function RegForm({ session }) {
     // prints the form into the console
     console.log(form);
 
-    // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id.
-    // Store result in state called fetchAttempt.
+    // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id. ✅
+    attemptingFetch(session.user.id);
+    // Store result in state called fetchAttempt. ✅
     // When fetchAttempt has populated (i.e. use useEffect), do the following...
     // If the payload is empty, do a POST request. (Then nav to myprofile)
     // If not, do a PATCH request. (Then nav to myprofile)
 
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
-    register();
+    // register();
 
-    navigate("/myprofile");
+    // navigate("/myprofile");
   };
+
+  async function attemptingFetch(id) {
+    const res = await fetch(
+      `https://arachnides-backend.onrender.com/api/users/${id}`
+    );
+    const data = await res.json();
+    setFetchAttempt(data);
+  }
+
+  useEffect(() => {
+    console.log(fetchAttempt);
+    if (fetchAttempt.length !== 0) {
+      if (fetchAttempt.payload.length === 0) {
+        register();
+        navigate("/myprofile");
+      } else {
+        patchUser(session.user.id);
+        navigate("/myprofile");
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchAttempt]);
+
+  async function patchUser(id) {
+    const res = await fetch(
+      `https://arachnides-backend.onrender.com/api/users/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      }
+    );
+  }
 
   async function register() {
     const res = await fetch(
