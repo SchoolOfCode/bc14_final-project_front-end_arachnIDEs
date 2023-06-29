@@ -25,12 +25,11 @@ From moving flats to feeding cats - we have it covered.</em></p>
 
 ## Authors
 
-[Catherine Broadbent](https://github.com/CGreen789)  
-[Christopher Webb](https://github.com/Webbocoder)  
-[Mohammed Farah](https://github.com/Mfar121)  
-[Olga Khristoliubova](https://github.com/olgaKhristo)  
-[Sarah Salmean](https://github.com/sarahsalmean)  
-[Tom Webb](https://github.com/tomwebb2022)
+| [Catherine Green](https://github.com/CGreen789)      |[Christopher Webb](https://github.com/Webbocoder)  |[Mohammed Farah](https://github.com/Mfar121) | [Olga Khristoliubova](https://github.com/olgaKhristo) | [Sarah Salmean](https://github.com/sarahsalmean) | [Tom Webb](https://github.com/tomwebb2022) |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| <div align="center"><img src="https://pbs.twimg.com/profile_images/1657511375776755718/0mmoe_wQ_400x400.jpg" width="100"/></div>| <div align="center"><img src="https://media.licdn.com/dms/image/D4E03AQE-kI8-ESrWvw/profile-displayphoto-shrink_800_800/0/1683200009262?e=1693440000&v=beta&t=CAgdM4ndRwY8uXr_JVR8xwMG7bTTcnnYmBSG9pzgE_g" width="100"/></div>| <div align="center"><img src="https://media.licdn.com/dms/image/C4E03AQG_prEhl8NgKg/profile-displayphoto-shrink_800_800/0/1613258089664?e=1693440000&v=beta&t=UA8GwNe1kkNkuWVG1YTGy-IB-VCj71ZDjmecZeyMMKQ" width="100"/></div>| <div align="center"><img src="https://avatars.githubusercontent.com/u/96662509?v=4" width="100"/></div>| <div align="center"><img src="https://avatars.githubusercontent.com/u/121130231?v=4" width="100"/></div>       | <div align="center"><img src="https://scontent-man2-1.xx.fbcdn.net/v/t1.6435-9/47505310_10155931741245060_1543910274690449408_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=SHZb6kVmZ6YAX-MrlU5&_nc_ht=scontent-man2-1.xx&oh=00_AfARxSMhvd9gktwqCUXkFMTvMyEeYpOjhAhxir0VAvWW5w&oe=64C202BD" width="100"/></div>|
+| <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/catherine-green-953766106/)</div>   | <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/webbophone/)</div>| <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammed-farah-2a300a206/)</div>| <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olga-smith-khristoliubova-6a1924250/)</div>| <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sarahsalmean/)</div>| <div align="center">[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tomwebb10/)</div>|
+
 
 ## Problem and Solution
 
