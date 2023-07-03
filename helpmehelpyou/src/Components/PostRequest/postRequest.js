@@ -62,14 +62,14 @@ export default function PostRequest({ session, user }) {
   // document.getElementById("offer-something-checkbox").checked = true;
 
   // function to save the whole setForm
-  const handleMakeAPostSubmit = (event) => {
+  const handleMakeAPostSubmit = async (event) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     // prints the form into the console
     console.log(form);
 
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
-    postToDb();
+    await postToDb();
 
     navigate("/give");
   };
@@ -106,6 +106,7 @@ export default function PostRequest({ session, user }) {
       }
     );
     console.log("The following has now been added to the database:", { res });
+    return res;
   }
 
   return (
@@ -121,26 +122,28 @@ export default function PostRequest({ session, user }) {
         )}
         {/* Put an onSubmit in the form element - callback function/call a function already written. */}
         <form id="ask-for-help-form" onSubmit={handleMakeAPostSubmit}>
-        {!session && (<div className="ask-for-help-div">
-            {/* Email */}
-            <label className="ask-for-help-label">Email*</label>
-            <input
-              required
-              className="ask-for-help-input"
-              type="email"
-              placeholder="Please enter your email"
-              value={form.email_address}
-              onChange={(e) => {
-                setForm(
-                  {
-                    ...form,
-                    email_address: e.target.value,
-                  }
-                  // console.log(form)
-                );
-              }}
-            ></input>
-          </div>)}
+          {!session && (
+            <div className="ask-for-help-div">
+              {/* Email */}
+              <label className="ask-for-help-label">Email*</label>
+              <input
+                required
+                className="ask-for-help-input"
+                type="email"
+                placeholder="Please enter your email"
+                value={form.email_address}
+                onChange={(e) => {
+                  setForm(
+                    {
+                      ...form,
+                      email_address: e.target.value,
+                    }
+                    // console.log(form)
+                  );
+                }}
+              ></input>
+            </div>
+          )}
           {/* Log in and Register will need Link tags at some point! */}
           {!session && (
             <p className="centered-text small-text">
@@ -149,25 +152,27 @@ export default function PostRequest({ session, user }) {
             </p>
           )}
           {/* Display Name  should we specify character limit in display name*/}
-          {!session && ( <div className="ask-for-help-div">
-            <label className="ask-for-help-label">Display Name*</label>
-            <input
-              required
-              className="ask-for-help-input"
-              type="text"
-              placeholder="Create a display name"
-              value={form.display_name}
-              onChange={(e) => {
-                setForm(
-                  {
-                    ...form,
-                    display_name: e.target.value,
-                  }
-                  // console.log(form)
-                );
-              }}
-            ></input>
-          </div>)}
+          {!session && (
+            <div className="ask-for-help-div">
+              <label className="ask-for-help-label">Display Name*</label>
+              <input
+                required
+                className="ask-for-help-input"
+                type="text"
+                placeholder="Create a display name"
+                value={form.display_name}
+                onChange={(e) => {
+                  setForm(
+                    {
+                      ...form,
+                      display_name: e.target.value,
+                    }
+                    // console.log(form)
+                  );
+                }}
+              ></input>
+            </div>
+          )}
           {/* Summary */}
           <div className="ask-for-help-div">
             <label className="ask-for-help-label">Summary*</label>
