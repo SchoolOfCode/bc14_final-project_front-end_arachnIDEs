@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 import "./userProfile.css";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function UserProfile({ session, user, setUser }) {
   console.log("here is the session in userProfile: ", session);
@@ -61,7 +61,7 @@ export default function UserProfile({ session, user, setUser }) {
 
               className="profile-pic"
               src={user && user.profile_picture}
-              alt="profile" className="profile-pic" src="https://i.ibb.co/YcXqprM/a.png"
+              alt="profile"
 
             ></img>
             <h3 className="user-rating">⭐️⭐️⭐️⭐️</h3>
