@@ -49,6 +49,7 @@
   max-width: 100%;
   font-family: "Aoboshi One", serif;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 .login-button:hover {
   background-color: #4563e7;
