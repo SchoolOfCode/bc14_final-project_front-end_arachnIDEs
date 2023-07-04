@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   height: 100%;
-  width: fit-content;
+  /* width: fit-content; */
 }
 
 .login-button {
@@ -47,7 +47,7 @@
   touch-action: manipulation;
   cursor: pointer;
   height: 40px;
-  width: 4.6rem;
+  width: 8rem;
   max-width: 100%;
   font-family: "Aoboshi One", serif;
   /* text-overflow: ellipsis;
@@ -261,6 +261,6 @@
 /* Trying to adjust button for Google Chrome */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .login-button {
-    width: 5rem;
+    width: 5.6rem;
   }
 }
