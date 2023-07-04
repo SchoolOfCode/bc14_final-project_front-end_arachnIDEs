@@ -256,6 +256,6 @@
 /* Trying to adjust button for Google Chrome */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .login-button {
-    width: 4.6rem;
+    width: 5rem;
   }
 }
