@@ -20,9 +20,9 @@
 
 .login-register-buttons {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  /* width: fit-content; */
 }
 
 .login-button {
@@ -42,11 +42,16 @@
   user-select: none;
   margin: 0.1rem;
   -webkit-user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
   touch-action: manipulation;
   cursor: pointer;
   height: 40px;
-  width: 4.6rem;
+  width: 8rem;
+  max-width: 100%;
   font-family: "Aoboshi One", serif;
+  /* text-overflow: ellipsis;
+  overflow: hidden; */
 }
 .login-button:hover {
   background-color: #4563e7;
@@ -186,7 +191,6 @@
   }
   .login-button {
     margin-bottom: 0.1rem;
-    max-width: fit-content;
   }
   .register-button {
     margin-top: 0.1rem;
@@ -250,5 +254,12 @@
 @media screen and (max-width: 5000px) {
   .navigation-menu.expanded ul {
     display: block;
+  }
+}
+
+/* Trying to adjust button for Google Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .login-button {
+    width: 5.6rem;
   }
 }

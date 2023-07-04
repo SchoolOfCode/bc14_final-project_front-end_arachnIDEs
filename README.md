@@ -42,7 +42,7 @@ Our solution to this problem is the development of a platform called 'Help Me He
 
 ## Instructions or Demo video
 
-(post link to video here)
+[See our app demo here!](https://youtu.be/d5tcuiqJsQM)
 
 ## Tech Stack
 
