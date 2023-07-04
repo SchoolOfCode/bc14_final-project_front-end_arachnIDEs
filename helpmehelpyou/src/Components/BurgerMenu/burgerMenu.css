@@ -42,14 +42,16 @@
   user-select: none;
   margin: 0.1rem;
   -webkit-user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
   touch-action: manipulation;
   cursor: pointer;
   height: 40px;
   width: 4.6rem;
   max-width: 100%;
   font-family: "Aoboshi One", serif;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /* text-overflow: ellipsis;
+  overflow: hidden; */
 }
 .login-button:hover {
   background-color: #4563e7;
