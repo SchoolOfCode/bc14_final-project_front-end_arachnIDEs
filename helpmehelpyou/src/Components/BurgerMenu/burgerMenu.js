@@ -38,7 +38,7 @@ export default function BurgerMenu({ session, setSession }) {
         {!session && (
           <div className="login-register-buttons">
             <Link to="/login" className="login-link">
-              <button className="login-button">Login / Register</button>{" "}
+              <button className="login-button">Login / Register</button>
             </Link>
           </div>
         )}
