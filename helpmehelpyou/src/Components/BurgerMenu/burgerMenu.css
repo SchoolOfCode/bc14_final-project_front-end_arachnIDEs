@@ -46,7 +46,9 @@
   cursor: pointer;
   height: 40px;
   width: 4.6rem;
+  max-width: 100%;
   font-family: "Aoboshi One", serif;
+  text-overflow: ellipsis;
 }
 .login-button:hover {
   background-color: #4563e7;
