@@ -82,6 +82,8 @@ export default function FindHelp() {
     { id: 31, borough: "Westminster" },
   ];
 
+  // first commit 
+
   // function to call the listings from the database
   async function fetchAllHelpers() {
     console.log("Attempting to fetch users from database...");
