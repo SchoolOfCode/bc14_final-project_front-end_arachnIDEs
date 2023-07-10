@@ -5,8 +5,18 @@ import "./regForm.css";
 export default function RegForm({ session }) {
   let userID;
   let emailAddress;
+  const url = "https://arachnides-backend.onrender.com/api/users";
+  // const url = "http://localhost:5001/api/users";
 
-  useEffect(() => {}, [session]);
+  const [fetchAttempt, setFetchAttempt] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
+
+  useEffect(() => {
+    attemptingFetch(session.user.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // useEffect(() => {}, [session]);
 
   if (session) {
     console.log("there is a session");
@@ -40,28 +50,98 @@ export default function RegForm({ session }) {
   const navigate = useNavigate();
 
   // function to save the whole setForm
-  const handleRegSubmit = (event) => {
+  const handleRegSubmit = async (event) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     // prints the form into the console
     console.log(form);
 
+    // See commit messages regarding the below.
+
+    // New Plan
+    // state: isEditing(false) ✅
+    // When page loads, attemptingFetch(session.user.id).✅
+    // Store result in state called fetchAttempt. ✅
+    // When fetchAttempt has populated (i.e. use useEffect),✅ do the following...
+    // If the payload is empty, setIsEdit(false) ready for a POST request after save.✅
+    // If not, setIsEdit(true) ready for a PATCH request.✅
+    //  setForm(fetchAttempt).✅
+    // When submit button is pressed, do POST or PATCH request according to state of isEdit.✅
+    // nav to myprofile.✅
+
+    if (isEditing) {
+      console.log("isEditing is true. About to patch...");
+      await patchUser(session.user.id);
+    } else {
+      console.log("isEditing is false. About to post...");
+      await register();
+    }
+
+    // Ignore below.
+    // When the submit button is clicked, we first want to attempt to fetch the user with the id session.user.id. ✅
+    // attemptingFetch(session.user.id);
+    // Store result in state called fetchAttempt. ✅
+    // When fetchAttempt has populated (i.e. use useEffect),✅ do the following...
+    // If the payload is empty, do a POST request. (Then nav to myprofile)
+    // If not, do a PATCH request. (Then nav to myprofile)
+
     // From here, we want the front end to send the object called form to the server for it to send it to the db.
-    register();
+    // register();
 
     navigate("/myprofile");
   };
 
-  async function register() {
-    const res = await fetch(
-      "https://arachnides-backend.onrender.com/api/users",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+  async function attemptingFetch(id) {
+    const res = await fetch(`${url}/${id}`);
+    const data = await res.json();
+    console.log({ data });
+    setFetchAttempt(data);
+  }
+
+  useEffect(() => {
+    console.log(fetchAttempt);
+    if (fetchAttempt.length !== 0) {
+      if (fetchAttempt.payload.length === 0) {
+        setIsEditing(false);
+        // register();
+        // navigate("/myprofile");
+      } else {
+        setIsEditing(true);
+        setForm(fetchAttempt.payload[0]);
+        // patchUser(session.user.id);
+        // navigate("/myprofile");
       }
-    );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchAttempt]);
+
+  useEffect(() => {
+    console.log({ form });
+  }, [form]);
+
+  useEffect(() => {
+    console.log({ isEditing });
+  }, [isEditing]);
+
+  async function patchUser(id) {
+    console.log("Attempting to patch...");
+    const res = await fetch(`${url}/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    console.log({ res });
+    return res;
+  }
+
+  async function register() {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
     console.log("The following has now been added to the database:", { res });
+    return res;
   }
 
   return (
@@ -366,12 +446,12 @@ export default function RegForm({ session }) {
               className="reg-input"
               id="categories-skills-wanted"
               name="categories"
-              value={form.skills_wanted}
+              value={form.skills_needed}
               onChange={(e) => {
                 setForm(
                   {
                     ...form,
-                    skills_wanted: e.target.value,
+                    skills_needed: e.target.value,
                   }
                   // console.log(form)
                 );
